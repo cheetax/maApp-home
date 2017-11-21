@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import ShellView from './Views/ShellView';
 
-AppRegistry.registerComponent('myApp', () => App);
+AppRegistry.registerComponent('myApp', () => ShellView);
