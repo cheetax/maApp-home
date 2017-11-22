@@ -14,7 +14,7 @@ import MainView from './MainView';
 
 function mapStateToProps(state) {
   return {
-    user: "unknow user"
+    user: "state"
   }
 }
 const myMainView = connect(mapStateToProps)(MainView);
