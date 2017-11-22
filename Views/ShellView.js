@@ -11,29 +11,31 @@ import {
 } from 'react-native';
 import MainView from './MainView';
 
-const store = createStore(rootReducer);
 
-export default class ShellView extends Component {
+function mapStateToProps(state) {
+  return {
+    user: "unknow user"
+  }
+}
+const myMainView = connect(mapStateToProps)(MainView);
+
+class ShellView extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-        <View >
-          <Text>
-            ShellView!
+      <View >
+        <Text>
+          ShellView! {this.props.user}
         </Text>
-          <MainView />
-        </View>
-      </Provider>
-
+        <MainView />
+      </View>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.userInfo.user
-  }
-}
-AppRegistry.registerComponent('ShellView', () => ShellView);
-//export default connect(mapStateToProps)(ShellView);
+
+
+
+//const myMainView = connect(mapStateToProps)(MainView);
+//AppRegistry.registerComponent('ShellView', () => ShellView);
+export default connect(mapStateToProps)(ShellView);
