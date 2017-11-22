@@ -13,7 +13,8 @@ export default class MainView extends Component {
       <View style={styles.container}>
         <Text >
           Привет myApp!!!
-        </Text>        
+        </Text>    
+        <Text/>
       </View>
     );
   }
