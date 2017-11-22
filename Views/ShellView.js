@@ -13,6 +13,7 @@ import MainView from './MainView';
 
 
 function mapStateToProps(state) {
+  console.log("Hello");
   return {
     user: "state"
   }
