@@ -12,10 +12,20 @@ import {
 import MainView from './MainView';
 
 
-export function mapStateToProps(state) {
+function mapStateToProps(state) {
   console.log(state.userInfo.user);
   return {
-    user: state.userInfo.user
+    user: state.userInfo.user,
+    year: state.userInfo.year
+  }
+}
+
+function mapDispatcherToProps(dispatcher) {
+  return {
+    setYearFunction: year => {
+      console.log(year);
+      dispatcher(setYearAction(year));
+    }
   }
 }
 
@@ -27,7 +37,7 @@ class ShellView extends Component {
         <Text>
           Привет {this.props.user}!
         </Text>
-        <MainView user={this.props.user} />
+        <MainView year={this.props.year} setYear={this.props.setYearFunction} />
       </View>
     );
   }
@@ -51,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(ShellView);
+export default connect(mapStateToProps, mapDispatcherToProps)(ShellView);
