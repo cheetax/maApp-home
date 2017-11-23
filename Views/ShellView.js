@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-//import { Provider } from "react-redux";
-//import { createStore } from "redux";
-//import rootReducer from "../reducers/index";
 import { connect } from "react-redux";
 
 import {
@@ -29,7 +26,7 @@ class ShellView extends Component {
         <Text>
           Привет {this.props.user}!
         </Text>
-        <MainView />
+        <MainView user={this.props.user} />
       </View>
     );
   }
@@ -53,8 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-//const myMainView = connect(mapStateToProps)(MainView);
-//AppRegistry.registerComponent('ShellView', () => ShellView);
 export default connect(mapStateToProps)(ShellView);

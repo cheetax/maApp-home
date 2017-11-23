@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import {
     AppRegistry,
     Platform,
@@ -9,14 +8,7 @@ import {
 } from 'react-native';
 //import mapStateToProps from "./ShellView";
 
-function mapStateToProps(state) {
-  console.log(state.userInfo.user);
-  return {
-    user: state.userInfo.user
-  }
-}
-
- class MainView extends Component {
+export default class MainView extends Component {
    render() {
     console.log(this.props.user);
     return (
@@ -48,5 +40,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps)(MainView);
+//export default connect(mapStateToProps)(MainView);
 //AppRegistry.registerComponent('MainView', () => MainView);
