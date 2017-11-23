@@ -1,6 +1,6 @@
 const initialState = {
     user: "Djon",
-    year: "2015"
+    year: 2015
 }
 
 export default function userInfo(state=initialState, action) {
