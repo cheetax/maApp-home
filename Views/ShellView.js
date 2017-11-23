@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 import {
   AppRegistry,
+  StyleSheet,
   Text,
   View
 } from 'react-native';
@@ -13,9 +14,9 @@ import MainView from './MainView';
 
 
 function mapStateToProps(state) {
-  console.log("Hello");
+  console.log(state.userInfo.user);
   return {
-    user: "state"
+    user: state.userInfo.user
   }
 }
 const myMainView = connect(mapStateToProps)(MainView);
@@ -24,9 +25,9 @@ class ShellView extends Component {
 
   render() {
     return (
-      <View >
+      <View style={styles.container}>
         <Text>
-          ShellView! {this.props.user}
+          Привет {this.props.user}!
         </Text>
         <MainView />
       </View>
@@ -34,6 +35,23 @@ class ShellView extends Component {
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 0,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
 
 
 

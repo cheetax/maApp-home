@@ -3,5 +3,6 @@ const initialState = {
 }
 
 export default function userInfo(state=initialState) {
-    return "Bob";
+    console.log(state);
+    return state;
 }
