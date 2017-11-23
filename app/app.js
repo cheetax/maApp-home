@@ -1,8 +1,7 @@
-import { AppRegistry } from 'react-native';
 import ShellView from "./views/ShellView"
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import rootReducer from "../reducers/index";
+import rootReducer from "./reducers/index";
 import React, { Component } from 'react';
 
 const store = createStore(rootReducer);
