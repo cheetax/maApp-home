@@ -8,14 +8,14 @@ import React, { Component } from 'react';
 const store = createStore(rootReducer);
 
 class App extends Component {
-    
-      render() {
-        return (
-          <Provider store={store}>
-            <ShellView/>
-          </Provider>
-        );
-      }
-    }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <ShellView />
+      </Provider>
+    );
+  }
+}
 
 AppRegistry.registerComponent('myApp', () => App);

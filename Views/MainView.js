@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import {
     AppRegistry,
     Platform,
@@ -6,13 +7,22 @@ import {
     Text,
     View
 } from 'react-native';
+//import mapStateToProps from "./ShellView";
 
-export default class MainView extends Component {
-  render() {
+function mapStateToProps(state) {
+  console.log(state.userInfo.user);
+  return {
+    user: state.userInfo.user
+  }
+}
+
+ class MainView extends Component {
+   render() {
+    console.log(this.props.user);
     return (
       <View style={styles.container}>
         <Text >
-          Привет myApp!!!
+          {this.props.user} это myApp!!! 
         </Text>    
         <Text/>
       </View>
@@ -38,4 +48,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('MainView', () => MainView);
+export default connect(mapStateToProps)(MainView);
+//AppRegistry.registerComponent('MainView', () => MainView);

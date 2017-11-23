@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "../reducers/index";
+//import { Provider } from "react-redux";
+//import { createStore } from "redux";
+//import rootReducer from "../reducers/index";
 import { connect } from "react-redux";
 
 import {
@@ -10,16 +10,16 @@ import {
   Text,
   View
 } from 'react-native';
+
 import MainView from './MainView';
 
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   console.log(state.userInfo.user);
   return {
     user: state.userInfo.user
   }
 }
-const myMainView = connect(mapStateToProps)(MainView);
 
 class ShellView extends Component {
 
