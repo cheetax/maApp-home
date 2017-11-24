@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import setYearAction from "../actions/actionYear"
+import { setYearUpAction, setYearDownAction } from "../actions/actionYear";
 
 import {
   AppRegistry,
@@ -13,18 +13,19 @@ import MainView from './MainView';
 
 
 function mapStateToProps(state) {
-  console.log(state.userInfo.user);
+  console.log(state);
   return {
-    user: state.userInfo.user,
-    year: state.userInfo.year
+    object: state.userInfo
   }
 }
 
 function mapDispatcherToProps(dispatcher) {
   return {
-    setYearFunction: year => {
-      console.log(year);
-      dispatcher(setYearAction(year));
+    setYearUpFunction: (object) => {
+      dispatcher(setYearUpAction(object));
+    },
+    setYearDownFunction: (object) => {
+      dispatcher(setYearDownAction(object));
     }
   }
 }
@@ -35,9 +36,10 @@ class ShellView extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Привет {this.props.user}!
+          Привет !
         </Text>
-        <MainView year={this.props.year} setYear={this.props.setYearFunction} />
+        <MainView object={this.props.object[0]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction}/>
+        <MainView object={this.props.object[1]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction}/>
       </View>
     );
   }
