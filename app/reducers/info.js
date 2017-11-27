@@ -1,3 +1,8 @@
+//import { Shortid } from 'shortid';
+
+//var id = shortid.generate;
+//console.log('id', id);
+
 var initialState = [
     {
         id: 1,
@@ -6,6 +11,21 @@ var initialState = [
     },
     {
         id: 2,
+        user: "Djon",
+        year: 2015
+    },
+    {
+        id: 3,
+        user: "Djon",
+        year: 2015
+    },
+    {
+        id: 4,
+        user: "Djon",
+        year: 2015
+    },
+    {
+        id: 5,
         user: "Gray",
         year: 2011
     }
@@ -14,18 +34,18 @@ export default function userInfo(state = initialState, action) {
     //tate.merge(initialState);
     switch (action.type) {
         case "SET_YEAR_UP":
-            state[action.object.id - 1].year += 1;
+            state[action.object].year += 1;
             console.log("actionUp",state);
             //break;
             return [...state];
         case "SET_YEAR_DOWN":
-            state[action.object.id - 1].year -= 1;
+            state[action.object].year -= 1;
             console.log("actionDown", state);
            // break;
             return [...state];
         default:
             return state;
     }
-    console.log("actionEnd", state);
+   // console.log("actionEnd", state);
    // return state;
 }

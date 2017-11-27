@@ -7,7 +7,12 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import { Button } from 'react-native-elements';
+
+import {
+  Button,
+  Card
+} from 'react-native-elements';
+
 //import mapStateToProps from "./ShellView";
 
 export default class MainView extends Component {
@@ -16,30 +21,31 @@ export default class MainView extends Component {
     this.onBtnUpClick = this.onBtnUpClick.bind(this);
   }
 
-  onBtnUpClick(id) {
-    console.log("OnBtnUpClick", id);
-    return this.props.setYearUp(this.props.item)
+  onBtnUpClick() {
+    //console.log("OnBtnUpClick", id);
+    return this.props.setYearUp(this.props.keyVal)
 
   }
   onBtnDownClick() {
-    console.log("OnBtnDownClick", this.props.setYearDown);
-    return this.props.setYearDown(this.props.item)
+    //console.log("OnBtnDownClick", this.props.setYearDown);
+    return this.props.setYearDown(this.props.keyVal)
 
   }
   render() {
-    console.log(this.props.item)
+    console.log(this.props.keyVal)
     return (
-      <View key={this.props.keyVal} style={styles.container}>
-        <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnUpClick} title='Up' />
-        <View style={styles.textView}>
-          <Text style={styles.text}>
-            {this.props.item.user} - {this.props.item.year}
-          </Text>
+      <Card containerStyle={styles.container} key={this.props.keyVal}>
+        <View style={styles.container}>
+          <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnUpClick.bind(this)} title='Up' />
+          <View style={styles.textView}>
+            <Text style={styles.text}>
+              {this.props.item.user} - {this.props.item.year}
+            </Text>
+          </View>
+          <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnDownClick.bind(this)} title='Down' />
         </View>
-        <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnDownClick.bind(this)} title='Down' />
-      </View>
+      </Card>
     );
-
   }
 }
 
