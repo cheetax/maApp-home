@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { setYearUpAction, setYearDownAction } from "../actions/actionYear";
+import { Header } from 'react-native-elements';
 
 import {
   AppRegistry,
@@ -10,12 +11,13 @@ import {
 } from 'react-native';
 
 import MainView from './MainView';
+import ItemsListView from './itemsListViews';
 
 
 function mapStateToProps(state) {
-  console.log(state);
+  console.log('mapStateToProps', state);
   return {
-    object: state.userInfo
+    items: state.userInfo
   }
 }
 
@@ -33,13 +35,26 @@ function mapDispatcherToProps(dispatcher) {
 class ShellView extends Component {
 
   render() {
+    console.log('map', this.props.items);
     return (
       <View style={styles.container}>
-        <Text>
-          Привет !
-        </Text>
-        <MainView object={this.props.object[0]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction}/>
-        <MainView object={this.props.object[1]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction}/>
+        <View style={styles.header} >
+          <Text style={styles.headerText} > MyApp </Text>
+        </View>
+        <View style={styles.item}>
+          {/* <ItemsListView items={this.props.items} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
+          {            
+            this.props.items.map((item, index) => {
+              console.log('item', item);
+              return (
+                //<Text key={index}> {item.user} </Text>
+                <MainView key={index} keyVal={index} item={item} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} />
+              );
+            })
+          }
+          {/* <MainView object={this.props.object[0]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} />
+          <MainView object={this.props.object[1]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
+        </View>
       </View>
     );
   }
@@ -49,17 +64,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 0,
     justifyContent: 'center',
-    alignItems: 'center'
   },
-  welcome: {
+  headerText: {
     fontSize: 20,
+    color: '#fff',
     textAlign: 'center',
+    alignItems: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  item: {
+    alignItems: 'center',
+    margin: 10,
+  },
+  header: {
+    backgroundColor: '#03A9F4',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 });
 

@@ -7,62 +7,67 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import Button from 'apsl-react-native-button';
+import { Button } from 'react-native-elements';
 //import mapStateToProps from "./ShellView";
 
 export default class MainView extends Component {
-
-  onBtnUpClick(event) {
-    console.log("OnBtnUpClick",this.props.setYear);
-    return this.props.setYearUp(this.props.object)
-    
+  constructor(props) {
+    super(props);
+    this.onBtnUpClick = this.onBtnUpClick.bind(this);
   }
-  onBtnDownClick(event) {
-    console.log("OnBtnDownClick",this.props.object);
-    return this.props.setYearDown(this.props.object)
-    
+
+  onBtnUpClick(id) {
+    console.log("OnBtnUpClick", id);
+    return this.props.setYearUp(this.props.item)
+
+  }
+  onBtnDownClick() {
+    console.log("OnBtnDownClick", this.props.setYearDown);
+    return this.props.setYearDown(this.props.item)
+
   }
   render() {
-    console.log("view",this.props.object.user)
+    console.log(this.props.item)
     return (
-      <View style={styles.container}>
-        <Button style={styles.buttonUpDown} onPress={this.onBtnUpClick.bind(this)}>Up</Button>
-        <Text style={styles.instructions} >
-          {this.props.object.user} - {this.props.object.year}
-        </Text>
-        <Button style={styles.buttonUpDown} onPress={this.onBtnDownClick.bind(this)}>Down</Button>
+      <View key={this.props.keyVal} style={styles.container}>
+        <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnUpClick} title='Up' />
+        <View style={styles.textView}>
+          <Text style={styles.text}>
+            {this.props.item.user} - {this.props.item.year}
+          </Text>
+        </View>
+        <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnDownClick.bind(this)} title='Down' />
       </View>
     );
+
   }
 }
 
 const styles = StyleSheet.create({
-  container: {    
+  container: {
     flexDirection: 'row',
-    margin: 5,
-    flex: 0,    
+    margin: 0,
+    flex: 0,
     justifyContent: 'center',
     alignItems: 'center'
   },
   buttonUpDown: {
     width: 100,
-    height: 40,
+    flex: 0,
     alignItems: 'center',
-    backgroundColor: 'transparent',
+    justifyContent: 'center',
     borderRadius: 20,
-    
+    margin: 5,
   },
-  welcome: {
+  text: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
+  textView: {
     flex: 0,
-    
-    color: '#333333',
-    margin: 20,
+    flexDirection: 'row',
+    margin: 0,
     justifyContent: 'center',
     alignItems: 'center'
   },

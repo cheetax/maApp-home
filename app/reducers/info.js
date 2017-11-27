@@ -1,4 +1,4 @@
-const initialState = [
+var initialState = [
     {
         id: 1,
         user: "Djon",
@@ -10,18 +10,22 @@ const initialState = [
         year: 2011
     }
 ]
-
 export default function userInfo(state = initialState, action) {
-    console.log(action);
+    //tate.merge(initialState);
     switch (action.type) {
         case "SET_YEAR_UP":
-            action.object.year += 1;
-            return { ...state, [action.object.id - 1]: action.object }
+           // state[action.object.id - 1].year += 1;
+            console.log("actionUp",state);
+            //break;
+            return [...state,state[action.object.id - 1].year += 1];
         case "SET_YEAR_DOWN":
-            action.object.year -= 1;
-            return { ...state, [action.object.id - 1]: action.object }
+            state[action.object.id - 1].year -= 1;
+            console.log("actionDown", state);
+           // break;
+            return [...state];
         default:
-            console.log(state);
             return state;
     }
+    console.log("actionEnd", state);
+   // return state;
 }
