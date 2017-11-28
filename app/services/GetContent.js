@@ -27,9 +27,14 @@ export default function GetContent() {
 
         httpClient.get(url + urlExperience).then((html) => {
             let doc = new DomParser().parseFromString(html, 'text/html');
+            console.log(doc);
+            let wizards  = doc.documentElement.querySelect('tr');
+            let wizard = wizards[0];
+           // let w = wizard.documentElement.querySelect("a[class='tdn c_user']");
             //var parsed = htmlparser.Parser(html);
             //const parsed = parser.parseFromString(html, 'text/html');
-            console.log('Experience', doc.findSelector('*'));
+            console.log('Experience', wizard);
+            console.log(wizard.childNodes[1].querySelect("a[class='tdn c_user']"));
 
         }, (error) => {
             console.log(error);
