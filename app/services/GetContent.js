@@ -1,5 +1,5 @@
 var DomParser = require('react-native-html-parser').DOMParser;
-import React from 'react'
+import React from 'react-native'
 
 
 import { HTTPClient } from '../services/HTTPClient';
@@ -20,12 +20,16 @@ function getUsers(wizards) {
 
     for (var i = 0; i < wizards.length; i++) {
 
-        let href = wizards[i].childNodes[1].querySelect('a')[0].getAttribute('href'); //Id
+        let href = wizards[i].childNodes[1].getElementsBySelector('a')[0].getAttribute('href'); //Id
         // let w = wizard.documentElement.querySelect("a[class='tdn c_user']");
         //console.log('wizard', wizard);
         console.log('href', href);
         var res = httpClient.get(url + href).then((_html) => {
             console.log(_html)
+            var userDoc = parser.parseFromString(_html, 'text/html')
+            var name = userDoc.documentElement.getElementsBySelector('div.p_end')[0].textContent;
+            var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent
+            // console.log('user', user);
         });
         // => {
         //     var user = parser.parseFromString(html, 'text/html')
