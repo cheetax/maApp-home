@@ -7,6 +7,7 @@ import { HTTPClient } from '../services/HTTPClient';
 //var HTTPClient = require;('./HTTPClient');
 
 var httpClient = new HTTPClient();
+var parser = new DomParser();
 
 var body = "UserName=cheetax&Password=Kalevala";
 var url = "https://magi.mobi";
@@ -15,26 +16,43 @@ var urlExperience = '/clan/treasures/history/tmp_experience/1';
 
 var DomParser = require('react-native-html-parser').DOMParser
 
+function getUsers(wizards) {
+
+    for (var i = 0; i < wizards.length; i++) {
+
+        let href = wizards[i].childNodes[1].querySelect('a')[0].getAttribute('href'); //Id
+        // let w = wizard.documentElement.querySelect("a[class='tdn c_user']");
+        //console.log('wizard', wizard);
+        console.log('href', href);
+        var res = httpClient.get(url + href).then((_html) => {
+            console.log(_html)
+        });
+        // => {
+        //     var user = parser.parseFromString(html, 'text/html')
+        //     console.log('user', user);
+        // console.log('user', user);
+    }
+    return {}
+}
+
 export default function GetContent() {
 
     // var el = document.createElement('html');
 
 
     httpClient.post(url + urlLogin, body).then((html) => {
-        doc = new DomParser().parseFromString(html, 'text/html');
+        // doc = parser.parseFromString(html, 'text/html');
         // el.innerHTML(html);
         // doc.querySelectorAll();
 
-        httpClient.get(url + urlExperience).then((html) => {
-            let doc = new DomParser().parseFromString(html, 'text/html');
+        var res = httpClient.get(url + urlExperience).then((html) => {
+            let doc = parser.parseFromString(html, 'text/html');
             console.log(doc);
-            let wizards  = doc.documentElement.querySelect('tr');
+            let wizards = doc.documentElement.getElementsBySelector('tr');
+            var users = getUsers(wizards);
+
             let wizard = wizards[0];
-           // let w = wizard.documentElement.querySelect("a[class='tdn c_user']");
-            //var parsed = htmlparser.Parser(html);
-            //const parsed = parser.parseFromString(html, 'text/html');
-            console.log('Experience', wizard);
-            console.log(wizard.childNodes[1].querySelect("a[class='tdn c_user']"));
+
 
         }, (error) => {
             console.log(error);

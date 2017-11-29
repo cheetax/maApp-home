@@ -31,7 +31,7 @@ export class HTTPClient {
             request.open("GET", url, true);
             console.log('url', url);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            request.addEventListener("load", function () {
+            request.addEventListener("load", () => {
                 if (request.status < 400) {
                     console.log(request.status);
                     succeed(request.responseText);
