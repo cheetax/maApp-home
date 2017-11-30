@@ -13,8 +13,6 @@ var url = "https://magi.mobi";
 var urlLogin = "/auth/credentials";
 var urlExperience = '/clan/treasures/history/tmp_experience/1';
 
-var str = ['dom','lom', 'fom'];
-
 var DomParser = require('react-native-html-parser').DOMParser
 
 function getUsers(wizards) {
@@ -24,13 +22,18 @@ function getUsers(wizards) {
         let href = wizards[i].childNodes[1].getElementsBySelector('a')[0].getAttribute('href'); //Id
         // let w = wizard.documentElement.querySelect("a[class='tdn c_user']");
         //console.log('wizard', wizard);
-        console.log('href', href);
-        var res = httpClient.get(url + href).then((_html) => {
-            console.log(_html)
-            var userDoc = parser.parseFromString(_html, 'text/html')
+       // console.log('href', href);
+        var res = httpClient.get(url + href).then((html) => {
+           // console.log(_html)
+            var userDoc = parser.parseFromString(html, 'text/html')
             var name = userDoc.documentElement.getElementsBySelector('div.p_end')[0].textContent;
+            //name = name.remove(name.indexOf('(')-1);
             var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent;
-            // console.log('user', user);
+            rankArray = rank.split('\n');
+            rank = rankArray.length === 4 ? rankArray[2].trim() : rankArray[3].trim();
+            var dayOfClan = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;
+            dayOfClan = dayOfClan.substring(dayOfClan.indexOf(":")+1).trim()
+            console.log('user', rank);
         });
         // => {
         //     var user = parser.parseFromString(html, 'text/html')
@@ -40,10 +43,7 @@ function getUsers(wizards) {
     return {}
 }
 
-export default function GetContent() {
-
-    // var el = document.createElement('html');
-    
+export default function GetContent() {    
 
     httpClient.post(url + urlLogin, body).then((html) => {
         // doc = parser.parseFromString(html, 'text/html');
@@ -52,7 +52,7 @@ export default function GetContent() {
 
         var res = httpClient.get(url + urlExperience).then((html) => {
             let doc = new DomParser().parseFromString(html, 'text/html');
-            console.log(doc);
+            //console.log(doc);
             let wizards = doc.documentElement.getElementsBySelector('tr');
             var users = getUsers(wizards);
 

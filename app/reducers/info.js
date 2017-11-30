@@ -1,8 +1,6 @@
 import GetContent from '../services/GetContent';
 
-var items = /\.[a-z,A-Z,\_]+/g.exec('div.c_orange.normal');
-items.map((item) => { console.log(item) });
-//GetContent();
+GetContent();
 
 var initialState = [
     {
@@ -33,21 +31,6 @@ var initialState = [
 ]
 export default function userInfo(state = initialState, action) {
 
-    var items = [];
-    // const regexp = '/\.[a-z,A-Z,\_]+/g';
-
-    const regex = /\.[a-z,A-Z,\_]+/g;
-    const str = `div.c_orange.normal`;
-    let m;
-    
-    while ((m = regex.exec(str)) !== null) {
-        items.push(...m);
-    }
-
-    //items = regexp.exec(`div.c_orange.normal`);
-    items.map((item) => { console.log(item) });
-
-    //tate.merge(initialState);
     switch (action.type) {
         case "SET_YEAR_UP":
             state[action.object].year += 1;
