@@ -13,6 +13,8 @@ var url = "https://magi.mobi";
 var urlLogin = "/auth/credentials";
 var urlExperience = '/clan/treasures/history/tmp_experience/1';
 
+var str = ['dom','lom', 'fom'];
+
 var DomParser = require('react-native-html-parser').DOMParser
 
 function getUsers(wizards) {
@@ -27,7 +29,7 @@ function getUsers(wizards) {
             console.log(_html)
             var userDoc = parser.parseFromString(_html, 'text/html')
             var name = userDoc.documentElement.getElementsBySelector('div.p_end')[0].textContent;
-            var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent
+            var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent;
             // console.log('user', user);
         });
         // => {
@@ -41,7 +43,7 @@ function getUsers(wizards) {
 export default function GetContent() {
 
     // var el = document.createElement('html');
-
+    
 
     httpClient.post(url + urlLogin, body).then((html) => {
         // doc = parser.parseFromString(html, 'text/html');
