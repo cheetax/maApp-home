@@ -8,7 +8,6 @@ import { HTTPClient } from '../services/HTTPClient';
 
 var httpClient = new HTTPClient();
 var parser = new DomParser();
-
 var body = "UserName=cheetax&Password=Kalevala";
 var url = "https://magi.mobi";
 var urlLogin = "/auth/credentials";
@@ -46,7 +45,7 @@ export default function GetContent() {
         // doc.querySelectorAll();
 
         var res = httpClient.get(url + urlExperience).then((html) => {
-            let doc = parser.parseFromString(html, 'text/html');
+            let doc = new DomParser().parseFromString(html, 'text/html');
             console.log(doc);
             let wizards = doc.documentElement.getElementsBySelector('tr');
             var users = getUsers(wizards);

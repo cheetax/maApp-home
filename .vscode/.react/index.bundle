@@ -67478,7 +67478,6 @@ var DomParser = require(630                       ).DOMParser; // 630 = react-na
 
 var httpClient = new _HTTPClient.HTTPClient();
 var parser = new DomParser();
-
 var body = "UserName=cheetax&Password=Kalevala";
 var url = "https://magi.mobi";
 var urlLogin = "/auth/credentials";
@@ -67504,7 +67503,7 @@ function GetContent() {
     httpClient.post(url + urlLogin, body).then(function (html) {
 
         var res = httpClient.get(url + urlExperience).then(function (html) {
-            var doc = parser.parseFromString(html, 'text/html');
+            var doc = new DomParser().parseFromString(html, 'text/html');
             console.log(doc);
             var wizards = doc.documentElement.getElementsBySelector('tr');
             var users = getUsers(wizards);
