@@ -32,7 +32,7 @@ export default class MainView extends Component {
 
   }
   render() {
-    console.log(this.props.keyVal)
+    //console.log(this.props.keyVal)
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.container}>

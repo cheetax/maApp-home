@@ -10,7 +10,7 @@ export class HTTPClient {
             //console.log('request.status',request.status); 
             request.addEventListener("load", function () {
                 if (request.status < 400) {
-
+                    console.log(request.status);
                     succeed(request.responseText);
                 }
                 else {
@@ -22,6 +22,7 @@ export class HTTPClient {
                 fail(new Error("Network error POST"));
             });
             request.send(requestuestBody);
+            console.log('send');
         });
     }
 
@@ -37,7 +38,7 @@ export class HTTPClient {
                     succeed(request.responseText);
                 }
                 else {
-                    console.log(request.status);
+                   // console.log(request.status);
                     fail(new Error("Request failed GET: " + request.statusText));
                 }
             });

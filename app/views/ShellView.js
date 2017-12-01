@@ -15,7 +15,7 @@ import ItemsListView from './itemsListViews';
 
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps', state);
+  //console.log('mapStateToProps', state);
   return {
     items: state.userInfo
   }
@@ -35,7 +35,7 @@ function mapDispatcherToProps(dispatcher) {
 class ShellView extends Component {
 
   render() {
-    console.log('map', this.props.items);
+    //console.log('map', this.props.items);
     return (
       <View style={styles.container}>
         <View style={styles.header} >
@@ -45,7 +45,7 @@ class ShellView extends Component {
           {/* <ItemsListView items={this.props.items} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
           {            
             this.props.items.map((item, index) => {
-              console.log('item', item);
+              //console.log('item', item);
               return (
                 //<Text key={index}> {item.user} </Text>
                 <MainView key={index} keyVal={index} item={item} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} />
