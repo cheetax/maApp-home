@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { setYearUpAction, setYearDownAction } from "../actions/actionYear";
+import { setYearUpAction, setYearDownAction, getContent } from "../actions/actionYear";
 import { Header } from 'react-native-elements';
+
+import {
+  Button,
+  Card
+} from 'react-native-elements';
 
 import {
   AppRegistry,
@@ -28,11 +33,20 @@ function mapDispatcherToProps(dispatcher) {
     },
     setYearDownFunction: (object) => {
       dispatcher(setYearDownAction(object));
+    },
+    getContent: () => {
+      dispatcher(getContent());
     }
   }
 }
 
 class ShellView extends Component {
+
+  onBtnResClick() {
+    //console.log("OnBtnUpClick", id);
+    return this.props.getContent()
+
+  }
 
   render() {
     //console.log('map', this.props.items);
@@ -42,6 +56,7 @@ class ShellView extends Component {
           <Text style={styles.headerText} > MyApp </Text>
         </View>
         <View style={styles.item}>
+          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' />
           {/* <ItemsListView items={this.props.items} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
           {            
             this.props.items.map((item, index) => {
@@ -75,6 +90,14 @@ const styles = StyleSheet.create({
   item: {
     alignItems: 'center',
     margin: 10,
+  },
+  buttonRes: {
+    width: 100,
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 5,
   },
   header: {
     backgroundColor: '#03A9F4',
