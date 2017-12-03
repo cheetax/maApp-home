@@ -67481,17 +67481,18 @@ var urlClan = '/clan/235/';
 
 var DomParser = require(630                       ).DOMParser; // 630 = react-native-html-parser
 var users = [];
+var expirienceUsers = [];
 
 exports.default = function GetContent() {
     var _this = this;
 
-    var getUsersExp, getUsers, login, getExperience, getClans, getUser, i;
-    return regeneratorRuntime.async(function GetContent$(_context5) {
+    var getUsersExp, getUsers, login, getExperienceUsers, getClans, getUser;
+    return regeneratorRuntime.async(function GetContent$(_context8) {
         while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context8.prev = _context8.next) {
                 case 0:
                     getUsersExp = function getUsersExp(wizards) {
-                        var i, href;
+                        var i, href, expirience;
                         return regeneratorRuntime.async(function getUsersExp$(_context) {
                             while (1) {
                                 switch (_context.prev = _context.next) {
@@ -67499,10 +67500,15 @@ exports.default = function GetContent() {
 
                                         for (i = 0; i < wizards.length; i++) {
                                             href = wizards[i].childNodes[1].getElementsBySelector('a.tdn.c_user')[0].getAttribute('href');
-                                        }
-                                        return _context.abrupt('return', users);
+                                            expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.trim();
 
-                                    case 2:
+                                            expirienceUsers.push({
+                                                id: href,
+                                                exp: expirience
+                                            });
+                                        }
+
+                                    case 1:
                                     case 'end':
                                         return _context.stop();
                                 }
@@ -67511,52 +67517,76 @@ exports.default = function GetContent() {
                     };
 
                     getUsers = function getUsers(wizards) {
-                        var i, href;
-                        return regeneratorRuntime.async(function getUsers$(_context2) {
+                        var _loop, i;
+
+                        return regeneratorRuntime.async(function getUsers$(_context3) {
                             while (1) {
-                                switch (_context2.prev = _context2.next) {
+                                switch (_context3.prev = _context3.next) {
                                     case 0:
+                                        _loop = function _loop() {
+                                            var href, userExp;
+                                            return regeneratorRuntime.async(function _loop$(_context2) {
+                                                while (1) {
+                                                    switch (_context2.prev = _context2.next) {
+                                                        case 0:
+                                                            href = wizards[i].getAttribute('href');
+                                                            userExp = wizards[i].childNodes[4].textContent.trim();
+                                                            _context2.next = 4;
+                                                            return regeneratorRuntime.awrap(getUser(href).then(function (user) {
+                                                                user.exp = userExp;
+                                                                users.push(user);
+                                                            }, function (error) {
+                                                                console.log(error);
+                                                            }));
+
+                                                        case 4:
+                                                        case 'end':
+                                                            return _context2.stop();
+                                                    }
+                                                }
+                                            }, null, _this);
+                                        };
+
                                         i = 0;
 
-                                    case 1:
+                                    case 2:
                                         if (!(i < wizards.length)) {
-                                            _context2.next = 8;
+                                            _context3.next = 8;
                                             break;
                                         }
 
-                                        href = wizards[i].getAttribute('href');
-                                        _context2.next = 5;
-                                        return regeneratorRuntime.awrap(getUser(href).then(function (user) {
-                                            users.push(user);
-                                        }, function (error) {
-                                            console.log(error);
-                                        }));
+                                        _context3.next = 5;
+                                        return regeneratorRuntime.awrap(_loop());
 
                                     case 5:
                                         i++;
-                                        _context2.next = 1;
+                                        _context3.next = 2;
                                         break;
 
                                     case 8:
-                                        return _context2.abrupt('return', users);
-
-                                    case 9:
                                     case 'end':
-                                        return _context2.stop();
+                                        return _context3.stop();
                                 }
                             }
                         }, null, _this);
                     };
 
                     login = function login() {
-                        return httpClient.post(url + urlLogin, body).then(function (html) {
-                            console.log("Есть логин");
+                        return new Promise(function (succes, fail) {
+                            httpClient.post(url + urlLogin, body).then(function (html) {
+                                succes({
+                                    code: 'Ok',
+                                    html: html
+                                });
+                            }, function (error) {
+                                fail(error);
+                            });
                         }, function (error) {
                             console.log(error);
                         });
                     };
 
-                    getExperience = function getExperience(i) {
+                    getExperienceUsers = function getExperienceUsers(i) {
                         return new Promise(function (succeed, fail) {
                             httpClient.get(url + urlExperience + i).then(function (_html) {
                                 var doc = new DomParser().parseFromString(_html, 'text/html');
@@ -67587,11 +67617,11 @@ exports.default = function GetContent() {
                     };
 
                     getUser = function getUser(href) {
-                        return regeneratorRuntime.async(function getUser$(_context3) {
+                        return regeneratorRuntime.async(function getUser$(_context4) {
                             while (1) {
-                                switch (_context3.prev = _context3.next) {
+                                switch (_context4.prev = _context4.next) {
                                     case 0:
-                                        return _context3.abrupt('return', new Promise(function (succeed, fail) {
+                                        return _context4.abrupt('return', new Promise(function (succeed, fail) {
                                             httpClient.get(url + href).then(function (html) {
                                                 var userDoc = parser.parseFromString(html, 'application/xhtml+xml');
 
@@ -67632,42 +67662,92 @@ exports.default = function GetContent() {
 
                                     case 1:
                                     case 'end':
-                                        return _context3.stop();
+                                        return _context4.stop();
                                 }
                             }
                         }, null, _this);
                     };
 
                     console.log('Старт');
-                    _context5.next = 9;
-                    return regeneratorRuntime.awrap(login());
 
-                case 9:
-                    i = 1;
+                    _context8.next = 9;
+                    return regeneratorRuntime.awrap(login().then(function _callee3(status) {
+                        var i, _i;
 
-                case 10:
-                    if (!(i <= 6)) {
-                        _context5.next = 17;
-                        break;
-                    }
-
-                    console.log(i);
-                    _context5.next = 14;
-                    return regeneratorRuntime.awrap(getClans(i).then(function _callee(wizards) {
-                        var users;
-                        return regeneratorRuntime.async(function _callee$(_context4) {
+                        return regeneratorRuntime.async(function _callee3$(_context7) {
                             while (1) {
-                                switch (_context4.prev = _context4.next) {
+                                switch (_context7.prev = _context7.next) {
                                     case 0:
-                                        _context4.next = 2;
-                                        return regeneratorRuntime.awrap(getUsers(wizards));
+                                        console.log(status);
+                                        i = 1;
 
                                     case 2:
-                                        users = _context4.sent;
+                                        if (!(i <= 6)) {
+                                            _context7.next = 9;
+                                            break;
+                                        }
 
-                                    case 3:
+                                        console.log(i);
+                                        _context7.next = 6;
+                                        return regeneratorRuntime.awrap(getClans(i).then(function _callee(wizards) {
+                                            return regeneratorRuntime.async(function _callee$(_context5) {
+                                                while (1) {
+                                                    switch (_context5.prev = _context5.next) {
+                                                        case 0:
+                                                            _context5.next = 2;
+                                                            return regeneratorRuntime.awrap(getUsers(wizards));
+
+                                                        case 2:
+                                                        case 'end':
+                                                            return _context5.stop();
+                                                    }
+                                                }
+                                            }, null, _this);
+                                        }, function (error) {
+                                            console.log(error);
+                                        }));
+
+                                    case 6:
+                                        i++;
+                                        _context7.next = 2;
+                                        break;
+
+                                    case 9:
+                                        _i = 1;
+
+                                    case 10:
+                                        if (!(_i <= 6)) {
+                                            _context7.next = 16;
+                                            break;
+                                        }
+
+                                        _context7.next = 13;
+                                        return regeneratorRuntime.awrap(getExperienceUsers(_i).then(function _callee2(wizards) {
+                                            return regeneratorRuntime.async(function _callee2$(_context6) {
+                                                while (1) {
+                                                    switch (_context6.prev = _context6.next) {
+                                                        case 0:
+                                                            _context6.next = 2;
+                                                            return regeneratorRuntime.awrap(getUsersExp(wizards));
+
+                                                        case 2:
+                                                        case 'end':
+                                                            return _context6.stop();
+                                                    }
+                                                }
+                                            }, null, _this);
+                                        }, function (error) {
+                                            console.log(error);
+                                        }));
+
+                                    case 13:
+                                        _i++;
+                                        _context7.next = 10;
+                                        break;
+
+                                    case 16:
                                     case 'end':
-                                        return _context4.stop();
+                                        return _context7.stop();
                                 }
                             }
                         }, null, _this);
@@ -67675,17 +67755,13 @@ exports.default = function GetContent() {
                         console.log(error);
                     }));
 
-                case 14:
-                    i++;
-                    _context5.next = 10;
-                    break;
+                case 9:
 
-                case 17:
-                    console.log('Финиш', users);
+                    console.log('Финиш', expirienceUsers);
 
-                case 18:
+                case 10:
                 case 'end':
-                    return _context5.stop();
+                    return _context8.stop();
             }
         }
     }, null, this);
@@ -67732,7 +67808,6 @@ var HTTPClient = exports.HTTPClient = function HTTPClient() {
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             request.addEventListener("load", function () {
                 if (request.status < 400) {
-                    console.log(request.status);
                     succeed(request.responseText);
                 } else {
                     fail(new Error("Request failed GET: " + request.statusText));
@@ -68199,9 +68274,7 @@ function _parse(source, defaultNSMapCopy, entityMap, domBuilder, errorHandler) {
 					var tagName = source.substring(tagStart + 2, end);
 					var config = parseStack.pop();
 					var localNSMap = config.localNSMap;
-					if (config.tagName != tagName) {
-						console.log(config.tagName, tagName);
-					}
+					if (config.tagName != tagName) {}
 					domBuilder.endElement(config.uri, config.localName, tagName);
 					if (localNSMap) {
 						for (var prefix in localNSMap) {

@@ -16,17 +16,21 @@ var urlClan = '/clan/235/'
 
 var DomParser = require('react-native-html-parser').DOMParser
 var users = [];
+var expirienceUsers = [];
+
 
 export default async function GetContent() {
 
     let getUsersExp = async (wizards) => {
 
         for (var i = 0; i < wizards.length; i++) {
-
             let href = wizards[i].childNodes[1].getElementsBySelector('a.tdn.c_user')[0].getAttribute('href'); //Id
-            
+            let expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.trim(); //опыт
+            expirienceUsers.push({
+                id: href,
+                exp: expirience,
+            });
         }
-        return users;
     }
 
     let getUsers = async (wizards) => {
@@ -34,22 +38,30 @@ export default async function GetContent() {
         for (var i = 0; i < wizards.length; i++) {
 
             let href = wizards[i].getAttribute('href'); //Id
+            let userExp = wizards[i].childNodes[4].textContent.trim();
             await getUser(href).then((user) => {
+                user.exp = userExp;
                 users.push(user);
             }, (error) => {
                 console.log(error);
             })
         }
-        return users;
     }
 
-    let login = () => httpClient.post(url + urlLogin, body).then((html) => {
-        console.log("Есть логин");
+    let login = () => new Promise((succes, fail) => {
+        httpClient.post(url + urlLogin, body).then((html) => {
+            succes({
+                code: 'Ok',
+                html: html
+            });
+        }, (error) => {
+            fail(error);
+        })
     }, (error) => {
         console.log(error);
     });
 
-    let getExperience = (i) => new Promise(function (succeed, fail) {
+    let getExperienceUsers = (i) => new Promise(function (succeed, fail) {
         httpClient.get(url + urlExperience + i).then((_html) => {
             let doc = new DomParser().parseFromString(_html, 'text/html');
             //console.log(doc);
@@ -117,53 +129,31 @@ export default async function GetContent() {
     });
 
     console.log('Старт');
-    await login();
 
-    for (let i = 1; i <= 6; i++) {
-        console.log(i);
-        await getClans(i).then(async (wizards) => {
-            //console.log(wizards);
-            let users = await getUsers(wizards);
-        }, (error) => {
-            console.log(error);
-        });
-    }
-    console.log('Финиш', users);
+    await login().then(async (status) => {
+        console.log(status);
+        for (let i = 1; i <= 6; i++) {
+            console.log(i);
+            await getClans(i).then(async (wizards) => {
+                //console.log(wizards);
+                await getUsers(wizards);
+            }, (error) => {
+                console.log(error);
+            });
+        }
+        for (let i = 1; i <= 6; i++) {
+            //console.log(i);
+            await getExperienceUsers(i).then(async (wizards) => {
+                //console.log(wizards);
+                await getUsersExp(wizards);
+            }, (error) => {
+                console.log(error);
+            });
+        }
+    }, (error) => {
+        console.log(error);
+    });
 
-    // (async () => {
-    //     let main = async () => {
-    //         await login();
-    //     }
-    // })
-    // await main();   
-    // console.log('вызов');
-
+    console.log('Финиш', expirienceUsers);
 }
 
-// export default function GetContent() {
-
-
-//         httpClient.post(url + urlLogin, body).then((html) => {
-//             // doc = parser.parseFromString(html, 'text/html');
-//             // el.innerHTML(html);
-//             // doc.querySelectorAll();
-
-//             (async () => {
-//                 await httpClient.get(url + urlExperience).then((_html) => {
-//                     let doc = new DomParser().parseFromString(_html, 'text/html');
-//                     //console.log(doc);
-//                     let wizards = doc.documentElement.getElementsBySelector('tr');
-//                     var users = getUsers(wizards);
-//                     let wizard = wizards[0];
-
-
-//                 }, (error) => {
-//                     console.log(error);
-//                 });
-//             })
-//         }, (error) => {
-//             console.log(error);
-//         });
-
-
-// }
