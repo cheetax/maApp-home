@@ -1,18 +1,18 @@
 import { GetContent } from "../services/GetContent";
 
-let data = null;
+let dataBase;
 
 export const getDataBase = (forceUpdate = false) => new Promise(async (succes, fail) => {
-    if (forceUpdate || data === null) {
+    if (forceUpdate || !dataBase) {
         await GetContent().then((data) => {
-            data = data;
-            succes(data);
+            let dataBase = data;
+            succes(dataBase);
         }, (error) => {
             fail(error)
         });
     }
     else {
-        succes(data);
+        succes(dataBase);
     }
 }, (error) => {
     fail(error);

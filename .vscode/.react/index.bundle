@@ -53511,7 +53511,7 @@ var _this = this;
 
 var _GetContent = require(518                     ); // 518 = ../services/GetContent
 
-var data = null;
+var dataBase = void 0;
 
 var getDataBase = exports.getDataBase = function getDataBase() {
     var forceUpdate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -53520,15 +53520,15 @@ var getDataBase = exports.getDataBase = function getDataBase() {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
-                        if (!(forceUpdate || data === null)) {
+                        if (!(forceUpdate || !dataBase)) {
                             _context.next = 5;
                             break;
                         }
 
                         _context.next = 3;
                         return regeneratorRuntime.awrap((0, _GetContent.GetContent)().then(function (data) {
-                            data = data;
-                            succes(data);
+                            var dataBase = data;
+                            succes(dataBase);
                         }, function (error) {
                             fail(error);
                         }));
@@ -53538,7 +53538,7 @@ var getDataBase = exports.getDataBase = function getDataBase() {
                         break;
 
                     case 5:
-                        succes(data);
+                        succes(dataBase);
 
                     case 6:
                     case "end":
