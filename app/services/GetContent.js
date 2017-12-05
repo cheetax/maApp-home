@@ -19,7 +19,7 @@ var users = [];
 var expirienceUsers = [];
 
 
-export default async function GetContent() {
+export const GetContent = () => new Promise(async (succes, fail) => {
 
     let getUsersExp = async (wizards) => {
 
@@ -59,11 +59,13 @@ export default async function GetContent() {
         })
     }, (error) => {
         console.log(error);
+        let errorDom = parser.parseFromString(error, 'text/html');
+
     });
 
     let getExperienceUsers = (i) => new Promise(function (succeed, fail) {
         httpClient.get(url + urlExperience + i).then((_html) => {
-            let doc = new DomParser().parseFromString(_html, 'text/html');
+            let doc = parser.parseFromString(_html, 'text/html');
             //console.log(doc);
             let elem = doc.documentElement.getElementsBySelector('tr');
             succeed(elem);
@@ -76,7 +78,7 @@ export default async function GetContent() {
 
     let getClans = (i) => new Promise(function (succeed, fail) {
         httpClient.get(url + urlClan + i).then((_html) => {
-            let doc = new DomParser().parseFromString(_html, 'text/html');
+            let doc = parser.parseFromString(_html, 'text/html');
             //console.log(doc);
             let elem = doc.documentElement.getElementsBySelector('a.tdn.bl.ptb2.c_89');
             succeed(elem);
@@ -150,10 +152,17 @@ export default async function GetContent() {
                 console.log(error);
             });
         }
+        
     }, (error) => {
         console.log(error);
     });
+    succes({
+        users: users,
+        expirienceUsers: expirienceUsers,
+    });
+    //console.log('Финиш', expirienceUsers);
 
-    console.log('Финиш', expirienceUsers);
-}
+}, (error) => {
+    fail(error);
+});
 

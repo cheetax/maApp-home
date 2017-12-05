@@ -14,8 +14,7 @@ export class HTTPClient {
                     succeed(request.responseText);
                 }
                 else {
-
-                    fail(new Error("Request failed POST: " + request.statusText));
+                    fail(request.responseText);
                 }
             });
             request.addEventListener("error", function () {
@@ -39,7 +38,7 @@ export class HTTPClient {
                 }
                 else {
                    // console.log(request.status);
-                    fail(new Error("Request failed GET: " + request.statusText));
+                    fail(request.statusText);
                 }
             });
             request.addEventListener("error", function () {

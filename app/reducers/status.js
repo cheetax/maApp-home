@@ -1,7 +1,11 @@
-export default function userInfo(state = [], action) {
+const initialAction = {
+    inAction: false,
+}
+
+export default function actionStatus(state = initialStatus, action) {
     console.log(action.type);
     switch (action.type) {
-        case "SET_YEAR_UP":
+        case "CHANGE":
             state[action.payload].year += 1;
             //console.log("actionUp", state);
             //break;

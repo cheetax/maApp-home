@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { setYearUpAction, setYearDownAction, getContent } from "../actions/actionYear";
+import { getContent } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 
 import {
@@ -26,17 +26,11 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatcherToProps(dispatcher) {
+function mapDispatcherToProps(dispatch) {
   return {
-    setYearUpFunction: (object) => {
-      dispatcher(setYearUpAction(object));
-    },
-    setYearDownFunction: (object) => {
-      dispatcher(setYearDownAction(object));
-    },
     getContent: () => {
-      dispatcher(getContent());
-    }
+      dispatch(getContent());
+    },
   }
 }
 
@@ -44,8 +38,12 @@ class ShellView extends Component {
 
   onBtnResClick() {
     //console.log("OnBtnUpClick", id);
-    return this.props.getContent()
+    console.log(new Date());
+    return this.props.getContent();
+  }  
 
+  componentDidMount() {
+    return this.props.getContent();
   }
 
   render() {
