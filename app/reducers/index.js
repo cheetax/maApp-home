@@ -5,6 +5,6 @@ import actionStatus from './status'
 const rootReducer = combineReducers({
     userInfo,
     actionStatus,
-})
+});
 
 export default rootReducer
