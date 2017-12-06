@@ -28,8 +28,8 @@ function mapStateToProps(state) {
 
 function mapDispatcherToProps(dispatch) {
   return {
-    getContent: () => {
-      dispatch(getContent());
+    getContent: (forceUpdate) => {
+      dispatch(getContent(forceUpdate));
     },
   }
 }
@@ -39,7 +39,7 @@ class ShellView extends Component {
   onBtnResClick() {
     //console.log("OnBtnUpClick", id);
     console.log(new Date());
-    return this.props.getContent();
+    return this.props.getContent(true);
   }  
 
   componentDidMount() {

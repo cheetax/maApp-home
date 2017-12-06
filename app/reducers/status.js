@@ -5,19 +5,11 @@ const initialAction = {
 export default function actionStatus(state = initialStatus, action) {
     console.log(action.type);
     switch (action.type) {
-        case "CHANGE":
-            state[action.payload].year += 1;
+        case "CHANGE_STATUS":
+            state.inAction = !state.inAction;
             //console.log("actionUp", state);
             //break;
-            return [...state];
-        case "SET_YEAR_DOWN":
-            state[action.payload].year -= 1;
-            //console.log("actionDown", state);
-            // break;
-            return [...state];
-        case 'GET_CONTENT':
-            console.log(action.payload);    
-            return state; 
+            return [state];        
         default:
             return state;
     }

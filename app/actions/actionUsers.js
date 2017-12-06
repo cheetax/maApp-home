@@ -14,12 +14,18 @@ export const setYearDownAction = (object) => dispatch => {
     });
 }
 
-export const getContent = () => dispatch => {
-    console.log(new Date(),'get content: start');
-    getDataBase().then((data) => {
+export const getContent = (forceUpdate) => dispatch => {
+    console.log(new Date(), 'get content: start');
+    dispatch({
+        type: 'CHANGE_STATUS',
+    });
+    getDataBase(forceUpdate).then((data) => {
         dispatch({
             type: 'GET_CONTENT',
             payload: data.users,
+        });
+        dispatch({
+            type: 'CHANGE_STATUS',
         });
     });
 }

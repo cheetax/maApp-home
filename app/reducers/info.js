@@ -13,7 +13,7 @@ export default function userInfo(state = [], action) {
             return [...state];
         case 'GET_CONTENT':
             console.log(action.payload);    
-            return state; 
+            return []; 
         default:
             return state;
     }
