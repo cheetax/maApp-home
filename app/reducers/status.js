@@ -1,4 +1,4 @@
-const initialAction = {
+const initialStatus = {
     inAction: false,
 }
 

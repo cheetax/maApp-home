@@ -70006,7 +70006,7 @@ __d(/* myApp/app/reducers/status.js */function(global, require, module, exports)
     value: true
 });
 exports.default = actionStatus;
-var initialAction = {
+var initialStatus = {
     inAction: false
 };
 
