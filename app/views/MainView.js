@@ -38,8 +38,11 @@ export default class MainView extends Component {
         <View style={styles.container}>
           
           <View style={styles.textView}>
-            <Text style={styles.text}>
+            <Text style={styles.textPrimary}>
               {this.props.item.name} 
+            </Text>
+            <Text style={styles.textSecondary}>
+              {this.props.item.rank} 
             </Text>
           </View>
           
@@ -53,8 +56,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     margin: 0,
+    padding: 2,
     flex: 0,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center'
   },
   buttonUpDown: {
@@ -63,19 +67,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    margin: 5,
+    margin: 0,
   },
-  text: {
+  
+  textPrimary: {
     fontSize: 20,
     textAlign: 'left',
-    margin: 10,
+    margin: 0,
+  },
+  textSecondary: {
+    fontSize: 15,
+    textAlign: 'left',
+    margin: 0,
+    marginLeft: 10,
   },
   textView: {
     flex: 0,
-    flexDirection: 'row',
+    flexDirection: 'column',
     margin: 0,
-    justifyContent: 'start',
-    alignItems: 'center'
+    marginLeft:5,
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
 });
 
