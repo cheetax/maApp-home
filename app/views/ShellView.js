@@ -5,14 +5,15 @@ import { Header } from 'react-native-elements';
 
 import {
   Button,
-  Card
+  Card,
 } from 'react-native-elements';
 
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ActivityIndicator
 } from 'react-native';
 
 import MainView from './MainView';
@@ -22,7 +23,8 @@ import ItemsListView from './itemsListViews';
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
   return {
-    items: state.userInfo
+    items: state.userInfo,
+    status: state.actionStatus,
   }
 }
 
@@ -38,7 +40,7 @@ class ShellView extends Component {
 
   onBtnResClick() {
     //console.log("OnBtnUpClick", id);
-    console.log(new Date());
+    //console.log(new Date());
     return this.props.getContent(true);
   }  
 
@@ -54,7 +56,9 @@ class ShellView extends Component {
           <Text style={styles.headerText} > MyApp </Text>
         </View>
         <View style={styles.item}>
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' />
+          
+          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' disabled={this.props.status.inAction} />
+          <ActivityIndicator animating={this.props.status.inAction} size={24} />
           {/* <ItemsListView items={this.props.items} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
           {            
             this.props.items.map((item, index) => {

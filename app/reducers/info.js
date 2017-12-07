@@ -1,5 +1,5 @@
 export default function userInfo(state = [], action) {
-    console.log(action.type);
+    console.log('userInfo', action.type);
     switch (action.type) {
         case "SET_YEAR_UP":
             state[action.payload].year += 1;
@@ -12,10 +12,10 @@ export default function userInfo(state = [], action) {
             // break;
             return [...state];
         case 'GET_CONTENT':
-            console.log(action.payload);    
+            console.log('payload', action.payload);    
             return []; 
         default:
-            return state;
+            return [...state];
     }
     // console.log("actionEnd", state);
     // return state;

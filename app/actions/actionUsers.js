@@ -15,7 +15,7 @@ export const setYearDownAction = (object) => dispatch => {
 }
 
 export const getContent = (forceUpdate) => dispatch => {
-    console.log(new Date(), 'get content: start');
+    // console.log(new Date(), 'get content: start');
     dispatch({
         type: 'CHANGE_STATUS',
     });

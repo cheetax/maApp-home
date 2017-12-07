@@ -1,15 +1,18 @@
 const initialStatus = {
     inAction: false,
+    nom: 0,
+    name: 'true'
 }
 
 export default function actionStatus(state = initialStatus, action) {
-    console.log(action.type);
+    console.log('actionStatus', action.type);
     switch (action.type) {
         case "CHANGE_STATUS":
             state.inAction = !state.inAction;
-            //console.log("actionUp", state);
+            state.nom += 1;
+            console.log("actionStatus", state.inAction);
             //break;
-            return [state];        
+            return state;        
         default:
             return state;
     }

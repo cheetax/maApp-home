@@ -14,13 +14,16 @@ var urlLogin = "/auth/credentials";
 var urlExperience = '/clan/treasures/history/tmp_experience/';
 var urlClan = '/clan/235/'
 
-var DomParser = require('react-native-html-parser').DOMParser
+var DomParser = require('react-native-html-parser').DOMParser;
 var users = [];
 var expirienceUsers = [];
 
 
 export const GetContent = () => new Promise(async (succes, fail) => {
 
+    users = [];
+    expirienceUsers = [];
+    
     let getUsersExp = async (wizards) => {
 
         for (var i = 0; i < wizards.length; i++) {
