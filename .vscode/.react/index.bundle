@@ -69930,7 +69930,8 @@ var ClanView = _wrapComponent("ClanView")(function (_Component) {
         },
         _react3.default.createElement(
           _reactNative.ScrollView,
-          { style: styles.item, __source: {
+          {
+            __source: {
               fileName: _jsxFileName,
               lineNumber: 45
             }
