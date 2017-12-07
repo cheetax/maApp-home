@@ -1,21 +1,15 @@
-export default function userInfo(state = [], action) {
+export default function clanInfo(state = { users: [], expirienceUsers: []}, action) {
     console.log('userInfo', action.type);
     switch (action.type) {
-        case "SET_YEAR_UP":
-            state[action.payload].year += 1;
-            //console.log("actionUp", state);
-            //break;
-            return [...state];
-        case "SET_YEAR_DOWN":
-            state[action.payload].year -= 1;
-            //console.log("actionDown", state);
-            // break;
-            return [...state];
         case 'GET_CONTENT':
-            console.log('payload', action.payload);    
-            return []; 
+            console.log('payload', action.payload);   
+            state = action.payload;
+            return {...state};
+        // case 'CHANGE_STATUS':
+        //     return state;
         default:
-            return [...state];
+            return state;
+            //return state;
     }
     // console.log("actionEnd", state);
     // return state;

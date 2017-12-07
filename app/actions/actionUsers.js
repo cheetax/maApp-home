@@ -22,7 +22,7 @@ export const getContent = (forceUpdate) => dispatch => {
     getDataBase(forceUpdate).then((data) => {
         dispatch({
             type: 'GET_CONTENT',
-            payload: data.users,
+            payload: data,
         });
         dispatch({
             type: 'CHANGE_STATUS',

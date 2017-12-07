@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import userInfo from "./info";
+import clanInfo from "./info";
 import actionStatus from './status'
 
 const rootReducer = combineReducers({
-    userInfo,
+    clanInfo,
     actionStatus,
 });
 

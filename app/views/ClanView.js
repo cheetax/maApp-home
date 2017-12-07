@@ -13,62 +13,48 @@ import {
   StyleSheet,
   Text,
   View,
-  ActivityIndicator
+  ActivityIndicator,
+  ScrollView
 } from 'react-native';
 
 import MainView from './MainView';
-import ClanView from './ClanView';
 import ItemsListView from './itemsListViews';
 
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
   return {
-    status: state.actionStatus,
-    data: state.clanInfo,
+    items: state.clanInfo.users,    
   }
 }
 
 function mapDispatcherToProps(dispatch) {
   return {
-    getContent: (forceUpdate) => {
-      dispatch(getContent(forceUpdate));
-    },
+    
   }
 }
 
-class ShellView extends Component {
+class ClanView extends Component {
 
-  onBtnResClick() {
-    //console.log("OnBtnUpClick", id);
-    //console.log(new Date());
-    return this.props.getContent(true);
-  }
-
-  componentDidMount() {
-    return this.props.getContent();
-  }
-
+  
   render() {
     //console.log('map', this.props.items);
-    var content;
-    if (true) {
-      content = <ClanView />
-    }
-    else {
-      content = <ClanView />
-    }
-
     return (
       <View style={styles.container}>
-        <View style={styles.header} >
-          <Text style={styles.headerText} > MyApp </Text>
-        </View>
-        <View style={styles.item}>
-
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction}/>          
-          {content}
-        </View>
+        
+        <ScrollView >
+          {            
+            this.props.items.map((item, index) => {
+              //console.log('item', item);
+              return (
+                //<Text key={index}> {item.user} </Text>
+                <MainView key={index} keyVal={index} item={item} />
+              );
+            })
+          }
+          {/* <MainView object={this.props.object[0]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} />
+          <MainView object={this.props.object[1]} setYearUp={this.props.setYearUpFunction} setYearDown={this.props.setYearDownFunction} /> */}
+        </ScrollView>
       </View>
     );
   }
@@ -106,4 +92,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(ShellView);
+export default connect(mapStateToProps, mapDispatcherToProps)(ClanView);

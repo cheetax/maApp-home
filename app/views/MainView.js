@@ -36,13 +36,13 @@ export default class MainView extends Component {
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.container}>
-          <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnUpClick.bind(this)} title='Up' />
+          
           <View style={styles.textView}>
             <Text style={styles.text}>
-              {this.props.item.user} - {this.props.item.year}
+              {this.props.item.name} 
             </Text>
           </View>
-          <Button buttonStyle={styles.buttonUpDown} onPress={this.onBtnDownClick.bind(this)} title='Down' />
+          
         </View>
       </Card>
     );

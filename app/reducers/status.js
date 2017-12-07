@@ -12,7 +12,7 @@ export default function actionStatus(state = initialStatus, action) {
             state.nom += 1;
             console.log("actionStatus", state.inAction);
             //break;
-            return state;        
+            return {...state};        
         default:
             return state;
     }
