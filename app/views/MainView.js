@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: 'left',
     margin: 10,
   },
   textView: {
     flex: 0,
     flexDirection: 'row',
     margin: 0,
-    justifyContent: 'center',
+    justifyContent: 'start',
     alignItems: 'center'
   },
 });

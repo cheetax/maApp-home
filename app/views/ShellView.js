@@ -67,8 +67,9 @@ class ShellView extends Component {
         <View style={styles.item}>
 
           <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction}/>          
-          {content}
+         
         </View>
+        {content}
       </View>
     );
   }
@@ -76,8 +77,8 @@ class ShellView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
-    justifyContent: 'center',
+    flex: 1,
+    //justifyContent: 'center',
   },
   headerText: {
     fontSize: 20,
