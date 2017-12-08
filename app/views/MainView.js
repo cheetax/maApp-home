@@ -50,10 +50,16 @@ export default class MainView extends Component {
               {this.props.item.dayOfClan}
             </Text>
           </View>
-          <View style={styles.textView}>
+          <View style={styles.parameterView}>
           {/* <Image source={require('../img/dmg.png')} />   */}
             <Text style={styles.textSecondary}>
-              {this.props.item.dayOfClan}
+              {this.props.item.force}
+            </Text>
+            <Text style={styles.textSecondary}>
+              {this.props.item.health}
+            </Text>
+            <Text style={styles.textSecondary}>
+              {this.props.item.armor}
             </Text>
           </View>
         </View>
@@ -69,15 +75,16 @@ const styles = StyleSheet.create({
     padding: 2,
     flex: 0,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'stretch'
   },
   listItem: {
     flexDirection: 'column',
     margin: 5,
     padding: 2,
-    flex: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    flex: -1,
+    justifyContent: "space-around",
+    alignItems: 'stretch',
+    alignSelf: 'stretch'
   },
   buttonUpDown: {
     width: 100,
@@ -113,6 +120,16 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     justifyContent: 'flex-start',
     alignItems: 'center'
+  },
+  parameterView: {
+    flex: -1,
+    flexDirection: 'row',
+    margin: 0,
+    marginLeft: 0,
+    backgroundColor: 'red',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    alignSelf: 'flex-start'
   },
 });
 
