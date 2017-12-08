@@ -6,6 +6,7 @@ import {
   Platform,
   StyleSheet,
   Text,
+  Image,
   View,
 } from 'react-native';
 
@@ -41,26 +42,33 @@ export default class MainView extends Component {
             <Text style={styles.textPrimary}>
               {this.props.item.name}
             </Text>
-            <Icon name='ios-star' style={styles.icon} size={15} />
+
             <Text style={styles.textSecondary}>
               {this.props.item.rank}
             </Text>
-            <Icon name='ios-star' style={styles.icon} size={15} />
-            <Text style={styles.textSecondary}>
-              {this.props.item.dayOfClan}
-            </Text>
+
+
           </View>
-          <View style={styles.parameterView}>
-          {/* <Image source={require('../img/dmg.png')} />   */}
-            <Text style={styles.textSecondary}>
-              {this.props.item.force}
-            </Text>
-            <Text style={styles.textSecondary}>
-              {this.props.item.health}
-            </Text>
-            <Text style={styles.textSecondary}>
-              {this.props.item.armor}
-            </Text>
+          <View style={styles.rowView} >
+            <View style={styles.parameterView}>
+              <Image source={require('../img/dmg.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.force}
+              </Text>
+              <Image source={require('../img/hp.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.health}
+              </Text>
+              <Image source={require('../img/armor.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.armor}
+              </Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignSelf: 'flex-end', alignItems: 'flex-end' }} >
+              <Text style={styles.textSecondary}>
+                {this.props.item.dayOfClan}
+              </Text>
+            </View>
           </View>
         </View>
       </Card>
@@ -107,6 +115,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 0,
   },
+  img: {
+    justifyContent: 'center',
+    marginLeft: 10,
+    marginRight: 0,
+    alignItems: 'center',
+    margin: 0,
+  },
   textSecondary: {
     fontSize: 15,
     textAlign: 'left',
@@ -115,18 +130,28 @@ const styles = StyleSheet.create({
   },
   textView: {
     flex: 0,
-    flexDirection: 'row',
+    flexDirection: 'column',
     margin: 0,
     marginLeft: 5,
     justifyContent: 'flex-start',
-    alignItems: 'center'
+    alignItems: 'flex-start'
+  },
+  rowView: {
+    flex: -1,
+    flexDirection: 'row',
+    margin: 0,
+    backgroundColor: 'red',
+    marginLeft: 5,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    //alignSelf: 'stretch'
   },
   parameterView: {
     flex: -1,
     flexDirection: 'row',
     margin: 0,
     marginLeft: 0,
-    backgroundColor: 'red',
+    backgroundColor: 'transparent',
     justifyContent: 'space-around',
     alignItems: 'center',
     alignSelf: 'flex-start'
