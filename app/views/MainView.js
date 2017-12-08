@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Icon from "react-native-vector-icons/Ionicons";
+
 import {
   AppRegistry,
   Platform,
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity
 } from 'react-native';
 
@@ -35,17 +38,26 @@ export default class MainView extends Component {
     //console.log(this.props.keyVal)
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
-        <View style={styles.container}>
-          
+        <View style={styles.listItem}>
           <View style={styles.textView}>
             <Text style={styles.textPrimary}>
-              {this.props.item.name} 
+              {this.props.item.name}
             </Text>
+            <Icon name='ios-star' style={styles.icon} size={15} />
             <Text style={styles.textSecondary}>
-              {this.props.item.rank} 
+              {this.props.item.rank}
+            </Text>
+            <Icon name='ios-star' style={styles.icon} size={15} />
+            <Text style={styles.textSecondary}>
+              {this.props.item.dayOfClan}
             </Text>
           </View>
-          
+          <View style={styles.textView}>
+          {/* <Image source={require('../img/dmg.png')} />   */}
+            <Text style={styles.textSecondary}>
+              {this.props.item.dayOfClan}
+            </Text>
+          </View>
         </View>
       </Card>
     );
@@ -54,12 +66,20 @@ export default class MainView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    margin: 0,
+    flexDirection: 'column',
+    margin: 5,
     padding: 2,
     flex: 0,
     justifyContent: 'flex-start',
-    alignItems: 'center'
+    alignItems: 'flex-start'
+  },
+  listItem: {
+    flexDirection: 'column',
+    margin: 5,
+    padding: 2,
+    flex: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
   },
   buttonUpDown: {
     width: 100,
@@ -69,10 +89,17 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 0,
   },
-  
+
   textPrimary: {
     fontSize: 20,
     textAlign: 'left',
+    alignItems: 'center',
+    margin: 0,
+  },
+  icon: {
+    justifyContent: 'center',
+    marginLeft: 10,
+    alignItems: 'center',
     margin: 0,
   },
   textSecondary: {
@@ -83,11 +110,11 @@ const styles = StyleSheet.create({
   },
   textView: {
     flex: 0,
-    flexDirection: 'column',
+    flexDirection: 'row',
     margin: 0,
-    marginLeft:5,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
+    marginLeft: 5,
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   },
 });
 
