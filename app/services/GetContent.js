@@ -102,8 +102,11 @@ export const GetContent = () => new Promise(async (succes, fail) => {
             var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent;
             rankArray = rank.split('\n');
             rank = rankArray.length === 4 ? rankArray[2].trim() : rankArray[3].trim();
-            var dayOfClan = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;
-            dayOfClan = dayOfClan.substring(dayOfClan.indexOf(":") + 1).trim()
+            // var dayOfClan = ((userDoc) => {
+            //     day = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;                
+            //     day = day.substring(day.indexOf(":") + 1).trim();
+            //     return day.substring(0, day.indexOf('(') === -1 ? day.length : day.indexOf('(') - 1).trim();
+            // })(userDoc);
             var param = userDoc.documentElement.getElementsBySelector('div.mt10.mb10.pr10');
             if (param.length === 0) {
                 param = userDoc.documentElement.getElementsBySelector('div.column1');
@@ -122,7 +125,11 @@ export const GetContent = () => new Promise(async (succes, fail) => {
                 health: health,
                 armor: armor,
                 option: option,
-                dayOfClan: dayOfClan,
+                dayOfClan: ((userDoc) => {
+                    day = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;                
+                    day = day.substring(day.indexOf(":") + 1).trim();
+                    return day.substring(0, day.indexOf('(') === -1 ? day.length : day.indexOf('(') - 1).trim();
+                })(userDoc),
             }
             succeed(user);
             //users.push(user);

@@ -38,19 +38,18 @@ export default class MainView extends Component {
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
-          <View style={styles.textView}>
-            <Text style={styles.textPrimary}>
-              {this.props.item.name}
-            </Text>
+          <View style={styles.column1} >
+            <View style={styles.nameView}>
+              <Text style={styles.textPrimary}>
+                {this.props.item.name}
+              </Text>
+              <Icon style={styles.icon} name='ios-star' size={15} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.rank}
+              </Text>
+            </View>
 
-            <Text style={styles.textSecondary}>
-              {this.props.item.rank}
-            </Text>
-
-
-          </View>
-          <View style={styles.rowView} >
-            <View style={styles.parameterView}>
+            <View style={styles.column1row2}>
               <Image source={require('../img/dmg.png')} style={styles.img} />
               <Text style={styles.textSecondary}>
                 {this.props.item.force}
@@ -64,7 +63,16 @@ export default class MainView extends Component {
                 {this.props.item.armor}
               </Text>
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignSelf: 'flex-end', alignItems: 'flex-end' }} >
+          </View>
+          <View style={styles.column2} >
+            <View style={styles.column2row}>
+              <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.exp}
+              </Text>
+            </View>
+            <View style={styles.column2row}>
+              <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
               <Text style={styles.textSecondary}>
                 {this.props.item.dayOfClan}
               </Text>
@@ -80,18 +88,18 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 5,
-    padding: 2,
+    padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
     alignItems: 'stretch'
   },
-  listItem: {
-    flexDirection: 'column',
+  listItem: {    
+    flex: -1,
+    flexDirection: 'row',
     margin: 5,
     padding: 2,
-    flex: -1,
-    justifyContent: "space-around",
-    alignItems: 'stretch',
+    justifyContent: "space-between",
+    alignItems: 'center',
     alignSelf: 'stretch'
   },
   buttonUpDown: {
@@ -102,7 +110,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 0,
   },
-
   textPrimary: {
     fontSize: 20,
     textAlign: 'left',
@@ -125,37 +132,58 @@ const styles = StyleSheet.create({
   textSecondary: {
     fontSize: 15,
     textAlign: 'left',
+    alignItems: 'center',
     margin: 0,
     marginLeft: 10,
   },
-  textView: {
-    flex: 0,
+  nameView: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    marginLeft: 5,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor:'transparent'
+  },
+  column1row2: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    paddingTop: 5,
+    marginLeft: 0,
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+  },
+  column1: {
+    flex: 1,
     flexDirection: 'column',
     margin: 0,
     marginLeft: 5,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    alignSelf: 'stretch'
   },
-  rowView: {
-    flex: -1,
-    flexDirection: 'row',
-    margin: 0,
-    backgroundColor: 'red',
-    marginLeft: 5,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    //alignSelf: 'stretch'
+  column2: {
+    flex: 0.3,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignSelf: 'stretch',
+    alignItems: 'flex-end',
   },
-  parameterView: {
-    flex: -1,
+  column2row: {
+    flex: 1,
     flexDirection: 'row',
     margin: 0,
     marginLeft: 0,
-    backgroundColor: 'transparent',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    alignSelf: 'flex-start'
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent'
   },
+
 });
 
 //export default connect(mapStateToProps)(MainView);

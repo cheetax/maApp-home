@@ -51523,11 +51523,11 @@ var _reactRedux = require(488          ); // 488 = react-redux
 
 var _redux = require(499    ); // 499 = redux
 
-var _reduxThunk = require(634          ); // 634 = redux-thunk
+var _reduxThunk = require(637          ); // 637 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _index3 = require(635               ); // 635 = ./reducers/index
+var _index3 = require(638               ); // 638 = ./reducers/index
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -51622,11 +51622,11 @@ var _MainView = require(631         ); // 631 = ./MainView
 
 var _MainView2 = _interopRequireDefault(_MainView);
 
-var _ClanView = require(632         ); // 632 = ./ClanView
+var _ClanView = require(635         ); // 635 = ./ClanView
 
 var _ClanView2 = _interopRequireDefault(_ClanView);
 
-var _itemsListViews = require(633               ); // 633 = ./itemsListViews
+var _itemsListViews = require(636               ); // 636 = ./itemsListViews
 
 var _itemsListViews2 = _interopRequireDefault(_itemsListViews);
 
@@ -53759,8 +53759,7 @@ var GetContent = exports.GetContent = function GetContent() {
                                                     var rank = userDoc.documentElement.getElementsBySelector('div.c_orange.normal')[0].textContent;
                                                     rankArray = rank.split('\n');
                                                     rank = rankArray.length === 4 ? rankArray[2].trim() : rankArray[3].trim();
-                                                    var dayOfClan = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;
-                                                    dayOfClan = dayOfClan.substring(dayOfClan.indexOf(":") + 1).trim();
+
                                                     var param = userDoc.documentElement.getElementsBySelector('div.mt10.mb10.pr10');
                                                     if (param.length === 0) {
                                                         param = userDoc.documentElement.getElementsBySelector('div.column1');
@@ -53779,7 +53778,11 @@ var GetContent = exports.GetContent = function GetContent() {
                                                         health: health,
                                                         armor: armor,
                                                         option: option,
-                                                        dayOfClan: dayOfClan
+                                                        dayOfClan: function (userDoc) {
+                                                            day = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;
+                                                            day = day.substring(day.indexOf(":") + 1).trim();
+                                                            return day.substring(0, day.indexOf('(') === -1 ? day.length : day.indexOf('(') - 1).trim();
+                                                        }(userDoc)
                                                     };
                                                     succeed(user);
                                                 }, function (error) {
@@ -69775,94 +69778,155 @@ var MainView = _wrapComponent('MainView')(function (_Component) {
         _reactNativeElements.Card,
         { containerStyle: styles.container, key: this.props.keyVal, __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 39
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.listItem, __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 40
             }
           },
           _react3.default.createElement(
             _reactNative.View,
-            { style: styles.textView, __source: {
+            { style: styles.column1, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 40
+                lineNumber: 41
               }
             },
             _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textPrimary, __source: {
+              _reactNative.View,
+              { style: styles.nameView, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 41
+                  lineNumber: 42
                 }
               },
-              this.props.item.name
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textPrimary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 43
+                  }
+                },
+                this.props.item.name
+              ),
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-star', size: 15, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 46
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 47
+                  }
+                },
+                this.props.item.rank
+              )
             ),
-            _react3.default.createElement(_Ionicons2.default, { name: 'ios-star', style: styles.icon, size: 15, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 44
-              }
-            }),
             _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textSecondary, __source: {
+              _reactNative.View,
+              { style: styles.column1row2, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 45
+                  lineNumber: 52
                 }
               },
-              this.props.item.rank
-            ),
-            _react3.default.createElement(_Ionicons2.default, { name: 'ios-star', style: styles.icon, size: 15, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 48
-              }
-            }),
-            _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textSecondary, __source: {
+              _react3.default.createElement(_reactNative.Image, { source: require(632             ), style: styles.img, __source: { // 632 = ../img/dmg.png
                   fileName: _jsxFileName,
-                  lineNumber: 49
+                  lineNumber: 53
                 }
-              },
-              this.props.item.dayOfClan
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 54
+                  }
+                },
+                this.props.item.force
+              ),
+              _react3.default.createElement(_reactNative.Image, { source: require(633            ), style: styles.img, __source: { // 633 = ../img/hp.png
+                  fileName: _jsxFileName,
+                  lineNumber: 57
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 58
+                  }
+                },
+                this.props.item.health
+              ),
+              _react3.default.createElement(_reactNative.Image, { source: require(634               ), style: styles.img, __source: { // 634 = ../img/armor.png
+                  fileName: _jsxFileName,
+                  lineNumber: 61
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 62
+                  }
+                },
+                this.props.item.armor
+              )
             )
           ),
           _react3.default.createElement(
             _reactNative.View,
-            { style: styles.parameterView, __source: {
+            { style: styles.column2, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 53
+                lineNumber: 67
               }
             },
             _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textSecondary, __source: {
+              _reactNative.View,
+              { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 55
+                  lineNumber: 68
                 }
               },
-              this.props.item.force
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-ribbon-outline', size: 20, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 70
+                  }
+                },
+                this.props.item.exp
+              )
             ),
             _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textSecondary, __source: {
+              _reactNative.View,
+              { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 58
+                  lineNumber: 74
                 }
               },
-              this.props.item.health
-            ),
-            _react3.default.createElement(
-              _reactNative.Text,
-              { style: styles.textSecondary, __source: {
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 20, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 61
+                  lineNumber: 75
                 }
-              },
-              this.props.item.armor
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 76
+                  }
+                },
+                this.props.item.dayOfClan
+              )
             )
           )
         )
@@ -69880,18 +69944,19 @@ var styles = _reactNative.StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 5,
-    padding: 2,
+    padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'stretch'
   },
   listItem: {
-    flexDirection: 'column',
+    flex: -1,
+    flexDirection: 'row',
     margin: 5,
     padding: 2,
-    flex: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    justifyContent: "space-between",
+    alignItems: 'center',
+    alignSelf: 'stretch'
   },
   buttonUpDown: {
     width: 100,
@@ -69901,7 +69966,6 @@ var styles = _reactNative.StyleSheet.create({
     borderRadius: 20,
     margin: 0
   },
-
   textPrimary: {
     fontSize: 20,
     textAlign: 'left',
@@ -69914,30 +69978,76 @@ var styles = _reactNative.StyleSheet.create({
     alignItems: 'center',
     margin: 0
   },
+  img: {
+    justifyContent: 'center',
+    marginLeft: 10,
+    marginRight: 0,
+    alignItems: 'center',
+    margin: 0
+  },
   textSecondary: {
     fontSize: 15,
     textAlign: 'left',
+    alignItems: 'center',
     margin: 0,
     marginLeft: 10
   },
-  textView: {
-    flex: 0,
+  nameView: {
+    flex: 1,
     flexDirection: 'row',
     margin: 0,
     marginLeft: 5,
     justifyContent: 'flex-start',
-    alignItems: 'center'
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent'
   },
-  parameterView: {
-    flex: 0,
+  column1row2: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    paddingTop: 5,
+    marginLeft: 0,
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignSelf: 'stretch'
+  },
+  column1: {
+    flex: 1,
+    flexDirection: 'column',
+    margin: 0,
+    marginLeft: 5,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    alignSelf: 'stretch'
+  },
+  column2: {
+    flex: 0.3,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignSelf: 'stretch',
+    alignItems: 'flex-end'
+  },
+  column2row: {
+    flex: 1,
     flexDirection: 'row',
     margin: 0,
     marginLeft: 0,
-    justifyContent: 'space-between',
-    alignItems: 'stretch'
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent'
   }
+
 });
 }, 631, null, "myApp/app/views/MainView.js");
+__d(/* myApp/app/img/dmg.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"2f3777aec51b6afeeca48103ebf338ea","name":"dmg","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 632, null, "myApp/app/img/dmg.png");
+__d(/* myApp/app/img/hp.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"0a348de9bde9461067c4fcf097f580f6","name":"hp","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 633, null, "myApp/app/img/hp.png");
+__d(/* myApp/app/img/armor.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"a8a4afa7f27932a7e99b0ee83c6577fb","name":"armor","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 634, null, "myApp/app/img/armor.png");
 __d(/* myApp/app/views/ClanView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -69966,7 +70076,7 @@ var _MainView = require(631         ); // 631 = ./MainView
 
 var _MainView2 = _interopRequireDefault(_MainView);
 
-var _itemsListViews = require(633               ); // 633 = ./itemsListViews
+var _itemsListViews = require(636               ); // 636 = ./itemsListViews
 
 var _itemsListViews2 = _interopRequireDefault(_itemsListViews);
 
@@ -70096,7 +70206,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(ClanView);
-}, 632, null, "myApp/app/views/ClanView.js");
+}, 635, null, "myApp/app/views/ClanView.js");
 __d(/* myApp/app/views/itemsListViews.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -70186,7 +70296,7 @@ var ItemsListView = _wrapComponent('ItemsListView')(function (_Component) {
 }(_react2.Component));
 
 exports.default = ItemsListView;
-}, 633, null, "myApp/app/views/itemsListViews.js");
+}, 636, null, "myApp/app/views/itemsListViews.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -70210,18 +70320,18 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 634, null, "redux-thunk/lib/index.js");
+}, 637, null, "redux-thunk/lib/index.js");
 __d(/* myApp/app/reducers/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _redux = require(499    ); // 499 = redux
 
-var _info = require(636     ); // 636 = ./info
+var _info = require(639     ); // 639 = ./info
 
 var _info2 = _interopRequireDefault(_info);
 
-var _status = require(637       ); // 637 = ./status
+var _status = require(640       ); // 640 = ./status
 
 var _status2 = _interopRequireDefault(_status);
 
@@ -70233,7 +70343,7 @@ var rootReducer = (0, _redux.combineReducers)({
 });
 
 exports.default = rootReducer;
-}, 635, null, "myApp/app/reducers/index.js");
+}, 638, null, "myApp/app/reducers/index.js");
 __d(/* myApp/app/reducers/info.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -70256,7 +70366,7 @@ function clanInfo() {
             return state;
     }
 }
-}, 636, null, "myApp/app/reducers/info.js");
+}, 639, null, "myApp/app/reducers/info.js");
 __d(/* myApp/app/reducers/status.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -70286,7 +70396,7 @@ function actionStatus() {
             return state;
     }
 }
-}, 637, null, "myApp/app/reducers/status.js");
+}, 640, null, "myApp/app/reducers/status.js");
 ;require(50);
 ;require(0);
 //# sourceMappingURL=index.map
