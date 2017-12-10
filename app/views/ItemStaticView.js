@@ -17,7 +17,7 @@ import {
 
 //import mapStateToProps from "./ShellView";
 
-export default class MainView extends Component {
+export default class ItemStaticView extends Component {
   constructor(props) {
     super(props);
     this.onBtnUpClick = this.onBtnUpClick.bind(this);

@@ -6,6 +6,8 @@ import { Header } from 'react-native-elements';
 import {
   Button,
   Card,
+  List,
+  ListItem,
 } from 'react-native-elements';
 
 import {
@@ -13,61 +15,59 @@ import {
   StyleSheet,
   Text,
   View,
-  ActivityIndicator
+  ActivityIndicator,
+  ListView,
 } from 'react-native';
-import ClanView from './ClanView';
-import StatisticView from './StatisticView';
+
+import ItemStaticView from './ItemStaticView';
 
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
+  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+  var usersExp = [];
+  var exp = state.clanInfo.expirienceUsers;
+  var users = state.clanInfo.users;
+  exp.map(element => {
+    var user = users.filter((value, index, array) => {
+      var result = false;
+      if (value.id === element.id) {
+        result = true;
+      }
+      return result;
+    })[0]
+    //element.name = user.name;
+    Object.assign(element, user);
+    usersExp.push(element);
+  });
   return {
-    status: state.actionStatus,
-    data: state.clanInfo,
+    items: ds.cloneWithRows(state.clanInfo.expirienceUsers),
   }
 }
 
 function mapDispatcherToProps(dispatch) {
   return {
-    getContent: (forceUpdate) => {
-      dispatch(getContent(forceUpdate));
-    },
+
   }
 }
 
-class ShellView extends Component {
+class StatisticView extends Component {
 
-  onBtnResClick() {
-    //console.log("OnBtnUpClick", id);
-    //console.log(new Date());
-    return this.props.getContent(true);
-  }
+  _keyExtractor = (item, index) => item.index;
 
-  componentDidMount() {
-    return this.props.getContent();
+  _renderRow(item) {
+    return <ItemStaticView key={item} keyVal={item} item={item} />
   }
 
   render() {
     //console.log('map', this.props.items);
-    var content;
-    if (!true) {
-      content = <ClanView />
-    }
-    else {
-      content = <StatisticView />
-    }
 
     return (
       <View style={styles.container}>
-        <View style={styles.header} >
-          <Text style={styles.headerText} > MyApp </Text>
-        </View>
-        <View style={styles.item}>
-
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction}/>          
-         
-        </View>
-        {content}
+        <ListView dataSource={this.props.items}
+          renderRow={this._renderRow}
+          enableEmptySections={true}>
+        </ListView>
       </View>
     );
   }
@@ -75,8 +75,7 @@ class ShellView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    //justifyContent: 'center',
+    flex: -1,
   },
   headerText: {
     fontSize: 20,
@@ -87,12 +86,11 @@ const styles = StyleSheet.create({
   },
   item: {
     alignItems: 'center',
-    margin: 0,
+    margin: 10,
   },
   buttonRes: {
     width: 100,
     flex: 0,
-    //padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
@@ -106,4 +104,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(ShellView);
+export default connect(mapStateToProps, mapDispatcherToProps)(StatisticView);

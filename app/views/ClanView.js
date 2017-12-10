@@ -19,8 +19,7 @@ import {
   ListView,
 } from 'react-native';
 
-import MainView from './MainView';
-import ItemsListView from './itemsListViews';
+import ItemClanView from './ItemClanView';
 
 
 function mapStateToProps(state) {
@@ -43,7 +42,7 @@ class ClanView extends Component {
   _keyExtractor = (item, index) => item.index;
 
   _renderRow (item) {
-    return <MainView key={item} keyVal={item} item={item} />
+    return <ItemClanView key={item} keyVal={item} item={item} />
   }
 
   render() {

@@ -51523,11 +51523,11 @@ var _reactRedux = require(488          ); // 488 = react-redux
 
 var _redux = require(499    ); // 499 = redux
 
-var _reduxThunk = require(637          ); // 637 = redux-thunk
+var _reduxThunk = require(638          ); // 638 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _index3 = require(638               ); // 638 = ./reducers/index
+var _index3 = require(639               ); // 639 = ./reducers/index
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -51618,17 +51618,13 @@ var _reactNativeElements = require(525                    ); // 525 = react-nati
 
 var _reactNative = require(12            ); // 12 = react-native
 
-var _MainView = require(631         ); // 631 = ./MainView
-
-var _MainView2 = _interopRequireDefault(_MainView);
-
 var _ClanView = require(635         ); // 635 = ./ClanView
 
 var _ClanView2 = _interopRequireDefault(_ClanView);
 
-var _itemsListViews = require(636               ); // 636 = ./itemsListViews
+var _StatisticView = require(637              ); // 637 = ./StatisticView
 
-var _itemsListViews2 = _interopRequireDefault(_itemsListViews);
+var _StatisticView2 = _interopRequireDefault(_StatisticView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51695,18 +51691,18 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
     key: "render",
     value: function render() {
       var content;
-      if (true) {
+      if (!true) {
         content = _react3.default.createElement(_ClanView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 54
           }
         });
       } else {
-        content = _react3.default.createElement(_ClanView2.default, {
+        content = _react3.default.createElement(_StatisticView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 57
           }
         });
       }
@@ -51715,21 +51711,21 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 61
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.header, __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 62
             }
           },
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.headerText, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 65
+                lineNumber: 63
               }
             },
             " MyApp "
@@ -51739,12 +51735,12 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
           _reactNative.View,
           { style: styles.item, __source: {
               fileName: _jsxFileName,
-              lineNumber: 67
+              lineNumber: 65
             }
           },
           _react3.default.createElement(_reactNativeElements.Button, { buttonStyle: styles.buttonRes, onPress: this.onBtnResClick.bind(this), title: "Res", loading: this.props.status.inAction, __source: {
               fileName: _jsxFileName,
-              lineNumber: 69
+              lineNumber: 67
             }
           })
         ),
@@ -51769,11 +51765,12 @@ var styles = _reactNative.StyleSheet.create({
   },
   item: {
     alignItems: 'center',
-    margin: 10
+    margin: 0
   },
   buttonRes: {
     width: 100,
     flex: 0,
+
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
@@ -53661,7 +53658,7 @@ var GetContent = exports.GetContent = function GetContent() {
                                                                 userExp = wizards[i].childNodes[4].textContent.trim();
                                                                 _context2.next = 4;
                                                                 return regeneratorRuntime.awrap(getUser(href).then(function (user) {
-                                                                    user.exp = userExp;
+                                                                    user.expClan = userExp;
                                                                     users.push(user);
                                                                 }, function (error) {
                                                                     console.log(error);
@@ -69698,7 +69695,7 @@ var styles = _reactNative.StyleSheet.create({
 
 exports.default = Search;
 }, 630, null, "react-native-elements/src/input/Search.js");
-__d(/* myApp/app/views/MainView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+__d(/* myApp/app/views/ClanView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -69710,7 +69707,162 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MainView.js';
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ClanView.js";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactRedux = require(488          ); // 488 = react-redux
+
+var _actionUsers = require(517                     ); // 517 = ../actions/actionUsers
+
+var _reactNativeElements = require(525                    ); // 525 = react-native-elements
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _ItemClanView = require(642             ); // 642 = ./ItemClanView
+
+var _ItemClanView2 = _interopRequireDefault(_ItemClanView);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  ClanView: {
+    displayName: "ClanView"
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/ClanView.js",
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+function mapStateToProps(state) {
+  var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
+      return r1 !== r2;
+    } });
+
+  return {
+    items: ds.cloneWithRows(state.clanInfo.users)
+  };
+}
+
+function mapDispatcherToProps(dispatch) {
+  return {};
+}
+
+var ClanView = _wrapComponent("ClanView")(function (_Component) {
+  _inherits(ClanView, _Component);
+
+  function ClanView() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ClanView);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClanView.__proto__ || Object.getPrototypeOf(ClanView)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtractor = function (item, index) {
+      return item.index;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ClanView, [{
+    key: "_renderRow",
+    value: function _renderRow(item) {
+      return _react3.default.createElement(_ItemClanView2.default, { key: item, keyVal: item, item: item, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+
+      return _react3.default.createElement(
+        _reactNative.View,
+        { style: styles.container, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          }
+        },
+        _react3.default.createElement(_reactNative.ListView, { dataSource: this.props.items,
+          renderRow: this._renderRow,
+          enableEmptySections: true, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65
+          }
+        })
+      );
+    }
+  }]);
+
+  return ClanView;
+}(_react2.Component));
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: -1
+  },
+  headerText: {
+    fontSize: 20,
+    color: '#fff',
+    textAlign: 'center',
+    alignItems: 'center',
+    margin: 10
+  },
+  item: {
+    alignItems: 'center',
+    margin: 10
+  },
+  buttonRes: {
+    width: 100,
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 5
+  },
+  header: {
+    backgroundColor: '#03A9F4',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(ClanView);
+}, 635, null, "myApp/app/views/ClanView.js");
+__d(/* myApp/app/views/ItemClanView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ItemClanView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -69731,13 +69883,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _components = {
-  MainView: {
-    displayName: 'MainView'
+  ItemClanView: {
+    displayName: 'ItemClanView'
   }
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/MainView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/ItemClanView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -69749,19 +69901,540 @@ function _wrapComponent(id) {
   };
 }
 
-var MainView = _wrapComponent('MainView')(function (_Component) {
-  _inherits(MainView, _Component);
+var ItemClanView = _wrapComponent('ItemClanView')(function (_Component) {
+  _inherits(ItemClanView, _Component);
 
-  function MainView(props) {
-    _classCallCheck(this, MainView);
+  function ItemClanView(props) {
+    _classCallCheck(this, ItemClanView);
 
-    var _this = _possibleConstructorReturn(this, (MainView.__proto__ || Object.getPrototypeOf(MainView)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ItemClanView.__proto__ || Object.getPrototypeOf(ItemClanView)).call(this, props));
 
     _this.onBtnUpClick = _this.onBtnUpClick.bind(_this);
     return _this;
   }
 
-  _createClass(MainView, [{
+  _createClass(ItemClanView, [{
+    key: 'onBtnUpClick',
+    value: function onBtnUpClick() {
+      return this.props.setYearUp(this.props.keyVal);
+    }
+  }, {
+    key: 'onBtnDownClick',
+    value: function onBtnDownClick() {
+      return this.props.setYearDown(this.props.keyVal);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react3.default.createElement(
+        _reactNativeElements.Card,
+        { containerStyle: styles.container, key: this.props.keyVal, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39
+          }
+        },
+        _react3.default.createElement(
+          _reactNative.View,
+          { style: styles.listItem, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.View,
+            { style: styles.column1, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 41
+              }
+            },
+            _react3.default.createElement(
+              _reactNative.View,
+              { style: styles.nameView, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 42
+                }
+              },
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textPrimary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 43
+                  }
+                },
+                this.props.item.name
+              ),
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-star', size: 15, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 46
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 47
+                  }
+                },
+                this.props.item.rank
+              )
+            ),
+            _react3.default.createElement(
+              _reactNative.View,
+              { style: styles.column1row2, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 52
+                }
+              },
+              _react3.default.createElement(_reactNative.Image, { source: require(632             ), style: styles.img, __source: { // 632 = ../img/dmg.png
+                  fileName: _jsxFileName,
+                  lineNumber: 53
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 54
+                  }
+                },
+                this.props.item.force
+              ),
+              _react3.default.createElement(_reactNative.Image, { source: require(633            ), style: styles.img, __source: { // 633 = ../img/hp.png
+                  fileName: _jsxFileName,
+                  lineNumber: 57
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 58
+                  }
+                },
+                this.props.item.health
+              ),
+              _react3.default.createElement(_reactNative.Image, { source: require(634               ), style: styles.img, __source: { // 634 = ../img/armor.png
+                  fileName: _jsxFileName,
+                  lineNumber: 61
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 62
+                  }
+                },
+                this.props.item.armor
+              )
+            )
+          ),
+          _react3.default.createElement(
+            _reactNative.View,
+            { style: styles.column2, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 67
+              }
+            },
+            _react3.default.createElement(
+              _reactNative.View,
+              { style: styles.column2row, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 68
+                }
+              },
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-ribbon-outline', size: 20, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 70
+                  }
+                },
+                this.props.item.expClan
+              )
+            ),
+            _react3.default.createElement(
+              _reactNative.View,
+              { style: styles.column2row, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 74
+                }
+              },
+              _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 20, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 75
+                }
+              }),
+              _react3.default.createElement(
+                _reactNative.Text,
+                { style: styles.textSecondary, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 76
+                  }
+                },
+                this.props.item.dayOfClan
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return ItemClanView;
+}(_react2.Component));
+
+exports.default = ItemClanView;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    margin: 5,
+    padding: 0,
+    flex: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'stretch'
+  },
+  listItem: {
+    flex: -1,
+    flexDirection: 'row',
+    margin: 5,
+    padding: 2,
+    justifyContent: "space-between",
+    alignItems: 'center',
+    alignSelf: 'stretch'
+  },
+  buttonUpDown: {
+    width: 100,
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 0
+  },
+  textPrimary: {
+    fontSize: 20,
+    textAlign: 'left',
+    alignItems: 'center',
+    margin: 0
+  },
+  icon: {
+    justifyContent: 'center',
+    marginLeft: 10,
+    alignItems: 'center',
+    margin: 0
+  },
+  img: {
+    justifyContent: 'center',
+    marginLeft: 10,
+    marginRight: 0,
+    alignItems: 'center',
+    margin: 0
+  },
+  textSecondary: {
+    fontSize: 15,
+    textAlign: 'left',
+    alignItems: 'center',
+    margin: 0,
+    marginLeft: 10
+  },
+  nameView: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    marginLeft: 5,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent'
+  },
+  column1row2: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    paddingTop: 5,
+    marginLeft: 0,
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    alignSelf: 'stretch'
+  },
+  column1: {
+    flex: 1,
+    flexDirection: 'column',
+    margin: 0,
+    marginLeft: 5,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    alignSelf: 'stretch'
+  },
+  column2: {
+    flex: 0.3,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignSelf: 'stretch',
+    alignItems: 'flex-end'
+  },
+  column2row: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 0,
+    marginLeft: 0,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: 'transparent'
+  }
+
+});
+}, 642, null, "myApp/app/views/ItemClanView.js");
+__d(/* myApp/app/img/dmg.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"2f3777aec51b6afeeca48103ebf338ea","name":"dmg","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 632, null, "myApp/app/img/dmg.png");
+__d(/* myApp/app/img/hp.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"0a348de9bde9461067c4fcf097f580f6","name":"hp","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 633, null, "myApp/app/img/hp.png");
+__d(/* myApp/app/img/armor.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"a8a4afa7f27932a7e99b0ee83c6577fb","name":"armor","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
+}, 634, null, "myApp/app/img/armor.png");
+__d(/* myApp/app/views/StatisticView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\StatisticView.js";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _reactRedux = require(488          ); // 488 = react-redux
+
+var _actionUsers = require(517                     ); // 517 = ../actions/actionUsers
+
+var _reactNativeElements = require(525                    ); // 525 = react-native-elements
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _ItemStaticView = require(643               ); // 643 = ./ItemStaticView
+
+var _ItemStaticView2 = _interopRequireDefault(_ItemStaticView);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  StatisticView: {
+    displayName: "StatisticView"
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/StatisticView.js",
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+function mapStateToProps(state) {
+  var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
+      return r1 !== r2;
+    } });
+  var usersExp = [];
+  var exp = state.clanInfo.expirienceUsers;
+  var users = state.clanInfo.users;
+  exp.map(function (element) {
+    var user = users.filter(function (value, index, array) {
+      var result = false;
+      if (value.id === element.id) {
+        result = true;
+      }
+      return result;
+    })[0];
+
+    _extends(element, user);
+    usersExp.push(element);
+  });
+  return {
+    items: ds.cloneWithRows(state.clanInfo.expirienceUsers)
+  };
+}
+
+function mapDispatcherToProps(dispatch) {
+  return {};
+}
+
+var StatisticView = _wrapComponent("StatisticView")(function (_Component) {
+  _inherits(StatisticView, _Component);
+
+  function StatisticView() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, StatisticView);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StatisticView.__proto__ || Object.getPrototypeOf(StatisticView)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtractor = function (item, index) {
+      return item.index;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(StatisticView, [{
+    key: "_renderRow",
+    value: function _renderRow(item) {
+      return _react3.default.createElement(_ItemStaticView2.default, { key: item, keyVal: item, item: item, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+
+      return _react3.default.createElement(
+        _reactNative.View,
+        { style: styles.container, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          }
+        },
+        _react3.default.createElement(_reactNative.ListView, { dataSource: this.props.items,
+          renderRow: this._renderRow,
+          enableEmptySections: true, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
+          }
+        })
+      );
+    }
+  }]);
+
+  return StatisticView;
+}(_react2.Component));
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: -1
+  },
+  headerText: {
+    fontSize: 20,
+    color: '#fff',
+    textAlign: 'center',
+    alignItems: 'center',
+    margin: 10
+  },
+  item: {
+    alignItems: 'center',
+    margin: 10
+  },
+  buttonRes: {
+    width: 100,
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 5
+  },
+  header: {
+    backgroundColor: '#03A9F4',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(StatisticView);
+}, 637, null, "myApp/app/views/StatisticView.js");
+__d(/* myApp/app/views/ItemStaticView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ItemStaticView.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Ionicons = require(586                                 ); // 586 = react-native-vector-icons/Ionicons
+
+var _Ionicons2 = _interopRequireDefault(_Ionicons);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _reactNativeElements = require(525                    ); // 525 = react-native-elements
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  ItemStaticView: {
+    displayName: 'ItemStaticView'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/ItemStaticView.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
+  _inherits(ItemStaticView, _Component);
+
+  function ItemStaticView(props) {
+    _classCallCheck(this, ItemStaticView);
+
+    var _this = _possibleConstructorReturn(this, (ItemStaticView.__proto__ || Object.getPrototypeOf(ItemStaticView)).call(this, props));
+
+    _this.onBtnUpClick = _this.onBtnUpClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(ItemStaticView, [{
     key: 'onBtnUpClick',
     value: function onBtnUpClick() {
       return this.props.setYearUp(this.props.keyVal);
@@ -69934,10 +70607,10 @@ var MainView = _wrapComponent('MainView')(function (_Component) {
     }
   }]);
 
-  return MainView;
+  return ItemStaticView;
 }(_react2.Component));
 
-exports.default = MainView;
+exports.default = ItemStaticView;
 
 
 var styles = _reactNative.StyleSheet.create({
@@ -70041,262 +70714,7 @@ var styles = _reactNative.StyleSheet.create({
   }
 
 });
-}, 631, null, "myApp/app/views/MainView.js");
-__d(/* myApp/app/img/dmg.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"2f3777aec51b6afeeca48103ebf338ea","name":"dmg","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
-}, 632, null, "myApp/app/img/dmg.png");
-__d(/* myApp/app/img/hp.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"0a348de9bde9461067c4fcf097f580f6","name":"hp","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
-}, 633, null, "myApp/app/img/hp.png");
-__d(/* myApp/app/img/armor.png */function(global, require, module, exports) {module.exports=require(160                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/app/img","width":16,"height":16,"scales":[1],"hash":"a8a4afa7f27932a7e99b0ee83c6577fb","name":"armor","type":"png"}); // 160 = react-native/Libraries/Image/AssetRegistry
-}, 634, null, "myApp/app/img/armor.png");
-__d(/* myApp/app/views/ClanView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react2 = require(35     ); // 35 = react
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
-
-var _index2 = _interopRequireDefault(_index);
-
-var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ClanView.js";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reactRedux = require(488          ); // 488 = react-redux
-
-var _actionUsers = require(517                     ); // 517 = ../actions/actionUsers
-
-var _reactNativeElements = require(525                    ); // 525 = react-native-elements
-
-var _reactNative = require(12            ); // 12 = react-native
-
-var _MainView = require(631         ); // 631 = ./MainView
-
-var _MainView2 = _interopRequireDefault(_MainView);
-
-var _itemsListViews = require(636               ); // 636 = ./itemsListViews
-
-var _itemsListViews2 = _interopRequireDefault(_itemsListViews);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _components = {
-  ClanView: {
-    displayName: "ClanView"
-  }
-};
-
-var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/ClanView.js",
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
-});
-
-function _wrapComponent(id) {
-  return function (Component) {
-    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-  };
-}
-
-function mapStateToProps(state) {
-  var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
-      return r1 !== r2;
-    } });
-
-  return {
-    items: ds.cloneWithRows(state.clanInfo.users)
-  };
-}
-
-function mapDispatcherToProps(dispatch) {
-  return {};
-}
-
-var ClanView = _wrapComponent("ClanView")(function (_Component) {
-  _inherits(ClanView, _Component);
-
-  function ClanView() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, ClanView);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClanView.__proto__ || Object.getPrototypeOf(ClanView)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtractor = function (item, index) {
-      return item.index;
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(ClanView, [{
-    key: "_renderRow",
-    value: function _renderRow(item) {
-      return _react3.default.createElement(_MainView2.default, { key: item, keyVal: item, item: item, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        }
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-
-      return _react3.default.createElement(
-        _reactNative.View,
-        { style: styles.container, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 53
-          }
-        },
-        _react3.default.createElement(_reactNative.ListView, { dataSource: this.props.items,
-          renderRow: this._renderRow,
-          enableEmptySections: true, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66
-          }
-        })
-      );
-    }
-  }]);
-
-  return ClanView;
-}(_react2.Component));
-
-var styles = _reactNative.StyleSheet.create({
-  container: {
-    flex: -1
-  },
-  headerText: {
-    fontSize: 20,
-    color: '#fff',
-    textAlign: 'center',
-    alignItems: 'center',
-    margin: 10
-  },
-  item: {
-    alignItems: 'center',
-    margin: 10
-  },
-  buttonRes: {
-    width: 100,
-    flex: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 20,
-    margin: 5
-  },
-  header: {
-    backgroundColor: '#03A9F4',
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(ClanView);
-}, 635, null, "myApp/app/views/ClanView.js");
-__d(/* myApp/app/views/itemsListViews.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react2 = require(35     ); // 35 = react
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
-
-var _index2 = _interopRequireDefault(_index);
-
-var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\itemsListViews.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reactNative = require(12            ); // 12 = react-native
-
-var _MainView = require(631         ); // 631 = ./MainView
-
-var _MainView2 = _interopRequireDefault(_MainView);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _components = {
-  ItemsListView: {
-    displayName: 'ItemsListView'
-  }
-};
-
-var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/itemsListViews.js',
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
-});
-
-function _wrapComponent(id) {
-  return function (Component) {
-    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-  };
-}
-
-var ItemsListView = _wrapComponent('ItemsListView')(function (_Component) {
-  _inherits(ItemsListView, _Component);
-
-  function ItemsListView() {
-    _classCallCheck(this, ItemsListView);
-
-    return _possibleConstructorReturn(this, (ItemsListView.__proto__ || Object.getPrototypeOf(ItemsListView)).apply(this, arguments));
-  }
-
-  _createClass(ItemsListView, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      console.log('map', this.props.items);
-      return _react3.default.createElement(
-        _reactNative.View,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          }
-        },
-        ' ',
-        this.props.items.map(function (item, index) {
-          console.log('item', item);
-          return _react3.default.createElement(_MainView2.default, { key: index, keyVal: index, item: item, setYearUp: _this2.props.setYearUp, setYearDown: _this2.props.setYearDown, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 22
-            }
-          });
-        })
-      );
-    }
-  }]);
-
-  return ItemsListView;
-}(_react2.Component));
-
-exports.default = ItemsListView;
-}, 636, null, "myApp/app/views/itemsListViews.js");
+}, 643, null, "myApp/app/views/ItemStaticView.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -70320,31 +70738,31 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 637, null, "redux-thunk/lib/index.js");
+}, 638, null, "redux-thunk/lib/index.js");
 __d(/* myApp/app/reducers/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _redux = require(499    ); // 499 = redux
 
-var _info = require(639     ); // 639 = ./info
+var _clanInfo = require(640         ); // 640 = ./clanInfo
 
-var _info2 = _interopRequireDefault(_info);
+var _clanInfo2 = _interopRequireDefault(_clanInfo);
 
-var _status = require(640       ); // 640 = ./status
+var _status = require(641       ); // 641 = ./status
 
 var _status2 = _interopRequireDefault(_status);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-    clanInfo: _info2.default,
+    clanInfo: _clanInfo2.default,
     actionStatus: _status2.default
 });
 
 exports.default = rootReducer;
-}, 638, null, "myApp/app/reducers/index.js");
-__d(/* myApp/app/reducers/info.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+}, 639, null, "myApp/app/reducers/index.js");
+__d(/* myApp/app/reducers/clanInfo.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -70366,7 +70784,7 @@ function clanInfo() {
             return state;
     }
 }
-}, 639, null, "myApp/app/reducers/info.js");
+}, 640, null, "myApp/app/reducers/clanInfo.js");
 __d(/* myApp/app/reducers/status.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -70396,7 +70814,7 @@ function actionStatus() {
             return state;
     }
 }
-}, 640, null, "myApp/app/reducers/status.js");
+}, 641, null, "myApp/app/reducers/status.js");
 ;require(50);
 ;require(0);
 //# sourceMappingURL=index.map

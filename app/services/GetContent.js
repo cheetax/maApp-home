@@ -43,7 +43,7 @@ export const GetContent = () => new Promise(async (succes, fail) => {
             let href = wizards[i].getAttribute('href'); //Id
             let userExp = wizards[i].childNodes[4].textContent.trim();
             await getUser(href).then((user) => {
-                user.exp = userExp;
+                user.expClan = userExp;
                 users.push(user);
             }, (error) => {
                 console.log(error);
