@@ -18,9 +18,12 @@ import {
 //import mapStateToProps from "./ShellView";
 
 export default class ItemStaticView extends Component {
+
   constructor(props) {
     super(props);
     this.onBtnUpClick = this.onBtnUpClick.bind(this);
+
+
   }
 
   onBtnUpClick() {
@@ -34,7 +37,8 @@ export default class ItemStaticView extends Component {
 
   }
   render() {
-    //console.log(this.props.keyVal)
+
+    //console.log(rulesUser)
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
@@ -52,10 +56,11 @@ export default class ItemStaticView extends Component {
             <View style={styles.column1row2}>
               <Text style={styles.textOther}>Выполнение нормы:</Text>
             </View>
-            
-            <Text style={styles.textSecondary}>
-                {this.props.item.rank}
-              </Text>
+
+            <View style={styles.column1row2}>
+              <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
+              <Text> {this.props.item.exp} >{this.props.item.ruleExp.exp / 1000}K </Text>
+            </View>
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
@@ -71,7 +76,7 @@ export default class ItemStaticView extends Component {
               </Text>
             </View>
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
+              <Icon style={styles.icon} name='ios-school-outline' size={20} />
               <Text style={styles.textSecondary}>
                 {this.props.item.option}
               </Text>
@@ -131,7 +136,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-    marginLeft: 10,
+    marginLeft: 0,
     alignItems: 'center',
     margin: 0,
   },
