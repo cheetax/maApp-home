@@ -50,31 +50,30 @@ export default class ItemStaticView extends Component {
             </View>
 
             <View style={styles.column1row2}>
-              <Image source={require('../img/dmg.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.force}
-              </Text>
-              <Image source={require('../img/hp.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.health}
-              </Text>
-              <Image source={require('../img/armor.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.armor}
-              </Text>
+              <Text style={styles.textOther}>Выполнение нормы:</Text>
             </View>
+            
+            <Text style={styles.textSecondary}>
+                {this.props.item.rank}
+              </Text>
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
               <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
               <Text style={styles.textSecondary}>
-                {this.props.item.exp}
+                {this.props.item.expClan}
               </Text>
             </View>
             <View style={styles.column2row}>
               <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
               <Text style={styles.textSecondary}>
                 {this.props.item.dayOfClan}
+              </Text>
+            </View>
+            <View style={styles.column2row}>
+              <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.option}
               </Text>
             </View>
           </View>
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'stretch'
   },
-  listItem: {    
+  listItem: {
     flex: -1,
     flexDirection: 'row',
     margin: 5,
@@ -116,6 +115,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 0,
   },
+  textSecondary: {
+    fontSize: 15,
+    textAlign: 'left',
+    alignItems: 'center',
+    margin: 0,
+    marginLeft: 10,
+  },
+  textOther: {
+    fontSize: 12,
+    textAlign: 'left',
+    alignItems: 'center',
+    margin: 0,
+    marginLeft: 0,
+  },
   icon: {
     justifyContent: 'center',
     marginLeft: 10,
@@ -129,29 +142,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 0,
   },
-  textSecondary: {
-    fontSize: 15,
-    textAlign: 'left',
-    alignItems: 'center',
-    margin: 0,
-    marginLeft: 10,
-  },
+
   nameView: {
     flex: 1,
     flexDirection: 'row',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor:'transparent'
+    backgroundColor: 'transparent'
   },
   column1row2: {
     flex: 1,
     flexDirection: 'row',
     margin: 0,
-    paddingTop: 5,
-    marginLeft: 0,
+    paddingTop: 0,
+    marginLeft: 5,
     backgroundColor: 'transparent',
     justifyContent: 'flex-start',
     alignItems: 'center',

@@ -26,8 +26,10 @@ function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   var usersExp = [];
+  var userRules = [];
   var exp = state.clanInfo.expirienceUsers;
   var users = state.clanInfo.users;
+  var rules = state.rules;
   exp.map(element => {
     var user = users.filter((value, index, array) => {
       var result = false;
@@ -36,8 +38,23 @@ function mapStateToProps(state) {
       }
       return result;
     })[0]
+    var ruleExp = rules.Exp.filter((value, index, array) => {
+      var result = false;
+      if (user.option >= value.minParam && user.option <= value.maxParam) {
+        result = true;
+      }
+      return result;
+    })[0];
+    if (ruleExp) { userRules.push({ ruleExp }); }
+    var ruleGold = rules.Gold.filter((value, index, array) => {
+      var result = false;
+      if (user.option >= value.minParam && user.option <= value.maxParam) {
+        result = true;
+      } return result;
+    })[0];
+    if (ruleGold) {userRules.push({ ruleGold });}
     //element.name = user.name;
-    Object.assign(element, user);
+    Object.assign(element, user, { userRules });
     usersExp.push(element);
   });
   return {
