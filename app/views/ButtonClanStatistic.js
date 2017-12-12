@@ -34,6 +34,8 @@ export default class ButtonClanStatistic extends Component {
                 selectedIndex={selectedIndex}
                 buttons={buttons}
                 containerStyle={styles.button}
+                selectedBackgroundColor='grey'
+                selectedTextStyle={styles.selectedText}
             />
         )
     }
@@ -49,4 +51,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         margin: 0,
     },
+    selectedText: {
+        color: '#fff',
+    }
 })

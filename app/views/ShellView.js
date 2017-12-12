@@ -66,7 +66,7 @@ class ShellView extends Component {
           <Text style={styles.headerText} > MyApp </Text>
         </View>
         <View style={styles.item}>
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction}/>          
+          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction} disabled={this.props.status.inAction} />          
          
         </View >
         {content}
@@ -83,6 +83,7 @@ class ShellView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: -1,
+    backgroundColor:'#ecf0f1',
     //justifyContent: 'center',
   },
   headerText: {
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   item: {
+    //backgroundColor: '#ecf0f1',
     alignItems: 'center',
     margin: 0,
   },
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     //height:40,
-    backgroundColor: '#03A9F4',
+    backgroundColor: '#ecf0f1',
     alignItems: 'stretch'
   },
   buttonRes: {
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
+    backgroundColor: 'grey',
     margin: 5,
   },
   buttonFooter: {
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    margin: 5,
+    margin: 0,
   },
   header: {
     backgroundColor: '#03A9F4',
