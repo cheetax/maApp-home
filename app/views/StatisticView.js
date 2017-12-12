@@ -31,7 +31,7 @@ function mapStateToProps(state) {
   var users = state.clanInfo.users;
   var rules = state.rules;
   exp.map(element => {
-   //var userRules = [];
+    var userRules = [];
     var user = users.filter((value, index, array) => {
       var result = false;
       if (value.id === element.id) {
@@ -46,16 +46,20 @@ function mapStateToProps(state) {
       }
       return result;
     })[0];
-    //if (ruleExp) { userRules.push({ ruleExp }); }
+    if (ruleExp) { userRules.push({ ruleExp }); }
     var ruleGold = rules.Gold.filter((value, index, array) => {
       var result = false;
       if (user.option >= value.minParam && user.option <= value.maxParam) {
         result = true;
       } return result;
     })[0];
-    //if (ruleGold) {userRules.push({ ruleGold });}
+    if (ruleGold) {userRules.push({ ruleGold });}
     //element.name = user.name;
-    Object.assign(element, user, { ruleExp });
+    Object.assign(element, user);
+    userRules.map((rule) => {
+      Object.assign(element, rule);
+    })
+     
     usersExp.push(element);
   });
   return {

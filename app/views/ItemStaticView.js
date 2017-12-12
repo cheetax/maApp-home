@@ -42,6 +42,7 @@ export default class ItemStaticView extends Component {
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
+          <View style={(this.props.item.exp>=this.props.item.ruleExp.exp) ? styles.onImplement:styles.offImplement } />  
           <View style={styles.column1} >
             <View style={styles.nameView}>
               <Text style={styles.textPrimary}>
@@ -58,25 +59,25 @@ export default class ItemStaticView extends Component {
             </View>
 
             <View style={styles.column1row2}>
-              <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
-              <Text> {this.props.item.exp} >{this.props.item.ruleExp.exp / 1000}K </Text>
+              {/* <Icon style={styles.icon} name='ios-ribbon-outline' size={15} /> */}
+              <Text>Опыт: {Math.round(this.props.item.exp/1000)}К Норма: >{this.props.item.ruleExp.exp / 1000}K</Text>
             </View>
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
+              <Icon style={styles.icon} name='ios-ribbon-outline' size={18} />
               <Text style={styles.textSecondary}>
                 {this.props.item.expClan}
               </Text>
             </View>
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
+              <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
               <Text style={styles.textSecondary}>
                 {this.props.item.dayOfClan}
               </Text>
             </View>
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-school-outline' size={20} />
+              <Icon style={styles.icon} name='ios-school-outline' size={18} />
               <Text style={styles.textSecondary}>
                 {this.props.item.option}
               </Text>
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
-    marginLeft: 10,
+    marginLeft: 5,
   },
   textOther: {
     fontSize: 12,
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-    marginLeft: 0,
+    marginLeft: 5,
     alignItems: 'center',
     margin: 0,
   },
@@ -168,6 +169,30 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch',
+  },
+  onImplement: {
+    flex: 0,
+    flexDirection: 'column',
+    width: 3,
+    backgroundColor: 'green',
+    //height: 5,
+    margin: 0,
+    marginLeft: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignSelf: 'stretch'
+  },
+  offImplement: {
+    flex: 0,
+    flexDirection: 'column',
+    width: 3,
+    backgroundColor: 'red',
+    //height: 5,
+    margin: 0,
+    marginLeft: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignSelf: 'stretch'
   },
   column1: {
     flex: 1,
