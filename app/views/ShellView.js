@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     //height:40,
-    backgroundColor: 'red',
+    backgroundColor: '#03A9F4',
     alignItems: 'stretch'
   },
   buttonRes: {
