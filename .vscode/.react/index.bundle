@@ -51626,6 +51626,10 @@ var _StatisticView = require(636              ); // 636 = ./StatisticView
 
 var _StatisticView2 = _interopRequireDefault(_StatisticView);
 
+var _ButtonClanStatistic = require(643                    ); // 643 = ./ButtonClanStatistic
+
+var _ButtonClanStatistic2 = _interopRequireDefault(_ButtonClanStatistic);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51664,6 +51668,9 @@ function mapDispatcherToProps(dispatch) {
   return {
     getContent: function getContent(forceUpdate) {
       dispatch((0, _actionUsers.getContent)(forceUpdate));
+    },
+    selectPage: function selectPage(Page) {
+      dispatch((0, _actionUsers.selectPage)(Page));
     }
   };
 }
@@ -51691,18 +51698,18 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
     key: "render",
     value: function render() {
       var content;
-      if (!true) {
+      if (!this.props.status.selectedPage) {
         content = _react3.default.createElement(_ClanView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 57
           }
         });
       } else {
         content = _react3.default.createElement(_StatisticView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 60
           }
         });
       }
@@ -51711,21 +51718,21 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 64
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.header, __source: {
               fileName: _jsxFileName,
-              lineNumber: 62
+              lineNumber: 65
             }
           },
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.headerText, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 63
+                lineNumber: 66
               }
             },
             " MyApp "
@@ -51735,16 +51742,29 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
           _reactNative.View,
           { style: styles.item, __source: {
               fileName: _jsxFileName,
-              lineNumber: 65
+              lineNumber: 68
             }
           },
           _react3.default.createElement(_reactNativeElements.Button, { buttonStyle: styles.buttonRes, onPress: this.onBtnResClick.bind(this), title: "Res", loading: this.props.status.inAction, __source: {
               fileName: _jsxFileName,
-              lineNumber: 67
+              lineNumber: 69
             }
           })
         ),
-        content
+        content,
+        _react3.default.createElement(
+          _reactNative.View,
+          { style: styles.footer, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73
+            }
+          },
+          _react3.default.createElement(_ButtonClanStatistic2.default, { btnSelectPageClick: this.props.selectPage.bind(this), __source: {
+              fileName: _jsxFileName,
+              lineNumber: 74
+            }
+          })
+        )
       );
     }
   }]);
@@ -51754,7 +51774,7 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
 
 var styles = _reactNative.StyleSheet.create({
   container: {
-    flex: 1
+    flex: -1
   },
   headerText: {
     fontSize: 20,
@@ -51767,7 +51787,24 @@ var styles = _reactNative.StyleSheet.create({
     alignItems: 'center',
     margin: 0
   },
+  footer: {
+    flex: 0,
+    flexDirection: 'column',
+    justifyContent: 'center',
+
+    backgroundColor: 'red',
+    alignItems: 'stretch'
+  },
   buttonRes: {
+    width: 100,
+    flex: 0,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 5
+  },
+  buttonFooter: {
     width: 100,
     flex: 0,
 
@@ -53477,24 +53514,15 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 __d(/* myApp/app/actions/actionUsers.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.getContent = exports.setYearDownAction = exports.setYearUpAction = undefined;
+exports.getContent = exports.selectPage = undefined;
 
 var _base = require(518           ); // 518 = ../Data/base
 
-var setYearUpAction = exports.setYearUpAction = function setYearUpAction(object) {
+var selectPage = exports.selectPage = function selectPage(selPage) {
     return function (dispatch) {
-        return dispatch({
-            type: "SET_YEAR_UP",
-            payload: object
-        });
-    };
-};
-
-var setYearDownAction = exports.setYearDownAction = function setYearDownAction(object) {
-    return function (dispatch) {
-        return dispatch({
-            type: "SET_YEAR_DOWN",
-            payload: object
+        dispatch({
+            type: 'SELECT_PAGE',
+            payload: selPage
         });
     };
 };
@@ -70457,7 +70485,6 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
     var _this = _possibleConstructorReturn(this, (ItemStaticView.__proto__ || Object.getPrototypeOf(ItemStaticView)).call(this, props));
 
     _this.onBtnUpClick = _this.onBtnUpClick.bind(_this);
-
     return _this;
   }
 
@@ -70478,54 +70505,54 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
         _reactNativeElements.Card,
         { containerStyle: styles.container, key: this.props.keyVal, __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 39
           }
         },
-        _react3.default.createElement(_reactNative.View, { style: styles.onImplement, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 44
-          }
-        }),
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.listItem, __source: {
               fileName: _jsxFileName,
-              lineNumber: 45
+              lineNumber: 40
             }
           },
+          _react3.default.createElement(_reactNative.View, { style: this.props.item.exp >= this.props.item.ruleExp.exp ? styles.onImplement : styles.offImplement, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 41
+            }
+          }),
           _react3.default.createElement(
             _reactNative.View,
             { style: styles.column1, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 47
+                lineNumber: 42
               }
             },
             _react3.default.createElement(
               _reactNative.View,
               { style: styles.nameView, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 48
+                  lineNumber: 43
                 }
               },
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textPrimary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 49
+                    lineNumber: 44
                   }
                 },
                 this.props.item.name
               ),
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-star', size: 15, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 52
+                  lineNumber: 47
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 53
+                    lineNumber: 48
                   }
                 },
                 this.props.item.rank
@@ -70535,14 +70562,14 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
               _reactNative.View,
               { style: styles.column1row2, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 58
+                  lineNumber: 53
                 }
               },
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textOther, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 59
+                    lineNumber: 54
                   }
                 },
                 '\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043D\u043E\u0440\u043C\u044B:'
@@ -70552,7 +70579,7 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
               _reactNative.View,
               { style: styles.column1row2, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 62
+                  lineNumber: 57
                 }
               },
               _react3.default.createElement(
@@ -70560,7 +70587,7 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 64
+                    lineNumber: 59
                   }
                 },
                 '\u041E\u043F\u044B\u0442: ',
@@ -70575,26 +70602,26 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
             _reactNative.View,
             { style: styles.column2, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 67
+                lineNumber: 62
               }
             },
             _react3.default.createElement(
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 68
+                  lineNumber: 63
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-ribbon-outline', size: 18, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 69
+                  lineNumber: 64
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 70
+                    lineNumber: 65
                   }
                 },
                 this.props.item.expClan
@@ -70604,19 +70631,19 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 74
+                  lineNumber: 69
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 18, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 75
+                  lineNumber: 70
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 76
+                    lineNumber: 71
                   }
                 },
                 this.props.item.dayOfClan
@@ -70626,19 +70653,19 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 75
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-school-outline', size: 18, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 81
+                  lineNumber: 76
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 82
+                    lineNumber: 77
                   }
                 },
                 this.props.item.option
@@ -70741,6 +70768,18 @@ var styles = _reactNative.StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     width: 3,
+    backgroundColor: 'green',
+
+    margin: 0,
+    marginLeft: 0,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignSelf: 'stretch'
+  },
+  offImplement: {
+    flex: 0,
+    flexDirection: 'column',
+    width: 3,
     backgroundColor: 'red',
 
     margin: 0,
@@ -70778,6 +70817,115 @@ var styles = _reactNative.StyleSheet.create({
 
 });
 }, 637, null, "myApp/app/views/ItemStaticView.js");
+__d(/* myApp/app/views/ButtonClanStatistic.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\ButtonClanStatistic.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Ionicons = require(586                                 ); // 586 = react-native-vector-icons/Ionicons
+
+var _Ionicons2 = _interopRequireDefault(_Ionicons);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _reactNativeElements = require(525                    ); // 525 = react-native-elements
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    ButtonClanStatistic: {
+        displayName: 'ButtonClanStatistic'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: 'd:/tfvc/maApp-home/app/views/ButtonClanStatistic.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var ButtonClanStatistic = _wrapComponent('ButtonClanStatistic')(function (_Component) {
+    _inherits(ButtonClanStatistic, _Component);
+
+    function ButtonClanStatistic() {
+        _classCallCheck(this, ButtonClanStatistic);
+
+        var _this = _possibleConstructorReturn(this, (ButtonClanStatistic.__proto__ || Object.getPrototypeOf(ButtonClanStatistic)).call(this));
+
+        _this.state = {
+            selectedIndex: 2
+        };
+        _this.updateIndex = _this.updateIndex.bind(_this);
+        return _this;
+    }
+
+    _createClass(ButtonClanStatistic, [{
+        key: 'updateIndex',
+        value: function updateIndex(selectedIndex) {
+            this.setState({ selectedIndex: selectedIndex });
+            this.props.btnSelectPageClick(selectedIndex);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var buttons = ['Клан', 'Статистика'];
+            var selectedIndex = this.state.selectedIndex;
+
+
+            return _react3.default.createElement(_reactNativeElements.ButtonGroup, {
+                onPress: this.updateIndex,
+                selectedIndex: selectedIndex,
+                buttons: buttons,
+                containerStyle: styles.button,
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 32
+                }
+            });
+        }
+    }]);
+
+    return ButtonClanStatistic;
+}(_react2.Component));
+
+exports.default = ButtonClanStatistic;
+
+
+var styles = _reactNative.StyleSheet.create({
+    button: {
+        flex: 0,
+        alignItems: 'center',
+
+        justifyContent: 'center',
+        borderRadius: 20,
+        margin: 0
+    }
+});
+}, 643, null, "myApp/app/views/ButtonClanStatistic.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -70862,8 +71010,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 exports.default = actionStatus;
 var initialStatus = {
     inAction: false,
-    nom: 0,
-    name: 'true'
+    selectedPage: 0
 };
 
 function actionStatus() {
@@ -70877,6 +71024,9 @@ function actionStatus() {
             state.nom += 1;
             console.log("actionStatus", state.inAction);
 
+            return _extends({}, state);
+        case 'SELECT_PAGE':
+            state.selectedPage = action.payload;
             return _extends({}, state);
         default:
             return state;

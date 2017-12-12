@@ -22,19 +22,15 @@ export default class ItemStaticView extends Component {
   constructor(props) {
     super(props);
     this.onBtnUpClick = this.onBtnUpClick.bind(this);
-
-
   }
 
   onBtnUpClick() {
     //console.log("OnBtnUpClick", id);
-    return this.props.setYearUp(this.props.keyVal)
-
+    return this.props.setYearUp(this.props.keyVal);
   }
   onBtnDownClick() {
     //console.log("OnBtnDownClick", this.props.setYearDown);
-    return this.props.setYearDown(this.props.keyVal)
-
+    return this.props.setYearDown(this.props.keyVal);
   }
   render() {
 

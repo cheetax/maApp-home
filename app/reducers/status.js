@@ -1,7 +1,6 @@
 const initialStatus = {
     inAction: false,
-    nom: 0,
-    name: 'true'
+    selectedPage: 0,
 }
 
 export default function actionStatus(state = initialStatus, action) {
@@ -12,7 +11,10 @@ export default function actionStatus(state = initialStatus, action) {
             state.nom += 1;
             console.log("actionStatus", state.inAction);
             //break;
-            return {...state};        
+            return { ...state }; 
+        case 'SELECT_PAGE':
+            state.selectedPage = action.payload;
+            return { ...state };
         default:
             return state;
     }
