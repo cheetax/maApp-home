@@ -63,7 +63,7 @@ class ShellView extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header} >
-          <Text style={styles.headerText} > MyApp </Text>
+          <Text style={styles.headerText} > Battle of Wizards Assistans </Text>
         </View>
         <View style={styles.item}>
           <Button
@@ -74,7 +74,6 @@ class ShellView extends Component {
             loading={this.props.status.inAction}
             disabled={this.props.status.inAction}
           />
-
         </View >
         {content}
         <View style={styles.footer} >
@@ -95,27 +94,32 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#fff',
     textAlign: 'center',
     alignItems: 'center',
-    margin: 10,
+    margin: 5,
   },
   item: {
-    //backgroundColor: '#ecf0f1',
-    alignItems: 'center',
+    backgroundColor: 'lightgrey',
+    alignItems: 'flex-end',
+    borderBottomWidth: 0,
+    borderColor: 'grey',
     margin: 0,
   },
   footer: {
     flex: 0,
     flexDirection: 'column',
     justifyContent: 'center',
-    //height:40,
-    backgroundColor: '#ecf0f1',
-    alignItems: 'stretch'
+    //height:40,    
+    borderTopWidth: 0.5,
+    borderColor: 'grey',
+    backgroundColor: 'lightgrey',
+    alignItems: 'center'
   },
   buttonRes: {
-    width: 100,
+    width: 80,
+    height: 35,
     flex: 0,
     borderColor: 'grey',
     borderWidth: 1,
@@ -123,7 +127,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    backgroundColor: 'transparent',
+    backgroundColor: '#ecf0f1',
     margin: 5,
   },
   buttonTextStyle: {
@@ -140,7 +144,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#03A9F4',
-    height: 50,
+    height: 30,
     justifyContent: 'center',
     alignItems: 'center'
   },

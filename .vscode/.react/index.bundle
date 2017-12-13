@@ -51745,7 +51745,14 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
               lineNumber: 68
             }
           },
-          _react3.default.createElement(_reactNativeElements.Button, { buttonStyle: styles.buttonRes, textStyle: styles.buttonTextStyle, onPress: this.onBtnResClick.bind(this), title: "Res", loading: this.props.status.inAction, disabled: this.props.status.inAction, __source: {
+          _react3.default.createElement(_reactNativeElements.Button, {
+            buttonStyle: styles.buttonRes,
+            textStyle: styles.buttonTextStyle,
+            onPress: this.onBtnResClick.bind(this),
+            title: "Res",
+            loading: this.props.status.inAction,
+            disabled: this.props.status.inAction,
+            __source: {
               fileName: _jsxFileName,
               lineNumber: 69
             }
@@ -51756,7 +51763,7 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
           _reactNative.View,
           { style: styles.footer, __source: {
               fileName: _jsxFileName,
-              lineNumber: 73
+              lineNumber: 79
             }
           },
           _react3.default.createElement(_ButtonGroup2.default, {
@@ -51764,7 +51771,7 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
             selectedIndex: this.props.status.selectedPage,
             buttons: ['Клан', 'Статистика'], __source: {
               fileName: _jsxFileName,
-              lineNumber: 74
+              lineNumber: 80
             }
           })
         )
@@ -51789,6 +51796,8 @@ var styles = _reactNative.StyleSheet.create({
   },
   item: {
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: 'grey',
     margin: 0
   },
   footer: {
@@ -51797,12 +51806,13 @@ var styles = _reactNative.StyleSheet.create({
     justifyContent: 'center',
 
     backgroundColor: '#ecf0f1',
-    alignItems: 'stretch'
+    alignItems: 'center'
   },
   buttonRes: {
     width: 100,
+    height: 35,
     flex: 0,
-    borderColor: 'lightgrey',
+    borderColor: 'grey',
     borderWidth: 1,
 
     alignItems: 'center',
@@ -70937,7 +70947,11 @@ var styles = {
         width: 1
     },
     buttonStyle: {
+        width: 250,
         flex: 0,
+        borderColor: 'grey',
+        borderWidth: 1,
+        height: 35,
 
         borderRadius: 20
     },

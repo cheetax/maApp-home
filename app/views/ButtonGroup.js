@@ -49,8 +49,11 @@ const styles = {
         width: 1,
     },
     buttonStyle: {
-        //width: 100,
+        width: 250,
         flex: 0,
+        borderColor: 'grey',
+        borderWidth: 1,
+        height: 35,
         //alignItems: 'center',
         //alignSelf: 'center',
         //justifyContent: 'center',
