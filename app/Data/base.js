@@ -9,7 +9,7 @@ export const getDataBase = (forceUpdate = false) => new Promise(async (succes, f
         dataBase = JSON.parse(data);
     })
     if (forceUpdate || !dataBase) {
-        console.log((forceUpdate || !dataBase));
+        //console.log((forceUpdate || !dataBase));
         await GetContent().then((data) => {
             dataBase = data;
             AsyncStorage.setItem('dataBase',JSON.stringify(dataBase));

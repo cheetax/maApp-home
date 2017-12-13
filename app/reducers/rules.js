@@ -41,7 +41,7 @@ const initialRules = {
 }
 
 export default function rules (state = initialRules, action) {
-    console.log('actionRules', action.type);
+    //console.log('actionRules', action.type);
     switch (action.type) {
         case "CHANGE_RULES_EXP":            
             return {...state};        

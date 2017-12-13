@@ -70,7 +70,7 @@ class ShellView extends Component {
             buttonStyle={styles.buttonRes}
             textStyle={styles.buttonTextStyle}
             onPress={this.onBtnResClick.bind(this)}
-            title='Res'
+            title='Обн'
             loading={this.props.status.inAction}
             disabled={this.props.status.inAction}
           />
@@ -118,9 +118,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   buttonRes: {
-    width: 80,
+    width: 85,
     height: 35,
     flex: 0,
+    padding: 0,
     borderColor: 'grey',
     borderWidth: 1,
     //padding: 0,

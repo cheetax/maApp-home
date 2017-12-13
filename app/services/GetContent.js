@@ -140,12 +140,12 @@ export const GetContent = () => new Promise(async (succes, fail) => {
         console.log(error);
     });
 
-    console.log('Старт');
+  //  console.log('Старт');
 
     await login().then(async (status) => {
-        console.log(status);
+        //console.log(status);
         for (let i = 1; i <= 6; i++) {
-            console.log(i);
+            //console.log(i);
             await getClans(i).then(async (wizards) => {
                 //console.log(wizards);
                 await getUsers(wizards);
