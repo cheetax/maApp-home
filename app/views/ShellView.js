@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import ClanView from './ClanView';
 import StatisticView from './StatisticView';
-import ButtonClanStatistic from './ButtonClanStatistic';
+import ButtonGroupTM from './ButtonGroup';
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -71,7 +71,10 @@ class ShellView extends Component {
         </View >
         {content}
         <View style={styles.footer} >
-          <ButtonClanStatistic btnSelectPageClick={this.props.selectPage.bind(this)} />
+          <ButtonGroupTM
+            btnSelectPageClick={this.props.selectPage.bind(this)}
+            selectedIndex={this.props.status.selectedPage}
+            buttons={['Клан', 'Статистика']} />
           {/* <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Клан' loading={this.props.status.inAction} />          
           <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Статистика' loading={this.props.status.inAction}/>             */}
         </View>

@@ -10,11 +10,11 @@ import {
     ButtonGroup,
 } from 'react-native-elements';
 
-export default class ButtonClanStatistic extends Component {
-    constructor() {
-        super()
+export default class ButtonGroupTM extends Component {
+    constructor(props) {
+        super(props)
         this.state = {
-            selectedIndex: 2
+            selectedIndex: props.selectedIndex,
         }
         this.updateIndex = this.updateIndex.bind(this)
     }
@@ -25,8 +25,8 @@ export default class ButtonClanStatistic extends Component {
     }
 
     render() {
-        const buttons = ['Клан', 'Статистика']
-        const { selectedIndex } = this.state
+        const buttons = this.props.buttons;
+        const { selectedIndex } = this.state;
 
         return (
             <ButtonGroup
@@ -36,6 +36,7 @@ export default class ButtonClanStatistic extends Component {
                 containerStyle={styles.button}
                 selectedBackgroundColor='grey'
                 selectedTextStyle={styles.selectedText}
+                innerBorderStyle= {style.innerBorder}
             />
         )
     }
@@ -53,5 +54,13 @@ const styles = StyleSheet.create({
     },
     selectedText: {
         color: '#fff',
-    }
+    },
+    
 })
+
+const style = {
+    innerBorder: {
+        color: '#fff',
+        width: 10,
+    },
+}
