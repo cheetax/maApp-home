@@ -28,7 +28,7 @@ export const GetContent = () => new Promise(async (succes, fail) => {
 
         for (var i = 0; i < wizards.length; i++) {
             let href = wizards[i].childNodes[1].getElementsBySelector('a.tdn.c_user')[0].getAttribute('href'); //Id
-            let expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.trim(); //опыт
+            let expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.replace(/'/g,'').trim(); //опыт
             expirienceUsers.push({
                 id: href,
                 exp: expirience,

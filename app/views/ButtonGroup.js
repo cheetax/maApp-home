@@ -27,40 +27,37 @@ export default class ButtonGroupTM extends Component {
     render() {
         const buttons = this.props.buttons;
         const { selectedIndex } = this.state;
+        const { buttonStyle, selectedTextStyle, innerBorderStyle } = styles;
 
         return (
             <ButtonGroup
                 onPress={this.updateIndex}
                 selectedIndex={selectedIndex}
                 buttons={buttons}
-                containerStyle={styles.button}
+                containerStyle={buttonStyle}
                 selectedBackgroundColor='grey'
-                selectedTextStyle={styles.selectedText}
-                innerBorderStyle= {style.innerBorder}
+                selectedTextStyle={selectedTextStyle}
+                innerBorderStyle={innerBorderStyle}
             />
         )
     }
 }
 
-const styles = StyleSheet.create({
-    button: {
+const styles = {
+    innerBorderStyle: {
+        color: 'lightgrey',
+        width: 1,
+    },
+    buttonStyle: {
         //width: 100,
         flex: 0,
-        alignItems: 'center',
+        //alignItems: 'center',
         //alignSelf: 'center',
-        justifyContent: 'center',
+        //justifyContent: 'center',
         borderRadius: 20,
-        margin: 0,
+        //margin: 0,
     },
-    selectedText: {
+    selectedTextStyle: {
         color: '#fff',
-    },
-    
-})
-
-const style = {
-    innerBorder: {
-        color: '#fff',
-        width: 10,
     },
 }

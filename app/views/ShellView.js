@@ -66,8 +66,15 @@ class ShellView extends Component {
           <Text style={styles.headerText} > MyApp </Text>
         </View>
         <View style={styles.item}>
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Res' loading={this.props.status.inAction} disabled={this.props.status.inAction} />          
-         
+          <Button
+            buttonStyle={styles.buttonRes}
+            textStyle={styles.buttonTextStyle}
+            onPress={this.onBtnResClick.bind(this)}
+            title='Res'
+            loading={this.props.status.inAction}
+            disabled={this.props.status.inAction}
+          />
+
         </View >
         {content}
         <View style={styles.footer} >
@@ -75,9 +82,7 @@ class ShellView extends Component {
             btnSelectPageClick={this.props.selectPage.bind(this)}
             selectedIndex={this.props.status.selectedPage}
             buttons={['Клан', 'Статистика']} />
-          {/* <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Клан' loading={this.props.status.inAction} />          
-          <Button buttonStyle={styles.buttonRes} onPress={this.onBtnResClick.bind(this)} title='Статистика' loading={this.props.status.inAction}/>             */}
-        </View>
+          </View>
       </View>
     );
   }
@@ -86,7 +91,7 @@ class ShellView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: -1,
-    backgroundColor:'#ecf0f1',
+    backgroundColor: '#ecf0f1',
     //justifyContent: 'center',
   },
   headerText: {
@@ -112,12 +117,17 @@ const styles = StyleSheet.create({
   buttonRes: {
     width: 100,
     flex: 0,
+    borderColor: 'grey',
+    borderWidth: 1,
     //padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    backgroundColor: 'grey',
+    backgroundColor: 'transparent',
     margin: 5,
+  },
+  buttonTextStyle: {
+    color: 'grey',
   },
   buttonFooter: {
     width: 100,

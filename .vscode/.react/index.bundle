@@ -51626,7 +51626,7 @@ var _StatisticView = require(636              ); // 636 = ./StatisticView
 
 var _StatisticView2 = _interopRequireDefault(_StatisticView);
 
-var _ButtonGroup = require(644            ); // 644 = ./ButtonGroup
+var _ButtonGroup = require(638            ); // 638 = ./ButtonGroup
 
 var _ButtonGroup2 = _interopRequireDefault(_ButtonGroup);
 
@@ -51745,7 +51745,7 @@ var ShellView = _wrapComponent("ShellView")(function (_Component) {
               lineNumber: 68
             }
           },
-          _react3.default.createElement(_reactNativeElements.Button, { buttonStyle: styles.buttonRes, onPress: this.onBtnResClick.bind(this), title: "Res", loading: this.props.status.inAction, disabled: this.props.status.inAction, __source: {
+          _react3.default.createElement(_reactNativeElements.Button, { buttonStyle: styles.buttonRes, textStyle: styles.buttonTextStyle, onPress: this.onBtnResClick.bind(this), title: "Res", loading: this.props.status.inAction, disabled: this.props.status.inAction, __source: {
               fileName: _jsxFileName,
               lineNumber: 69
             }
@@ -51802,12 +51802,17 @@ var styles = _reactNative.StyleSheet.create({
   buttonRes: {
     width: 100,
     flex: 0,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
 
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
-    backgroundColor: 'grey',
+    backgroundColor: 'transparent',
     margin: 5
+  },
+  buttonTextStyle: {
+    color: 'grey'
   },
   buttonFooter: {
     width: 100,
@@ -53658,7 +53663,7 @@ var GetContent = exports.GetContent = function GetContent() {
 
                                             for (i = 0; i < wizards.length; i++) {
                                                 href = wizards[i].childNodes[1].getElementsBySelector('a.tdn.c_user')[0].getAttribute('href');
-                                                expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.trim();
+                                                expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.replace(/'/g, '').trim();
 
                                                 expirienceUsers.push({
                                                     id: href,
@@ -70899,19 +70904,22 @@ var ButtonGroupTM = _wrapComponent('ButtonGroupTM')(function (_Component) {
         value: function render() {
             var buttons = this.props.buttons;
             var selectedIndex = this.state.selectedIndex;
+            var buttonStyle = styles.buttonStyle,
+                selectedTextStyle = styles.selectedTextStyle,
+                innerBorderStyle = styles.innerBorderStyle;
 
 
             return _react3.default.createElement(_reactNativeElements.ButtonGroup, {
                 onPress: this.updateIndex,
                 selectedIndex: selectedIndex,
                 buttons: buttons,
-                containerStyle: styles.button,
+                containerStyle: buttonStyle,
                 selectedBackgroundColor: 'grey',
-                selectedTextStyle: styles.selectedText,
-                innerBorderStyle: style.innerBorder,
+                selectedTextStyle: selectedTextStyle,
+                innerBorderStyle: innerBorderStyle,
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 32
+                    lineNumber: 33
                 }
             });
         }
@@ -70923,28 +70931,21 @@ var ButtonGroupTM = _wrapComponent('ButtonGroupTM')(function (_Component) {
 exports.default = ButtonGroupTM;
 
 
-var styles = _reactNative.StyleSheet.create({
-    button: {
-        flex: 0,
-        alignItems: 'center',
-
-        justifyContent: 'center',
-        borderRadius: 20,
-        margin: 0
+var styles = {
+    innerBorderStyle: {
+        color: 'lightgrey',
+        width: 1
     },
-    selectedText: {
+    buttonStyle: {
+        flex: 0,
+
+        borderRadius: 20
+    },
+    selectedTextStyle: {
         color: '#fff'
     }
-
-});
-
-var style = {
-    innerBorder: {
-        color: '#fff',
-        width: 10
-    }
 };
-}, 644, null, "myApp/app/views/ButtonGroup.js");
+}, 638, null, "myApp/app/views/ButtonGroup.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
