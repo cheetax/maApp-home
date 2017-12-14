@@ -18,21 +18,6 @@ import {
 //import mapStateToProps from "./ShellView";
 
 export default class ItemClanView extends Component {
-  constructor(props) {
-    super(props);
-    this.onBtnUpClick = this.onBtnUpClick.bind(this);
-  }
-
-  onBtnUpClick() {
-    //console.log("OnBtnUpClick", id);
-    return this.props.setYearUp(this.props.keyVal)
-
-  }
-  onBtnDownClick() {
-    //console.log("OnBtnDownClick", this.props.setYearDown);
-    return this.props.setYearDown(this.props.keyVal)
-
-  }
   render() {
     //console.log(this.props.keyVal)
     return (
@@ -43,7 +28,7 @@ export default class ItemClanView extends Component {
               <Text style={styles.textPrimary}>
                 {this.props.item.name}
               </Text>
-              <Icon style={styles.icon} name='ios-star' size={15} />
+              <Icon style={styles.icon} name='ios-star' size={13} />
               <Text style={styles.textSecondary}>
                 {this.props.item.rank}
               </Text>

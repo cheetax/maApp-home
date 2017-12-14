@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent, selectPage } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
 
 import {
   Button,
@@ -38,7 +39,26 @@ function mapDispatcherToProps(dispatch) {
   }
 }
 
-class ShellView extends Component {
+class ShellPage extends Component {
+  static navigationOptions = {
+    title: 'Battle of Wizards Assistans',
+     headerStyle: {
+       backgroundColor: '#03A9F4',
+       height: 30,
+       justifyContent: 'center',
+       //alignItems: 'center'
+     },
+     headerTitleStyle: {
+       fontSize: 18,
+       color: '#fff',
+       textAlign: 'center',
+       justifyContent: 'center',
+      alignItems: 'center',
+    //   margin: 5,
+
+     },
+
+  }
 
   onBtnResClick() {
     //console.log("OnBtnUpClick", id);
@@ -50,7 +70,7 @@ class ShellView extends Component {
     return this.props.getContent();
   }
 
-  render() {
+  render() {    
     //console.log('map', this.props.items);
     var content;
     if (!this.props.status.selectedPage) {
@@ -62,9 +82,9 @@ class ShellView extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.header} >
+        {/* <View style={styles.header} >
           <Text style={styles.headerText} > Battle of Wizards Assistans </Text>
-        </View>
+        </View> */}
         <View style={styles.item}>
           <Button
             buttonStyle={styles.buttonRes}
@@ -86,6 +106,13 @@ class ShellView extends Component {
     );
   }
 }
+
+const shellPage = StackNavigator({
+  Home: { screen: ShellPage },
+  //Shell: { screen: ShellPage},
+  //Rules: { screen: RulesPage },
+  
+},)
 
 const styles = StyleSheet.create({
   container: {
@@ -151,4 +178,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(ShellView);
+export default connect(mapStateToProps, mapDispatcherToProps)(ShellPage);
