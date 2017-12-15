@@ -51612,11 +51612,11 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\ShellPage.js",
+    _class,
+    _temp;
 
-var _class,
-    _temp,
-    _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\ShellPage.js";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _reactRedux = require(489          ); // 489 = react-redux
 
@@ -51649,6 +51649,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _components = {
+  shellPage: {
+    displayName: "shellPage"
+  },
   ShellPage: {
     displayName: "ShellPage"
   }
@@ -51670,7 +51673,8 @@ function _wrapComponent(id) {
 function mapStateToProps(state) {
   return {
     status: state.actionStatus,
-    data: state.clanInfo
+    data: state.clanInfo,
+    nav: state.navReducer
   };
 }
 
@@ -51685,8 +51689,34 @@ function mapDispatcherToProps(dispatch) {
   };
 }
 
-var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Component) {
-  _inherits(ShellPage, _Component);
+var shellPage = _wrapComponent("shellPage")(function (_Component) {
+  _inherits(shellPage, _Component);
+
+  function shellPage() {
+    _classCallCheck(this, shellPage);
+
+    return _possibleConstructorReturn(this, (shellPage.__proto__ || Object.getPrototypeOf(shellPage)).apply(this, arguments));
+  }
+
+  _createClass(shellPage, [{
+    key: "render",
+    value: function render() {
+      return _react3.default.createElement(AppNavigator, { navigation: addNavigationHelpers({
+          dispatch: this.props.dispatch,
+          state: this.props.nav
+        }), __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        }
+      });
+    }
+  }]);
+
+  return shellPage;
+}(_react2.Component));
+
+var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Component2) {
+  _inherits(ShellPage, _Component2);
 
   function ShellPage() {
     _classCallCheck(this, ShellPage);
@@ -51712,14 +51742,14 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
         content = _react3.default.createElement(_ClanView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 90
           }
         });
       } else {
         content = _react3.default.createElement(_StatisticView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 93
           }
         });
       }
@@ -51728,14 +51758,14 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 97
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.item, __source: {
               fileName: _jsxFileName,
-              lineNumber: 88
+              lineNumber: 101
             }
           },
           _react3.default.createElement(_reactNativeElements.Button, {
@@ -51747,7 +51777,7 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
             disabled: this.props.status.inAction,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 89
+              lineNumber: 102
             }
           })
         ),
@@ -51756,7 +51786,7 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
           _reactNative.View,
           { style: styles.footer, __source: {
               fileName: _jsxFileName,
-              lineNumber: 99
+              lineNumber: 112
             }
           },
           _react3.default.createElement(_ButtonGroup2.default, {
@@ -51764,7 +51794,7 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
             selectedIndex: this.props.status.selectedPage,
             buttons: ['Клан', 'Статистика'], __source: {
               fileName: _jsxFileName,
-              lineNumber: 100
+              lineNumber: 113
             }
           })
         )
@@ -51790,7 +51820,7 @@ var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Compone
 
 }, _temp));
 
-var shellPage = (0, _reactNavigation.StackNavigator)({
+var AppNavigator = (0, _reactNavigation.StackNavigator)({
   Home: { screen: ShellPage }
 });
 
@@ -51857,7 +51887,7 @@ var styles = _reactNative.StyleSheet.create({
   }
 });
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(ShellPage);
+exports.default = AppWithNavigationState = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(shellPage);
 }, 488, null, "myApp/app/views/ShellPage.js");
 __d(/* react-redux/lib/index.js */function(global, require, module, exports) {'use strict';
 
@@ -80065,12 +80095,17 @@ var _rules = require(644      ); // 644 = ./rules
 
 var _rules2 = _interopRequireDefault(_rules);
 
+var _stackNavigator = require(707               ); // 707 = ./stackNavigator
+
+var _stackNavigator2 = _interopRequireDefault(_stackNavigator);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
     clanInfo: _clanInfo2.default,
     actionStatus: _status2.default,
-    rules: _rules2.default
+    rules: _rules2.default,
+    navReducer: _stackNavigator2.default
 });
 
 exports.default = rootReducer;
@@ -80179,6 +80214,21 @@ function rules() {
     }
 }
 }, 644, null, "myApp/app/reducers/rules.js");
+__d(/* myApp/app/reducers/stackNavigator.js */function(global, require, module, exports) {var _reactNavigation = require(645               ); // 645 = react-navigation
+
+var AppNavigator = (0, _reactNavigation.StackNavigator)(AppRouteConfigs);
+
+var initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Login'));
+
+var navReducer = function navReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  var nextState = AppNavigator.router.getStateForAction(action, state);
+
+  return nextState || state;
+};
+}, 707, null, "myApp/app/reducers/stackNavigator.js");
 ;require(50);
 ;require(0);
 //# sourceMappingURL=index.map

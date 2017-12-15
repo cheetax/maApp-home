@@ -1,5 +1,5 @@
 import RootPage from "./views/RootPage"
-import ShellPage from './views/ShellPage';
+import shellPage from './views/ShellPage';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
@@ -14,7 +14,7 @@ export default class App extends Component {
    // store.nav = this.props;
     return (
       <Provider store={store}>
-        <ShellPage />
+        <shellPage />
       </Provider>
     );
   }

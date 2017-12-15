@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent, selectPage } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
-import { StackNavigator } from 'react-navigation';
+import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import {
   Button,
@@ -25,6 +25,7 @@ function mapStateToProps(state) {
   return {
     status: state.actionStatus,
     data: state.clanInfo,
+    nav: state.navReducer,    
   }
 }
 
@@ -38,6 +39,13 @@ function mapDispatcherToProps(dispatch) {
     },
   }
 }
+
+const shellPage = ({ dispatch, nav }) => (
+  
+    <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+  
+  );
+
 
 class ShellPage extends Component {
   static navigationOptions = {
@@ -107,7 +115,7 @@ class ShellPage extends Component {
   }
 }
 
-const shellPage = StackNavigator({
+const AppNavigator = StackNavigator({
   Home: { screen: ShellPage },
   //Shell: { screen: ShellPage},
   //Rules: { screen: RulesPage },
@@ -178,4 +186,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(ShellPage);
+export default connect(mapStateToProps, mapDispatcherToProps)(shellPage);
