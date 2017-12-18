@@ -115,7 +115,7 @@ class ShellPage extends Component {
   }
 }
 
-const AppNavigator = StackNavigator({
+export const AppNavigator = StackNavigator({
   Home: { screen: ShellPage },
   //Shell: { screen: ShellPage},
   //Rules: { screen: RulesPage },

@@ -1,9 +1,10 @@
 import { addNavigationHelpers } from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
+import {AppNavigator} from '../views/ShellPage';
 
-const AppNavigator = StackNavigator(AppRouteConfigs);
+//const AppNavigator = StackNavigator(AppRouteConfigs);
 
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Login'));
+const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Home'));
 
 const navReducer = (state = initialState, action) => {
   const nextState = AppNavigator.router.getStateForAction(action, state);
