@@ -2,13 +2,13 @@ import { combineReducers } from "redux";
 import clanInfo from "./clanInfo";
 import actionStatus from './status';
 import rules from './rules';
-import navReducer from './stackNavigator';
+import nav from './stackNavigator';
 
 const rootReducer = combineReducers({
-    clanInfo,
-    actionStatus,
-    rules,
-    nav,
+    clanInfo: clanInfo,
+    actionStatus: actionStatus,
+    rules: rules,
+    nav: nav,
 });
 
-export default rootReducer
+export default rootReducer;

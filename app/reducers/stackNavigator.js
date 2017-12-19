@@ -1,6 +1,6 @@
 import { addNavigationHelpers } from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
-import {AppNavigator} from '../views/ShellPage';
+import {AppNavigator} from '../views/RootPage';
 
 //const AppNavigator = StackNavigator(AppRouteConfigs);
 
@@ -8,7 +8,6 @@ import {AppNavigator} from '../views/ShellPage';
 const firstAction = AppNavigator.router.getActionForPathAndParams('Home');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const initialNavState = AppNavigator.router.getStateForAction(
-  firstAction,
   tempNavState
 );
 
@@ -22,12 +21,12 @@ function nav(state = initialNavState, action) {
       );
       break;
 
-    case 'Logout':
-      nextState = AppNavigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Login' }),
-        state
-      );
-      break;
+    // case 'Logout':
+    //   nextState = AppNavigator.router.getStateForAction(
+    //     NavigationActions.navigate({ routeName: 'Login' }),
+    //     state
+    //   );
+    //   break;
 
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
@@ -39,6 +38,7 @@ function nav(state = initialNavState, action) {
 
 }
 
+export default nav;
 // const initialAuthState = { isLoggedIn: false };
 
 // function auth(state = initialAuthState, action) {

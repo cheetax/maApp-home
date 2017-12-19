@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent, selectPage } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
-import PropTypes from 'prop-types';
-import { addNavigationHelpers, StackNavigator } from 'react-navigation';
+//import PropTypes from 'prop-types';
+//import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import {
   Button,
@@ -26,7 +26,7 @@ function mapStateToProps(state) {
   return {
     status: state.actionStatus,
     data: state.clanInfo,
-    nav: state.navReducer,
+    nav: state.nav,
   }
 }
 
@@ -41,21 +41,10 @@ function mapDispatcherToProps(dispatch) {
   }
 }
 
-const AppNavigator = StackNavigator({
-  Home: { screen: ShellPage },
-  //Shell: { screen: ShellPage},
-  //Rules: { screen: RulesPage },
-},
-);
-
-const shellPage = ({ dispatch, nav }) => (
-  <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
-);
-
-shellPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  nav: PropTypes.object.isRequired,
-};
+// shellPage.propTypes = {
+//   dispatch: PropTypes.func.isRequired,
+//   nav: PropTypes.object.isRequired,
+// };
 
 class ShellPage extends Component {
   static navigationOptions = {
@@ -88,6 +77,16 @@ class ShellPage extends Component {
     return this.props.getContent();
   }
 
+  onBtnRulesClick() {
+    this.props.navigation.dispatch({
+      type: 'Login'
+    });
+    // () => dispatch => {
+    //   console.log('Login');
+    //   dispatch({ type: 'Login' })
+    // };
+  }
+
   render() {
     //console.log('map', this.props.items);
     var content;
@@ -112,6 +111,12 @@ class ShellPage extends Component {
             loading={this.props.status.inAction}
             disabled={this.props.status.inAction}
           />
+          <Button
+            title='Нормы'
+            buttonStyle={styles.buttonRes}
+            textStyle={styles.buttonTextStyle}
+            onPress={this.onBtnRulesClick.bind(this)}
+          />
         </View >
         {content}
         <View style={styles.footer} >
@@ -125,6 +130,7 @@ class ShellPage extends Component {
   }
 }
 
+export default connect(mapStateToProps, mapDispatcherToProps)(ShellPage);
 
 const styles = StyleSheet.create({
   container: {
@@ -190,4 +196,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(shellPage);
