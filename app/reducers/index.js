@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     clanInfo,
     actionStatus,
     rules,
-    navReducer,
+    nav,
 });
 
 export default rootReducer

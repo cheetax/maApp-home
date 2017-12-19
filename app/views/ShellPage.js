@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent, selectPage } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
+import PropTypes from 'prop-types';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import {
@@ -25,7 +26,7 @@ function mapStateToProps(state) {
   return {
     status: state.actionStatus,
     data: state.clanInfo,
-    nav: state.navReducer,    
+    nav: state.navReducer,
   }
 }
 
@@ -40,31 +41,40 @@ function mapDispatcherToProps(dispatch) {
   }
 }
 
-const shellPage = ({ dispatch, nav }) => (
-  
-    <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
-  
-  );
+const AppNavigator = StackNavigator({
+  Home: { screen: ShellPage },
+  //Shell: { screen: ShellPage},
+  //Rules: { screen: RulesPage },
+},
+);
 
+const shellPage = ({ dispatch, nav }) => (
+  <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+);
+
+shellPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  nav: PropTypes.object.isRequired,
+};
 
 class ShellPage extends Component {
   static navigationOptions = {
     title: 'Battle of Wizards Assistans',
-     headerStyle: {
-       backgroundColor: '#03A9F4',
-       height: 30,
-       justifyContent: 'center',
-       //alignItems: 'center'
-     },
-     headerTitleStyle: {
-       fontSize: 18,
-       color: '#fff',
-       textAlign: 'center',
-       justifyContent: 'center',
+    headerStyle: {
+      backgroundColor: '#03A9F4',
+      height: 30,
+      justifyContent: 'center',
+      //alignItems: 'center'
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+      color: '#fff',
+      textAlign: 'center',
+      justifyContent: 'center',
       alignItems: 'center',
-    //   margin: 5,
+      //   margin: 5,
 
-     },
+    },
 
   }
 
@@ -78,7 +88,7 @@ class ShellPage extends Component {
     return this.props.getContent();
   }
 
-  render() {    
+  render() {
     //console.log('map', this.props.items);
     var content;
     if (!this.props.status.selectedPage) {
@@ -109,18 +119,12 @@ class ShellPage extends Component {
             btnSelectPageClick={this.props.selectPage.bind(this)}
             selectedIndex={this.props.status.selectedPage}
             buttons={['Клан', 'Статистика']} />
-          </View>
+        </View>
       </View>
     );
   }
 }
 
-const AppNavigator = StackNavigator({
-  Home: { screen: ShellPage },
-  //Shell: { screen: ShellPage},
-  //Rules: { screen: RulesPage },
-  
-},)
 
 const styles = StyleSheet.create({
   container: {
