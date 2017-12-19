@@ -1,7 +1,8 @@
 import { addNavigationHelpers } from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
+import {AppNavigator} from '../views/ShellPage';
 
-const AppNavigator = StackNavigator(AppRouteConfigs);
+//const AppNavigator = StackNavigator(AppRouteConfigs);
 
 
 const firstAction = AppNavigator.router.getActionForPathAndParams('Home');
