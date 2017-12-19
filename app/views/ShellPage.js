@@ -51,7 +51,7 @@ class ShellPage extends Component {
     title: 'Battle of Wizards Assistans',
     headerStyle: {
       backgroundColor: '#03A9F4',
-      height: 30,
+      height: 40,
       justifyContent: 'center',
       //alignItems: 'center'
     },
@@ -79,7 +79,8 @@ class ShellPage extends Component {
 
   onBtnRulesClick() {
     this.props.navigation.dispatch({
-      type: 'Login'
+      type: 'NAV_RULES_PAGE',
+      payload: ''
     });
     // () => dispatch => {
     //   console.log('Login');

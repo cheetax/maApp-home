@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 import PropTypes from 'prop-types';
-import ShellPage from './ShellPage'
+import ShellPage from './ShellPage';
+import RulesPage from './RulesPage';
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -14,7 +15,7 @@ function mapStateToProps(state) {
 export const AppNavigator = StackNavigator({
   Home: { screen: ShellPage, },
   //Shell: { screen: ShellPage},
-  //Rules: { screen: RulesPage },
+  Rules: { screen: RulesPage },
 },
 );
 

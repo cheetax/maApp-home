@@ -23,18 +23,38 @@ import ItemClanView from './ItemClanView';
 
 
 function mapStateToProps(state) {
-  //console.log('mapStateToProps', state);
-  
-}
-
-function mapDispatcherToProps(dispatch) {
+  console.log('mapStateToProps', state);
   return {
-
+    nav: state.nav,
   }
 }
 
-class RulesPage extends Component {
+// function mapDispatcherToProps(dispatch) {
+//   return {
 
+//   }
+// }
+
+class RulesPage extends Component {
+  static navigationOptions = {
+    title: 'Нормы',
+    headerStyle: {
+      backgroundColor: '#03A9F4',
+      height: 40,
+      justifyContent: 'center',
+      //alignItems: 'center'
+    },
+    headerTitleStyle: {
+      fontSize: 18,
+      color: '#fff',
+      textAlign: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+      //   margin: 5,
+
+    },
+
+  }
   
   render() {
     //console.log('map', this.props.items);
@@ -49,4 +69,4 @@ class RulesPage extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatcherToProps)(RulesPage);
+export default connect(mapStateToProps)(RulesPage);

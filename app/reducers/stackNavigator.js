@@ -1,5 +1,5 @@
 import { addNavigationHelpers } from 'react-navigation';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, NavigationActions } from 'react-navigation';
 import {AppNavigator} from '../views/RootPage';
 
 //const AppNavigator = StackNavigator(AppRouteConfigs);
@@ -14,9 +14,9 @@ const initialNavState = AppNavigator.router.getStateForAction(
 function nav(state = initialNavState, action) {
   let nextState;
   switch (action.type) {
-    case 'Login':
+    case 'NAV_RULES_PAGE':
       nextState = AppNavigator.router.getStateForAction(
-        NavigationActions.back(),
+        NavigationActions.navigate({routeName: 'Rules'}),
         state
       );
       break;
