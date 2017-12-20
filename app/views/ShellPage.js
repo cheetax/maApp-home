@@ -47,26 +47,7 @@ function mapDispatcherToProps(dispatch) {
 // };
 
 class ShellPage extends Component {
-  static navigationOptions = {
-    title: 'Battle of Wizards Assistans',
-    headerStyle: {
-       backgroundColor: '#03A9F4',
-       height: 40,
-       justifyContent: 'center',
-       //alignItems: 'flex_end'
-    },
-    headerTitleStyle: {
-       fontSize: 18,
-       color: '#fff',
-      // textAlign: 'center',
-      // justifyContent: 'center',
-      alignItems: 'center',
-       alignSelf: 'center'
-      //   margin: 5,
 
-    },
-
-  }
 
   onBtnResClick() {
     //console.log("OnBtnUpClick", id);
@@ -104,7 +85,13 @@ class ShellPage extends Component {
         {/* <View style={styles.header} >
           <Text style={styles.headerText} > Battle of Wizards Assistans </Text>
         </View> */}
-        <View style={styles.item}>
+        <View style={styles.buttonPanel}>
+          <Button
+            title='Нормы'
+            buttonStyle={styles.buttonRes}
+            textStyle={styles.buttonTextStyle}
+            onPress={this.onBtnRulesClick.bind(this)}
+          />
           <Button
             buttonStyle={styles.buttonRes}
             textStyle={styles.buttonTextStyle}
@@ -113,12 +100,7 @@ class ShellPage extends Component {
             loading={this.props.status.inAction}
             disabled={this.props.status.inAction}
           />
-          <Button
-            title='Нормы'
-            buttonStyle={styles.buttonRes}
-            textStyle={styles.buttonTextStyle}
-            onPress={this.onBtnRulesClick.bind(this)}
-          />
+
         </View >
         {content}
         <View style={styles.footer} >
@@ -147,9 +129,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 5,
   },
-  item: {
+  buttonPanel: {
+    flexDirection: 'row',
     backgroundColor: 'lightgrey',
-    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     borderBottomWidth: 0,
     borderColor: 'grey',
     margin: 0,

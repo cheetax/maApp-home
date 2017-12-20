@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator
+} from 'react-native';
+import Icon from "react-native-vector-icons/Entypo";
 import PropTypes from 'prop-types';
 import ShellPage from './ShellPage';
 import RulesPage from './RulesPage';
@@ -12,11 +20,31 @@ function mapStateToProps(state) {
   }
 }
 
-export const AppNavigator = StackNavigator({
-  Home: { screen: ShellPage, },
-  //Shell: { screen: ShellPage},
-  Rules: { screen: RulesPage },
-},
+export const AppNavigator = StackNavigator(
+  {
+    Home: { screen: ShellPage, },
+    //Shell: { screen: ShellPage},
+    Rules: {
+      screen: RulesPage,
+    },
+  },
+  {
+
+    navigationOptions: {
+      title: 'Battle of Wizards Assistans',
+      headerStyle: {
+        backgroundColor: '#03A9F4',
+        height: 40,
+      },
+      headerTitleStyle: {
+        fontSize: 18,
+        color: '#fff',
+        marginHorizontal: 0,
+        textAlign: 'center',
+        alignSelf: 'stretch'
+      },
+    }
+  },
 );
 
 const RootPage = ({ dispatch, nav }) => (

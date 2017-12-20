@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
+import Icon from "react-native-vector-icons/Entypo";
 
 import {
   Button,
@@ -36,30 +37,22 @@ function mapStateToProps(state) {
 // }
 
 class RulesPage extends Component {
-  static navigationOptions = {
-    title: 'Основной',
-    headerBackTitle: 'test',
-    headerStyle: {
-      backgroundColor: '#03A9F4',
-      height: 40,
-      //marginHorizontal:0,
-      //justifyContent: 'center',
-      //alignItems: 'center'
-    },
-    headerTitleStyle: {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Нормы',
+    headerLeft: (<Icon
+      name={'chevron-thin-left'}
+      size={18}
+      style={{ color: '#fff', marginLeft: 10 }}
+      onPress={() => { navigation.goBack() }} />),
+    headerTitleStyle: {      
       fontSize: 18,
       color: '#fff',
-      marginHorizontal:0,
-      //textAlign: 'center',
-      //justifyContent: 'center',
-     // alignItems: 'center',
-      //alignSelf: 'center'
-      //   margin: 5,
-
+      marginLeft: -20,
+      textAlign: 'center',
+      alignSelf: 'stretch'
     },
-
-  }
-  
+    //headerTitle: <Text>test</Text>
+  });
   render() {
     //console.log('map', this.props.items);
 
