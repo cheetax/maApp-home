@@ -37,19 +37,23 @@ function mapStateToProps(state) {
 
 class RulesPage extends Component {
   static navigationOptions = {
-    title: 'Нормы',
+    title: 'Основной',
+    headerBackTitle: 'test',
     headerStyle: {
       backgroundColor: '#03A9F4',
       height: 40,
-      justifyContent: 'center',
+      //marginHorizontal:0,
+      //justifyContent: 'center',
       //alignItems: 'center'
     },
     headerTitleStyle: {
       fontSize: 18,
       color: '#fff',
-      textAlign: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
+      marginHorizontal:0,
+      //textAlign: 'center',
+      //justifyContent: 'center',
+     // alignItems: 'center',
+      //alignSelf: 'center'
       //   margin: 5,
 
     },

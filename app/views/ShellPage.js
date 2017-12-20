@@ -50,17 +50,18 @@ class ShellPage extends Component {
   static navigationOptions = {
     title: 'Battle of Wizards Assistans',
     headerStyle: {
-      backgroundColor: '#03A9F4',
-      height: 40,
-      justifyContent: 'center',
-      //alignItems: 'center'
+       backgroundColor: '#03A9F4',
+       height: 40,
+       justifyContent: 'center',
+       //alignItems: 'flex_end'
     },
     headerTitleStyle: {
-      fontSize: 18,
-      color: '#fff',
-      textAlign: 'center',
-      justifyContent: 'center',
+       fontSize: 18,
+       color: '#fff',
+      // textAlign: 'center',
+      // justifyContent: 'center',
       alignItems: 'center',
+       alignSelf: 'center'
       //   margin: 5,
 
     },
