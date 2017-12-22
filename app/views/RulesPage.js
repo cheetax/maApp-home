@@ -24,7 +24,7 @@ import ItemClanView from './ItemClanView';
 
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps', state);
+  //console.log('mapStateToProps', state);
   return {
     nav: state.nav,
   }
