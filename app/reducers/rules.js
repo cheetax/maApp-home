@@ -1,7 +1,7 @@
 const initialRules = {
     Gold: [],
     Exp: [
-        {            
+        {
             minParam: 0,
             maxParam: 1499,
             exp: 50000,
@@ -40,11 +40,17 @@ const initialRules = {
     Crystals: [],
 }
 
-export default function rules (state = initialRules, action) {
+export default function rules(state = initialRules, action) {
     //console.log('actionRules', action.type);
     switch (action.type) {
-        case "CHANGE_RULES_EXP":            
-            return {...state};        
+        case "CHANGE_RULES_EXP":
+            return { ...state };
+        case 'GET_CONTENT':
+            //console.log('payload', action.payload);   
+            state = action.payload.rules;
+            return { ...state };
+        // case 'CHANGE_STATUS':
+        //     return state;
         default:
             return state;
     }

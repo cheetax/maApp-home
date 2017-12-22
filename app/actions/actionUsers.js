@@ -1,4 +1,4 @@
-import { getDataBase } from '../Data/base';
+import { getDataBase, saveDataBase } from '../Data/base';
 
 export const selectPage = (selPage) => dispatch => {
     dispatch({
@@ -21,4 +21,9 @@ export const getContent = (forceUpdate) => dispatch => {
             type: 'CHANGE_STATUS',
         });
     });
+}
+
+export const saveData = (data) => dispatch => {
+    saveDataBase(data);
+    
 }

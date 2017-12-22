@@ -12,7 +12,7 @@ export const getDataBase = (forceUpdate = false) => new Promise(async (succes, f
         //console.log((forceUpdate || !dataBase));
         await GetContent().then((data) => {
             dataBase = data;
-            AsyncStorage.setItem('dataBase',JSON.stringify(dataBase));
+            AsyncStorage.setItem('dataBase', JSON.stringify(dataBase));
             succes(dataBase);
         }, (error) => {
             fail(error)
@@ -24,3 +24,5 @@ export const getDataBase = (forceUpdate = false) => new Promise(async (succes, f
 }, (error) => {
     fail(error);
 })
+
+export const saveDataBase = async (data) => await AsyncStorage.setItem('dataBase', JSON.stringify(data));
