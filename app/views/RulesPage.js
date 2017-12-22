@@ -20,13 +20,16 @@ import {
   ListView,
 } from 'react-native';
 
-import ItemClanView from './ItemClanView';
+import ItemRulesView from './ItemRulesView';
 
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
+  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
   return {
     nav: state.nav,
+    items: ds.cloneWithRows(state.rules.Exp),
   }
 }
 
@@ -44,7 +47,7 @@ class RulesPage extends Component {
       size={18}
       style={{ color: '#fff', marginLeft: 10 }}
       onPress={() => { navigation.goBack() }} />),
-    headerTitleStyle: {      
+    headerTitleStyle: {
       fontSize: 18,
       color: '#fff',
       marginLeft: -20,
@@ -53,13 +56,26 @@ class RulesPage extends Component {
     },
     //headerTitle: <Text>test</Text>
   });
+
+  _renderRow(item) {
+    return <ItemRulesView key={item} keyVal={item} item={item} />
+    // return <View>
+    //   <Text>{item.minParam} </Text>
+    //   <Text>{item.maxParam} </Text>
+    //   <Text>{item.exp} </Text>
+    // </View>
+  }
+
   render() {
     //console.log('map', this.props.items);
 
     return (
       <View >
 
-        <Text>Rules</Text>
+        <ListView dataSource={this.props.items}
+          renderRow={this._renderRow}
+          enableEmptySections={true}>
+        </ListView>
 
       </View>
     );
