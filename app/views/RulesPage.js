@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { getContent } from "../actions/actionUsers";
+import { saveRules } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
 
@@ -30,14 +30,17 @@ function mapStateToProps(state) {
   return {
     nav: state.nav,
     items: ds.cloneWithRows(state.rules.Exp),
+    rules: state.rules,
   }
 }
 
-// function mapDispatcherToProps(dispatch) {
-//   return {
-
-//   }
-// }
+function mapDispatcherToProps(dispatch) {
+  return {
+    saveRules: (data) => {
+      dispatch(saveRules(data));
+    },
+  }
+}
 
 class RulesPage extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -66,6 +69,10 @@ class RulesPage extends Component {
     // </View>
   }
 
+  onBtnSaveClick() {
+    return this.props.saveRules(this.props.rules);
+  }
+
   render() {
     //console.log('map', this.props.items);
 
@@ -76,10 +83,85 @@ class RulesPage extends Component {
           renderRow={this._renderRow}
           enableEmptySections={true}>
         </ListView>
+        <View style={styles.buttonPanel}>
+          <Button
+            title='Записать'
+            buttonStyle={styles.buttonRes}
+            textStyle={styles.buttonTextStyle}
+            onPress={this.onBtnSaveClick.bind(this)}
+          />
+          
 
+        </View >
       </View>
     );
   }
 }
 
-export default connect(mapStateToProps)(RulesPage);
+export default connect(mapStateToProps, mapDispatcherToProps)(RulesPage);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: -1,
+    backgroundColor: '#ecf0f1',
+    //justifyContent: 'center',
+  },
+  headerText: {
+    fontSize: 18,
+    color: '#fff',
+    textAlign: 'center',
+    alignItems: 'center',
+    margin: 5,
+  },
+  buttonPanel: {
+    flexDirection: 'row',
+    backgroundColor: 'lightgrey',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 0,
+    borderColor: 'grey',
+    margin: 0,
+  },
+  footer: {
+    flex: 0,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    //height:40,    
+    borderTopWidth: 0.5,
+    borderColor: 'grey',
+    backgroundColor: 'lightgrey',
+    alignItems: 'center'
+  },
+  buttonRes: {
+    width: 85,
+    height: 35,
+    flex: 0,
+    padding: 0,
+    borderColor: 'grey',
+    borderWidth: 1,
+    //padding: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    backgroundColor: '#ecf0f1',
+    margin: 5,
+  },
+  buttonTextStyle: {
+    color: 'grey',
+  },
+  buttonFooter: {
+    width: 100,
+    flex: 0,
+    //padding: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    margin: 0,
+  },
+  header: {
+    backgroundColor: '#03A9F4',
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+});

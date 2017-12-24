@@ -1,4 +1,4 @@
-import { getDataBase, saveDataBase } from '../Data/base';
+import { getDataBase, saveRulesToBase } from '../Data/base';
 
 export const selectPage = (selPage) => dispatch => {
     dispatch({
@@ -23,7 +23,7 @@ export const getContent = (forceUpdate) => dispatch => {
     });
 }
 
-export const saveData = (data) => dispatch => {
-    saveDataBase(data);
+export const saveRules = (data) => dispatch => {
+    saveRulesToBase(data);
     
 }
