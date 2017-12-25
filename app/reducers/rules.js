@@ -47,8 +47,8 @@ export default function rules(state = initialRules, action) {
             return { ...state };
         case 'GET_CONTENT':
             //console.log('payload', action.payload);   
-            state = action.payload.rules;
-            return { ...state };
+            newstate = action.payload.rules;
+            return { ... newstate || state };
         // case 'CHANGE_STATUS':
         //     return state;
         default:

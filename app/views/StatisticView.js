@@ -47,13 +47,15 @@ function mapStateToProps(state) {
       return result;
     })[0];
     if (ruleExp) { userRules.push({ ruleExp }); }
+    else { userRules.push({ruleExp: { minParam: 0, maxParam: 0, exp: 0}})}
     var ruleGold = rules.Gold.filter((value, index, array) => {
       var result = false;
       if (user.option >= value.minParam && user.option <= value.maxParam) {
         result = true;
       } return result;
     })[0];
-    if (ruleGold) {userRules.push({ ruleGold });}
+    if (ruleGold) { userRules.push({ ruleGold }); }
+    else { userRules.push({ruleGold: { minParam: 0, maxParam: 0, exp: 0}})}
     //element.name = user.name;
     Object.assign(element, user);
     userRules.map((rule) => {
