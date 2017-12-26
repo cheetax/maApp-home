@@ -12,6 +12,7 @@ import Icon from "react-native-vector-icons/Entypo";
 import PropTypes from 'prop-types';
 import ShellPage from './ShellPage';
 import RulesPage from './RulesPage';
+import AddRulesView from './AddRulesView';
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -24,12 +25,10 @@ export const AppNavigator = StackNavigator(
   {
     Home: { screen: ShellPage, },
     //Shell: { screen: ShellPage},
-    Rules: {
-      screen: RulesPage,
-    },
+    Rules: { screen: RulesPage, },
+    AddRules: { screen: AddRulesView, },
   },
   {
-
     navigationOptions: {
       title: 'Battle of Wizards Assistans',
       headerStyle: {

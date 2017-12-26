@@ -10,7 +10,7 @@ import {
     Card,
 } from 'react-native-elements';
 
-import { Icon as ButtonIcon } from 'react-native-elements';
+import { Icon as ButtonIcon, FormLabel, FormInput, } from 'react-native-elements';
 
 import {
     AppRegistry,
@@ -56,6 +56,8 @@ class AddRulesView extends Component {
         //headerTitle: <Text>test</Text>
     });
 
+    maxParam = {};
+
     onBtnSaveClick() {
         return this.props.saveRules(this.props.rules);
     }
@@ -65,72 +67,16 @@ class AddRulesView extends Component {
 
         return (
             <View >
-                <Card containerStyle={styles.container} key={this.props.keyVal}>
-                    <View style={styles.listItem}>
-                        <View style={styles.column1} >
-                            <View style={styles.nameView}>
-                                <Text style={styles.textPrimary}>
-                                    {this.props.item.name}
-                                </Text>
-                                <Icon style={styles.icon} name='ios-star' size={13} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.rank}
-                                </Text>
-                            </View>
-
-                            <View style={styles.column1row2}>
-                                <Image source={require('../img/dmg.png')} style={styles.img} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.force}
-                                </Text>
-                                <Image source={require('../img/hp.png')} style={styles.img} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.health}
-                                </Text>
-                                <Image source={require('../img/armor.png')} style={styles.img} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.armor}
-                                </Text>
-                            </View>
-                        </View>
-                        <View style={styles.column2} >
-                            <View style={styles.column2row}>
-                                <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.expClan}
-                                </Text>
-                            </View>
-                            <View style={styles.column2row}>
-                                <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
-                                <Text style={styles.textSecondary}>
-                                    {this.props.item.dayOfClan}
-                                </Text>
-                            </View>
-                        </View>
-                    </View>
+                <Card containerStyle={styles.container}>
+                    <FormLabel>min Параметр</FormLabel>
+                    <FormInput
+                        ref = {input => this.maxParam = input} />
+                    <FormLabel>max Параметр</FormLabel>
+                    <FormInput></FormInput>
+                    <FormLabel>Параметр</FormLabel>
+                    <FormInput></FormInput>
                 </Card>
-                <ButtonIcon
-                    raised
-                    size={15}
-                    name='md-add'
-                    type='ionicon'
-                    color='#f50'
-                    onPress={() => console.log('hello')}
-                    iconStyle={
-                        {
-                            fontSize: 25,
-                            color: 'grey'
-                        }
-                    }
-                    containerStyle={
-                        {
-                            borderColor: 'grey',
-                            borderWidth: 1,
-                            backgroundColor: '#ecf0f1',
-                            alignSelf: 'center'
-                        }
-                    }
-                />
+                
                 <View style={styles.buttonPanel}>
 
                     <Button
@@ -149,7 +95,7 @@ class AddRulesView extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatcherToProps)(RulesPage);
+export default connect(mapStateToProps)(AddRulesView);
 
 const styles = StyleSheet.create({
     container: {

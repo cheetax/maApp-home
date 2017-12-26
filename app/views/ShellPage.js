@@ -58,17 +58,7 @@ class ShellPage extends Component {
   componentDidMount() {
     return this.props.getContent();
   }
-
-  onBtnRulesClick() {
-    this.props.navigation.dispatch({
-      type: 'NAV_RULES_PAGE',
-      payload: ''
-    });
-    // () => dispatch => {
-    //   console.log('Login');
-    //   dispatch({ type: 'Login' })
-    // };
-  }
+  
 
   render() {
     //console.log('map', this.props.items);
@@ -90,7 +80,11 @@ class ShellPage extends Component {
             title='Нормы'
             buttonStyle={styles.buttonRes}
             textStyle={styles.buttonTextStyle}
-            onPress={this.onBtnRulesClick.bind(this)}
+            onPress={() => this.props.navigation.dispatch({
+              type: 'NAV_RULES_PAGE',
+              //payload: ''
+            })}
+            //onPress={this.onBtnRulesClick.bind(this)}
           />
           <Button
             buttonStyle={styles.buttonRes}

@@ -95,9 +95,9 @@ class RulesPage extends Component {
           name='md-add'
           type='ionicon'
           color='#f50'
-          onPress={() => this.props.dispatch({
-            type: 'ADD_RULES',
-            payload: this.state
+          onPress={() => this.props.navigation.dispatch({
+            type: 'ADD_RULES_VIEW',
+            //payload: ''
           })}
           iconStyle={
             {
@@ -123,7 +123,8 @@ class RulesPage extends Component {
             //containerViewStyle={{borderRadius: 20}}
             buttonStyle={styles.buttonRes}
             textStyle={styles.buttonTextStyle}
-            onPress={this.onBtnSaveClick.bind(this)}
+            onPress={() => this.props.dispatch(saveRules(this.props.rules))}
+          //onPress={this.onBtnSaveClick.bind(this)}
           />
 
         </View >
@@ -132,7 +133,7 @@ class RulesPage extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatcherToProps)(RulesPage);
+export default connect(mapStateToProps)(RulesPage);
 
 const styles = StyleSheet.create({
   container: {

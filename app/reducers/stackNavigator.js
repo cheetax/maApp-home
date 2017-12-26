@@ -27,6 +27,12 @@ function nav(state = initialNavState, action) {
     //     state
     //   );
     //   break;
+    case 'ADD_RULES_VIEW':
+    nextState = AppNavigator.router.getStateForAction(
+      NavigationActions.navigate({routeName: 'AddRules'}),
+      state
+    );
+    break;
 
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
