@@ -95,7 +95,7 @@ class RulesPage extends Component {
           name='md-add'
           type='ionicon'
           color='#f50'
-          onPress={() => dispatch({
+          onPress={() => this.props.dispatch({
             type: 'ADD_RULES',
             payload: this.state
           })}
