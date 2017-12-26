@@ -80291,11 +80291,13 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
           name: "md-add",
           type: "ionicon",
           color: "#f50",
-          onPress: function onPress(dispatch) {
-            return dispatch({
-              type: 'ADD_RULES',
-              payload: _this2.state
-            });
+          onPress: function onPress() {
+            return function (dispatch) {
+              return dispatch({
+                type: 'ADD_RULES',
+                payload: _this2.state
+              });
+            };
           },
           iconStyle: {
             fontSize: 25,
