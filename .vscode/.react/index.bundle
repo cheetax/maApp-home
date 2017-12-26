@@ -1303,7 +1303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactNative.AppRegistry.registerComponent('myApp', function () {
   return _app2.default;
 });
-}, 710, null, "myApp/index.js");
+}, 1050, null, "myApp/index.js");
 __d(/* react-native-implementation */function(global, require, module, exports) {
 'use strict';
 
@@ -51525,11 +51525,11 @@ var _reactRedux = require(488          ); // 488 = react-redux
 
 var _redux = require(499    ); // 499 = redux
 
-var _reduxThunk = require(704          ); // 704 = redux-thunk
+var _reduxThunk = require(1044         ); // 1044 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _index3 = require(705               ); // 705 = ./reducers/index
+var _index3 = require(1045              ); // 1045 = ./reducers/index
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -80178,7 +80178,7 @@ var _Entypo2 = _interopRequireDefault(_Entypo);
 
 var _reactNative = require(12            ); // 12 = react-native
 
-var _ItemRulesView = require(703              ); // 703 = ./ItemRulesView
+var _ItemRulesView = require(1043             ); // 1043 = ./ItemRulesView
 
 var _ItemRulesView2 = _interopRequireDefault(_ItemRulesView);
 
@@ -80243,9 +80243,22 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
     value: function _renderRow(item) {
       return _react3.default.createElement(_ItemRulesView2.default, { key: item, keyVal: item, item: item, __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 67
         }
       });
+    }
+  }, {
+    key: "_iconAdd",
+    value: function _iconAdd() {
+      return _react3.default.createElement(
+        _reactNative.Text,
+        { style: styles.headerText, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          }
+        },
+        "+"
+      );
     }
   }, {
     key: "onBtnSaveClick",
@@ -80255,37 +80268,66 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
 
       return _react3.default.createElement(
         _reactNative.View,
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80
+            lineNumber: 87
           }
         },
         _react3.default.createElement(_reactNative.ListView, { dataSource: this.props.items,
           renderRow: this._renderRow,
           enableEmptySections: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 88
+          }
+        }),
+        _react3.default.createElement(_reactNativeElements.Icon, {
+          raised: true,
+          size: 15,
+          name: "md-add",
+          type: "ionicon",
+          color: "#f50",
+          onPress: function onPress(dispatch) {
+            return dispatch({
+              type: 'ADD_RULES',
+              payload: _this2.state
+            });
+          },
+          iconStyle: {
+            fontSize: 25,
+            color: 'grey'
+          },
+          containerStyle: {
+            borderColor: 'grey',
+            borderWidth: 1,
+            backgroundColor: '#ecf0f1',
+            alignSelf: 'center'
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
           }
         }),
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.buttonPanel, __source: {
               fileName: _jsxFileName,
-              lineNumber: 86
+              lineNumber: 117
             }
           },
           _react3.default.createElement(_reactNativeElements.Button, {
             title: "\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C",
+
             buttonStyle: styles.buttonRes,
             textStyle: styles.buttonTextStyle,
             onPress: this.onBtnSaveClick.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 87
+              lineNumber: 119
             }
           })
         )
@@ -80306,7 +80348,7 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
         navigation.goBack();
       }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 51
       }
     }),
     headerTitleStyle: {
@@ -80369,6 +80411,19 @@ var styles = _reactNative.StyleSheet.create({
   },
   buttonTextStyle: {
     color: 'grey'
+  },
+  buttonCircle: {
+    width: 35,
+    height: 35,
+    borderRadius: 20,
+    margin: 0,
+    padding: 0,
+    borderColor: 'grey',
+    borderWidth: 1,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1'
   },
   buttonFooter: {
     width: 100,
@@ -80642,7 +80697,7 @@ var styles = _reactNative.StyleSheet.create({
   }
 
 });
-}, 703, null, "myApp/app/views/ItemRulesView.js");
+}, 1043, null, "myApp/app/views/ItemRulesView.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -80666,26 +80721,26 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 704, null, "redux-thunk/lib/index.js");
+}, 1044, null, "redux-thunk/lib/index.js");
 __d(/* myApp/app/reducers/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _redux = require(499    ); // 499 = redux
 
-var _clanInfo = require(706         ); // 706 = ./clanInfo
+var _clanInfo = require(1046        ); // 1046 = ./clanInfo
 
 var _clanInfo2 = _interopRequireDefault(_clanInfo);
 
-var _status = require(707       ); // 707 = ./status
+var _status = require(1047      ); // 1047 = ./status
 
 var _status2 = _interopRequireDefault(_status);
 
-var _rules = require(708      ); // 708 = ./rules
+var _rules = require(1048     ); // 1048 = ./rules
 
 var _rules2 = _interopRequireDefault(_rules);
 
-var _stackNavigator = require(709               ); // 709 = ./stackNavigator
+var _stackNavigator = require(1049              ); // 1049 = ./stackNavigator
 
 var _stackNavigator2 = _interopRequireDefault(_stackNavigator);
 
@@ -80699,7 +80754,7 @@ var rootReducer = (0, _redux.combineReducers)({
 });
 
 exports.default = rootReducer;
-}, 705, null, "myApp/app/reducers/index.js");
+}, 1045, null, "myApp/app/reducers/index.js");
 __d(/* myApp/app/reducers/clanInfo.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -80720,7 +80775,7 @@ function clanInfo() {
             return state;
     }
 }
-}, 706, null, "myApp/app/reducers/clanInfo.js");
+}, 1046, null, "myApp/app/reducers/clanInfo.js");
 __d(/* myApp/app/reducers/status.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -80750,7 +80805,7 @@ function actionStatus() {
             return state;
     }
 }
-}, 707, null, "myApp/app/reducers/status.js");
+}, 1047, null, "myApp/app/reducers/status.js");
 __d(/* myApp/app/reducers/rules.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -80779,7 +80834,7 @@ function rules() {
             return state;
     }
 }
-}, 708, null, "myApp/app/reducers/rules.js");
+}, 1048, null, "myApp/app/reducers/rules.js");
 __d(/* myApp/app/reducers/stackNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -80812,7 +80867,7 @@ function nav() {
 }
 
 exports.default = nav;
-}, 709, null, "myApp/app/reducers/stackNavigator.js");
+}, 1049, null, "myApp/app/reducers/stackNavigator.js");
 ;require(50);
-;require(710);
+;require(1050);
 //# sourceMappingURL=index.map

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { saveRules } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
+//import { MKButton } from 'react-native-material-kit';
 
 import {
   Button,
@@ -10,6 +11,8 @@ import {
   List,
   ListItem,
 } from 'react-native-elements';
+
+import { Icon as ButtonIcon } from 'react-native-elements';
 
 import {
   AppRegistry,
@@ -69,6 +72,10 @@ class RulesPage extends Component {
     // </View>
   }
 
+  _iconAdd() {
+    return <Text style={styles.headerText} >+</Text>
+  }
+
   onBtnSaveClick() {
     return this.props.saveRules(this.props.rules);
   }
@@ -78,19 +85,46 @@ class RulesPage extends Component {
 
     return (
       <View >
-
         <ListView dataSource={this.props.items}
           renderRow={this._renderRow}
           enableEmptySections={true}>
         </ListView>
+        <ButtonIcon
+          raised
+          size={15}
+          name='md-add'
+          type='ionicon'
+          color='#f50'
+          onPress={(dispatch) => dispatch({
+            type: 'ADD_RULES',
+            payload: this.state
+          })}
+          iconStyle={
+            {
+              fontSize: 25,
+              color: 'grey'
+            }
+          }
+          containerStyle={
+            {
+              borderColor: 'grey',
+              borderWidth: 1,
+              backgroundColor: '#ecf0f1',
+              alignSelf: 'center'
+            }
+          }
+        />
         <View style={styles.buttonPanel}>
+
           <Button
             title='Записать'
+            //borderRadius={20}
+            //backgroundColor='#ecf0f1'
+            //containerViewStyle={{borderRadius: 20}}
             buttonStyle={styles.buttonRes}
             textStyle={styles.buttonTextStyle}
             onPress={this.onBtnSaveClick.bind(this)}
           />
-          
 
         </View >
       </View>
@@ -149,9 +183,25 @@ const styles = StyleSheet.create({
   buttonTextStyle: {
     color: 'grey',
   },
+  buttonCircle: {
+    width: 35,
+    height: 35,
+    borderRadius: 20,
+    margin: 0,
+    padding: 0,
+    borderColor: 'grey',
+    borderWidth: 1,
+    //padding: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    //backgroundColor: 'transparent',
+
+  },
   buttonFooter: {
     width: 100,
     flex: 0,
+
     //padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
