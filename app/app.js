@@ -5,9 +5,11 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import rootReducer from "./reducers/index";
 import ShellPage from './views/ShellPage';
+import {saveRules} from './actions/actionUsers';
 import React, { Component } from 'react';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
+store.subscribe(() => saveRules(store.getState().rules));
 
 export default class App extends Component {
   static navigationOptions = {

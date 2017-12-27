@@ -49,8 +49,9 @@ export default function rules(state = initialRules, action) {
             //console.log('payload', action.payload);   
             newstate = action.payload.rules;
             return { ... newstate || state };
-        // case 'CHANGE_STATUS':
-        //     return state;
+        case 'ADD_RULES':
+            newstate = {...state, Exp: state.Exp.concat([action.payload])};    
+            return { ... newstate || state };
         default:
             return state;
     }

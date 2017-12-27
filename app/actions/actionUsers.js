@@ -23,7 +23,7 @@ export const getContent = (forceUpdate) => dispatch => {
     });
 }
 
-export const saveRules = (data) => dispatch => {
+export const saveRules = (data) => {
     saveRulesToBase(data);
     
 }

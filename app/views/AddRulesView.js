@@ -46,7 +46,7 @@ class AddRulesView extends Component {
         this.state = {
             minParam: 0,
             maxParam: 0,
-            Param: 0,
+            exp: 0,
         };
     }
     static navigationOptions = ({ navigation }) => ({
@@ -67,8 +67,11 @@ class AddRulesView extends Component {
     });
 
     onBtnSaveClick() {
-        this.props.rules.Exp.push(this.state);
-        return this.dispatch(saveRules(this.props.rules));
+        //this.props.rules.Exp.push(this.state);
+        return this.props.dispatch({
+            type: 'ADD_RULES',
+            payload: this.state,
+          });
     }
 
     render() {
@@ -85,7 +88,7 @@ class AddRulesView extends Component {
                         onChangeText={(maxParam) => this.setState({ maxParam })} />
                     <FormLabel  >Параметр</FormLabel>
                     <FormInput
-                        onChangeText={(Param) => this.setState({ Param })} />
+                        onChangeText={(exp) => this.setState({ exp })} />
                 </Card>
                 
                 <View style={styles.buttonPanel}>
