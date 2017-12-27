@@ -28,17 +28,27 @@ function mapStateToProps(state) {
     //console.log('mapStateToProps', state);
     return {
         nav: state.nav,
+        rules: state.rules,
     }
 }
 
 function mapDispatcherToProps(dispatch) {
-    return dispatch({
-        type: 'ADD_RULES',
-        payload: this.state
-    })
+    return {
+        saveRules: (data) => {
+          dispatch(saveRules(data));
+        },
+      }
 }
 
 class AddRulesView extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            minParam: 0,
+            maxParam: 0,
+            Param: 0,
+        };
+    }
     static navigationOptions = ({ navigation }) => ({
         title: 'Норма',
         headerLeft: (<Icon
@@ -56,10 +66,9 @@ class AddRulesView extends Component {
         //headerTitle: <Text>test</Text>
     });
 
-    maxParam = {};
-
     onBtnSaveClick() {
-        return this.props.saveRules(this.props.rules);
+        this.props.rules.Exp.push(this.state);
+        return this.dispatch(saveRules(this.props.rules));
     }
 
     render() {
@@ -70,11 +79,13 @@ class AddRulesView extends Component {
                 <Card containerStyle={styles.container}>
                     <FormLabel>min Параметр</FormLabel>
                     <FormInput
-                        ref = {input => this.maxParam = input} />
+                        onChangeText={(minParam) => this.setState({minParam})} />
                     <FormLabel>max Параметр</FormLabel>
-                    <FormInput></FormInput>
-                    <FormLabel>Параметр</FormLabel>
-                    <FormInput></FormInput>
+                    <FormInput
+                        onChangeText={(maxParam) => this.setState({ maxParam })} />
+                    <FormLabel  >Параметр</FormLabel>
+                    <FormInput
+                        onChangeText={(Param) => this.setState({ Param })} />
                 </Card>
                 
                 <View style={styles.buttonPanel}>
