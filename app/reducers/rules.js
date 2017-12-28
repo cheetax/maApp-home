@@ -40,7 +40,7 @@ const initialRules = {
     Crystals: [],
 }
 
-export default function rules(state = initialRules, action) {
+export function rules(state = initialRules, action) {
     //console.log('actionRules', action.type);
     switch (action.type) {
         case "CHANGE_RULES_EXP":
@@ -57,4 +57,13 @@ export default function rules(state = initialRules, action) {
     }
     // console.log("actionEnd", state);
     // return state;
+}
+
+export function editRule(state = { gold: {}, exp: {}, crystals: {} }, action) {
+    switch (action.type) {
+        case 'ADD_RULES_VIEW':
+            return { gold: {}, exp: {minParam: '', maxParam: '', exp: ''}, crystals: {} };
+        default:
+            return state;
+    }   
 }

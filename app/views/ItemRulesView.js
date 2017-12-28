@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 5,
-    padding: 0,
+    paddingVertical: 5,
     flex: 0,
     justifyContent: 'flex-start',
     alignItems: 'stretch'

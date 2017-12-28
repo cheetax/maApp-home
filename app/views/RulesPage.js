@@ -53,6 +53,13 @@ class RulesPage extends Component {
       size={18}
       style={{ color: '#fff', marginLeft: 10 }}
       onPress={() => { navigation.goBack() }} />),
+    HeaderRight: (<Icon
+      name={'chevron-thin-left'}
+      size={18}
+      style={{ color: '#fff', marginRight: 10 }}
+      onPress={() => { navigation.goBack() }} />
+
+    ),
     headerTitleStyle: {
       fontSize: 18,
       color: '#fff',
@@ -91,43 +98,29 @@ class RulesPage extends Component {
         </ListView>
         <ButtonIcon
           raised
-          size={15}
+          size={25}
           name='md-add'
           type='ionicon'
-          color='#f50'
+          color='#ecf0f1'
           onPress={() => this.props.navigation.dispatch({
             type: 'ADD_RULES_VIEW',
-            //payload: ''
+            //payload: {}
           })}
           iconStyle={
             {
-              fontSize: 25,
-              color: 'grey'
+              fontSize: 30,
+              color: '#fff'
             }
           }
           containerStyle={
             {
               borderColor: 'grey',
-              borderWidth: 1,
-              backgroundColor: '#ecf0f1',
+              borderWidth: 0,
+              backgroundColor: '#03A9F4',
               alignSelf: 'center'
             }
           }
-        />
-        <View style={styles.buttonPanel}>
-
-          <Button
-            title='Записать'
-            //borderRadius={20}
-            //backgroundColor='#ecf0f1'
-            //containerViewStyle={{borderRadius: 20}}
-            buttonStyle={styles.buttonRes}
-            textStyle={styles.buttonTextStyle}
-            onPress={() => this.props.dispatch(saveRules(this.props.rules))}
-          //onPress={this.onBtnSaveClick.bind(this)}
-          />
-
-        </View >
+        />        
       </View>
     );
   }
@@ -190,7 +183,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 0,
     padding: 0,
-    borderColor: 'grey',
+    borderColor: '#ecf0f1',
     borderWidth: 1,
     //padding: 0,
     alignItems: 'center',

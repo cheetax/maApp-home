@@ -5,11 +5,20 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import rootReducer from "./reducers/index";
 import ShellPage from './views/ShellPage';
-import {saveRules} from './actions/actionUsers';
+import { getContent, saveRules } from './actions/actionUsers';
 import React, { Component } from 'react';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-store.subscribe(() => saveRules(store.getState().rules));
+let init = () => new Promise((succes, fail) => {
+  store.dispatch(getContent());
+  succes();
+}).then(() => {
+  store.subscribe(() => {
+    saveRules(store.getState().rules)
+  })
+});
+
+init();
 
 export default class App extends Component {
   static navigationOptions = {
@@ -27,12 +36,12 @@ export default class App extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       //   margin: 5,
-  
+
     },
-  
+
   }
   render() {
-   // store.nav = this.props;
+    // store.nav = this.props;
     return (
       <Provider store={store}>
         <RootPage />

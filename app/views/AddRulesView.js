@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { saveRules } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
+import { Sae } from 'react-native-textinput-effects';
 //import { MKButton } from 'react-native-material-kit';
 
 import {
@@ -28,26 +29,22 @@ function mapStateToProps(state) {
     //console.log('mapStateToProps', state);
     return {
         nav: state.nav,
-        rules: state.rules,
+        rule: state.editRule,
     }
 }
 
 function mapDispatcherToProps(dispatch) {
     return {
         saveRules: (data) => {
-          dispatch(saveRules(data));
+            dispatch(saveRules(data));
         },
-      }
+    }
 }
 
 class AddRulesView extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            minParam: 0,
-            maxParam: 0,
-            exp: 0,
-        };
+        this.state = props.rule.exp;
     }
     static navigationOptions = ({ navigation }) => ({
         title: 'Норма',
@@ -71,7 +68,7 @@ class AddRulesView extends Component {
         return this.props.dispatch({
             type: 'ADD_RULES',
             payload: this.state,
-          });
+        });
     }
 
     render() {
@@ -80,17 +77,33 @@ class AddRulesView extends Component {
         return (
             <View >
                 <Card containerStyle={styles.container}>
+                    <Sae
+                        label={'Email Address'}
+                        iconClass={Icon}
+                        iconName={'chevron-thin-left'}
+                        iconColor={'white'}
+                        // TextInput props
+                        autoCapitalize={'none'}
+                        autoCorrect={false}
+                    />
+
                     <FormLabel>min Параметр</FormLabel>
                     <FormInput
-                        onChangeText={(minParam) => this.setState({minParam})} />
+                        keyboardType={'numeric'}
+                        onChangeText={(minParam) => this.setState({ minParam })}
+                        value={this.state.minParam} />
                     <FormLabel>max Параметр</FormLabel>
                     <FormInput
-                        onChangeText={(maxParam) => this.setState({ maxParam })} />
-                    <FormLabel  >Параметр</FormLabel>
+                        keyboardType={'numeric'}
+                        onChangeText={(maxParam) => this.setState({ maxParam })}
+                        value={this.state.maxParam} />
+                    <FormLabel  >Значение</FormLabel>
                     <FormInput
-                        onChangeText={(exp) => this.setState({ exp })} />
+                        keyboardType={'numeric'}
+                        onChangeText={(exp) => this.setState({ exp })}
+                        value={this.state.exp} />
                 </Card>
-                
+
                 <View style={styles.buttonPanel}>
 
                     <Button
@@ -115,6 +128,7 @@ const styles = StyleSheet.create({
     container: {
         flex: -1,
         backgroundColor: '#ecf0f1',
+        padding: 0,
         //justifyContent: 'center',
     },
     headerText: {

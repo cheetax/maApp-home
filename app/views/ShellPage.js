@@ -56,7 +56,7 @@ class ShellPage extends Component {
   }
 
   componentDidMount() {
-    return this.props.getContent();
+    //return this.props.getContent();
   }
   
 

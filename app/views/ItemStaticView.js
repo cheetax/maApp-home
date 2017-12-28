@@ -24,7 +24,7 @@ export default class ItemStaticView extends Component {
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
-          <View style={(this.props.item.exp>=this.props.item.ruleExp.exp) ? styles.onImplement:styles.offImplement } />  
+          <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.exp)) ? styles.onImplement : styles.offImplement } />  
           <View style={styles.column1} >
             <View style={styles.nameView}>
               <Text style={styles.textPrimary}>

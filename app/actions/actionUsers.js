@@ -23,7 +23,12 @@ export const getContent = (forceUpdate) => dispatch => {
     });
 }
 
-export const saveRules = (data) => {
-    saveRulesToBase(data);
+let previousRules;
+
+export const saveRules = (currentRules) => {
     
+    if (previousRules !== currentRules) {
+        saveRulesToBase(currentRules);
+    }
+    previousRules = currentRules;
 }

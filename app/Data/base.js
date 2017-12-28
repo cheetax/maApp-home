@@ -23,10 +23,12 @@ export const getDataBase = (forceUpdate = false) => new Promise(async (succes, f
     await AsyncStorage.getItem('rules').then((data) => {
         rules = JSON.parse(data);
     })
-    dataBase = { ...clanInfo, rules}
+    dataBase = { ...clanInfo, rules }
     succes(dataBase);
 }, (error) => {
     fail(error);
 })
 
-export const saveRulesToBase = async (data) => await AsyncStorage.setItem('rules', JSON.stringify(data));
+export const saveRulesToBase = async (data) => {
+    await AsyncStorage.setItem('rules', JSON.stringify(data))
+};
