@@ -1303,7 +1303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactNative.AppRegistry.registerComponent('myApp', function () {
   return _app2.default;
 });
-}, 711, null, "myApp/index.js");
+}, 724, null, "myApp/index.js");
 __d(/* react-native-implementation */function(global, require, module, exports) {
 'use strict';
 
@@ -51525,11 +51525,11 @@ var _reactRedux = require(488          ); // 488 = react-redux
 
 var _redux = require(499    ); // 499 = redux
 
-var _reduxThunk = require(705          ); // 705 = redux-thunk
+var _reduxThunk = require(718          ); // 718 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _index3 = require(706               ); // 706 = ./reducers/index
+var _index3 = require(719               ); // 719 = ./reducers/index
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -80730,6 +80730,8 @@ var _Entypo = require(579                               ); // 579 = react-native
 
 var _Entypo2 = _interopRequireDefault(_Entypo);
 
+var _reactNativeTextinputEffects = require(705                             ); // 705 = react-native-textinput-effects
+
 var _reactNative = require(12            ); // 12 = react-native
 
 var _ItemRulesView = require(703              ); // 703 = ./ItemRulesView
@@ -80808,31 +80810,25 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 77
+                        lineNumber: 78
                     }
                 },
                 _react3.default.createElement(
                     _reactNativeElements.Card,
                     { containerStyle: styles.container, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 78
+                            lineNumber: 79
                         }
                     },
-                    _react3.default.createElement(
-                        _reactNativeElements.FormLabel,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 79
-                            }
-                        },
-                        "min \u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440"
-                    ),
-                    _react3.default.createElement(_reactNativeElements.FormInput, {
-                        onChangeText: function onChangeText(minParam) {
-                            return _this2.setState({ minParam: minParam });
-                        },
-                        value: this.state.minParam, __source: {
+                    _react3.default.createElement(_reactNativeTextinputEffects.Sae, {
+                        label: 'Email Address',
+                        iconClass: _Entypo2.default,
+                        iconName: 'chevron-thin-left',
+                        iconColor: 'white',
+
+                        autoCapitalize: 'none',
+                        autoCorrect: false,
+                        __source: {
                             fileName: _jsxFileName,
                             lineNumber: 80
                         }
@@ -80842,19 +80838,19 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 84
+                                lineNumber: 90
                             }
                         },
-                        "max \u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440"
+                        "min \u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440"
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
-                        keyboardType: "numeric",
-                        onChangeText: function onChangeText(maxParam) {
-                            return _this2.setState({ maxParam: maxParam });
+                        keyboardType: 'numeric',
+                        onChangeText: function onChangeText(minParam) {
+                            return _this2.setState({ minParam: minParam });
                         },
-                        value: this.state.maxParam, __source: {
+                        value: this.state.minParam, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 85
+                            lineNumber: 91
                         }
                     }),
                     _react3.default.createElement(
@@ -80862,19 +80858,39 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 89
+                                lineNumber: 95
+                            }
+                        },
+                        "max \u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        keyboardType: 'numeric',
+                        onChangeText: function onChangeText(maxParam) {
+                            return _this2.setState({ maxParam: maxParam });
+                        },
+                        value: this.state.maxParam, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 96
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 100
                             }
                         },
                         "\u0417\u043D\u0430\u0447\u0435\u043D\u0438\u0435"
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
-                        keyboardType: "numeric",
+                        keyboardType: 'numeric',
                         onChangeText: function onChangeText(exp) {
                             return _this2.setState({ exp: exp });
                         },
                         value: this.state.exp, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 90
+                            lineNumber: 101
                         }
                     })
                 ),
@@ -80882,7 +80898,7 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                     _reactNative.View,
                     { style: styles.buttonPanel, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 96
+                            lineNumber: 107
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -80893,7 +80909,7 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                         onPress: this.onBtnSaveClick.bind(this),
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 98
+                            lineNumber: 109
                         }
                     })
                 )
@@ -80914,7 +80930,7 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                 navigation.goBack();
             }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 50
+                lineNumber: 51
             }
         }),
         headerTitleStyle: {
@@ -81009,6 +81025,2578 @@ var styles = _reactNative.StyleSheet.create({
     }
 });
 }, 704, null, "myApp/app/views/AddRulesView.js");
+__d(/* react-native-textinput-effects/lib/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Fumi = exports.Sae = exports.Makiko = exports.Kohana = exports.Hideo = exports.Akira = exports.Madoka = exports.Isao = exports.Jiro = exports.Hoshi = exports.Kaede = undefined;
+
+var _Kaede = require(706      ); // 706 = ./Kaede
+
+var _Kaede2 = _interopRequireDefault(_Kaede);
+
+var _Hoshi = require(708      ); // 708 = ./Hoshi
+
+var _Hoshi2 = _interopRequireDefault(_Hoshi);
+
+var _Jiro = require(709     ); // 709 = ./Jiro
+
+var _Jiro2 = _interopRequireDefault(_Jiro);
+
+var _Isao = require(710     ); // 710 = ./Isao
+
+var _Isao2 = _interopRequireDefault(_Isao);
+
+var _Madoka = require(711       ); // 711 = ./Madoka
+
+var _Madoka2 = _interopRequireDefault(_Madoka);
+
+var _Akira = require(712      ); // 712 = ./Akira
+
+var _Akira2 = _interopRequireDefault(_Akira);
+
+var _Hideo = require(713      ); // 713 = ./Hideo
+
+var _Hideo2 = _interopRequireDefault(_Hideo);
+
+var _Kohana = require(714       ); // 714 = ./Kohana
+
+var _Kohana2 = _interopRequireDefault(_Kohana);
+
+var _Makiko = require(715       ); // 715 = ./Makiko
+
+var _Makiko2 = _interopRequireDefault(_Makiko);
+
+var _Sae = require(716    ); // 716 = ./Sae
+
+var _Sae2 = _interopRequireDefault(_Sae);
+
+var _Fumi = require(717     ); // 717 = ./Fumi
+
+var _Fumi2 = _interopRequireDefault(_Fumi);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Kaede = _Kaede2.default;
+exports.Hoshi = _Hoshi2.default;
+exports.Jiro = _Jiro2.default;
+exports.Isao = _Isao2.default;
+exports.Madoka = _Madoka2.default;
+exports.Akira = _Akira2.default;
+exports.Hideo = _Hideo2.default;
+exports.Kohana = _Kohana2.default;
+exports.Makiko = _Makiko2.default;
+exports.Sae = _Sae2.default;
+exports.Fumi = _Fumi2.default;
+}, 705, null, "react-native-textinput-effects/lib/index.js");
+__d(/* react-native-textinput-effects/lib/Kaede.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Kaede.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+
+var Kaede = function (_BaseInput) {
+  _inherits(Kaede, _BaseInput);
+
+  function Kaede() {
+    _classCallCheck(this, Kaede);
+
+    return _possibleConstructorReturn(this, (Kaede.__proto__ || Object.getPrototypeOf(Kaede)).apply(this, arguments));
+  }
+
+  _createClass(Kaede, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          inputHeight = _props.height;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var inputWidth = width * 0.6;
+
+      var flatLabelStyle = _reactNative.StyleSheet.flatten(labelStyle);
+      var labelBackgroundColor = '#EBEAEA';
+      if (flatLabelStyle && flatLabelStyle.backgroundColor) {
+        labelBackgroundColor = flatLabelStyle.backgroundColor;
+      }
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: containerStyle, onLayout: this._onLayout, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.Animated.View,
+          {
+            style: {
+              width: inputWidth,
+              marginLeft: focusedAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [inputWidth * -1, 0]
+              })
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 47
+            }
+          },
+          _react2.default.createElement(_reactNative.TextInput, _extends({
+            ref: 'input'
+          }, this.props, {
+            style: [styles.textInput, inputStyle, { height: inputHeight }],
+            value: value,
+            onBlur: this._onBlur,
+            onFocus: this._onFocus,
+            onChange: this._onChange,
+            underlineColorAndroid: 'transparent',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 56
+            }
+          }))
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 67
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                position: 'absolute',
+                justifyContent: 'center',
+                top: 0,
+                height: inputHeight,
+                width: width,
+                left: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, inputWidth]
+                }),
+                backgroundColor: labelBackgroundColor
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 68
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Text,
+              { style: [styles.label, labelStyle], __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 82
+                }
+              },
+              label
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Kaede;
+}(_BaseInput3.default);
+
+Kaede.propTypes = {
+  easing: _propTypes2.default.func,
+  height: _propTypes2.default.number
+};
+Kaede.defaultProps = {
+  easing: _reactNative.Easing.bezier(0.2, 1, 0.3, 1),
+  height: 60
+};
+exports.default = Kaede;
+
+
+var styles = _reactNative.StyleSheet.create({
+  label: {
+    marginHorizontal: PADDING,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#6a7989'
+  },
+  textInput: {
+    padding: PADDING,
+    backgroundColor: 'white',
+    color: 'black',
+    fontSize: 16,
+    fontWeight: 'bold'
+  }
+});
+}, 706, null, "react-native-textinput-effects/lib/Kaede.js");
+__d(/* react-native-textinput-effects/lib/BaseInput.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BaseInput = function (_Component) {
+  _inherits(BaseInput, _Component);
+
+  function BaseInput(props, context) {
+    _classCallCheck(this, BaseInput);
+
+    var _this = _possibleConstructorReturn(this, (BaseInput.__proto__ || Object.getPrototypeOf(BaseInput)).call(this, props, context));
+
+    _this._onLayout = _this._onLayout.bind(_this);
+    _this._onChange = _this._onChange.bind(_this);
+    _this._onBlur = _this._onBlur.bind(_this);
+    _this._onFocus = _this._onFocus.bind(_this);
+    _this.focus = _this.focus.bind(_this);
+
+    var value = props.value || props.defaultValue;
+
+    _this.state = {
+      value: value,
+      focusedAnim: new _reactNative.Animated.Value(value ? 1 : 0)
+    };
+    return _this;
+  }
+
+  _createClass(BaseInput, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      var newValue = newProps.value;
+      if (newProps.hasOwnProperty('value') && newValue !== this.state.value) {
+        this.setState({
+          value: newValue
+        });
+
+        var isFocused = this.refs.input.isFocused();
+        if (!isFocused) {
+          var isActive = Boolean(newValue);
+          if (isActive !== this.isActive) {
+            this._toggle(isActive);
+          }
+        }
+      }
+    }
+  }, {
+    key: '_onLayout',
+    value: function _onLayout(event) {
+      this.setState({
+        width: event.nativeEvent.layout.width
+      });
+    }
+  }, {
+    key: '_onChange',
+    value: function _onChange(event) {
+      this.setState({
+        value: event.nativeEvent.text
+      });
+
+      var onChange = this.props.onChange;
+      if (onChange) {
+        onChange(event);
+      }
+    }
+  }, {
+    key: '_onBlur',
+    value: function _onBlur(event) {
+      if (!this.state.value) {
+        this._toggle(false);
+      }
+
+      var onBlur = this.props.onBlur;
+      if (onBlur) {
+        onBlur(event);
+      }
+    }
+  }, {
+    key: '_onFocus',
+    value: function _onFocus(event) {
+      this._toggle(true);
+
+      var onFocus = this.props.onFocus;
+      if (onFocus) {
+        onFocus(event);
+      }
+    }
+  }, {
+    key: '_toggle',
+    value: function _toggle(isActive) {
+      var _props = this.props,
+          animationDuration = _props.animationDuration,
+          easing = _props.easing,
+          useNativeDriver = _props.useNativeDriver;
+
+      this.isActive = isActive;
+      _reactNative.Animated.timing(this.state.focusedAnim, {
+        toValue: isActive ? 1 : 0,
+        duration: animationDuration,
+        easing: easing,
+        useNativeDriver: useNativeDriver
+      }).start();
+    }
+  }, {
+    key: 'inputRef',
+    value: function inputRef() {
+      return this.refs.input;
+    }
+  }, {
+    key: 'focus',
+    value: function focus() {
+      if (this.props.editable !== false) {
+        this.inputRef().focus();
+      }
+    }
+  }, {
+    key: 'blur',
+    value: function blur() {
+      this.inputRef().blur();
+    }
+  }, {
+    key: 'isFocused',
+    value: function isFocused() {
+      return this.inputRef().isFocused();
+    }
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.inputRef().clear();
+    }
+  }]);
+
+  return BaseInput;
+}(_react.Component);
+
+BaseInput.propTypes = {
+  label: _propTypes2.default.string,
+  value: _propTypes2.default.string,
+  defaultValue: _propTypes2.default.string,
+  style: _reactNative.ViewPropTypes ? _reactNative.ViewPropTypes.style : _reactNative.View.propTypes.style,
+  inputStyle: _reactNative.Text.propTypes.style,
+  labelStyle: _reactNative.Text.propTypes.style,
+  easing: _propTypes2.default.func,
+  animationDuration: _propTypes2.default.number,
+  useNativeDriver: _propTypes2.default.bool,
+
+  editable: _propTypes2.default.bool,
+
+  onBlur: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func,
+  onChange: _propTypes2.default.func
+};
+exports.default = BaseInput;
+}, 707, null, "react-native-textinput-effects/lib/BaseInput.js");
+__d(/* react-native-textinput-effects/lib/Hoshi.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Hoshi.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+
+var Hoshi = function (_BaseInput) {
+  _inherits(Hoshi, _BaseInput);
+
+  function Hoshi() {
+    _classCallCheck(this, Hoshi);
+
+    return _possibleConstructorReturn(this, (Hoshi.__proto__ || Object.getPrototypeOf(Hoshi)).apply(this, arguments));
+  }
+
+  _createClass(Hoshi, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          maskColor = _props.maskColor,
+          borderColor = _props.borderColor,
+          inputHeight = _props.height;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var flatStyles = _reactNative.StyleSheet.flatten(containerStyle) || {};
+      var containerWidth = flatStyles.width || width;
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle, {
+            height: inputHeight + PADDING,
+            width: containerWidth
+          }],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        },
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle, {
+            width: width,
+            height: inputHeight
+          }],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59
+          }
+        })),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 76
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: [styles.labelContainer, {
+                opacity: focusedAnim.interpolate({
+                  inputRange: [0, 0.5, 1],
+                  outputRange: [1, 0, 1]
+                }),
+                top: focusedAnim.interpolate({
+                  inputRange: [0, 0.5, 0.51, 1],
+                  outputRange: [24, 24, 0, 0]
+                }),
+                left: focusedAnim.interpolate({
+                  inputRange: [0, 0.5, 0.51, 1],
+                  outputRange: [PADDING, 2 * PADDING, 0, PADDING]
+                })
+              }],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 77
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Text,
+              { style: [styles.label, labelStyle], __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 96
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.View, { style: [styles.labelMask, { backgroundColor: maskColor }], __source: {
+            fileName: _jsxFileName,
+            lineNumber: 101
+          }
+        }),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: [styles.border, {
+            width: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, width]
+            }),
+            backgroundColor: borderColor
+          }],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102
+          }
+        })
+      );
+    }
+  }]);
+
+  return Hoshi;
+}(_BaseInput3.default);
+
+Hoshi.propTypes = {
+  borderColor: _propTypes2.default.string,
+
+  maskColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Hoshi.defaultProps = {
+  borderColor: 'red',
+  height: 48
+};
+exports.default = Hoshi;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    borderBottomWidth: 2,
+    borderBottomColor: '#b9c1ca'
+  },
+  labelContainer: {
+    position: 'absolute'
+  },
+  label: {
+    fontSize: 16,
+    color: '#6a7989'
+  },
+  textInput: {
+    position: 'absolute',
+    bottom: 2,
+    left: PADDING,
+    padding: 0,
+    color: '#6a7989',
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  labelMask: {
+    height: 24,
+    width: PADDING
+  },
+  border: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 3
+  }
+});
+}, 708, null, "react-native-textinput-effects/lib/Hoshi.js");
+__d(/* react-native-textinput-effects/lib/Jiro.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Jiro.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+
+var Jiro = function (_BaseInput) {
+  _inherits(Jiro, _BaseInput);
+
+  function Jiro(props, context) {
+    _classCallCheck(this, Jiro);
+
+    var _this = _possibleConstructorReturn(this, (Jiro.__proto__ || Object.getPrototypeOf(Jiro)).call(this, props, context));
+
+    var animationValue = props.value ? 1 : 0;
+    _this.state = {
+      value: props.value,
+      borderPositionAnim: new _reactNative.Animated.Value(animationValue),
+      borderHeightAnim: new _reactNative.Animated.Value(animationValue),
+      labelPositionAnim: new _reactNative.Animated.Value(animationValue)
+    };
+    return _this;
+  }
+
+  _createClass(Jiro, [{
+    key: '_toggle',
+    value: function _toggle(isActive) {
+      var animationValue = isActive ? 1 : 0;
+      var borderPositionAnimation = _reactNative.Animated.timing(this.state.borderPositionAnim, {
+        toValue: animationValue,
+        eaasing: _reactNative.Easing.bezier(0.2, 1, 0.3, 1),
+        duration: 200
+      });
+      var borderHeightAnimation = _reactNative.Animated.timing(this.state.borderHeightAnim, {
+        toValue: animationValue,
+        eaasing: _reactNative.Easing.ease,
+        duration: 200
+      });
+      var labelPositionAnimation = _reactNative.Animated.timing(this.state.labelPositionAnim, {
+        toValue: animationValue,
+        eaasing: _reactNative.Easing.ease,
+        duration: 200
+      });
+
+      if (isActive) {
+        _reactNative.Animated.sequence([borderPositionAnimation, _reactNative.Animated.parallel([labelPositionAnimation, borderHeightAnimation])]).start();
+      } else {
+        _reactNative.Animated.sequence([borderHeightAnimation, _reactNative.Animated.parallel([borderPositionAnimation, labelPositionAnimation])]).start();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          borderColor = _props.borderColor,
+          inputHeight = _props.height;
+      var _state = this.state,
+          width = _state.width,
+          borderPositionAnim = _state.borderPositionAnim,
+          borderHeightAnim = _state.borderHeightAnim,
+          labelPositionAnim = _state.labelPositionAnim,
+          value = _state.value;
+
+      var totalHeight = inputHeight + 2 * PADDING;
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [containerStyle, {
+            height: totalHeight
+          }],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96
+          }
+        },
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: [styles.border, {
+            height: borderHeightAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [3, inputHeight]
+            }),
+            top: borderPositionAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [totalHeight - 3, 2 * PADDING]
+            }),
+            backgroundColor: borderColor
+          }],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105
+          }
+        }),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle, {
+            width: width,
+            height: inputHeight
+          }],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121
+          }
+        })),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 138
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: [styles.labelContainer, {
+                bottom: labelPositionAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [PADDING / 2, inputHeight + PADDING / 4]
+                })
+              }],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 139
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Text,
+              { style: [styles.label, labelStyle], __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 150
+                }
+              },
+              label
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Jiro;
+}(_BaseInput3.default);
+
+Jiro.propTypes = {
+  borderColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Jiro.defaultProps = {
+  borderColor: 'red',
+  height: 48
+};
+exports.default = Jiro;
+
+
+var styles = _reactNative.StyleSheet.create({
+  labelContainer: {
+    position: 'absolute',
+    left: PADDING,
+    backgroundColor: 'transparent'
+  },
+  label: {
+    fontFamily: 'Arial',
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: '#6a7989'
+  },
+  textInput: {
+    position: 'absolute',
+    bottom: 0,
+    padding: 0,
+    left: PADDING,
+    color: 'black',
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  border: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0
+  }
+});
+}, 709, null, "react-native-textinput-effects/lib/Jiro.js");
+__d(/* react-native-textinput-effects/lib/Isao.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Isao.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LABEL_HEIGHT = 24;
+var PADDING = 16;
+
+var Isao = function (_BaseInput) {
+  _inherits(Isao, _BaseInput);
+
+  function Isao() {
+    _classCallCheck(this, Isao);
+
+    return _possibleConstructorReturn(this, (Isao.__proto__ || Object.getPrototypeOf(Isao)).apply(this, arguments));
+  }
+
+  _createClass(Isao, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputHeight = _props.height,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          activeColor = _props.activeColor,
+          passiveColor = _props.passiveColor;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [containerStyle, {
+            height: inputHeight + LABEL_HEIGHT
+          }],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.View,
+          {
+            style: [styles.inputContainer, {
+              height: inputHeight,
+              borderBottomColor: passiveColor
+            }],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 63
+            }
+          },
+          _react2.default.createElement(_reactNative.TextInput, _extends({
+            ref: 'input'
+          }, this.props, {
+            style: [styles.textInput, inputStyle, {
+              width: width,
+              height: inputHeight
+            }],
+            value: value,
+            onBlur: this._onBlur,
+            onChange: this._onChange,
+            onFocus: this._onFocus,
+            underlineColorAndroid: 'transparent',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 72
+            }
+          }))
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 90
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.View,
+            {
+              style: {
+                height: LABEL_HEIGHT,
+                width: width
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 91
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Animated.Text,
+              {
+                style: [styles.label, labelStyle, {
+                  width: width,
+                  opacity: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [1, 0]
+                  }),
+                  bottom: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, LABEL_HEIGHT]
+                  }),
+                  color: passiveColor
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 98
+                }
+              },
+              label
+            ),
+            _react2.default.createElement(
+              _reactNative.Animated.Text,
+              {
+                style: [styles.label, labelStyle, {
+                  opacity: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, 1]
+                  }),
+                  bottom: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [LABEL_HEIGHT * -1, 0]
+                  }),
+                  color: activeColor
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 119
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: [styles.border, {
+            height: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, 8]
+            }),
+            width: width,
+            backgroundColor: activeColor
+          }],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 140
+          }
+        })
+      );
+    }
+  }]);
+
+  return Isao;
+}(_BaseInput3.default);
+
+Isao.propTypes = {
+  passiveColor: _propTypes2.default.string,
+
+  activeColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Isao.defaultProps = {
+  activeColor: 'red',
+  passiveColor: 'white',
+  height: 48,
+  easing: _reactNative.Easing.bezier(0.2, 1, 0.3, 1)
+};
+exports.default = Isao;
+
+
+var styles = _reactNative.StyleSheet.create({
+  inputContainer: {
+    borderBottomWidth: 2
+  },
+  labelContainer: {
+    paddingLeft: PADDING,
+    height: LABEL_HEIGHT
+  },
+  label: {
+    position: 'absolute',
+    height: LABEL_HEIGHT,
+    left: PADDING,
+    paddingTop: 4,
+    backgroundColor: 'transparent',
+    fontFamily: 'Arial',
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  textInput: {
+    paddingHorizontal: PADDING,
+    color: '#afb3b8',
+    fontSize: 18,
+    fontWeight: 'bold',
+    padding: 0
+  },
+  border: {
+    position: 'absolute',
+    bottom: LABEL_HEIGHT,
+    left: 0,
+    right: 0
+  }
+});
+}, 710, null, "react-native-textinput-effects/lib/Isao.js");
+__d(/* react-native-textinput-effects/lib/Madoka.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Madoka.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LABEL_HEIGHT = 24;
+var PADDING = 16;
+
+var Madoka = function (_BaseInput) {
+  _inherits(Madoka, _BaseInput);
+
+  function Madoka() {
+    _classCallCheck(this, Madoka);
+
+    return _possibleConstructorReturn(this, (Madoka.__proto__ || Object.getPrototypeOf(Madoka)).apply(this, arguments));
+  }
+
+  _createClass(Madoka, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputHeight = _props.height,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          borderColor = _props.borderColor;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [containerStyle, { height: inputHeight + LABEL_HEIGHT + 8 }],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.View,
+          {
+            style: [styles.inputContainer, { borderBottomColor: borderColor }],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 51
+            }
+          },
+          _react2.default.createElement(_reactNative.TextInput, _extends({
+            ref: 'input'
+          }, this.props, {
+            style: [styles.textInput, inputStyle, {
+              width: width,
+              height: inputHeight
+            }],
+            value: value,
+            onBlur: this._onBlur,
+            onChange: this._onChange,
+            onFocus: this._onFocus,
+            underlineColorAndroid: 'transparent',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 54
+            }
+          })),
+          _react2.default.createElement(_reactNative.Animated.View, {
+            style: {
+              position: 'absolute',
+              right: 0,
+              bottom: 0,
+              width: 2,
+              height: focusedAnim.interpolate({
+                inputRange: [0, 0.2, 1],
+                outputRange: [0, inputHeight, inputHeight]
+              }),
+              backgroundColor: borderColor
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 72
+            }
+          }),
+          _react2.default.createElement(_reactNative.Animated.View, {
+            style: {
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              height: 2,
+              width: focusedAnim.interpolate({
+                inputRange: [0, 0.2, 0.8, 1],
+                outputRange: [0, 0, width, width]
+              }),
+              backgroundColor: borderColor
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 86
+            }
+          }),
+          _react2.default.createElement(_reactNative.Animated.View, {
+            style: {
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: 2,
+              height: focusedAnim.interpolate({
+                inputRange: [0, 0.8, 1],
+                outputRange: [0, 0, inputHeight]
+              }),
+              backgroundColor: borderColor
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 100
+            }
+          })
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 114
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: [styles.labelContainer, {
+                width: width,
+                height: LABEL_HEIGHT,
+                bottom: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [LABEL_HEIGHT + PADDING, 0]
+                })
+              }],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 115
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Animated.Text,
+              {
+                style: [styles.label, labelStyle, {
+                  fontSize: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [18, 14]
+                  })
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 128
+                }
+              },
+              label
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Madoka;
+}(_BaseInput3.default);
+
+Madoka.propTypes = {
+  borderColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Madoka.defaultProps = {
+  borderColor: '#7A7593',
+  animationDuration: 250,
+  height: 48
+};
+exports.default = Madoka;
+
+
+var styles = _reactNative.StyleSheet.create({
+  inputContainer: {
+    borderBottomWidth: 2
+  },
+  labelContainer: {
+    position: 'absolute',
+    left: PADDING
+  },
+  label: {
+    backgroundColor: 'transparent',
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    color: '#6a7989'
+  },
+  textInput: {
+    paddingHorizontal: PADDING,
+    paddingVertical: 0,
+    color: 'black',
+    fontSize: 18,
+    fontWeight: 'bold'
+  }
+});
+}, 711, null, "react-native-textinput-effects/lib/Madoka.js");
+__d(/* react-native-textinput-effects/lib/Akira.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Akira.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LABEL_HEIGHT = 24;
+var PADDING = 16;
+
+var Akira = function (_BaseInput) {
+  _inherits(Akira, _BaseInput);
+
+  function Akira() {
+    _classCallCheck(this, Akira);
+
+    return _possibleConstructorReturn(this, (Akira.__proto__ || Object.getPrototypeOf(Akira)).apply(this, arguments));
+  }
+
+  _createClass(Akira, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputHeight = _props.height,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle,
+          borderColor = _props.borderColor;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        { style: containerStyle, onLayout: this._onLayout, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                width: width,
+                height: LABEL_HEIGHT,
+                transform: [{
+                  translateY: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [LABEL_HEIGHT + PADDING, 0]
+                  })
+                }]
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 50
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Text,
+              { style: [styles.label, labelStyle], __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 64
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle, {
+            width: width,
+            height: inputHeight
+          }],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69
+          }
+        })),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            height: inputHeight,
+            width: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [6, 1]
+            }),
+            backgroundColor: borderColor
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87
+          }
+        }),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            top: LABEL_HEIGHT,
+            width: width,
+            height: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [6, 1]
+            }),
+            backgroundColor: borderColor
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 101
+          }
+        }),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            right: 0,
+            bottom: 0,
+            height: inputHeight,
+            width: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [6, 1]
+            }),
+            backgroundColor: borderColor
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 114
+          }
+        }),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            bottom: 0,
+            height: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [6, 1]
+            }),
+            width: width,
+            backgroundColor: borderColor
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128
+          }
+        })
+      );
+    }
+  }]);
+
+  return Akira;
+}(_BaseInput3.default);
+
+Akira.propTypes = {
+  borderColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Akira.defaultProps = {
+  borderColor: '#7A7593',
+  height: 48,
+  animationDuration: 200
+};
+exports.default = Akira;
+
+
+var styles = _reactNative.StyleSheet.create({
+  label: {
+    backgroundColor: 'transparent',
+    fontFamily: 'Arial',
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#cc6055',
+    textAlign: 'center'
+  },
+  textInput: {
+    paddingHorizontal: PADDING,
+    padding: 0,
+    color: 'black',
+    fontSize: 18,
+    textAlign: 'center'
+  }
+});
+}, 712, null, "react-native-textinput-effects/lib/Akira.js");
+__d(/* react-native-textinput-effects/lib/Hideo.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Hideo.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Hideo = function (_BaseInput) {
+  _inherits(Hideo, _BaseInput);
+
+  function Hideo() {
+    _classCallCheck(this, Hideo);
+
+    return _possibleConstructorReturn(this, (Hideo.__proto__ || Object.getPrototypeOf(Hideo)).apply(this, arguments));
+  }
+
+  _createClass(Hideo, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          iconClass = _props.iconClass,
+          iconColor = _props.iconColor,
+          iconSize = _props.iconSize,
+          iconName = _props.iconName,
+          iconBackgroundColor = _props.iconBackgroundColor,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          inputHeight = _props.height;
+      var _state = this.state,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var AnimatedIcon = _reactNative.Animated.createAnimatedComponent(iconClass);
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 70
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                backgroundColor: iconBackgroundColor,
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: inputHeight,
+                width: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [60, 40]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 71
+              }
+            },
+            _react2.default.createElement(AnimatedIcon, {
+              name: iconName,
+              color: iconColor,
+              style: {
+                fontSize: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [iconSize, iconSize * 0.6]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 83
+              }
+            })
+          )
+        ),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95
+          }
+        }))
+      );
+    }
+  }]);
+
+  return Hideo;
+}(_BaseInput3.default);
+
+Hideo.propTypes = {
+  iconBackgroundColor: _propTypes2.default.string,
+
+  iconClass: _propTypes2.default.func.isRequired,
+
+  iconName: _propTypes2.default.string.isRequired,
+
+  iconColor: _propTypes2.default.string,
+
+  iconSize: _propTypes2.default.number
+};
+Hideo.defaultProps = {
+  iconColor: 'white',
+  iconSize: 25,
+  iconBackgroundColor: '#899dda',
+  height: 48,
+  animationDuration: 200
+};
+exports.default = Hideo;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  textInput: {
+    flex: 1,
+    paddingHorizontal: 16,
+    paddingVertical: 0,
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 18
+  }
+});
+}, 713, null, "react-native-textinput-effects/lib/Hideo.js");
+__d(/* react-native-textinput-effects/lib/Kohana.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Kohana.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+
+var Kohana = function (_BaseInput) {
+  _inherits(Kohana, _BaseInput);
+
+  function Kohana() {
+    _classCallCheck(this, Kohana);
+
+    return _possibleConstructorReturn(this, (Kohana.__proto__ || Object.getPrototypeOf(Kohana)).apply(this, arguments));
+  }
+
+  _createClass(Kohana, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          Icon = _props.iconClass,
+          iconColor = _props.iconColor,
+          iconSize = _props.iconSize,
+          iconName = _props.iconName,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle;
+      var _state = this.state,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 63
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                justifyContent: 'center',
+                padding: PADDING,
+                transform: [{
+                  translateX: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [-15 - iconSize, 0]
+                  })
+                }]
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 64
+              }
+            },
+            _react2.default.createElement(Icon, { name: iconName, color: iconColor, size: iconSize, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 78
+              }
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 81
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                position: 'absolute',
+                top: PADDING,
+                left: 0,
+                transform: [{
+                  translateX: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [PADDING, 80]
+                  })
+                }],
+                opacity: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [1, 0]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 82
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Text,
+              { style: [styles.label, labelStyle], __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 101
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle],
+          value: value,
+          onBlur: this._onBlur,
+          onFocus: this._onFocus,
+          onChange: this._onChange,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106
+          }
+        }))
+      );
+    }
+  }]);
+
+  return Kohana;
+}(_BaseInput3.default);
+
+Kohana.propTypes = {
+  iconClass: _propTypes2.default.func.isRequired,
+
+  iconName: _propTypes2.default.string.isRequired,
+
+  iconColor: _propTypes2.default.string,
+
+  iconSize: _propTypes2.default.number
+};
+Kohana.defaultProps = {
+  easing: _reactNative.Easing.bezier(0.2, 1, 0.3, 1),
+  iconSize: 25,
+  useNativeDriver: false
+};
+exports.default = Kohana;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    overflow: 'hidden'
+  },
+  label: {
+    fontSize: 18,
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    color: '#D2D2D2'
+  },
+  textInput: {
+    flex: 1,
+    paddingHorizontal: PADDING,
+    paddingVertical: 0,
+    color: 'black',
+    fontSize: 18
+  }
+});
+}, 714, null, "react-native-textinput-effects/lib/Kohana.js");
+__d(/* react-native-textinput-effects/lib/Makiko.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Makiko.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+
+var Makiko = function (_BaseInput) {
+  _inherits(Makiko, _BaseInput);
+
+  function Makiko() {
+    _classCallCheck(this, Makiko);
+
+    return _possibleConstructorReturn(this, (Makiko.__proto__ || Object.getPrototypeOf(Makiko)).apply(this, arguments));
+  }
+
+  _createClass(Makiko, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          iconClass = _props.iconClass,
+          iconColor = _props.iconColor,
+          iconName = _props.iconName,
+          iconSize = _props.iconSize,
+          iconWidth = _props.iconWidth,
+          containerStyle = _props.style,
+          inputHeight = _props.height,
+          inputStyle = _props.inputStyle,
+          label = _props.label,
+          labelStyle = _props.labelStyle;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var AnimatedIcon = _reactNative.Animated.createAnimatedComponent(iconClass);
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 80
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.View,
+            {
+              style: {
+                position: 'absolute',
+                height: inputHeight,
+                width: width
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 81
+              }
+            },
+            _react2.default.createElement(AnimatedIcon, {
+              name: iconName,
+              color: iconColor,
+              style: {
+                position: 'absolute',
+                backgroundColor: 'transparent',
+                top: focusedAnim.interpolate({
+                  inputRange: [0, 0.2, 1],
+                  outputRange: [8, iconSize * -1, iconSize * -1]
+                }),
+                left: focusedAnim.interpolate({
+                  inputRange: [0, 0.2, 1],
+                  outputRange: [PADDING, -22, -22]
+                }),
+                height: focusedAnim.interpolate({
+                  inputRange: [0, 0.2, 1],
+                  outputRange: [iconSize, inputHeight * 2, inputHeight * 2]
+                }),
+                fontSize: focusedAnim.interpolate({
+                  inputRange: [0, 0.2, 1],
+                  outputRange: [iconSize, iconSize * 4, iconSize * 4]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 88
+              }
+            }),
+            _react2.default.createElement(
+              _reactNative.Text,
+              {
+                style: [styles.label, labelStyle, { left: iconWidth, color: iconColor }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 112
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            backgroundColor: 'white',
+            left: iconWidth,
+            height: inputHeight,
+            width: focusedAnim.interpolate({
+              inputRange: [0, 0.2, 1],
+              outputRange: [0, 0, width]
+            })
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 123
+          }
+        }),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle, {
+            width: width,
+            height: inputHeight
+          }],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135
+          }
+        }))
+      );
+    }
+  }]);
+
+  return Makiko;
+}(_BaseInput3.default);
+
+Makiko.propTypes = {
+  iconClass: _propTypes2.default.func.isRequired,
+
+  iconName: _propTypes2.default.string.isRequired,
+
+  iconColor: _propTypes2.default.string,
+
+  iconSize: _propTypes2.default.number,
+  iconWidth: _propTypes2.default.number
+};
+Makiko.defaultProps = {
+  iconColor: 'white',
+  iconSize: 30,
+  iconWidth: 60,
+  height: 48,
+  easing: _reactNative.Easing.bezier(0.7, 0, 0.3, 1),
+  animationDuration: 300
+};
+exports.default = Makiko;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    backgroundColor: '#CBCBCB',
+    overflow: 'hidden'
+  },
+  label: {
+    position: 'absolute',
+    top: PADDING,
+    fontSize: 16,
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    color: 'white',
+    backgroundColor: 'transparent'
+  },
+  textInput: {
+    paddingHorizontal: PADDING,
+    paddingVertical: 0,
+    color: 'black',
+    fontSize: 18
+  }
+});
+}, 715, null, "react-native-textinput-effects/lib/Makiko.js");
+__d(/* react-native-textinput-effects/lib/Sae.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Sae.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LABEL_HEIGHT = 24;
+var PADDING = 16;
+
+var Sae = function (_BaseInput) {
+  _inherits(Sae, _BaseInput);
+
+  function Sae() {
+    _classCallCheck(this, Sae);
+
+    return _possibleConstructorReturn(this, (Sae.__proto__ || Object.getPrototypeOf(Sae)).apply(this, arguments));
+  }
+
+  _createClass(Sae, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          iconClass = _props.iconClass,
+          iconColor = _props.iconColor,
+          iconName = _props.iconName,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputHeight = _props.height,
+          inputStyle = _props.inputStyle,
+          labelStyle = _props.labelStyle;
+      var _state = this.state,
+          width = _state.width,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var AnimatedIcon = _reactNative.Animated.createAnimatedComponent(iconClass);
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle, {
+            height: inputHeight + PADDING
+          }],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 68
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                position: 'absolute',
+                bottom: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, LABEL_HEIGHT + PADDING]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 69
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Animated.Text,
+              {
+                style: [styles.label, labelStyle, {
+                  fontSize: focusedAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [18, 12]
+                  })
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 78
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, inputStyle, {
+            width: width,
+            height: inputHeight
+          }],
+          value: value,
+          onBlur: this._onBlur,
+          onChange: this._onChange,
+          onFocus: this._onFocus,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94
+          }
+        })),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            }
+          },
+          _react2.default.createElement(AnimatedIcon, {
+            name: iconName,
+            color: iconColor,
+            style: {
+              position: 'absolute',
+              bottom: 0,
+              right: focusedAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0, width + PADDING]
+              }),
+              transform: [{
+                rotate: focusedAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: ['0deg', '-90deg']
+                })
+              }],
+              fontSize: 20,
+              backgroundColor: 'transparent'
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 112
+            }
+          })
+        ),
+        _react2.default.createElement(_reactNative.Animated.View, {
+          style: {
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            height: 2,
+            width: focusedAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, width]
+            }),
+            backgroundColor: iconColor
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 136
+          }
+        })
+      );
+    }
+  }]);
+
+  return Sae;
+}(_BaseInput3.default);
+
+Sae.propTypes = {
+  height: _propTypes2.default.number,
+
+  iconClass: _propTypes2.default.func.isRequired,
+
+  iconName: _propTypes2.default.string,
+
+  iconColor: _propTypes2.default.string
+};
+Sae.defaultProps = {
+  iconColor: 'white',
+  height: 48,
+  animationDuration: 300,
+  iconName: 'pencil'
+};
+exports.default = Sae;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    overflow: 'hidden'
+  },
+  label: {
+    backgroundColor: 'transparent',
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
+    color: '#7771ab'
+  },
+  textInput: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    paddingTop: PADDING / 2,
+    paddingLeft: 0,
+    color: 'white',
+    fontSize: 18
+  }
+});
+}, 716, null, "react-native-textinput-effects/lib/Sae.js");
+__d(/* react-native-textinput-effects/lib/Fumi.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-textinput-effects\\lib\\Fumi.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require(35     ); // 35 = react
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require(126         ); // 126 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _BaseInput2 = require(707          ); // 707 = ./BaseInput
+
+var _BaseInput3 = _interopRequireDefault(_BaseInput2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PADDING = 16;
+var ICON_WIDTH = 40;
+
+var Fumi = function (_BaseInput) {
+  _inherits(Fumi, _BaseInput);
+
+  function Fumi() {
+    _classCallCheck(this, Fumi);
+
+    return _possibleConstructorReturn(this, (Fumi.__proto__ || Object.getPrototypeOf(Fumi)).apply(this, arguments));
+  }
+
+  _createClass(Fumi, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          iconClass = _props.iconClass,
+          iconColor = _props.iconColor,
+          iconSize = _props.iconSize,
+          passiveIconColor = _props.passiveIconColor,
+          iconName = _props.iconName,
+          label = _props.label,
+          containerStyle = _props.style,
+          inputStyle = _props.inputStyle,
+          inputHeight = _props.height,
+          labelStyle = _props.labelStyle;
+      var _state = this.state,
+          focusedAnim = _state.focusedAnim,
+          value = _state.value;
+
+      var AnimatedIcon = _reactNative.Animated.createAnimatedComponent(iconClass);
+      var ANIM_PATH = PADDING + inputHeight;
+      var NEGATIVE_ANIM_PATH = ANIM_PATH * -1;
+
+      return _react2.default.createElement(
+        _reactNative.View,
+        {
+          style: [styles.container, containerStyle],
+          onLayout: this._onLayout,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69
+          }
+        },
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73
+            }
+          },
+          _react2.default.createElement(AnimatedIcon, {
+            name: iconName,
+            color: iconColor,
+            size: iconSize,
+            style: {
+              position: 'absolute',
+              left: PADDING,
+              bottom: focusedAnim.interpolate({
+                inputRange: [0, 0.5, 0.51, 0.7, 1],
+                outputRange: [24, ANIM_PATH, NEGATIVE_ANIM_PATH, NEGATIVE_ANIM_PATH, 24]
+              }),
+              color: focusedAnim.interpolate({
+                inputRange: [0, 0.5, 1],
+                outputRange: [passiveIconColor, iconColor, iconColor]
+              })
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 74
+            }
+          })
+        ),
+        _react2.default.createElement(_reactNative.View, {
+          style: [styles.separator, {
+            height: inputHeight,
+            left: ICON_WIDTH + 8
+          }],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          }
+        }),
+        _react2.default.createElement(
+          _reactNative.TouchableWithoutFeedback,
+          { onPress: this.focus, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 107
+            }
+          },
+          _react2.default.createElement(
+            _reactNative.Animated.View,
+            {
+              style: {
+                position: 'absolute',
+                left: ICON_WIDTH + PADDING,
+                height: inputHeight,
+                top: focusedAnim.interpolate({
+                  inputRange: [0, 0.5, 0.51, 0.7, 1],
+                  outputRange: [24, ANIM_PATH, NEGATIVE_ANIM_PATH, NEGATIVE_ANIM_PATH, PADDING / 2]
+                })
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 108
+              }
+            },
+            _react2.default.createElement(
+              _reactNative.Animated.Text,
+              {
+                style: [styles.label, {
+                  fontSize: focusedAnim.interpolate({
+                    inputRange: [0, 0.7, 0.71, 1],
+                    outputRange: [16, 16, 12, 12]
+                  }),
+                  color: focusedAnim.interpolate({
+                    inputRange: [0, 0.7],
+                    outputRange: ['#696969', '#a3a3a3']
+                  })
+                }, labelStyle],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 125
+                }
+              },
+              label
+            )
+          )
+        ),
+        _react2.default.createElement(_reactNative.TextInput, _extends({
+          ref: 'input'
+        }, this.props, {
+          style: [styles.textInput, {
+            marginLeft: ICON_WIDTH + PADDING,
+            color: iconColor
+          }, inputStyle],
+          value: value,
+          onBlur: this._onBlur,
+          onFocus: this._onFocus,
+          onChange: this._onChange,
+          underlineColorAndroid: 'transparent',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          }
+        }))
+      );
+    }
+  }]);
+
+  return Fumi;
+}(_BaseInput3.default);
+
+Fumi.propTypes = {
+  iconClass: _propTypes2.default.func.isRequired,
+
+  iconName: _propTypes2.default.string.isRequired,
+
+  iconColor: _propTypes2.default.string,
+
+  iconSize: _propTypes2.default.number,
+
+  passiveIconColor: _propTypes2.default.string,
+  height: _propTypes2.default.number
+};
+Fumi.defaultProps = {
+  height: 48,
+  iconColor: '#00aeef',
+  iconSize: 20,
+  passiveIconColor: '#a3a3a3',
+  animationDuration: 300
+};
+exports.default = Fumi;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    overflow: 'hidden',
+    paddingTop: 16,
+    backgroundColor: 'white'
+  },
+  label: {
+    fontSize: 18,
+    fontFamily: 'Arial',
+    fontWeight: 'bold'
+  },
+  textInput: {
+    flex: 1,
+    color: 'black',
+    fontSize: 18,
+    padding: 7,
+    paddingLeft: 0
+  },
+  separator: {
+    position: 'absolute',
+    width: 1,
+    backgroundColor: '#f0f0f0',
+    top: 8
+  }
+});
+}, 717, null, "react-native-textinput-effects/lib/Fumi.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -81032,24 +83620,24 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 705, null, "redux-thunk/lib/index.js");
+}, 718, null, "redux-thunk/lib/index.js");
 __d(/* myApp/app/reducers/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _redux = require(499    ); // 499 = redux
 
-var _clanInfo = require(707         ); // 707 = ./clanInfo
+var _clanInfo = require(720         ); // 720 = ./clanInfo
 
 var _clanInfo2 = _interopRequireDefault(_clanInfo);
 
-var _status = require(708       ); // 708 = ./status
+var _status = require(721       ); // 721 = ./status
 
 var _status2 = _interopRequireDefault(_status);
 
-var _rules = require(709      ); // 709 = ./rules
+var _rules = require(722      ); // 722 = ./rules
 
-var _stackNavigator = require(710               ); // 710 = ./stackNavigator
+var _stackNavigator = require(723               ); // 723 = ./stackNavigator
 
 var _stackNavigator2 = _interopRequireDefault(_stackNavigator);
 
@@ -81064,7 +83652,7 @@ var rootReducer = (0, _redux.combineReducers)({
 });
 
 exports.default = rootReducer;
-}, 706, null, "myApp/app/reducers/index.js");
+}, 719, null, "myApp/app/reducers/index.js");
 __d(/* myApp/app/reducers/clanInfo.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -81085,7 +83673,7 @@ function clanInfo() {
             return state;
     }
 }
-}, 707, null, "myApp/app/reducers/clanInfo.js");
+}, 720, null, "myApp/app/reducers/clanInfo.js");
 __d(/* myApp/app/reducers/status.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -81115,7 +83703,7 @@ function actionStatus() {
             return state;
     }
 }
-}, 708, null, "myApp/app/reducers/status.js");
+}, 721, null, "myApp/app/reducers/status.js");
 __d(/* myApp/app/reducers/rules.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -81159,7 +83747,7 @@ function editRule() {
             return state;
     }
 }
-}, 709, null, "myApp/app/reducers/rules.js");
+}, 722, null, "myApp/app/reducers/rules.js");
 __d(/* myApp/app/reducers/stackNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -81196,7 +83784,7 @@ function nav() {
 }
 
 exports.default = nav;
-}, 710, null, "myApp/app/reducers/stackNavigator.js");
+}, 723, null, "myApp/app/reducers/stackNavigator.js");
 ;require(50);
-;require(711);
+;require(724);
 //# sourceMappingURL=index.map

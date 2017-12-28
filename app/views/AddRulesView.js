@@ -81,7 +81,7 @@ class AddRulesView extends Component {
                         label={'Email Address'}
                         iconClass={Icon}
                         iconName={'chevron-thin-left'}
-                        iconColor={'white'}
+                        iconColor={'red'}
                         // TextInput props
                         autoCapitalize={'none'}
                         autoCorrect={false}
