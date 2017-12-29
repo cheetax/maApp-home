@@ -23,6 +23,8 @@ import {
   ListView,
 } from 'react-native';
 
+import { MenuProvider } from 'react-native-popup-menu';
+
 import ItemRulesView from './ItemRulesView';
 
 
@@ -72,11 +74,7 @@ class RulesPage extends Component {
 
   _renderRow(item) {
     return <ItemRulesView key={item} keyVal={item} item={item} />
-    // return <View>
-    //   <Text>{item.minParam} </Text>
-    //   <Text>{item.maxParam} </Text>
-    //   <Text>{item.exp} </Text>
-    // </View>
+
   }
 
   _iconAdd() {
@@ -91,37 +89,41 @@ class RulesPage extends Component {
     //console.log('map', this.props.items);
 
     return (
-      <View >
-        <ListView dataSource={this.props.items}
-          renderRow={this._renderRow}
-          enableEmptySections={true}>
-        </ListView>
-        <ButtonIcon
-          raised
-          size={25}
-          name='md-add'
-          type='ionicon'
-          color='#ecf0f1'
-          onPress={() => this.props.navigation.dispatch({
-            type: 'ADD_RULES_VIEW',
-            //payload: {}
-          })}
-          iconStyle={
-            {
-              fontSize: 30,
-              color: '#fff'
+      <MenuProvider>
+        <View >
+
+          <ListView dataSource={this.props.items}
+            renderRow={this._renderRow}
+            enableEmptySections={true}>
+          </ListView>
+          <ButtonIcon
+            raised
+            size={25}
+            name='md-add'
+            type='ionicon'
+            color='#ecf0f1'
+            onPress={() => this.props.navigation.dispatch({
+              type: 'ADD_RULES_VIEW',
+              //payload: {}
+            })}
+            iconStyle={
+              {
+                fontSize: 30,
+                color: '#fff'
+              }
             }
-          }
-          containerStyle={
-            {
-              borderColor: 'grey',
-              borderWidth: 0,
-              backgroundColor: '#03A9F4',
-              alignSelf: 'center'
+            containerStyle={
+              {
+                borderColor: 'grey',
+                borderWidth: 0,
+                backgroundColor: '#03A9F4',
+                alignSelf: 'center'
+              }
             }
-          }
-        />        
-      </View>
+          />
+        </View>
+      </MenuProvider>
+
     );
   }
 }

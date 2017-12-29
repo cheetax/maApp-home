@@ -15,11 +15,28 @@ import {
   Card
 } from 'react-native-elements';
 
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+  MenuProvider,
+  renderers,
+} from 'react-native-popup-menu';
+
+import MenuButton from 'react-native-menu-button'
+
+
 //import mapStateToProps from "./ShellView";
 
 export default class ItemRulesView extends Component {
   render() {
     //console.log(this.props.keyVal)
+    menuGroup = [
+      { key: "0", value: "edit", text: "edit" },
+      { key: "1", value: "delete", text: "delete" },
+    ]
+
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
@@ -36,37 +53,23 @@ export default class ItemRulesView extends Component {
               <Text style={styles.textPrimary}>
                 Норма: {this.props.item.exp}
               </Text>
-            </View>
 
-            {/* <View style={styles.column1row2}>
-              <Image source={require('../img/dmg.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.force}
-              </Text>
-              <Image source={require('../img/hp.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.health}
-              </Text>
-              <Image source={require('../img/armor.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.armor}
-              </Text>
-            </View> */}
+              <Menu renderer={renderers.Popover} >
+                <MenuTrigger>
+                  <Icon
+                    name={'md-more'}
+                    size={18}
+                    style={{ color: 'red', marginLeft: 10 }} />                  
+                </MenuTrigger>
+                <MenuOptions>
+                  <MenuOption text='edit' />
+                  <MenuOption text='delete' />
+                </MenuOptions>
+              </Menu>
+
+
+            </View>
           </View>
-          {/* <View style={styles.column2} >
-            <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-ribbon-outline' size={20} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.expClan}
-              </Text>
-            </View>
-            <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-calendar-outline' size={20} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.dayOfClan}
-              </Text>
-            </View>
-          </View> */}
         </View>
       </Card>
     );
@@ -82,10 +85,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'stretch'
   },
-  listItem: {    
+  listItem: {
     flex: -1,
     flexDirection: 'row',
-    margin: 5,
+    marginVertical: 5,
     padding: 2,
     justifyContent: "space-between",
     alignItems: 'center',
@@ -129,11 +132,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor:'transparent'
+    backgroundColor: 'transparent'
   },
   column1row2: {
     flex: 1,
@@ -150,7 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
     justifyContent: 'space-between',
     alignItems: 'stretch',
     alignSelf: 'stretch'
@@ -172,6 +175,15 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: 'transparent'
   },
+  rightButton: {
+    width: 100,
+    height: 37,
+    position: 'absolute',
+    bottom: 8,
+    right: 2,
+    padding: 8
+  },
+
 
 });
 

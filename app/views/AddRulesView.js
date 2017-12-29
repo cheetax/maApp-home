@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { saveRules } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
-import { Sae } from 'react-native-textinput-effects';
+import TextField from 'react-native-md-textinput';
 //import { MKButton } from 'react-native-material-kit';
 
 import {
@@ -77,31 +77,32 @@ class AddRulesView extends Component {
         return (
             <View >
                 <Card containerStyle={styles.container}>
-                    <Sae
-                        label={'Email Address'}
-                        iconClass={Icon}
-                        iconName={'chevron-thin-left'}
-                        iconColor={'red'}
-                        // TextInput props
-                        autoCapitalize={'none'}
-                        autoCorrect={false}
-                    />
-
-                    <FormLabel>min Параметр</FormLabel>
-                    <FormInput
-                        keyboardType={'numeric'}
-                        onChangeText={(minParam) => this.setState({ minParam })}
-                        value={this.state.minParam} />
-                    <FormLabel>max Параметр</FormLabel>
-                    <FormInput
-                        keyboardType={'numeric'}
-                        onChangeText={(maxParam) => this.setState({ maxParam })}
-                        value={this.state.maxParam} />
-                    <FormLabel  >Значение</FormLabel>
-                    <FormInput
-                        keyboardType={'numeric'}
-                        onChangeText={(exp) => this.setState({ exp })}
-                        value={this.state.exp} />
+                    <View style={{ marginLeft: 10 }}>
+                        <TextField
+                            label={'min Параметр'}
+                            highlightColor={'#00BCD4'}
+                            keyboardType={'numeric'}
+                            onChangeText={(minParam) => this.state.minParam = minParam}
+                            value={this.state.minParam}
+                        //returnKeyType={'next'}                         
+                        />
+                        <TextField
+                            label={'max Параметр'}
+                            highlightColor={'#00BCD4'}
+                            keyboardType={'numeric'}
+                            onChangeText={(maxParam) => this.state.maxParam = maxParam}
+                            value={this.state.maxParam}
+                        //returnKeyType={'next'} 
+                        />
+                        <TextField
+                            label={'Значение'}
+                            highlightColor={'#00BCD4'}
+                            keyboardType={'numeric'}
+                            onChangeText={(exp) => this.state.exp = exp}
+                            value={this.state.exp}
+                        //returnKeyType={'next'} 
+                        />
+                    </View>
                 </Card>
 
                 <View style={styles.buttonPanel}>
