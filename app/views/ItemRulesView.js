@@ -54,7 +54,7 @@ export default class ItemRulesView extends Component {
                 Норма: {this.props.item.exp}
               </Text>
 
-              <Menu renderer={renderers.Popover} >
+              <Menu renderer={renderers.SlideInMen} >
                 <MenuTrigger>
                   <Icon
                     name={'md-more'}

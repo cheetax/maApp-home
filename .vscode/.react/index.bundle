@@ -83311,7 +83311,7 @@ var ItemRulesView = _wrapComponent('ItemRulesView')(function (_Component) {
               ),
               _react3.default.createElement(
                 _reactNativePopupMenu.Menu,
-                { renderer: _reactNativePopupMenu.renderers.Popover, __source: {
+                { renderer: _reactNativePopupMenu.renderers.SlideInMen, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 57
                   }
