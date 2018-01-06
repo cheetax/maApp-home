@@ -33,13 +33,13 @@ export const AppNavigator = StackNavigator(
       title: 'Battle of Wizards Assistans',
       headerStyle: {
         backgroundColor: '#03A9F4',
-        height: 40,
+        height: 56,
       },
       headerTitleStyle: {
-        fontSize: 18,
-        color: '#fff',
-        marginHorizontal: 0,
-        textAlign: 'center',
+        fontSize: 20,
+        color: '#fff',        
+        marginHorizontal: 24,
+        textAlign: 'left',
         alignSelf: 'stretch'
       },
     }

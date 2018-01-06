@@ -48,10 +48,70 @@ export function rules(state = initialRules, action) {
         case 'GET_CONTENT':
             //console.log('payload', action.payload);   
             newstate = action.payload.rules;
-            return { ... newstate || state };
+            return { ...newstate || state };
         case 'ADD_RULES':
-            newstate = {...state, Exp: state.Exp.concat([action.payload])};    
-            return { ... newstate || state };
+            switch (action.payload.index) {
+                case 0:
+                    newstate = { ...state, Gold: state.Gold.concat([action.payload.newRule]) };
+                    break;
+                case 1:
+                    newstate = { ...state, Exp: state.Exp.concat([action.payload.newRule]) };
+                    break;
+                case 2:
+                    newstate = { ...state, Crystals: state.Crystals.concat([action.payload.newRule]) };
+                    break;
+            }
+            return { ...newstate || state };
+        case 'EDIT_RULES':
+            var oldRule = action.payload.oldRule;
+            var newRule = action.payload.newRule;
+            switch (action.payload.index) {
+                case 0:
+                    newstate = { ...state, Gold: state.Gold.filter((value,index,array) => {
+                        return value.minParam !== oldRule.minParam || value.maxParam !== oldRule.maxParam || value.value !== oldRule.value ;
+                    }).concat([newRule]) };
+                    break;
+                case 1:
+                    newstate = { ...state, Exp: state.Exp.filter((value,index,array) => {
+
+                        return value.minParam !== oldRule.minParam || value.maxParam !== oldRule.maxParam || value.value !== oldRule.value ;
+                    }).concat([newRule]) };
+                    break;
+                case 2:
+                    newstate = { ...state, Crystals: state.Crystals.filter((value,index,array) => {
+                        return value.minParam !== oldRule.minParam || value.maxParam !== oldRule.maxParam || value.value !== oldRule.value ;
+                    }).concat([newRule]) };
+                    break;
+            }
+            return { ...newstate || state };
+        case 'DELETE_RULE':
+            switch (action.payload.index) {
+                case 0:
+                    rule = action.payload.item;
+                    newstate = {
+                        ...state, Gold: state.Gold.filter((value, index, array) => {
+                            return value !== rule
+                        })
+                    };
+                    break;
+                case 1:
+                    rule = action.payload.item;
+                    newstate = {
+                        ...state, Exp: state.Exp.filter((value, index, array) => {
+                            return value !== rule
+                        })
+                    };
+                    break;
+                case 2:
+                    rule = action.payload.item;
+                    newstate = {
+                        ...state, Crystals: state.Crystals.filter((value, index, array) => {
+                            return value !== rule
+                        })
+                    };
+                    break;
+            }
+            return { ...newstate }
         default:
             return state;
     }
@@ -62,8 +122,21 @@ export function rules(state = initialRules, action) {
 export function editRule(state = { gold: {}, exp: {}, crystals: {} }, action) {
     switch (action.type) {
         case 'ADD_RULES_VIEW':
-            return { gold: {}, exp: {minParam: '', maxParam: '', exp: ''}, crystals: {} };
+            return { gold: { minParam: '', maxParam: '', value: '' }, exp: { minParam: '', maxParam: '', value: '' }, crystals: { minParam: '', maxParam: '', value: '' } };
+        case 'EDIT_RULES_VIEW':
+            switch (action.payload.index) {
+                case 0:
+                    newstate = { gold: { ...action.payload.item }, exp: { minParam: '', maxParam: '', value: '' }, crystals: { minParam: '', maxParam: '', value: '' } };
+                    break;
+                case 1:
+                    newstate = { gold: { minParam: '', maxParam: '', value: '' }, exp: { ...action.payload.item }, crystals: { minParam: '', maxParam: '', value: '' } };
+                    break;
+                case 2:
+                    newstate = { gold: { minParam: '', maxParam: '', value: '' }, exp: { minParam: '', maxParam: '', value: '' }, crystals: { ...action.payload.item } };
+                    break;
+            }
+            return { ...newstate }
         default:
             return state;
-    }   
+    }
 }

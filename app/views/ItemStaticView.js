@@ -24,7 +24,7 @@ export default class ItemStaticView extends Component {
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
-          <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.exp)) ? styles.onImplement : styles.offImplement } />  
+          <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) ? styles.onImplement : styles.offImplement } />  
           <View style={styles.column1} >
             <View style={styles.nameView}>
               <Text style={styles.textPrimary}>
@@ -42,7 +42,7 @@ export default class ItemStaticView extends Component {
 
             <View style={styles.column1row2}>
               {/* <Icon style={styles.icon} name='ios-ribbon-outline' size={15} /> */}
-              <Text>Опыт: {Math.round(this.props.item.exp/1000)}К Норма: >{this.props.item.ruleExp.exp / 1000}K</Text>
+              <Text>Опыт: {Math.round(this.props.item.exp/1000)}К Норма: >{this.props.item.ruleExp.value / 1000}K</Text>
             </View>
           </View>
           <View style={styles.column2} >

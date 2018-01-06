@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { saveRules } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
-//import { MKButton } from 'react-native-material-kit';
+import RulesView from './RulesView';
+import MaterialTabs from 'react-native-material-tabs';
 
 import {
   Button,
@@ -14,6 +15,7 @@ import {
 
 import { Icon as ButtonIcon } from 'react-native-elements';
 
+
 import {
   AppRegistry,
   StyleSheet,
@@ -21,20 +23,18 @@ import {
   View,
   ActivityIndicator,
   ListView,
+  FlatList,
 } from 'react-native';
 
-import { MenuProvider } from 'react-native-popup-menu';
+//import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
 
 import ItemRulesView from './ItemRulesView';
 
 
 function mapStateToProps(state) {
-  //console.log('mapStateToProps', state);
-  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-
   return {
     nav: state.nav,
-    items: ds.cloneWithRows(state.rules.Exp),
+    //items: state.rules.Exp,
     rules: state.rules,
   }
 }
@@ -48,54 +48,73 @@ function mapDispatcherToProps(dispatch) {
 }
 
 class RulesPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedTab: 0,
+    };
+
+  }
+
   static navigationOptions = ({ navigation }) => ({
     title: 'Нормы',
     headerLeft: (<Icon
       name={'chevron-thin-left'}
-      size={18}
-      style={{ color: '#fff', marginLeft: 10 }}
+      size={20}
+      style={{ color: '#fff', marginLeft: 16 }}
       onPress={() => { navigation.goBack() }} />),
-    HeaderRight: (<Icon
-      name={'chevron-thin-left'}
-      size={18}
-      style={{ color: '#fff', marginRight: 10 }}
-      onPress={() => { navigation.goBack() }} />
 
-    ),
     headerTitleStyle: {
-      fontSize: 18,
+      fontSize: 20,
       color: '#fff',
-      marginLeft: -20,
-      textAlign: 'center',
+      marginLeft: 0,
+      textAlign: 'left',
       alignSelf: 'stretch'
     },
     //headerTitle: <Text>test</Text>
   });
 
-  _renderRow(item) {
-    return <ItemRulesView key={item} keyVal={item} item={item} />
+  setTab = (tab) => {
+    this.setState({ selectedTab: tab });
 
-  }
-
-  _iconAdd() {
-    return <Text style={styles.headerText} >+</Text>
-  }
-
-  onBtnSaveClick() {
-    return this.props.saveRules(this.props.rules);
-  }
+  }  
 
   render() {
     //console.log('map', this.props.items);
-
+    let items;
+    switch (this.state.selectedTab) {
+      case 0:
+        items = this.props.rules.Gold;
+        break;
+      case 1:
+        items = this.props.rules.Exp
+        break;
+      case 2:
+        items = this.props.rules.Crystals;
+        break;
+    }
+    let rulesView = <RulesView items={items} onPress={(type, item) => {
+     // console.log(type);
+      this.props.dispatch({
+        type: type,
+        payload: {index: this.state.selectedTab, item}
+      })
+    }} />
     return (
-      <MenuProvider>
-        <View >
+      <View style={styles.container} >
+        <MaterialTabs
+          items={['Gold', 'Exp', 'Crystal']}
+          selectedIndex={this.state.selectedTab}
+          onChange={this.setTab.bind(this)}
+          barColor="#03A9F4"
+          indicatorColor="#fffe94"
+          activeTextColor="white"
+        />
+        <View style={{ flex: 1, }} >
+          {rulesView}
+        </View>
 
-          <ListView dataSource={this.props.items}
-            renderRow={this._renderRow}
-            enableEmptySections={true}>
-          </ListView>
+        <View style={styles.footer} >
           <ButtonIcon
             raised
             size={25}
@@ -104,7 +123,7 @@ class RulesPage extends Component {
             color='#ecf0f1'
             onPress={() => this.props.navigation.dispatch({
               type: 'ADD_RULES_VIEW',
-              //payload: {}
+              payload: { index: this.state.selectedTab }
             })}
             iconStyle={
               {
@@ -122,8 +141,9 @@ class RulesPage extends Component {
             }
           />
         </View>
-      </MenuProvider>
 
+
+      </View>
     );
   }
 }
@@ -132,8 +152,9 @@ export default connect(mapStateToProps)(RulesPage);
 
 const styles = StyleSheet.create({
   container: {
-    flex: -1,
-    backgroundColor: '#ecf0f1',
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: '#fff',
     //justifyContent: 'center',
   },
   headerText: {
@@ -156,11 +177,8 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'column',
     justifyContent: 'center',
-    //height:40,    
-    borderTopWidth: 0.5,
-    borderColor: 'grey',
-    backgroundColor: 'lightgrey',
-    alignItems: 'center'
+    alignItems: 'center',
+    //alignSelf:'flex-end'
   },
   buttonRes: {
     width: 85,

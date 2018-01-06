@@ -29,6 +29,7 @@ function mapStateToProps(state) {
     //console.log('mapStateToProps', state);
     return {
         nav: state.nav,
+        ruleType: state.nav.routes[state.nav.index].params,
         rule: state.editRule,
     }
 }
@@ -44,20 +45,52 @@ function mapDispatcherToProps(dispatch) {
 class AddRulesView extends Component {
     constructor(props) {
         super(props);
-        this.state = props.rule.exp;
+        // props.navigation.setParams({btnSave: this.onBtnSaveClick})
+        this.state = {
+            oldRule: {},
+            newRule: {}
+        }
+        //this.state.oldRule = {};
+        switch (props.ruleType.index) {
+            case 0:
+                this.state.oldRule = props.rule.gold;
+                this.title = 'Золото';
+                break;
+            case 1:
+                this.state.oldRule = props.rule.exp;
+                this.title = 'Опыт';
+                break;
+            case 2:
+                this.state.oldRule = props.rule.crystals;
+                this.title = 'Кристаллы';
+                break;
+        }
+        this.state.newRule = {...this.state.oldRule};
+
     }
     static navigationOptions = ({ navigation }) => ({
-        title: 'Норма',
+        title: (navigation.state.params.type === 'add') ? 'Новая норма' : 'Редактирование нормы',
         headerLeft: (<Icon
-            name={'chevron-thin-left'}
-            size={18}
-            style={{ color: '#fff', marginLeft: 10 }}
+            name={'cross'}
+            size={20}
+            style={{ color: '#fff', marginLeft: 16 }}
             onPress={() => { navigation.goBack() }} />),
+        headerRight: (<Button
+            title='Записать'
+            //borderRadius={20}
+            backgroundColor='transparent'
+            //containerViewStyle={{borderRadius: 20}}
+            buttonStyle={styles.buttonRes}
+            textStyle={styles.buttonTextStyle}
+            onPress={navigation.state.params.btnSave ? navigation.state.params.btnSave : () => null}
+        />
+
+        ),
         headerTitleStyle: {
-            fontSize: 18,
+            fontSize: 20,
             color: '#fff',
-            marginLeft: -20,
-            textAlign: 'center',
+            marginLeft: 0,
+            textAlign: 'left',
             alignSelf: 'stretch'
         },
         //headerTitle: <Text>test</Text>
@@ -65,59 +98,52 @@ class AddRulesView extends Component {
 
     onBtnSaveClick() {
         //this.props.rules.Exp.push(this.state);
+        this.props.navigation.goBack();
         return this.props.dispatch({
-            type: 'ADD_RULES',
-            payload: this.state,
+            type: (this.props.ruleType.type === 'add') ? 'ADD_RULES' : 'EDIT_RULES',
+            payload: { index: this.props.ruleType.index, oldRule: this.state.oldRule, newRule: this.state.newRule },
         });
+    }
+
+    componentDidMount() {
+        this.props.navigation.setParams({ btnSave: this.onBtnSaveClick.bind(this) })
     }
 
     render() {
         //console.log('map', this.props.items);
 
         return (
-            <View >
-                <Card containerStyle={styles.container}>
-                    <View style={{ marginLeft: 10 }}>
-                        <TextField
-                            label={'min Параметр'}
-                            highlightColor={'#00BCD4'}
-                            keyboardType={'numeric'}
-                            onChangeText={(minParam) => this.state.minParam = minParam}
-                            value={this.state.minParam}
-                        //returnKeyType={'next'}                         
-                        />
-                        <TextField
-                            label={'max Параметр'}
-                            highlightColor={'#00BCD4'}
-                            keyboardType={'numeric'}
-                            onChangeText={(maxParam) => this.state.maxParam = maxParam}
-                            value={this.state.maxParam}
-                        //returnKeyType={'next'} 
-                        />
-                        <TextField
-                            label={'Значение'}
-                            highlightColor={'#00BCD4'}
-                            keyboardType={'numeric'}
-                            onChangeText={(exp) => this.state.exp = exp}
-                            value={this.state.exp}
-                        //returnKeyType={'next'} 
-                        />
-                    </View>
-                </Card>
-
-                <View style={styles.buttonPanel}>
-
-                    <Button
-                        title='Записать'
-                        //borderRadius={20}
-                        //backgroundColor='#ecf0f1'
-                        //containerViewStyle={{borderRadius: 20}}
-                        buttonStyle={styles.buttonRes}
-                        textStyle={styles.buttonTextStyle}
-                        onPress={this.onBtnSaveClick.bind(this)}
+            <View style={styles.container}>
+                <Text style={styles.headerText} >{this.title}</Text>
+                <View style={{ marginLeft: 16, }}>
+                    <TextField
+                        label={'min Параметр'}
+                        height={52}
+                        highlightColor={'#00BCD4'}
+                        keyboardType={'numeric'}
+                        onChangeText={(minParam) => this.state.newRule.minParam = minParam}
+                        value={this.state.newRule.minParam}
+                    //returnKeyType={'next'}                         
                     />
-
-                </View >
+                    <TextField
+                        label={'max Параметр'}
+                        height={52}
+                        highlightColor={'#00BCD4'}
+                        keyboardType={'numeric'}
+                        onChangeText={(maxParam) => this.state.newRule.maxParam = maxParam}
+                        value={this.state.newRule.maxParam}
+                    //returnKeyType={'next'} 
+                    />
+                    <TextField
+                        label={'Значение'}
+                        height={52}
+                        highlightColor={'#00BCD4'}
+                        keyboardType={'numeric'}
+                        onChangeText={(value) => this.state.newRule.value = value}
+                        value={this.state.newRule.value}
+                    //returnKeyType={'next'} 
+                    />
+                </View>
             </View>
         );
     }
@@ -127,17 +153,15 @@ export default connect(mapStateToProps)(AddRulesView);
 
 const styles = StyleSheet.create({
     container: {
-        flex: -1,
-        backgroundColor: '#ecf0f1',
+        flex: 1,
+        backgroundColor: '#fff',
         padding: 0,
-        //justifyContent: 'center',
     },
     headerText: {
-        fontSize: 18,
-        color: '#fff',
-        textAlign: 'center',
-        alignItems: 'center',
-        margin: 5,
+        fontSize: 20,
+        textAlign: 'left',
+        marginLeft: 16,
+        marginTop: 24,
     },
     buttonPanel: {
         flexDirection: 'row',
@@ -159,21 +183,23 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     buttonRes: {
-        width: 85,
-        height: 35,
-        flex: 0,
+        //width: 85,
+        //height: 35,
+        flex: 1,
         padding: 0,
-        borderColor: 'grey',
-        borderWidth: 1,
+        //borderColor: 'grey',
+        //borderWidth: 1,
         //padding: 0,
         alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-        backgroundColor: '#ecf0f1',
-        margin: 5,
+        alignSelf: 'flex-end',
+        //borderRadius: 20,
+        backgroundColor: 'transparent',
+        marginRight: 16,
     },
     buttonTextStyle: {
-        color: 'grey',
+        color: '#fff',
+        fontSize: 16,
+        textAlign: 'right',
     },
     buttonCircle: {
         width: 35,

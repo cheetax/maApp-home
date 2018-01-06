@@ -15,63 +15,40 @@ import {
   Card
 } from 'react-native-elements';
 
-import {
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger,
-  MenuProvider,
-  renderers,
-} from 'react-native-popup-menu';
-
-import MenuButton from 'react-native-menu-button'
-
+//import MenuButton from 'react-native-menu-button'
+import { MenuContext } from './MenuContext';
 
 //import mapStateToProps from "./ShellView";
 
 export default class ItemRulesView extends Component {
   render() {
     //console.log(this.props.keyVal)
-    menuGroup = [
-      { key: "0", value: "edit", text: "edit" },
-      { key: "1", value: "delete", text: "delete" },
-    ]
-
     return (
-      <Card containerStyle={styles.container} key={this.props.keyVal}>
-        <View style={styles.listItem}>
-          <View style={styles.column1} >
-            <View style={styles.nameView}>
-              <Text style={styles.textPrimary}>
-                Min: {this.props.item.minParam}
-              </Text>
-              <Text>  </Text>
-              <Text style={styles.textPrimary}>
-                Max: {this.props.item.maxParam}
-              </Text>
-              <Text>  </Text>
-              <Text style={styles.textPrimary}>
-                Норма: {this.props.item.exp}
-              </Text>
-
-              <Menu renderer={renderers.SlideInMen} >
-                <MenuTrigger>
-                  <Icon
-                    name={'md-more'}
-                    size={18}
-                    style={{ color: 'red', marginLeft: 10 }} />                  
-                </MenuTrigger>
-                <MenuOptions>
-                  <MenuOption text='edit' />
-                  <MenuOption text='delete' />
-                </MenuOptions>
-              </Menu>
+      // <Card containerStyle={styles.container} >
+      <View style={styles.listItem}>
+        <View style={styles.column1} >
+          <View style={styles.nameView}>
+            <Text style={styles.textPrimary}>
+              Min: {this.props.item.minParam}
+            </Text>
+            <Text>  </Text>
+            <Text style={styles.textPrimary}>
+              Max: {this.props.item.maxParam}
+            </Text>
+            <Text>  </Text>
+            <Text style={styles.textPrimary}>
+              Норма: {this.props.item.value}
+            </Text>
 
 
-            </View>
           </View>
+          <View style={{ justifyContent: 'center' }}>
+            <MenuContext onPress={this.props.onPress} item={this.props.item} />
+          </View>
+
         </View>
-      </Card>
+      </View>
+      // </Card>
     );
   }
 }
@@ -86,10 +63,13 @@ const styles = StyleSheet.create({
     alignItems: 'stretch'
   },
   listItem: {
-    flex: -1,
+    flex: 1,
+    height: 48,
+    //borderBottomWidth: 0.5,
+    //borderColor: '#c9c9c9',
+    //borderColor: 'red',
     flexDirection: 'row',
-    marginVertical: 5,
-    padding: 2,
+    padding: 0,
     justifyContent: "space-between",
     alignItems: 'center',
     alignSelf: 'stretch'
@@ -103,7 +83,7 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   textPrimary: {
-    fontSize: 18,
+    fontSize: 16,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
@@ -151,9 +131,10 @@ const styles = StyleSheet.create({
   },
   column1: {
     flex: 1,
-    flexDirection: 'column',
-    margin: 0,
-    marginLeft: 0,
+    flexDirection: 'row',
+
+    marginVertical: 0,
+    marginHorizontal: 16,
     justifyContent: 'space-between',
     alignItems: 'stretch',
     alignSelf: 'stretch'

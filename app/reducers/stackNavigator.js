@@ -1,6 +1,6 @@
 import { addNavigationHelpers } from 'react-navigation';
 import { StackNavigator, NavigationActions } from 'react-navigation';
-import {AppNavigator} from '../views/RootPage';
+import { AppNavigator } from '../views/RootPage';
 
 //const AppNavigator = StackNavigator(AppRouteConfigs);
 
@@ -16,24 +16,22 @@ function nav(state = initialNavState, action) {
   switch (action.type) {
     case 'NAV_RULES_PAGE':
       nextState = AppNavigator.router.getStateForAction(
-        NavigationActions.navigate({routeName: 'Rules'}),
+        NavigationActions.navigate({ routeName: 'Rules' }),
         state
       );
       break;
-
-    // case 'Logout':
-    //   nextState = AppNavigator.router.getStateForAction(
-    //     NavigationActions.navigate({ routeName: 'Login' }),
-    //     state
-    //   );
-    //   break;
     case 'ADD_RULES_VIEW':
-    nextState = AppNavigator.router.getStateForAction(
-      NavigationActions.navigate({routeName: 'AddRules'}),
-      state
-    );
-    break;
-
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } }),
+        state
+      );
+      break;
+    case 'EDIT_RULES_VIEW':
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'edit' } }),
+        state
+      );
+      break;
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;
@@ -45,16 +43,3 @@ function nav(state = initialNavState, action) {
 }
 
 export default nav;
-// const initialAuthState = { isLoggedIn: false };
-
-// function auth(state = initialAuthState, action) {
-//   switch (action.type) {
-//     case 'Login':
-//       return { ...state, isLoggedIn: true };
-//     case 'Logout':
-//       return { ...state, isLoggedIn: false };
-//     default:
-//       return state;
-//   }
-
-// }
