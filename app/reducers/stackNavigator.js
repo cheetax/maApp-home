@@ -10,9 +10,11 @@ const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const initialNavState = AppNavigator.router.getStateForAction(
   tempNavState
 );
+let inAction = false;
 
 function nav(state = initialNavState, action) {
   let nextState;
+  //
   switch (action.type) {
     case 'NAV_RULES_PAGE':
       nextState = AppNavigator.router.getStateForAction(
@@ -32,6 +34,11 @@ function nav(state = initialNavState, action) {
         state
       );
       break;
+    // case "CHANGE_STATUS":
+    //   inAction = !inAction;
+    //   nextState = AppNavigator.router.getStateForAction({ }, state);
+    //   nextState.router
+    //   break;
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;

@@ -9,18 +9,22 @@ import { getContent, saveRules } from './actions/actionUsers';
 import React, { Component } from 'react';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-let init = () => new Promise((succes, fail) => {
-  store.dispatch(getContent());
-  succes();
-}).then(() => {
-  store.subscribe(() => {
-    saveRules(store.getState().rules)
-  })
-});
+// let init = () => new Promise((succes, fail) => {
+//   store.dispatch(getContent());
+//   succes();
+// }).then(() => {
+//   store.subscribe(() => {
+//     saveRules(store.getState().rules)
+//   })
+// });
 
-init();
+//init();
 
 export default class App extends Component {
+  // constructor(props){
+  //   super(props)
+  //   //init();
+  // }
   static navigationOptions = {
     title: 'Battle of Wizards Assistans',
     headerStyle: {
@@ -39,6 +43,10 @@ export default class App extends Component {
 
     },
 
+  }
+
+  componentWillMount(){
+    store.dispatch(getContent())
   }
   render() {
     // store.nav = this.props;

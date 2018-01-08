@@ -26,9 +26,13 @@ export const getContent = (forceUpdate) => dispatch => {
 let previousRules;
 
 export const saveRules = (currentRules) => {
-    
+    if (!previousRules) {previousRules = currentRules}
     if (previousRules !== currentRules) {
         saveRulesToBase(currentRules);
     }
     previousRules = currentRules;
+}
+
+const _compareRules = (rulesA, rulesB)  => {
+    return (rulesA.minParam === rulesB.minParam || rulesA.maxParam === rulesB.maxParam || rulesA.value === rulesB.value);
 }

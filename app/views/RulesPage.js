@@ -56,6 +56,10 @@ class RulesPage extends Component {
 
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    saveRules(nextProps.rules);
+  }
+
   static navigationOptions = ({ navigation }) => ({
     title: 'Нормы',
     headerLeft: (<Icon

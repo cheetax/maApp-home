@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { addNavigationHelpers, StackNavigator } from 'react-navigation';
+import { addNavigationHelpers, StackNavigator, DrawerNavigator } from 'react-navigation';
 import {
   AppRegistry,
   StyleSheet,
@@ -21,23 +21,38 @@ function mapStateToProps(state) {
   }
 }
 
-export const AppNavigator = StackNavigator(
+const DrawerMenu = DrawerNavigator(
   {
     Home: { screen: ShellPage, },
     //Shell: { screen: ShellPage},
     Rules: { screen: RulesPage, },
-    AddRules: { screen: AddRulesView, },
+    //AddRules: { screen: AddRulesView, },
+  },
+  {
+    
+  }
+)
+
+
+export const AppNavigator = StackNavigator(
+  //export const AppNavigator = DrawerNavigator(
+  {
+    Home: {screen: DrawerMenu, },
+    //Home: { screen: ShellPage, },
+    //Shell: { screen: ShellPage},
+     Rules: { screen: RulesPage, },
+    // AddRules: { screen: AddRulesView, },
   },
   {
     navigationOptions: {
-      title: 'Battle of Wizards Assistans',
+      drawerLabel: 'Home',
       headerStyle: {
         backgroundColor: '#03A9F4',
         height: 56,
       },
       headerTitleStyle: {
         fontSize: 20,
-        color: '#fff',        
+        color: '#fff',
         marginHorizontal: 24,
         textAlign: 'left',
         alignSelf: 'stretch'

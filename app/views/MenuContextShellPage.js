@@ -21,7 +21,7 @@ import {
     ListView,
 } from 'react-native';
 
-export class MenuContext extends Component {
+export class MenuContextShellPage extends Component {
     menu = null;
     setMenuRef = ref => {
         this.menu = ref;
@@ -36,7 +36,7 @@ export class MenuContext extends Component {
                         name={'dots-three-vertical'}
                         size={18}
                         onPress={() => this.menu.show()}
-                        style={{ color: 'red', marginLeft: 10 }} />}
+                        style={{marginLeft: 10 }} />}
             // style={{ backgroundColor: 'red' }}
             >
                 <MenuItem onPress={() => {

@@ -8,7 +8,7 @@ export default function actionStatus(state = initialStatus, action) {
     switch (action.type) {
         case "CHANGE_STATUS":
             state.inAction = !state.inAction;
-            state.nom += 1;
+            //state.nom += 1;
             //console.log("actionStatus", state.inAction);
             //break;
             return { ...state }; 

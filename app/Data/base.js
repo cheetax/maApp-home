@@ -30,5 +30,9 @@ export const getDataBase = (forceUpdate = false) => new Promise(async (succes, f
 })
 
 export const saveRulesToBase = async (data) => {
-    await AsyncStorage.setItem('rules', JSON.stringify(data))
+    await AsyncStorage.setItem('rules', JSON.stringify(data)).then(async () => {
+        await AsyncStorage.getItem('rules').then((data) => {
+            rules = JSON.parse(data);
+        })
+    })
 };

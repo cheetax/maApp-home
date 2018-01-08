@@ -16,7 +16,7 @@ import {
 } from 'react-native-elements';
 
 //import MenuButton from 'react-native-menu-button'
-import { MenuContext } from './MenuContext';
+import { MenuContextRulesItem } from './MenuContextRulesItem';
 
 //import mapStateToProps from "./ShellView";
 
@@ -43,7 +43,7 @@ export default class ItemRulesView extends Component {
 
           </View>
           <View style={{ justifyContent: 'center' }}>
-            <MenuContext onPress={this.props.onPress} item={this.props.item} />
+            <MenuContextRulesItem onPress={this.props.onPress} item={this.props.item} />
           </View>
 
         </View>

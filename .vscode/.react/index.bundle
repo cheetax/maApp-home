@@ -51567,18 +51567,6 @@ function _wrapComponent(id) {
 }
 
 var store = (0, _redux.createStore)(_index4.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-var init = function init() {
-  return new Promise(function (succes, fail) {
-    store.dispatch((0, _actionUsers.getContent)());
-    succes();
-  }).then(function () {
-    store.subscribe(function () {
-      (0, _actionUsers.saveRules)(store.getState().rules);
-    });
-  });
-};
-
-init();
 
 var App = _wrapComponent("App")((_temp = _class = function (_Component) {
   _inherits(App, _Component);
@@ -51590,19 +51578,24 @@ var App = _wrapComponent("App")((_temp = _class = function (_Component) {
   }
 
   _createClass(App, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      store.dispatch((0, _actionUsers.getContent)());
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react3.default.createElement(
         _reactRedux.Provider,
         { store: store, __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 54
           }
         },
         _react3.default.createElement(_RootPage2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 55
           }
         })
       );
@@ -51673,14 +51666,19 @@ function mapStateToProps(state) {
   };
 }
 
-var AppNavigator = exports.AppNavigator = (0, _reactNavigation.StackNavigator)({
+var DrawerMenu = (0, _reactNavigation.DrawerNavigator)({
   Home: { screen: _ShellPage2.default },
 
-  Rules: { screen: _RulesPage2.default },
-  AddRules: { screen: _AddRulesView2.default }
+  Rules: { screen: _RulesPage2.default }
+}, {});
+
+var AppNavigator = exports.AppNavigator = (0, _reactNavigation.StackNavigator)({
+  Home: { screen: DrawerMenu },
+
+  Rules: { screen: _RulesPage2.default }
 }, {
   navigationOptions: {
-    title: 'Battle of Wizards Assistans',
+    drawerLabel: 'Home',
     headerStyle: {
       backgroundColor: '#03A9F4',
       height: 56
@@ -51700,7 +51698,7 @@ var RootPage = function RootPage(_ref) {
       nav = _ref.nav;
   return _react2.default.createElement(AppNavigator, { navigation: (0, _reactNavigation.addNavigationHelpers)({ dispatch: dispatch, state: nav }), __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 65
     }
   });
 };
@@ -64381,15 +64379,21 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ShellPage.js";
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class,
+    _temp,
+    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ShellPage.js";
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
 var _actionUsers = require(628                     ); // 628 = ../actions/actionUsers
 
 var _reactNativeElements = require(636                    ); // 636 = react-native-elements
+
+var _Entypo = require(579                               ); // 579 = react-native-vector-icons/Entypo
+
+var _Entypo2 = _interopRequireDefault(_Entypo);
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -64451,13 +64455,16 @@ function mapDispatcherToProps(dispatch) {
   };
 }
 
-var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
+var ShellPage = _wrapComponent("ShellPage")((_temp = _class = function (_Component) {
   _inherits(ShellPage, _Component);
 
-  function ShellPage() {
+  function ShellPage(props) {
     _classCallCheck(this, ShellPage);
 
-    return _possibleConstructorReturn(this, (ShellPage.__proto__ || Object.getPrototypeOf(ShellPage)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (ShellPage.__proto__ || Object.getPrototypeOf(ShellPage)).call(this, props));
+
+    _this.state = { inAction: false };
+    return _this;
   }
 
   _createClass(ShellPage, [{
@@ -64466,42 +64473,62 @@ var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
       return this.props.getContent(true);
     }
   }, {
+    key: "shouldComponentUpdate",
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      console.log();
+      return true;
+    }
+  }, {
+    key: "componentWillUpdate",
+    value: function componentWillUpdate(nextProps, nextState) {
+      var _this2 = this;
+
+      if (this.props.status.inAction !== this.state.inAction) {
+        this.setState({
+          inAction: this.props.status.inAction
+        }, function () {
+          return _this2.props.navigation.setParams({ inAction: _this2.state.inAction });
+        });
+      }
+    }
+  }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.props.navigation.setParams({ btnRes: this.onBtnResClick.bind(this), inAction: this.state.inAction });
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var content;
       if (!this.props.status.selectedPage) {
         content = _react3.default.createElement(_ClanView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 93
           }
         });
       } else {
         content = _react3.default.createElement(_StatisticView2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 96
           }
         });
       }
-
       return _react3.default.createElement(
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 99
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.buttonPanel, __source: {
               fileName: _jsxFileName,
-              lineNumber: 78
+              lineNumber: 100
             }
           },
           _react3.default.createElement(_reactNativeElements.Button, {
@@ -64509,25 +64536,13 @@ var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
             buttonStyle: styles.buttonRes,
             textStyle: styles.buttonTextStyle,
             onPress: function onPress() {
-              return _this2.props.navigation.dispatch({
+              return _this3.props.navigation.dispatch({
                 type: 'NAV_RULES_PAGE'
               });
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79
-            }
-          }),
-          _react3.default.createElement(_reactNativeElements.Button, {
-            buttonStyle: styles.buttonRes,
-            textStyle: styles.buttonTextStyle,
-            onPress: this.onBtnResClick.bind(this),
-            title: "\u041E\u0431\u043D",
-            loading: this.props.status.inAction,
-            disabled: this.props.status.inAction,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 89
+              lineNumber: 101
             }
           })
         ),
@@ -64536,7 +64551,7 @@ var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
           _reactNative.View,
           { style: styles.footer, __source: {
               fileName: _jsxFileName,
-              lineNumber: 100
+              lineNumber: 112
             }
           },
           _react3.default.createElement(_ButtonGroup2.default, {
@@ -64544,7 +64559,7 @@ var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
             selectedIndex: this.props.status.selectedPage,
             buttons: ['Клан', 'Статистика'], __source: {
               fileName: _jsxFileName,
-              lineNumber: 101
+              lineNumber: 113
             }
           })
         )
@@ -64553,7 +64568,35 @@ var ShellPage = _wrapComponent("ShellPage")(function (_Component) {
   }]);
 
   return ShellPage;
-}(_react2.Component));
+}(_react2.Component), _class.navigationOptions = function (_ref) {
+  var navigation = _ref.navigation;
+  var _navigation$state$par = navigation.state.params,
+      params = _navigation$state$par === undefined ? {} : _navigation$state$par;
+
+  var headerRight = _react3.default.createElement(_Entypo2.default, {
+    name: 'cw',
+    size: 24,
+    style: { color: '#fff', marginRight: 16 },
+    onPress: params.btnRes ? params.btnRes : function () {
+      return null;
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    }
+  });
+  if (params.inAction) {
+    headerRight = _react3.default.createElement(_reactNative.ActivityIndicator, { size: 24, color: "#fff", style: { marginRight: 16 }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      }
+    });
+  }
+  return {
+    headerTitle: 'Battle of Wizards Assistans',
+    headerRight: headerRight
+  };
+}, _temp));
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatcherToProps)(ShellPage);
 
@@ -64659,11 +64702,17 @@ var getContent = exports.getContent = function getContent(forceUpdate) {
 var previousRules = void 0;
 
 var saveRules = exports.saveRules = function saveRules(currentRules) {
-
+    if (!previousRules) {
+        previousRules = currentRules;
+    }
     if (previousRules !== currentRules) {
         (0, _base.saveRulesToBase)(currentRules);
     }
     previousRules = currentRules;
+};
+
+var _compareRules = function _compareRules(rulesA, rulesB) {
+    return rulesA.minParam === rulesB.minParam || rulesA.maxParam === rulesB.maxParam || rulesA.value === rulesB.value;
 };
 }, 628, null, "myApp/app/actions/actionUsers.js");
 __d(/* myApp/app/Data/base.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
@@ -64731,16 +64780,32 @@ var getDataBase = exports.getDataBase = function getDataBase() {
 };
 
 var saveRulesToBase = exports.saveRulesToBase = function saveRulesToBase(data) {
-    return regeneratorRuntime.async(function saveRulesToBase$(_context2) {
+    return regeneratorRuntime.async(function saveRulesToBase$(_context3) {
         while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
                 case 0:
-                    _context2.next = 2;
-                    return regeneratorRuntime.awrap(_reactNative.AsyncStorage.setItem('rules', JSON.stringify(data)));
+                    _context3.next = 2;
+                    return regeneratorRuntime.awrap(_reactNative.AsyncStorage.setItem('rules', JSON.stringify(data)).then(function _callee2() {
+                        return regeneratorRuntime.async(function _callee2$(_context2) {
+                            while (1) {
+                                switch (_context2.prev = _context2.next) {
+                                    case 0:
+                                        _context2.next = 2;
+                                        return regeneratorRuntime.awrap(_reactNative.AsyncStorage.getItem('rules').then(function (data) {
+                                            rules = JSON.parse(data);
+                                        }));
+
+                                    case 2:
+                                    case "end":
+                                        return _context2.stop();
+                                }
+                            }
+                        }, null, _this);
+                    }));
 
                 case 2:
                 case "end":
-                    return _context2.stop();
+                    return _context3.stop();
             }
         }
     }, null, _this);
@@ -80266,6 +80331,11 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
   }
 
   _createClass(RulesPage, [{
+    key: "componentWillUpdate",
+    value: function componentWillUpdate(nextProps, nextState) {
+      (0, _actionUsers.saveRules)(nextProps.rules);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -80283,21 +80353,20 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
           break;
       }
       var rulesView = _react3.default.createElement(_RulesView2.default, { items: items, onPress: function onPress(type, item) {
-          console.log(type);
           _this2.props.dispatch({
             type: type,
             payload: { index: _this2.state.selectedTab, item: item }
           });
         }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 100
         }
       });
       return _react3.default.createElement(
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 106
+            lineNumber: 108
           }
         },
         _react3.default.createElement(_reactNativeMaterialTabs2.default, {
@@ -80309,14 +80378,14 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
           activeTextColor: "white",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 107
+            lineNumber: 109
           }
         }),
         _react3.default.createElement(
           _reactNative.View,
           { style: { flex: 1 }, __source: {
               fileName: _jsxFileName,
-              lineNumber: 115
+              lineNumber: 117
             }
           },
           rulesView
@@ -80325,7 +80394,7 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
           _reactNative.View,
           { style: styles.footer, __source: {
               fileName: _jsxFileName,
-              lineNumber: 119
+              lineNumber: 121
             }
           },
           _react3.default.createElement(_reactNativeElements.Icon, {
@@ -80352,7 +80421,7 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 120
+              lineNumber: 122
             }
           })
         )
@@ -80373,7 +80442,7 @@ var RulesPage = _wrapComponent("RulesPage")((_temp = _class = function (_Compone
         navigation.goBack();
       }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 65
       }
     }),
 
@@ -80716,7 +80785,7 @@ var _reactNative = require(12            ); // 12 = react-native
 
 var _reactNativeElements = require(636                    ); // 636 = react-native-elements
 
-var _MenuContext = require(705            ); // 705 = ./MenuContext
+var _MenuContextRulesItem = require(795                     ); // 795 = ./MenuContextRulesItem
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -80836,7 +80905,7 @@ var ItemRulesView = _wrapComponent('ItemRulesView')(function (_Component) {
                 lineNumber: 45
               }
             },
-            _react3.default.createElement(_MenuContext.MenuContext, { onPress: this.props.onPress, item: this.props.item, __source: {
+            _react3.default.createElement(_MenuContextRulesItem.MenuContextRulesItem, { onPress: this.props.onPress, item: this.props.item, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 46
               }
@@ -80965,10 +81034,10 @@ var styles = _reactNative.StyleSheet.create({
 
 });
 }, 704, null, "myApp/app/views/ItemRulesView.js");
-__d(/* myApp/app/views/MenuContext.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+__d(/* myApp/app/views/MenuContextRulesItem.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MenuContext = undefined;
+exports.MenuContextRulesItem = undefined;
 
 var _react2 = require(35     ); // 35 = react
 
@@ -80978,7 +81047,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MenuContext.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MenuContextRulesItem.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -81011,13 +81080,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _components = {
-    MenuContext: {
-        displayName: "MenuContext"
+    MenuContextRulesItem: {
+        displayName: "MenuContextRulesItem"
     }
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/MenuContext.js",
+    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/MenuContextRulesItem.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -81029,26 +81098,26 @@ function _wrapComponent(id) {
     };
 }
 
-var MenuContext = exports.MenuContext = _wrapComponent("MenuContext")(function (_Component) {
-    _inherits(MenuContext, _Component);
+var MenuContextRulesItem = exports.MenuContextRulesItem = _wrapComponent("MenuContextRulesItem")(function (_Component) {
+    _inherits(MenuContextRulesItem, _Component);
 
-    function MenuContext() {
+    function MenuContextRulesItem() {
         var _ref;
 
         var _temp, _this, _ret;
 
-        _classCallCheck(this, MenuContext);
+        _classCallCheck(this, MenuContextRulesItem);
 
         for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MenuContext.__proto__ || Object.getPrototypeOf(MenuContext)).call.apply(_ref, [this].concat(args))), _this), _this.menu = null, _this.setMenuRef = function (ref) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MenuContextRulesItem.__proto__ || Object.getPrototypeOf(MenuContextRulesItem)).call.apply(_ref, [this].concat(args))), _this), _this.menu = null, _this.setMenuRef = function (ref) {
             _this.menu = ref;
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    _createClass(MenuContext, [{
+    _createClass(MenuContextRulesItem, [{
         key: "render",
         value: function render() {
             var _this2 = this;
@@ -81063,7 +81132,7 @@ var MenuContext = exports.MenuContext = _wrapComponent("MenuContext")(function (
                         onPress: function onPress() {
                             return _this2.menu.show();
                         },
-                        style: { color: 'red', marginLeft: 10 }, __source: {
+                        style: { marginLeft: 10 }, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 35
                         }
@@ -81101,9 +81170,9 @@ var MenuContext = exports.MenuContext = _wrapComponent("MenuContext")(function (
         }
     }]);
 
-    return MenuContext;
+    return MenuContextRulesItem;
 }(_react2.Component));
-}, 705, null, "myApp/app/views/MenuContext.js");
+}, 795, null, "myApp/app/views/MenuContextRulesItem.js");
 __d(/* react-native-md-textinput/lib/TextField.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -81312,9 +81381,8 @@ TextField.defaultProps = {
 
 var styles = _reactNative.StyleSheet.create({
   wrapper: {
-    height: 72,
     paddingTop: 30,
-    paddingBottom: 7,
+    paddingBottom: 8,
     position: 'relative'
   },
   denseWrapper: {
@@ -81325,8 +81393,7 @@ var styles = _reactNative.StyleSheet.create({
   },
   textInput: {
     fontSize: 16,
-    height: 34,
-    lineHeight: 34
+    paddingVertical: 4
   },
   denseTextInput: {
     fontSize: 13,
@@ -81537,7 +81604,7 @@ var FloatingLabel = _wrapComponent("FloatingLabel")(function (_Component) {
       _this.fontSmall = 13;
     } else {
       _this.posTop = 16;
-      _this.posBottom = 37;
+      _this.posBottom = 38;
       _this.fontLarge = 16;
       _this.fontSmall = 12;
     }
@@ -81621,6 +81688,7 @@ var styles = _reactNative.StyleSheet.create({
   labelText: {
     position: 'absolute',
     left: 0,
+    paddingVertical: 3,
     backgroundColor: 'rgba(0,0,0,0)'
   }
 });
@@ -88650,7 +88718,7 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                     },
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
                         label: 'min Параметр',
-                        height: 52,
+
                         highlightColor: '#00BCD4',
                         keyboardType: 'numeric',
                         onChangeText: function onChangeText(minParam) {
@@ -88664,7 +88732,6 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                     }),
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
                         label: 'max Параметр',
-                        height: 52,
                         highlightColor: '#00BCD4',
                         keyboardType: 'numeric',
                         onChangeText: function onChangeText(maxParam) {
@@ -88673,12 +88740,11 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                         value: this.state.newRule.maxParam,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 128
+                            lineNumber: 130
                         }
                     }),
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
                         label: 'Значение',
-                        height: 52,
                         highlightColor: '#00BCD4',
                         keyboardType: 'numeric',
                         onChangeText: function onChangeText(value) {
@@ -88687,7 +88753,7 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
                         value: this.state.newRule.value,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 137
+                            lineNumber: 138
                         }
                     })
                 )
@@ -88911,7 +88977,6 @@ function actionStatus() {
     switch (action.type) {
         case "CHANGE_STATUS":
             state.inAction = !state.inAction;
-            state.nom += 1;
 
             return _extends({}, state);
         case 'SELECT_PAGE':
@@ -89049,12 +89114,14 @@ var _RootPage = require(487                ); // 487 = ../views/RootPage
 var firstAction = _RootPage.AppNavigator.router.getActionForPathAndParams('Home');
 var tempNavState = _RootPage.AppNavigator.router.getStateForAction(firstAction);
 var initialNavState = _RootPage.AppNavigator.router.getStateForAction(tempNavState);
+var inAction = false;
 
 function nav() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialNavState;
   var action = arguments[1];
 
   var nextState = void 0;
+
   switch (action.type) {
     case 'NAV_RULES_PAGE':
       nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'Rules' }), state);
@@ -89065,6 +89132,7 @@ function nav() {
     case 'EDIT_RULES_VIEW':
       nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'AddRules', params: _extends({}, action.payload, { type: 'edit' }) }), state);
       break;
+
     default:
       nextState = _RootPage.AppNavigator.router.getStateForAction(action, state);
       break;

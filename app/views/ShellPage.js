@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent, selectPage } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
-//import PropTypes from 'prop-types';
-//import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import {
   Button,
   Card,
 } from 'react-native-elements';
+
+import Icon from "react-native-vector-icons/Entypo";
 
 import {
   AppRegistry,
@@ -17,12 +17,12 @@ import {
   View,
   ActivityIndicator
 } from 'react-native';
+
 import ClanView from './ClanView';
 import StatisticView from './StatisticView';
 import ButtonGroupTM from './ButtonGroup';
 
 function mapStateToProps(state) {
-  //console.log('mapStateToProps', state);
   return {
     status: state.actionStatus,
     data: state.clanInfo,
@@ -41,24 +41,50 @@ function mapDispatcherToProps(dispatch) {
   }
 }
 
-// shellPage.propTypes = {
-//   dispatch: PropTypes.func.isRequired,
-//   nav: PropTypes.object.isRequired,
-// };
-
 class ShellPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { inAction: false };
+  }
 
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+    let headerRight = (<Icon
+      name={'cw'}
+      size={24}
+      style={{ color: '#fff', marginRight: 16 }}
+      onPress={params.btnRes ? params.btnRes : () => null}
+    />
+    );
+    if (params.inAction) {
+      headerRight = (<ActivityIndicator size={24} color='#fff' style={{ marginRight: 16 }} />)
+    }
+    return {
+      headerTitle: 'Battle of Wizards Assistans',
+      headerRight
+    };
+  }
 
   onBtnResClick() {
-    //console.log("OnBtnUpClick", id);
-    //console.log(new Date());
     return this.props.getContent(true);
   }
-
-  componentDidMount() {
-    //return this.props.getContent();
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log();
+    return true;
   }
-  
+
+  componentWillUpdate(nextProps, nextState) {
+    //console.log();
+    if (this.props.status.inAction !== this.state.inAction) {
+      this.setState({
+        inAction: this.props.status.inAction
+      }, () => this.props.navigation.setParams({ inAction: this.state.inAction }));
+
+    }
+  }
+  componentDidMount() {
+    this.props.navigation.setParams({ btnRes: this.onBtnResClick.bind(this), inAction: this.state.inAction })
+  }
 
   render() {
     //console.log('map', this.props.items);
@@ -69,12 +95,8 @@ class ShellPage extends Component {
     else {
       content = <StatisticView />
     }
-
     return (
       <View style={styles.container}>
-        {/* <View style={styles.header} >
-          <Text style={styles.headerText} > Battle of Wizards Assistans </Text>
-        </View> */}
         <View style={styles.buttonPanel}>
           <Button
             title='Нормы'
@@ -84,17 +106,7 @@ class ShellPage extends Component {
               type: 'NAV_RULES_PAGE',
               //payload: ''
             })}
-            //onPress={this.onBtnRulesClick.bind(this)}
           />
-          <Button
-            buttonStyle={styles.buttonRes}
-            textStyle={styles.buttonTextStyle}
-            onPress={this.onBtnResClick.bind(this)}
-            title='Обн'
-            loading={this.props.status.inAction}
-            disabled={this.props.status.inAction}
-          />
-
         </View >
         {content}
         <View style={styles.footer} >

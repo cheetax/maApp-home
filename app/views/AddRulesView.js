@@ -118,7 +118,9 @@ class AddRulesView extends Component {
                 <View style={{ marginLeft: 16, }}>
                     <TextField
                         label={'min Параметр'}
-                        height={52}
+                        // labelStyle={{color: 'orange'}}
+                        //inputStyle={{paddingVertical:8 }}
+                        //wrapperStyle={{paddingBottom:8}}
                         highlightColor={'#00BCD4'}
                         keyboardType={'numeric'}
                         onChangeText={(minParam) => this.state.newRule.minParam = minParam}
@@ -127,7 +129,6 @@ class AddRulesView extends Component {
                     />
                     <TextField
                         label={'max Параметр'}
-                        height={52}
                         highlightColor={'#00BCD4'}
                         keyboardType={'numeric'}
                         onChangeText={(maxParam) => this.state.newRule.maxParam = maxParam}
@@ -136,7 +137,6 @@ class AddRulesView extends Component {
                     />
                     <TextField
                         label={'Значение'}
-                        height={52}
                         highlightColor={'#00BCD4'}
                         keyboardType={'numeric'}
                         onChangeText={(value) => this.state.newRule.value = value}
