@@ -11,6 +11,8 @@ import {
     Text,
     View,
     Button,
+    TouchableOpacity,
+    TouchableHighlight,
     ActivityIndicator
 } from 'react-native';
 
@@ -48,13 +50,28 @@ class MenuDrawer extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Button
-                    title='Нормы'
+                <TouchableHighlight
+                    underlayColor='#03A9F4'
+                    style={styles.elementMenuButton} 
+                    onPress={() => this.props.dispatch(selectPage(0))}>
+                    <Text style={styles.elementMenuText} >Клан</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    underlayColor='#03A9F4'
+                    style={styles.elementMenuButton} 
+                    onPress={() => this.props.dispatch(selectPage(1))}>
+                    <Text style={styles.elementMenuText} >Статистика</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    underlayColor='#03A9F4'
+                    style={styles.elementMenuButton} 
                     onPress={() => this.props.navigation.dispatch({
                         type: 'NAV_RULES_PAGE',
                         //payload: ''
-                    })}
-                />
+                    })}>
+                    <Text style={styles.elementMenuText} >Нормы</Text>
+                </TouchableHighlight>
+
             </View>
         );
     }
@@ -68,20 +85,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#ecf0f1',
         justifyContent: 'flex-start',
     },
-    headerText: {
-        fontSize: 18,
-        color: '#fff',
-        textAlign: 'center',
+    elementMenuText: {
+        fontSize: 14,
+        color: '#03A9F4',
+        textAlign: 'left',
         alignItems: 'center',
-        margin: 5,
+        marginLeft: 72,
     },
-    buttonPanel: {
-        flexDirection: 'row',
-        backgroundColor: 'lightgrey',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderBottomWidth: 0,
-        borderColor: 'grey',
+    elementMenuButton: {
+        height: 48,
+        justifyContent: 'center',
         margin: 0,
     },
     footer: {

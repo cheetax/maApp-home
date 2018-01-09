@@ -28,7 +28,7 @@ export default class ItemClanView extends Component {
               <Text style={styles.textPrimary}>
                 {this.props.item.name}
               </Text>
-              <Icon style={styles.icon} name='ios-star' size={13} />
+              {/* <Icon style={styles.icon} name='ios-star' size={13} /> */}
               <Text style={styles.textSecondary}>
                 {this.props.item.rank}
               </Text>
@@ -72,7 +72,8 @@ export default class ItemClanView extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    margin: 5,
+    margin: 8,
+    //marginHorizontal: 8,
     padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
@@ -81,53 +82,47 @@ const styles = StyleSheet.create({
   listItem: {    
     flex: -1,
     flexDirection: 'row',
-    margin: 5,
-    padding: 2,
+    margin: 16,
+    padding: 0,
     justifyContent: "space-between",
     alignItems: 'center',
     alignSelf: 'stretch'
   },
-  buttonUpDown: {
-    width: 100,
-    flex: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 20,
-    margin: 0,
-  },
   textPrimary: {
-    fontSize: 20,
+    fontSize: 24,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
+    padding:0,
   },
   icon: {
     justifyContent: 'center',
     marginLeft: 10,
+    marginRight: 5,
     alignItems: 'center',
     margin: 0,
   },
   img: {
     justifyContent: 'center',
-    marginLeft: 10,
-    marginRight: 0,
+    marginLeft: 5,
+    marginRight: 5,
     alignItems: 'center',
     margin: 0,
   },
   textSecondary: {
-    fontSize: 15,
+    fontSize: 14,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
-    marginLeft: 10,
+    marginLeft: 0,
   },
   nameView: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     alignSelf: 'stretch',
     backgroundColor:'transparent'
   },
@@ -135,7 +130,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     margin: 0,
-    paddingTop: 5,
+    paddingTop: 16,
     marginLeft: 0,
     backgroundColor: 'transparent',
     justifyContent: 'flex-start',
@@ -146,7 +141,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
     justifyContent: 'space-between',
     alignItems: 'stretch',
     alignSelf: 'stretch'

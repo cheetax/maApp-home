@@ -74,7 +74,8 @@ export default class ItemStaticView extends Component {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    margin: 5,
+    margin: 8,
+    marginHorizontal: 8,
     padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
@@ -83,8 +84,8 @@ const styles = StyleSheet.create({
   listItem: {
     flex: -1,
     flexDirection: 'row',
-    margin: 5,
-    padding: 2,
+    margin: 16,
+    padding: 0,
     justifyContent: "space-between",
     alignItems: 'center',
     alignSelf: 'stretch'
@@ -98,20 +99,20 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   textPrimary: {
-    fontSize: 20,
+    fontSize: 24,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
   },
   textSecondary: {
-    fontSize: 15,
+    fontSize: 14,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
     marginLeft: 5,
   },
   textOther: {
-    fontSize: 12,
+    fontSize: 14,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,

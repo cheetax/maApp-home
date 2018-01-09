@@ -97,7 +97,7 @@ class ShellPage extends Component {
     }
     return (
       <View style={styles.container}>
-        <View style={styles.buttonPanel}>
+        {/* <View style={styles.buttonPanel}>
           <Button
             title='Нормы'
             buttonStyle={styles.buttonRes}
@@ -107,14 +107,14 @@ class ShellPage extends Component {
               //payload: ''
             })}
           />
-        </View >
+        </View > */}
         {content}
-        <View style={styles.footer} >
+        {/* <View style={styles.footer} >
           <ButtonGroupTM
             btnSelectPageClick={this.props.selectPage.bind(this)}
             selectedIndex={this.props.status.selectedPage}
             buttons={['Клан', 'Статистика']} />
-        </View>
+        </View> */}
       </View>
     );
   }
