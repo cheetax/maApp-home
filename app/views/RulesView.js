@@ -62,7 +62,7 @@ export default class RulesView extends Component {
           data={this.props.items}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderRow.bind(this)}
-          ItemSeparatorComponent={()=> <View style={{height: 0.5, backgroundColor:'grey'}} />}
+          ItemSeparatorComponent={()=> <View style={{height: 0.5, backgroundColor:'grey', marginHorizontal: 16}} />}
           style={{backgroundColor:'#fff', marginVertical:8 }}
         />
 

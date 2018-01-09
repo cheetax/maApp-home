@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 import ShellPage from './ShellPage';
 import RulesPage from './RulesPage';
 import AddRulesView from './AddRulesView';
+import MenuDrawer from './MenuDrawer';
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -25,11 +26,11 @@ const DrawerMenu = DrawerNavigator(
   {
     Home: { screen: ShellPage, },
     //Shell: { screen: ShellPage},
-    Rules: { screen: RulesPage, },
+    //Rules: { screen: RulesPage, },
     //AddRules: { screen: AddRulesView, },
   },
   {
-    
+    contentComponent:props => <MenuDrawer {...props}/>
   }
 )
 
@@ -41,7 +42,7 @@ export const AppNavigator = StackNavigator(
     //Home: { screen: ShellPage, },
     //Shell: { screen: ShellPage},
      Rules: { screen: RulesPage, },
-    // AddRules: { screen: AddRulesView, },
+     AddRules: { screen: AddRulesView, },
   },
   {
     navigationOptions: {

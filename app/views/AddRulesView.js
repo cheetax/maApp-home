@@ -69,7 +69,7 @@ class AddRulesView extends Component {
 
     }
     static navigationOptions = ({ navigation }) => ({
-        title: (navigation.state.params.type === 'add') ? 'Новая норма' : 'Редактирование нормы',
+        headerTitle: (navigation.state.params.type === 'add') ? 'Новая норма' : 'Редактирование нормы',
         headerLeft: (<Icon
             name={'cross'}
             size={20}
@@ -115,7 +115,7 @@ class AddRulesView extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.headerText} >{this.title}</Text>
-                <View style={{ marginLeft: 16, }}>
+                <View style={{ marginHorizontal: 16, }}>
                     <TextField
                         label={'min Параметр'}
                         // labelStyle={{color: 'orange'}}
