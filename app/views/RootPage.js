@@ -30,7 +30,7 @@ const DrawerMenu = DrawerNavigator(
     //AddRules: { screen: AddRulesView, },
   },
   {
-    contentComponent:props => <MenuDrawer {...props}/>
+    contentComponent: props => <MenuDrawer {...props} />,
   }
 )
 
@@ -38,15 +38,15 @@ const DrawerMenu = DrawerNavigator(
 export const AppNavigator = StackNavigator(
   //export const AppNavigator = DrawerNavigator(
   {
-    Home: {screen: DrawerMenu, },
+    Home: { screen: DrawerMenu, },
     //Home: { screen: ShellPage, },
     //Shell: { screen: ShellPage},
-     Rules: { screen: RulesPage, },
-     AddRules: { screen: AddRulesView, },
+    Rules: { screen: RulesPage, },
+    AddRules: { screen: AddRulesView, },
   },
   {
     navigationOptions: {
-      drawerLabel: 'Home',
+      title: 'Battle of Wizards Assistans',
       headerStyle: {
         backgroundColor: '#03A9F4',
         height: 56,
@@ -54,13 +54,15 @@ export const AppNavigator = StackNavigator(
       headerTitleStyle: {
         fontSize: 20,
         color: '#fff',
-        marginHorizontal: 24,
+        marginHorizontal: 16,
         textAlign: 'left',
         alignSelf: 'stretch'
       },
     }
+
   },
 );
+
 
 const RootPage = ({ dispatch, nav }) => (
   <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />

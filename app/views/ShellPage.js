@@ -49,6 +49,13 @@ class ShellPage extends Component {
 
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
+    let headerLeft = (<Icon
+      name={'menu'}
+      size={24}
+      style={{ color: '#fff', marginLeft: 16 }}
+      onPress={() => navigation.navigate('DrawerOpen')}
+    />
+    );
     let headerRight = (<Icon
       name={'cw'}
       size={24}
@@ -61,7 +68,11 @@ class ShellPage extends Component {
     }
     return {
       headerTitle: 'Battle of Wizards Assistans',
-      headerRight
+      headerLeft,
+      headerRight,
+      headerTitleStyle: {
+        marginHorizontal: 0,
+      },
     };
   }
 
@@ -97,24 +108,7 @@ class ShellPage extends Component {
     }
     return (
       <View style={styles.container}>
-        {/* <View style={styles.buttonPanel}>
-          <Button
-            title='Нормы'
-            buttonStyle={styles.buttonRes}
-            textStyle={styles.buttonTextStyle}
-            onPress={() => this.props.navigation.dispatch({
-              type: 'NAV_RULES_PAGE',
-              //payload: ''
-            })}
-          />
-        </View > */}
         {content}
-        {/* <View style={styles.footer} >
-          <ButtonGroupTM
-            btnSelectPageClick={this.props.selectPage.bind(this)}
-            selectedIndex={this.props.status.selectedPage}
-            buttons={['Клан', 'Статистика']} />
-        </View> */}
       </View>
     );
   }
