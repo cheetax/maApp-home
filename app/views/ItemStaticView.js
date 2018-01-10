@@ -18,39 +18,55 @@ import {
 //import mapStateToProps from "./ShellView";
 
 export default class ItemStaticView extends Component {
-  
+
   render() {
+    const exp = (exp) => {
+      if (Math.round(exp) > 1000000) {
+        return (Math.round(exp) / 1000000).toFixed(1).toString() + 'm';
+      }
+      else {
+        return (Math.round(exp) / 1000).toFixed(1).toString() + 'k';
+      }
+    }
+    //const iconOnOff = (_OnOff) => { <Icon style={styles.icon} name='ios-checkmark' size={13} />
+    var iconOnOff = <Icon style={styles.iconOnOff} name='ios-checkmark' size={32} />
+    if (parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) {
+      iconOnOff = <Icon style={styles.iconOnOff} name='ios-checkmark' size={32} />
+    }
+
+
     //console.log(rulesUser)
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
-          <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) ? styles.onImplement : styles.offImplement } />  
+          <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) ? styles.onImplement : styles.offImplement}>
+            {iconOnOff}
+            {/* <Icon style={styles.icon} name='ios-checkmark' size={13} /> */}
+          </View>
           <View style={styles.column1} >
             <View style={styles.nameView}>
               <Text style={styles.textPrimary}>
                 {this.props.item.name}
               </Text>
-              <Icon style={styles.icon} name='ios-star' size={13} />
+              {/* <Icon style={styles.icon} name='ion-checkmark' size={13} /> */}
               <Text style={styles.textSecondary}>
                 {this.props.item.rank}
               </Text>
             </View>
 
-            <View style={styles.column1row2}>
+            {/* <View style={styles.column1row2}>
               <Text style={styles.textOther}>Выполнение нормы:</Text>
             </View>
 
             <View style={styles.column1row2}>
               {/* <Icon style={styles.icon} name='ios-ribbon-outline' size={15} /> */}
-              <Text>Опыт: {Math.round(this.props.item.exp/1000)}К Норма: >{this.props.item.ruleExp.value / 1000}K</Text>
-            </View>
+            {/* <Text> Опыт: {exp(this.props.item.exp)} Норма: >{this.props.item.ruleExp.value / 1000}K</Text>
+            </View> */}
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
               <Icon style={styles.icon} name='ios-ribbon-outline' size={18} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.expClan}
-              </Text>
+              <Text style={styles.textSecondary}>{exp(this.props.item.exp)}</Text>
             </View>
             <View style={styles.column2row}>
               <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
@@ -75,7 +91,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 8,
-    marginHorizontal: 8,
     padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
@@ -99,17 +114,20 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   textPrimary: {
+    flex: 0,
     fontSize: 24,
     textAlign: 'left',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     margin: 0,
+    //backgroundColor: 'blue'
   },
   textSecondary: {
     fontSize: 14,
     textAlign: 'left',
     alignItems: 'center',
     margin: 0,
-    marginLeft: 5,
+    marginLeft: 0,
   },
   textOther: {
     fontSize: 14,
@@ -120,9 +138,16 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-    marginLeft: 5,
+    marginHorizontal: 5,
     alignItems: 'center',
     margin: 0,
+  },
+  iconOnOff: {
+    justifyContent: 'center',
+    marginHorizontal: 0,
+    alignItems: 'center',
+    margin: 0,
+    color: '#fff'
   },
   img: {
     justifyContent: 'center',
@@ -134,13 +159,14 @@ const styles = StyleSheet.create({
 
   nameView: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     margin: 0,
-    marginLeft: 0,
+    padding: 0,
+    marginLeft: 16,
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: 'transparent'
+    alignItems: 'flex-start',
+    //alignSelf: 'stretch',
+    //backgroundColor: 'yellow'
   },
   column1row2: {
     flex: 1,
@@ -156,35 +182,41 @@ const styles = StyleSheet.create({
   onImplement: {
     flex: 0,
     flexDirection: 'column',
-    width: 3,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: 'green',
     //height: 5,
     margin: 0,
     marginLeft: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    alignSelf: 'stretch'
+    justifyContent: 'center',
+    alignItems: 'center',
+    //alignSelf: 'center'
   },
   offImplement: {
     flex: 0,
     flexDirection: 'column',
-    width: 3,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: 'red',
     //height: 5,
     margin: 0,
     marginLeft: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    alignSelf: 'stretch'
+    justifyContent: 'center',
+    alignItems: 'center',
+    //alignSelf: 'center'
   },
   column1: {
     flex: 1,
     flexDirection: 'column',
     margin: 0,
-    marginLeft: 5,
-    justifyContent: 'space-between',
+    padding: 0,
+    marginLeft: 0,
+    justifyContent: 'flex-start',
     alignItems: 'stretch',
-    alignSelf: 'stretch'
+    //backgroundColor: 'red'
+    //alignSelf: 'stretch'
   },
   column2: {
     flex: 0.3,
