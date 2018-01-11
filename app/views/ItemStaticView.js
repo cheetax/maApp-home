@@ -51,15 +51,6 @@ export default class ItemStaticView extends Component {
                 {this.props.item.rank}
               </Text>
             </View>
-
-            {/* <View style={styles.column1row2}>
-              <Text style={styles.textOther}>Выполнение нормы:</Text>
-            </View>
-
-            <View style={styles.column1row2}>
-              {/* <Icon style={styles.icon} name='ios-ribbon-outline' size={15} /> */}
-            {/* <Text> Опыт: {exp(this.props.item.exp)} Норма: >{this.props.item.ruleExp.value / 1000}K</Text>
-            </View> */}
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>

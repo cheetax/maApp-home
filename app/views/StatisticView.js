@@ -107,8 +107,7 @@ class StatisticView extends Component {
           indicatorColor="#fffe94"
           activeTextColor="white"
         />
-        <View style={{ flex: 1, }} >
-            
+        <View style={{ flex: 1, }} >            
           {statisticView}
         </View>
       </View>

@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { getContent } from "../actions/actionUsers";
-import { Header } from 'react-native-elements';
-import MaterialTabs from 'react-native-material-tabs';
 
 import {
   Button,
@@ -19,33 +15,76 @@ import {
   Text,
   View,
   ActivityIndicator,
-  ListView,  
+  ListView,
   FlatList,
+  SectionList,
+  TouchableHighlight
 } from 'react-native';
 
 import ItemStaticView from './ItemStaticView';
+import MoreStatisticView from './MoreStatisticView'
 
-class StatisticViewItems extends Component {  
-  
+class StatisticViewItems extends Component {
+
   _keyExtractor = (item, index) => item.uid = index;
 
-  _renderRow(item) {
-    return <ItemStaticView key={item.id} keyVal={item.id} item={item.item} />
+  _renderRow({ item }) {
+    return <ItemStaticView key={item.id} keyVal={item.id} item={item} />
   }
-  
+  _renderSectionHeader({ section }) {
+    return (
+      <View style={
+        {
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginHorizontal: 16,
+          marginTop: 16,
+          marginBottom: 8
+        }} >
+        <Text style={{ fontSize: 20, }} >{section.title}: {section.data.length} </Text>
+        <TouchableHighlight style={{padding: 8}} onPress={() => {
+
+        }} >
+          <Text style={{ fontSize: 16, }} >БОЛЬШЕ</Text>
+        </TouchableHighlight>
+
+      </View>
+    )
+  }
+
+  _MoreStatisticView() {return <MoreStatisticView/>}
+  //</View>
+
+
   render() {
+    const performs = this.props.items.filter((value, index, array) => {
+      return parseInt(value.exp) >= parseInt(value.ruleExp.value)
+    })
+    const notPerforms = this.props.items.filter((value, index, array) => {
+      return parseInt(value.exp) < parseInt(value.ruleExp.value)
+    })
     //console.log('map', this.props.items);
 
+
     return (
-      <View style={styles.container}>        
-        <FlatList
-          data={this.props.items}
-          keyExtractor={this._keyExtractor}
+      <View style={styles.container}>
+        <SectionList
           renderItem={this._renderRow.bind(this)}
-          //ItemSeparatorComponent={()=> <View style={{height: 0.5, backgroundColor:'grey', marginHorizontal: 16}} />}
-          //style={{backgroundColor:'#fff', marginVertical:8 }}
+          renderSectionHeader={this._renderSectionHeader}
+          sections={[
+            {
+              data: notPerforms, title: 'Не выполняющие норму'
+            },
+            {
+              data: performs, title: 'Выполняющие норму'
+            },
+          ]}
         />
+        {this._MoreStatisticView()}
       </View>
+      
     );
   }
 }
