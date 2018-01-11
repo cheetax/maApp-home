@@ -88017,16 +88017,6 @@ var StatisticView = _wrapComponent("StatisticView")(function (_Component) {
               lineNumber: 110
             }
           },
-          _react3.default.createElement(
-            _reactNative.Text,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 111
-              }
-            },
-            "\u0412\u044B\u043F\u043E\u043B\u043D\u0438\u0432\u0448\u0438\u0435 \u043D\u043E\u0440\u043C\u0443"
-          ),
           statisticView
         )
       );
@@ -88086,8 +88076,6 @@ var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\StatisticViewItems.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _reactRedux = require(488          ); // 488 = react-redux
 
 var _actionUsers = require(628                     ); // 628 = ../actions/actionUsers
@@ -88135,62 +88123,6 @@ function _wrapComponent(id) {
   };
 }
 
-function mapStateToProps(state) {
-  var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
-      return r1 !== r2;
-    } });
-  var usersExp = [];
-
-  var exp = state.clanInfo.expirienceUsers;
-  var users = state.clanInfo.users;
-  var rules = state.rules;
-  exp.map(function (element) {
-    var userRules = [];
-    var user = users.filter(function (value, index, array) {
-      var result = false;
-      if (value.id === element.id) {
-        result = true;
-      }
-      return result;
-    })[0];
-    var ruleExp = rules.Exp.filter(function (value, index, array) {
-      var result = false;
-      if (user.option >= value.minParam && user.option <= value.maxParam) {
-        result = true;
-      }
-      return result;
-    })[0];
-    if (ruleExp) {
-      userRules.push({ ruleExp: ruleExp });
-    } else {
-      userRules.push({ ruleExp: { minParam: 0, maxParam: 0, exp: 0 } });
-    }
-    var ruleGold = rules.Gold.filter(function (value, index, array) {
-      var result = false;
-      if (user.option >= value.minParam && user.option <= value.maxParam) {
-        result = true;
-      }return result;
-    })[0];
-    if (ruleGold) {
-      userRules.push({ ruleGold: ruleGold });
-    } else {
-      userRules.push({ ruleGold: { minParam: 0, maxParam: 0, exp: 0 } });
-    }
-
-    _extends(element, user);
-    userRules.map(function (rule) {
-      _extends(element, rule);
-    });
-
-    usersExp.push(element);
-  });
-  return {
-    status: state.actionStatus,
-    items: state.clanInfo.expirienceUsers,
-    nav: state.nav
-  };
-}
-
 var StatisticViewItems = _wrapComponent("StatisticViewItems")(function (_Component) {
   _inherits(StatisticViewItems, _Component);
 
@@ -88215,7 +88147,7 @@ var StatisticViewItems = _wrapComponent("StatisticViewItems")(function (_Compone
     value: function _renderRow(item) {
       return _react3.default.createElement(_ItemStaticView2.default, { key: item.id, keyVal: item.id, item: item.item, __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 33
         }
       });
     }
@@ -88227,7 +88159,7 @@ var StatisticViewItems = _wrapComponent("StatisticViewItems")(function (_Compone
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 40
           }
         },
         _react3.default.createElement(_reactNative.FlatList, {
@@ -88236,7 +88168,7 @@ var StatisticViewItems = _wrapComponent("StatisticViewItems")(function (_Compone
           renderItem: this._renderRow.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 41
           }
         })
       );

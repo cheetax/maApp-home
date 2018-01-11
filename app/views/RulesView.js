@@ -18,6 +18,7 @@ import { Icon as ButtonIcon } from 'react-native-elements';
 import {
   StyleSheet,
   FlatList,
+  View,
 } from 'react-native';
 
 //import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
