@@ -16,12 +16,7 @@ import { Icon as ButtonIcon } from 'react-native-elements';
 
 
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  ActivityIndicator,
-  ListView,
   FlatList,
 } from 'react-native';
 
@@ -29,29 +24,16 @@ import {
 
 import ItemRulesView from './ItemRulesView';
 
-
-function mapStateToProps(state) {
-  return {
-    nav: state.nav,
-    items: state.rules.Exp,
-    rules: state.rules,
-  }
-}
-
 export default class RulesView extends Component {
 
   _renderRow({item}) {
     return <ItemRulesView key={item} keyVal={item} item={item} onPress={this.props.onPress} />
-
   }
 
-  _keyExtractor = (item, index) => item.id = index;
-
-
-  _iconAdd() {
-    return <Text style={styles.headerText} >+</Text>
+  _keyExtractor = (item, index) => {
+    item.id = index;
   }
-
+  
   render() {
     //console.log('map', this.props.items);
 

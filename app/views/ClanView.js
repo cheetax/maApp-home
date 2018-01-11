@@ -20,28 +20,82 @@ import {
 } from 'react-native';
 
 import ItemClanView from './ItemClanView';
-
+import Icon from "react-native-vector-icons/Entypo";
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
   const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-  return {
+  return {    
+    status: state.actionStatus,
     items: ds.cloneWithRows(state.clanInfo.users),
-  }
-}
-
-function mapDispatcherToProps(dispatch) {
-  return {
-
+    nav: state.nav,
   }
 }
 
 class ClanView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { inAction: false };
+  }
+
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+    let headerLeft = (<Icon
+      name={'menu'}
+      size={24}
+      style={{ color: '#fff', marginLeft: 16 }}
+      onPress={() => navigation.navigate('DrawerOpen')}
+    />
+    );
+    let headerRight = (<Icon
+      name={'cw'}
+      size={24}
+      style={{ color: '#fff', marginRight: 16 }}
+      onPress={params.btnRes ? params.btnRes : () => null}
+    />
+    );
+    if (params.inAction) {
+      headerRight = (<ActivityIndicator size={24} color='#fff' style={{ marginRight: 16 }} />)
+    }
+    return {
+      headerTitle: 'Battle of Wizards Assistans',
+      headerLeft,
+      headerRight,
+      headerTitleStyle: {
+        marginHorizontal: 0,
+      },
+    };
+  }
+
+  onBtnResClick() {
+    return this.props.dispatch(getContent(true));
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    //console.log();
+    if (this.props.status.inAction !== this.state.inAction) {
+      this.setState({
+        inAction: this.props.status.inAction
+      }, () => this.props.navigation.setParams({ inAction: this.state.inAction }));
+
+    }
+    // if (!this.props.status.selectedPage) {
+    //   this.props.navigation.setParams({title: 'Battle of Wizards Assistans'})
+    //   //this.navigationOptions({ headerTitle: 'Test' });
+    // }
+    // else {
+    //   this.props.navigation.setParams({title: 'Статистика'})
+    // }
+  }
+  componentDidMount() {
+    this.props.navigation.setParams({ btnRes: this.onBtnResClick.bind(this), inAction: this.state.inAction })
+
+  }
 
   _keyExtractor = (item, index) => item.index;
 
-  _renderRow (item) {
+  _renderRow(item) {
     return <ItemClanView key={item} keyVal={item} item={item} />
   }
 
@@ -105,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(ClanView);
+export default connect(mapStateToProps)(ClanView);

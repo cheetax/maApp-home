@@ -20,12 +20,12 @@ import {
 export default class ItemStaticView extends Component {
 
   render() {
-    const exp = (exp) => {
-      if (Math.round(exp) > 1000000) {
-        return (Math.round(exp) / 1000000).toFixed(1).toString() + 'm';
+    const exp = (_exp) => {
+      if (Math.round(_exp) > 1000000) {
+        return (Math.round(_exp) / 1000000).toFixed(1).toString() + 'm';
       }
       else {
-        return (Math.round(exp) / 1000).toFixed(1).toString() + 'k';
+        return (Math.round(_exp) / 1000).toFixed(1).toString() + 'k';
       }
     }
     //const iconOnOff = (_OnOff) => { <Icon style={styles.icon} name='ios-checkmark' size={13} />
@@ -33,8 +33,6 @@ export default class ItemStaticView extends Component {
     if (parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) {
       iconOnOff = <Icon style={styles.iconOnOff} name='ios-checkmark' size={32} />
     }
-
-
     //console.log(rulesUser)
     return (
       <Card containerStyle={styles.container} key={this.props.keyVal}>

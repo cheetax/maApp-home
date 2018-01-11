@@ -32,7 +32,11 @@ class MenuDrawer extends Component {
                     style={styles.elementMenuButton}
                     onPress={() => {
                         this.props.navigation.navigate('DrawerClose');
-                        this.props.dispatch(selectPage(0))
+                        this.props.navigation.dispatch({
+                            type: 'NAV_CLAN_PAGE',
+                            //payload: ''
+                        })
+                        //this.props.dispatch(selectPage(0))
                     }
                     }>
                     <Text style={styles.elementMenuText} >Клан</Text>
@@ -42,7 +46,11 @@ class MenuDrawer extends Component {
                     style={styles.elementMenuButton}
                     onPress={() => {
                         this.props.navigation.navigate('DrawerClose');
-                        this.props.dispatch(selectPage(1))
+                        this.props.navigation.dispatch({
+                            type: 'NAV_STATISTIC_PAGE',
+                            //payload: ''
+                        })
+                        //this.props.dispatch(selectPage(1))
                     }}>
                     <Text style={styles.elementMenuText} >Статистика</Text>
                 </TouchableHighlight>

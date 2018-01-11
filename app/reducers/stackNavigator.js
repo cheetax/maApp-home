@@ -22,6 +22,19 @@ function nav(state = initialNavState, action) {
         state
       );
       break;
+
+    case 'NAV_CLAN_PAGE':
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Home' }),
+        state
+      );
+      break;
+    case 'NAV_STATISTIC_PAGE':
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Statistic' }),
+        state
+      );
+      break;
     case 'ADD_RULES_VIEW':
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } }),

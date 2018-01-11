@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getContent } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
+import MaterialTabs from 'react-native-material-tabs';
+import StatisticViewItems from './StatisticViewItems';
 
 import {
   Button,
@@ -9,6 +11,8 @@ import {
   List,
   ListItem,
 } from 'react-native-elements';
+
+import Icon from "react-native-vector-icons/Entypo";
 
 import {
   AppRegistry,
@@ -19,14 +23,11 @@ import {
   ListView,
 } from 'react-native';
 
-import ItemStaticView from './ItemStaticView';
-
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
-  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   var usersExp = [];
-  
+
   var exp = state.clanInfo.expirienceUsers;
   var users = state.clanInfo.users;
   var rules = state.rules;
@@ -47,7 +48,7 @@ function mapStateToProps(state) {
       return result;
     })[0];
     if (ruleExp) { userRules.push({ ruleExp }); }
-    else { userRules.push({ruleExp: { minParam: 0, maxParam: 0, exp: 0}})}
+    else { userRules.push({ ruleExp: { minParam: 0, maxParam: 0, exp: 0 } }) }
     var ruleGold = rules.Gold.filter((value, index, array) => {
       var result = false;
       if (user.option >= value.minParam && user.option <= value.maxParam) {
@@ -55,43 +56,61 @@ function mapStateToProps(state) {
       } return result;
     })[0];
     if (ruleGold) { userRules.push({ ruleGold }); }
-    else { userRules.push({ruleGold: { minParam: 0, maxParam: 0, exp: 0}})}
+    else { userRules.push({ ruleGold: { minParam: 0, maxParam: 0, exp: 0 } }) }
     //element.name = user.name;
     Object.assign(element, user);
     userRules.map((rule) => {
       Object.assign(element, rule);
     })
-     
+
     usersExp.push(element);
   });
   return {
-    items: ds.cloneWithRows(state.clanInfo.expirienceUsers),
-  }
-}
-
-function mapDispatcherToProps(dispatch) {
-  return {
-
+    items: state.clanInfo.expirienceUsers,
   }
 }
 
 class StatisticView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 0,
+    };
+  }  
 
-  _keyExtractor = (item, index) => item.index;
-
-  _renderRow(item) {
-    return <ItemStaticView key={item} keyVal={item} item={item} />
+  setTab = (tab) => {
+    this.setState({ selectedTab: tab });
   }
-
+  
   render() {
     //console.log('map', this.props.items);
-
+    let items;
+    switch (this.state.selectedTab) {
+      case 0:
+        items = [];
+        break;
+      case 1:
+        items = this.props.items
+        break;
+      case 2:
+        items = [];
+        break;
+    }
+    let statisticView = <StatisticViewItems items={items} />
     return (
       <View style={styles.container}>
-        <ListView dataSource={this.props.items}
-          renderRow={this._renderRow}
-          enableEmptySections={true}>
-        </ListView>
+        <MaterialTabs
+          items={['Gold', 'Exp', 'Crystal']}
+          selectedIndex={this.state.selectedTab}
+          onChange={this.setTab.bind(this)}
+          barColor="#03A9F4"
+          indicatorColor="#fffe94"
+          activeTextColor="white"
+        />
+        <View style={{ flex: 1, }} >
+            
+          {statisticView}
+        </View>
       </View>
     );
   }
@@ -99,7 +118,10 @@ class StatisticView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: -1,
+    flex: 1,
+    justifyContent: 'space-between',
+    //backgroundColor: '#fff',
+    //backgroundColor: 'red'
   },
   headerText: {
     fontSize: 20,
@@ -128,4 +150,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatcherToProps)(StatisticView);
+export default connect(mapStateToProps)(StatisticView);

@@ -67,7 +67,7 @@ class ShellPage extends Component {
       headerRight = (<ActivityIndicator size={24} color='#fff' style={{ marginRight: 16 }} />)
     }
     return {
-      headerTitle: 'Battle of Wizards Assistans',
+      headerTitle: params.title,
       headerLeft,
       headerRight,
       headerTitleStyle: {
@@ -92,9 +92,17 @@ class ShellPage extends Component {
       }, () => this.props.navigation.setParams({ inAction: this.state.inAction }));
 
     }
+    // if (!this.props.status.selectedPage) {
+    //   this.props.navigation.setParams({title: 'Battle of Wizards Assistans'})
+    //   //this.navigationOptions({ headerTitle: 'Test' });
+    // }
+    // else {
+    //   this.props.navigation.setParams({title: 'Статистика'})
+    // }
   }
   componentDidMount() {
     this.props.navigation.setParams({ btnRes: this.onBtnResClick.bind(this), inAction: this.state.inAction })
+    
   }
 
   render() {
@@ -102,9 +110,12 @@ class ShellPage extends Component {
     var content;
     if (!this.props.status.selectedPage) {
       content = <ClanView />
+      //this.props.navigation.setParams({title: 'Battle of Wizards Assistans'})
+      //this.navigationOptions({ headerTitle: 'Test' });
     }
     else {
       content = <StatisticView />
+      //this.props.navigation.setParams({title: 'Статистика'})
     }
     return (
       <View style={styles.container}>

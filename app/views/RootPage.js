@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 import Icon from "react-native-vector-icons/Entypo";
 import PropTypes from 'prop-types';
-import ShellPage from './ShellPage';
+//import ShellPage from './ShellPage';
+import ClanView from './ClanView';
 import RulesPage from './RulesPage';
+import StatisticPage from './StatisticPage';
 import AddRulesView from './AddRulesView';
 import MenuDrawer from './MenuDrawer';
 
@@ -24,10 +26,9 @@ function mapStateToProps(state) {
 
 const DrawerMenu = DrawerNavigator(
   {
-    Home: { screen: ShellPage, },
-    //Shell: { screen: ShellPage},
-    //Rules: { screen: RulesPage, },
-    //AddRules: { screen: AddRulesView, },
+    //Home: { screen: ShellPage, },
+    Home: { screen: ClanView, },
+    Statistic: { screen: StatisticPage},
   },
   {
     contentComponent: props => <MenuDrawer {...props} />,
@@ -43,6 +44,7 @@ export const AppNavigator = StackNavigator(
     //Shell: { screen: ShellPage},
     Rules: { screen: RulesPage, },
     AddRules: { screen: AddRulesView, },
+    
   },
   {
     navigationOptions: {
