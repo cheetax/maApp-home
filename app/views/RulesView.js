@@ -28,11 +28,11 @@ import ItemRulesView from './ItemRulesView';
 export default class RulesView extends Component {
 
   _renderRow({item}) {
-    return <ItemRulesView key={item} keyVal={item} item={item} onPress={this.props.onPress} />
+    return <ItemRulesView key={item.uid} keyVal={item.uid} item={item} onPress={this.props.onPress} />
   }
 
   _keyExtractor = (item, index) => {
-    item.id = index;
+    item.uid = index;
   }
   
   render() {

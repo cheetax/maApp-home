@@ -51,23 +51,31 @@ export default class ItemStaticView extends Component {
                 {this.props.item.rank}
               </Text>
             </View>
+            <View style={styles.column1row2} >
+              <View style={{ flex: 1, flexDirection: 'row' }}>
+                <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
+                <Text style={styles.textSecondary}>
+                  {this.props.item.dayOfClan}
+                </Text>
+              </View>
+              <View style={styles.column2row}>
+                <Icon style={styles.icon} name='ios-school-outline' size={18} />
+                <Text style={styles.textSecondary}>
+                  {this.props.item.option}
+                </Text>
+              </View>
+            </View>
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-ribbon-outline' size={18} />
+              <Icon style={[styles.icon,]} name='ios-ribbon-outline' size={18} />
               <Text style={styles.textSecondary}>{exp(this.props.item.exp)}</Text>
             </View>
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.dayOfClan}
-              </Text>
+
             </View>
             <View style={styles.column2row}>
-              <Icon style={styles.icon} name='ios-school-outline' size={18} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.option}
-              </Text>
+              
             </View>
           </View>
         </View>
@@ -91,8 +99,8 @@ const styles = StyleSheet.create({
     margin: 16,
     padding: 0,
     justifyContent: "space-between",
-    alignItems: 'center',
-    alignSelf: 'stretch'
+    alignItems: 'flex-start',
+    alignSelf: 'flex-start'
   },
   buttonUpDown: {
     width: 100,
@@ -108,7 +116,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    margin: 0,
+    marginTop: -5,
+    paddingTop: -5,
     //backgroundColor: 'blue'
   },
   textSecondary: {
@@ -127,7 +136,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-    marginHorizontal: 5,
+    marginRight: 5,
     alignItems: 'center',
     margin: 0,
   },
@@ -162,7 +171,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 0,
     paddingTop: 0,
-    marginLeft: 5,
+    marginLeft: 16,
     backgroundColor: 'transparent',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -203,8 +212,8 @@ const styles = StyleSheet.create({
     padding: 0,
     marginLeft: 0,
     justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    //backgroundColor: 'red'
+    alignItems: 'flex-start',
+    backgroundColor: 'red'
     //alignSelf: 'stretch'
   },
   column2: {
