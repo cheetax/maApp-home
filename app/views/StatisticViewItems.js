@@ -18,11 +18,13 @@ import {
   ListView,
   FlatList,
   SectionList,
-  TouchableHighlight
+  TouchableHighlight,
+  Clipboard,
 } from 'react-native';
 
 import ItemStaticView from './ItemStaticView';
 import MoreStatisticView from './MoreStatisticView'
+
 
 class StatisticViewItems extends Component {
 
@@ -44,17 +46,25 @@ class StatisticViewItems extends Component {
           marginBottom: 8
         }} >
         <Text style={{ fontSize: 20, }} >{section.title}: {section.data.length} </Text>
-        <TouchableHighlight style={{padding: 8}} onPress={() => {
-
-        }} >
-          <Text style={{ fontSize: 16, }} >БОЛЬШЕ</Text>
+        <TouchableHighlight style={{padding: 8}} onPress={() => this._MoreStatisticView(section.data)} >
+          <Text style={{ fontSize: 16, }} >КОПИР.</Text>
         </TouchableHighlight>
 
       </View>
     )
   }
 
-  _MoreStatisticView() {return <MoreStatisticView/>}
+  _MoreStatisticView = (data) => {
+    //console.log(data)
+    var str = ''
+    data.forEach(element => {
+      str = str + element.name + ' ⋆ ' + element.exp + ' ⋆ >' + parseInt(element.ruleExp.value)/1000 + ' ⋆ дней: ' + element.dayOfClan + '\n'
+    });
+    Clipboard.setString(str);
+    //return {}
+  }
+  
+  
   //</View>
 
 
@@ -72,7 +82,8 @@ class StatisticViewItems extends Component {
       <View style={styles.container}>
         <SectionList
           renderItem={this._renderRow.bind(this)}
-          renderSectionHeader={this._renderSectionHeader}
+          renderSectionHeader={this._renderSectionHeader.bind(this)}
+          keyExtractor={this._keyExtractor}
           sections={[
             {
               data: notPerforms, title: 'Не выполняющие норму'
@@ -82,7 +93,6 @@ class StatisticViewItems extends Component {
             },
           ]}
         />
-        {this._MoreStatisticView()}
       </View>
       
     );
