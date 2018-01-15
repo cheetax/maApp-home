@@ -42,11 +42,11 @@ export class MenuContextRulesItem extends Component {
                 <MenuItem onPress={() => {
                     this.menu.hide();
                     this.props.onPress('EDIT_RULES_VIEW', this.props.item);
-                }} >edit</MenuItem>
+                }} >редактировать</MenuItem>
                 <MenuItem onPress={() => {
                     this.menu.hide();
                     this.props.onPress('DELETE_RULE', this.props.item);
-                }}>delete</MenuItem>
+                }}>удалить</MenuItem>
             </Menu>
         );
     }

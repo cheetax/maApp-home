@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 8,
-    //marginHorizontal: 8,
     padding: 0,
     flex: 0,
     justifyContent: 'flex-start',

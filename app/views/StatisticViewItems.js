@@ -31,7 +31,7 @@ class StatisticViewItems extends Component {
   _keyExtractor = (item, index) => item.uid = index;
 
   _renderRow({ item }) {
-    return <ItemStaticView key={item.id} keyVal={item.id} item={item} />
+    return <ItemStaticView key={item.uid} keyVal={item.uid} item={item} />
   }
   _renderSectionHeader({ section }) {
     return (
