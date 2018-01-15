@@ -17,6 +17,8 @@ import {
   View,
   ActivityIndicator,
   ListView,
+  FlatList,
+  ScrollView,
 } from 'react-native';
 
 import ItemClanView from './ItemClanView';
@@ -24,11 +26,12 @@ import Icon from "react-native-vector-icons/Entypo";
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
-  const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+  //const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
   return {    
     status: state.actionStatus,
-    items: ds.cloneWithRows(state.clanInfo.users),
+    //items: ds.cloneWithRows(state.clanInfo.users),
+    items: state.clanInfo.users,
     nav: state.nav,
   }
 }
@@ -93,17 +96,17 @@ class ClanView extends Component {
 
   }
 
-  _keyExtractor = (item, index) => item.index;
+  _keyExtractor = (item, index) => item.uid = index;
 
-  _renderRow(item) {
-    return <ItemClanView key={item} keyVal={item} item={item} />
+  _renderRow({item}) {
+    return <ItemClanView key={item.id} keyVal={item.id} item={item} />
   }
 
   render() {
     //console.log('map', this.props.items);
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
 
         {/* <List >
           {            
@@ -116,14 +119,22 @@ class ClanView extends Component {
           }
           </List> */}
 
-        <ListView dataSource={this.props.items}
+        {/* <ListView dataSource={this.props.items}
           renderRow={this._renderRow}
           enableEmptySections={true}>
 
-        </ListView>
+        </ListView> */}
+        <FlatList
+          data={this.props.items}          
+          keyExtractor={this._keyExtractor.bind(this)}
+          renderItem={this._renderRow.bind(this)}
+          //style={{ backgroundColor: 'red' }}
+        >
+          
+        </FlatList>
 
 
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -131,6 +142,7 @@ class ClanView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: -1,
+   // backgroundColor: 'red'
   },
   headerText: {
     fontSize: 20,

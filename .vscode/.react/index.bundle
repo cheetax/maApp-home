@@ -64451,13 +64451,11 @@ function _wrapComponent(id) {
 }
 
 function mapStateToProps(state) {
-  var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
-      return r1 !== r2;
-    } });
 
   return {
     status: state.actionStatus,
-    items: ds.cloneWithRows(state.clanInfo.users),
+
+    items: state.clanInfo.users,
     nav: state.nav
   };
 }
@@ -64471,7 +64469,7 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
     var _this = _possibleConstructorReturn(this, (ClanView.__proto__ || Object.getPrototypeOf(ClanView)).call(this, props));
 
     _this._keyExtractor = function (item, index) {
-      return item.index;
+      return item.uid = index;
     };
 
     _this.state = { inAction: false };
@@ -64503,10 +64501,12 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
     }
   }, {
     key: "_renderRow",
-    value: function _renderRow(item) {
-      return _react3.default.createElement(_ItemClanView2.default, { key: item, keyVal: item, item: item, __source: {
+    value: function _renderRow(_ref) {
+      var item = _ref.item;
+
+      return _react3.default.createElement(_ItemClanView2.default, { key: item.id, keyVal: item.id, item: item, __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 101
         }
       });
     }
@@ -64518,23 +64518,29 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
         _reactNative.View,
         { style: styles.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 106
+            lineNumber: 108
           }
         },
-        _react3.default.createElement(_reactNative.ListView, { dataSource: this.props.items,
-          renderRow: this._renderRow,
-          enableEmptySections: true, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 119
-          }
-        })
+        _react3.default.createElement(
+          _reactNative.FlatList,
+          {
+            data: this.props.items,
+            keyExtractor: this._keyExtractor.bind(this),
+            renderItem: this._renderRow.bind(this), __source: {
+              fileName: _jsxFileName,
+              lineNumber: 126
+            }
+          },
+          "style=",
+          { backgroundColor: 'red' }
+        )
       );
     }
   }]);
 
   return ClanView;
-}(_react2.Component), _class.navigationOptions = function (_ref) {
-  var navigation = _ref.navigation;
+}(_react2.Component), _class.navigationOptions = function (_ref2) {
+  var navigation = _ref2.navigation;
   var _navigation$state$par = navigation.state.params,
       params = _navigation$state$par === undefined ? {} : _navigation$state$par;
 
@@ -64547,7 +64553,7 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 46
     }
   });
   var headerRight = _react3.default.createElement(_Entypo2.default, {
@@ -64559,13 +64565,13 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 53
     }
   });
   if (params.inAction) {
     headerRight = _react3.default.createElement(_reactNative.ActivityIndicator, { size: 24, color: "#fff", style: { marginRight: 16 }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 61
       }
     });
   }
@@ -64581,7 +64587,8 @@ var ClanView = _wrapComponent("ClanView")((_temp = _class = function (_Component
 
 var styles = _reactNative.StyleSheet.create({
   container: {
-    flex: -1
+    flex: -1,
+    backgroundColor: 'red'
   },
   headerText: {
     fontSize: 20,
@@ -79205,7 +79212,6 @@ var styles = _reactNative.StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 8,
-
     padding: 0,
     flex: 0,
     justifyContent: 'flex-start',
