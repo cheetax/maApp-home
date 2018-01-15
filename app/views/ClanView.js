@@ -96,7 +96,7 @@ class ClanView extends Component {
 
   }
 
-  _keyExtractor = (item, index) => item.uid = index;
+  _keyExtractor = (item, index) => item.id;
 
   _renderRow({item}) {
     return <ItemClanView key={item.id} keyVal={item.id} item={item} />
@@ -128,7 +128,7 @@ class ClanView extends Component {
           data={this.props.items}          
           keyExtractor={this._keyExtractor.bind(this)}
           renderItem={this._renderRow.bind(this)}
-          //style={{ backgroundColor: 'red' }}
+          //style={{ elevation: 8 }}
         >
           
         </FlatList>
@@ -142,7 +142,8 @@ class ClanView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: -1,
-   // backgroundColor: 'red'
+    elevation: 0,
+    //backgroundColor: '#fff'
   },
   headerText: {
     fontSize: 20,

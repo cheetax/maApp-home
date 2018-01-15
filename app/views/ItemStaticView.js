@@ -35,7 +35,7 @@ export default class ItemStaticView extends Component {
     }
     //console.log(rulesUser)
     return (
-      <Card containerStyle={styles.container} key={this.props.keyVal}>
+      <View style={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
           <View style={(parseInt(this.props.item.exp) >= parseInt(this.props.item.ruleExp.value)) ? styles.onImplement : styles.offImplement}>
             {iconOnOff}
@@ -73,7 +73,7 @@ export default class ItemStaticView extends Component {
               <Text style={styles.textSecondary}>{exp(this.props.item.exp)}</Text>
             </View>
             <View style={styles.column2row}>
-              <Icon style={[styles.icon,]} name='ios-ribbon-outline' size={18} />
+              <Icon style={[styles.icon,]} name='ios-arrow-forward-outline' size={18} />
               <Text style={styles.textSecondary}>{exp(this.props.item.ruleExp.value)}</Text>
             </View>
             <View style={styles.column2row}>
@@ -81,7 +81,7 @@ export default class ItemStaticView extends Component {
             </View>
           </View>
         </View>
-      </Card>
+      </View>
     );
   }
 }
@@ -90,10 +90,16 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 8,
+    marginBottom: 2,
     padding: 0,
     flex: 0,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
+    borderRadius: 2,
+    elevation: 2,
     justifyContent: 'flex-start',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    backgroundColor: '#fff'
   },
   listItem: {
     flex: -1,

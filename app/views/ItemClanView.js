@@ -21,7 +21,7 @@ export default class ItemClanView extends Component {
   render() {
     //console.log(this.props.keyVal)
     return (
-      <Card containerStyle={styles.container} key={this.props.keyVal}>
+      <View style={styles.container} key={this.props.keyVal}>
         <View style={styles.listItem}>
           <View style={styles.column1} >
             <View style={styles.nameView}>
@@ -64,7 +64,7 @@ export default class ItemClanView extends Component {
             </View>
           </View>
         </View>
-      </Card>
+      </View>
     );
   }
 }
@@ -73,12 +73,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     margin: 8,
+    
+    marginBottom: 2,
     padding: 0,
     flex: 0,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
+    borderRadius: 2,
+    elevation: 2,
     justifyContent: 'flex-start',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    backgroundColor: '#fff'
   },
-  listItem: {    
+  listItem: { 
     flex: -1,
     flexDirection: 'row',
     margin: 16,
