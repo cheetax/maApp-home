@@ -21,11 +21,18 @@ import {
     ListView,
 } from 'react-native';
 
+var x= (newUserClans) => {
+    if (newUserClans.expirience >= '500,000' && newUserClans.dayOfClan <= 1) { return "Read clan chat"}
+    else { return "Kick out of the clan"}
+}
+
 export class MenuContextShellPage extends Component {
     menu = null;
     setMenuRef = ref => {
         this.menu = ref;
     }
+
+    
     
     render() {
         return (

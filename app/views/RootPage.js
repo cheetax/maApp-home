@@ -24,14 +24,16 @@ function mapStateToProps(state) {
   }
 }
 
-const DrawerMenu = DrawerNavigator(
+export const DrawerMenu = DrawerNavigator(
+  // export const AppNavigator = DrawerNavigator(
   {
     //Home: { screen: ShellPage, },
     Home: { screen: ClanView, },
-    Statistic: { screen: StatisticPage},
+    Statistic: { screen: StatisticPage },
   },
   {
     contentComponent: props => <MenuDrawer {...props} />,
+  
   }
 )
 
@@ -44,7 +46,7 @@ export const AppNavigator = StackNavigator(
     //Shell: { screen: ShellPage},
     Rules: { screen: RulesPage, },
     AddRules: { screen: AddRulesView, },
-    
+
   },
   {
     navigationOptions: {
@@ -75,4 +77,5 @@ const RootPage = ({ dispatch, nav }) => (
 //   nav: PropTypes.object.isRequired,
 // };
 
+//export default connect(mapStateToProps)(RootPage);
 export default connect(mapStateToProps)(RootPage);

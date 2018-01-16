@@ -9,7 +9,7 @@ const firstAction = AppNavigator.router.getActionForPathAndParams('Home');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const initialNavState = AppNavigator.router.getStateForAction(
   tempNavState
-);
+); 
 let inAction = false;
 
 function nav(state = initialNavState, action) {
