@@ -24,6 +24,8 @@ import {
   ActivityIndicator,
   ListView,
   FlatList,
+  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 //import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
@@ -62,11 +64,31 @@ class RulesPage extends Component {
 
   static navigationOptions = ({ navigation }) => ({
     title: 'Нормы',
-    headerLeft: (<Icon
-      name={'chevron-thin-left'}
-      size={20}
-      style={{ color: '#fff', marginLeft: 16 }}
-      onPress={() => { navigation.goBack() }} />),
+    headerLeft: (
+      <TouchableHighlight
+        style={{
+          margin: 0,
+          marginLeft: 8,
+          width: 40,
+          height: 40,
+          borderRadius: 25,
+          justifyContent: 'center',
+          alignItems: 'center'          
+        }}
+        underlayColor="rgba(0,0,0,0.2)"
+        onPress={() => { navigation.goBack() }} >
+        <Icon
+          name={'chevron-thin-left'}
+          size={24}
+          style={{
+            color: '#fff',
+            margin: 0,
+            marginLeft: 0,
+            padding: 0,
+          }}
+        />
+      </TouchableHighlight>
+    ),
 
     headerTitleStyle: {
       fontSize: 20,
@@ -81,7 +103,7 @@ class RulesPage extends Component {
   setTab = (tab) => {
     this.setState({ selectedTab: tab });
 
-  }  
+  }
 
   render() {
     //console.log('map', this.props.items);
@@ -98,10 +120,10 @@ class RulesPage extends Component {
         break;
     }
     let rulesView = <RulesView items={items} onPress={(type, item) => {
-     // console.log(type);
+      // console.log(type);
       this.props.dispatch({
         type: type,
-        payload: {index: this.state.selectedTab, item}
+        payload: { index: this.state.selectedTab, item }
       })
     }} />
     return (
@@ -118,7 +140,7 @@ class RulesPage extends Component {
           {rulesView}
         </View>
 
-        <View style={styles.footer} >
+        <View style={styles.footer} >          
           <ButtonIcon
             raised
             size={25}

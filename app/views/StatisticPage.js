@@ -21,6 +21,7 @@ import {
   View,
   ActivityIndicator,
   ListView,
+  TouchableHighlight,
 } from 'react-native';
 
 
@@ -41,19 +42,48 @@ class StatisticPage extends Component {
   }
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
-    let headerLeft = (<Icon
-      name={'menu'}
-      size={24}
-      style={{ color: '#fff', marginLeft: 16 }}
-      onPress={() => navigation.navigate('DrawerOpen')}
-    />
+    let headerLeft = (
+      <TouchableHighlight
+        style={{
+          margin: 0,
+          marginLeft: 8,
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+        underlayColor="rgba(0,0,0,0.2)"
+        onPress={() => navigation.navigate('DrawerOpen')}
+      >
+        <Icon
+          name={'menu'}
+          size={24}
+          style={{ color: '#fff', marginLeft: 0 }}
+        />
+      </TouchableHighlight>
+
     );
-    let headerRight = (<Icon
-      name={'cw'}
-      size={24}
-      style={{ color: '#fff', marginRight: 16 }}
-      onPress={params.btnRes ? params.btnRes : () => null}
-    />
+    let headerRight = (
+      <TouchableHighlight
+        style={{
+          margin: 0,
+          marginRight: 8,
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+        underlayColor="rgba(0,0,0,0.2)"
+        onPress={params.btnRes ? params.btnRes : () => null}
+      >
+        <Icon
+          name={'cw'}
+          size={24}
+          style={{ color: '#fff', marginRight: 0 }}
+        />
+      </TouchableHighlight>
     );
     if (params.inAction) {
       headerRight = (<ActivityIndicator size={24} color='#fff' style={{ marginRight: 16 }} />)

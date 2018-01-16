@@ -28,7 +28,7 @@ class MenuDrawer extends Component {
         return (
             <View style={styles.container}>
                 <TouchableHighlight
-                    underlayColor='#03A9F4'
+                    underlayColor="rgba(3, 169, 244, 0.4)"
                     style={styles.elementMenuButton}
                     onPress={() => {
                         this.props.navigation.navigate('DrawerClose');
@@ -39,10 +39,31 @@ class MenuDrawer extends Component {
                         //this.props.dispatch(selectPage(0))
                     }
                     }>
-                    <Text style={styles.elementMenuText} >Клан</Text>
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'row',
+                            marginLeft: 16,
+                            alignItems: 'center'
+
+                        }} >
+                        <Icon
+                            name={'home'}
+                            size={16}
+                            style={{
+                                color: '#03A9F4',
+                                //backgroundColor: 'red',
+                                width: 40,
+                                margin: 0,
+                                marginLeft: 0,
+                                padding: 0,
+                            }}
+                        />
+                        <Text style={styles.elementMenuText} >Клан</Text>
+                    </View>
                 </TouchableHighlight>
                 <TouchableHighlight
-                    underlayColor='#03A9F4'
+                    underlayColor='rgba(3, 169, 244, 0.4)'
                     style={styles.elementMenuButton}
                     onPress={() => {
                         this.props.navigation.navigate('DrawerClose');
@@ -52,10 +73,32 @@ class MenuDrawer extends Component {
                         })
                         //this.props.dispatch(selectPage(1))
                     }}>
-                    <Text style={styles.elementMenuText} >Статистика</Text>
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'row',
+                            marginLeft: 16,
+                            alignItems: 'center'
+
+                        }} >
+                        <Icon
+                            name={'line-graph'}
+                            size={16}
+                            style={{
+                                color: '#03A9F4',
+                                //backgroundColor: 'red',
+                                width: 40,
+                                margin: 0,
+                                marginLeft: 0,
+                                padding: 0,
+                            }}
+                        />
+                        <Text style={styles.elementMenuText} >Статистика</Text>
+                    </View>
+
                 </TouchableHighlight>
                 <TouchableHighlight
-                    underlayColor='#03A9F4'
+                    underlayColor='rgba(3, 169, 244, 0.4)'
                     style={styles.elementMenuButton}
                     onPress={() => {
                         this.props.navigation.navigate('DrawerClose');
@@ -64,7 +107,28 @@ class MenuDrawer extends Component {
                             //payload: ''
                         })
                     }}>
-                    <Text style={styles.elementMenuText} >Нормы</Text>
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'row',
+                            marginLeft: 16,
+                            alignItems: 'center'
+
+                        }} >
+                        <Icon
+                            name={'graduation-cap'}
+                            size={16}
+                            style={{
+                                color: '#03A9F4',
+                                //backgroundColor: 'red',
+                                width: 40,
+                                margin: 0,
+                                marginLeft: 0,
+                                padding: 0,
+                            }}
+                        />
+                        <Text style={styles.elementMenuText} >Нормы</Text>
+                    </View>
                 </TouchableHighlight>
 
             </View>
@@ -85,12 +149,12 @@ const styles = StyleSheet.create({
         color: '#03A9F4',
         textAlign: 'left',
         alignItems: 'center',
-        marginLeft: 72,
+        marginLeft: 16,
     },
     elementMenuButton: {
         height: 48,
         justifyContent: 'center',
         margin: 0,
-    },    
+    },
 });
 

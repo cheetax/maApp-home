@@ -31,9 +31,7 @@ export default class RulesView extends Component {
     return <ItemRulesView key={item.uid} keyVal={item.uid} item={item} onPress={this.props.onPress} />
   }
 
-  _keyExtractor = (item, index) => {
-    item.uid = index;
-  }
+  _keyExtractor = (item, index) => index;
   
   render() {
     //console.log('map', this.props.items);
