@@ -36,6 +36,7 @@ function nav(state = initialNavState, action) {
       );
       break;
     case 'ADD_RULES_VIEW':
+      var navig = NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } });  
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } }),
         state

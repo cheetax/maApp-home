@@ -25,25 +25,25 @@ export default class App extends Component {
   //   super(props)
   //   //init();
   // }
-  static navigationOptions = {
-    title: 'Battle of Wizards Assistans',
-    headerStyle: {
-      backgroundColor: '#03A9F4',
-      height: 30,
-      justifyContent: 'center',
-      //alignItems: 'center'
-    },
-    headerTitleStyle: {
-      fontSize: 18,
-      color: '#fff',
-      textAlign: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
-      //   margin: 5,
+  // static navigationOptions = {
+  //   title: 'Battle of Wizards Assistans',
+  //   headerStyle: {
+  //     backgroundColor: '#03A9F4',
+  //     height: 30,
+  //     justifyContent: 'center',
+  //     //alignItems: 'center'
+  //   },
+  //   headerTitleStyle: {
+  //     fontSize: 18,
+  //     color: '#fff',
+  //     textAlign: 'center',
+  //     justifyContent: 'center',
+  //     alignItems: 'center',
+  //     //   margin: 5,
 
-    },
+  //   },
 
-  }
+  // }
 
   componentWillMount(){
     store.dispatch(getContent())
