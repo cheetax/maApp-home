@@ -92,9 +92,6 @@ class StatisticPage extends Component {
       headerTitle: 'Статистика',
       headerLeft,
       headerRight,
-      headerTitleStyle: {
-        marginHorizontal: 0,
-      },
     };
   }
 

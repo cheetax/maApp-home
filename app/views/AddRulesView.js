@@ -51,7 +51,7 @@ class AddRulesView extends Component {
             newRule: {}
         }
         //this.state.oldRule = {};
-        switch (props.ruleType.index) {
+        switch (props.navigation.state.params.index) {
             case 0:
                 this.state.oldRule = props.rule.gold;
                 this.title = 'Золото';
@@ -100,8 +100,8 @@ class AddRulesView extends Component {
         //this.props.rules.Exp.push(this.state);
         this.props.navigation.goBack();
         return this.props.dispatch({
-            type: (this.props.ruleType.type === 'add') ? 'ADD_RULES' : 'EDIT_RULES',
-            payload: { index: this.props.ruleType.index, oldRule: this.state.oldRule, newRule: this.state.newRule },
+            type: (this.props.navigation.state.params.type === 'add') ? 'ADD_RULES' : 'EDIT_RULES',
+            payload: { index: this.props.navigation.state.params.index, oldRule: this.state.oldRule, newRule: this.state.newRule },
         });
     }
 

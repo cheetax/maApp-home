@@ -94,9 +94,10 @@ class ClanView extends Component {
       headerTitle: 'Battle of Wizards Assistans',
       headerLeft,
       headerRight,
-      headerTitleStyle: {
-        marginHorizontal: 0,
-      },
+      // headerTitleStyle: {
+      //   marginHorizontal: 0,
+      // },
+      
     };
   }
 
@@ -112,13 +113,6 @@ class ClanView extends Component {
       }, () => this.props.navigation.setParams({ inAction: this.state.inAction }));
 
     }
-    // if (!this.props.status.selectedPage) {
-    //   this.props.navigation.setParams({title: 'Battle of Wizards Assistans'})
-    //   //this.navigationOptions({ headerTitle: 'Test' });
-    // }
-    // else {
-    //   this.props.navigation.setParams({title: 'Статистика'})
-    // }
   }
   componentDidMount() {
     this.props.navigation.setParams({ btnRes: this.onBtnResClick.bind(this), inAction: this.state.inAction })
@@ -136,23 +130,6 @@ class ClanView extends Component {
 
     return (
       <ScrollView style={styles.container}>
-
-        {/* <List >
-          {            
-            this.props.items.map((item, index) => (
-              <ListItem key={index} 
-                        title ={item.name} />
-                //<Text key={index}> {item.user} </Text>
-                //<MainView key={index} keyVal={index} item={item} />
-              ))           
-          }
-          </List> */}
-
-        {/* <ListView dataSource={this.props.items}
-          renderRow={this._renderRow}
-          enableEmptySections={true}>
-
-        </ListView> */}
         <FlatList
           data={this.props.items}
           keyExtractor={this._keyExtractor.bind(this)}
