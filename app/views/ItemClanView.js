@@ -32,22 +32,7 @@ export default class ItemClanView extends Component {
               <Text style={styles.textSecondary}>
                 {this.props.item.rank}
               </Text>
-            </View>
-
-            <View style={styles.column1row2}>
-              <Image source={require('../img/dmg.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.force}
-              </Text>
-              <Image source={require('../img/hp.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.health}
-              </Text>
-              <Image source={require('../img/armor.png')} style={styles.img} />
-              <Text style={styles.textSecondary}>
-                {this.props.item.armor}
-              </Text>
-            </View>
+            </View>            
           </View>
           <View style={styles.column2} >
             <View style={styles.column2row}>
@@ -64,6 +49,21 @@ export default class ItemClanView extends Component {
             </View>
           </View>
         </View>
+        <View style={{height: 1, backgroundColor: 'lightgray', marginVertical: 16}} />
+        <View style={styles.column1row2}>
+              <Image source={require('../img/dmg.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.force}
+              </Text>
+              <Image source={require('../img/hp.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.health}
+              </Text>
+              <Image source={require('../img/armor.png')} style={styles.img} />
+              <Text style={styles.textSecondary}>
+                {this.props.item.armor}
+              </Text>
+            </View>
       </View>
     );
   }
@@ -83,16 +83,19 @@ const styles = StyleSheet.create({
     elevation: 2,
     justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: '#fff'
+    //backgroundColor: '#fff'
+    //backgroundColor: 'red'
   },
   listItem: { 
-    flex: -1,
+    flex: 1,
     flexDirection: 'row',
     margin: 16,
     padding: 0,
+    marginBottom: 0,
     justifyContent: "space-between",
     alignItems: 'center',
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    //backgroundColor: 'orange'
   },
   textPrimary: {
     fontSize: 24,
@@ -130,15 +133,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     alignSelf: 'stretch',
-    backgroundColor:'transparent'
+    //backgroundColor:'transparent'
   },
   column1row2: {
     flex: 1,
     flexDirection: 'row',
-    margin: 0,
-    paddingTop: 16,
-    marginLeft: 0,
-    backgroundColor: 'transparent',
+    margin: 16,
+    marginTop: 0,
+    //backgroundColor: 'blue',
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -167,7 +169,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor: 'transparent'
+    //backgroundColor: 'transparent'
   },
 
 });

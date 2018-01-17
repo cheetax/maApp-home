@@ -59,7 +59,6 @@ export const AppNavigator = DrawerNavigator(
   },
   {
     contentComponent: props => <MenuDrawer {...props} />,
-
   },
 );
 

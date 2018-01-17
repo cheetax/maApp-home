@@ -26,112 +26,115 @@ class MenuDrawer extends Component {
 
     render() {
         return (
+            // <View style={{backgroundColor: '#ecf0f1'}} >
+                
+            // </View>
             <View style={styles.container}>
-                <TouchableHighlight
-                    underlayColor="rgba(3, 169, 244, 0.4)"
-                    style={styles.elementMenuButton}
-                    onPress={() => {
-                        this.props.navigation.navigate('DrawerClose');
-                        this.props.navigation.dispatch({
-                            type: 'NAV_CLAN_PAGE',
-                            //payload: ''
-                        })
-                        //this.props.dispatch(selectPage(0))
-                    }
-                    }>
-                    <View
+            <TouchableHighlight
+                underlayColor="rgba(3, 169, 244, 0.4)"
+                style={styles.elementMenuButton}
+                onPress={() => {
+                    this.props.navigation.navigate('DrawerClose');
+                    this.props.navigation.dispatch({
+                        type: 'NAV_CLAN_PAGE',
+                        //payload: ''
+                    })
+                    //this.props.dispatch(selectPage(0))
+                }
+                }>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: 'row',
+                        marginLeft: 16,
+                        alignItems: 'center'
+
+                    }} >
+                    <Icon
+                        name={'home'}
+                        size={16}
                         style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            marginLeft: 16,
-                            alignItems: 'center'
+                            color: '#03A9F4',
+                            //backgroundColor: 'red',
+                            width: 40,
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0,
+                        }}
+                    />
+                    <Text style={styles.elementMenuText} >Клан</Text>
+                </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+                underlayColor='rgba(3, 169, 244, 0.4)'
+                style={styles.elementMenuButton}
+                onPress={() => {
+                    this.props.navigation.navigate('DrawerClose');
+                    this.props.navigation.dispatch({
+                        type: 'NAV_STATISTIC_PAGE',
+                        //payload: ''
+                    })
+                    //this.props.dispatch(selectPage(1))
+                }}>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: 'row',
+                        marginLeft: 16,
+                        alignItems: 'center'
 
-                        }} >
-                        <Icon
-                            name={'home'}
-                            size={16}
-                            style={{
-                                color: '#03A9F4',
-                                //backgroundColor: 'red',
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0,
-                            }}
-                        />
-                        <Text style={styles.elementMenuText} >Клан</Text>
-                    </View>
-                </TouchableHighlight>
-                <TouchableHighlight
-                    underlayColor='rgba(3, 169, 244, 0.4)'
-                    style={styles.elementMenuButton}
-                    onPress={() => {
-                        this.props.navigation.navigate('DrawerClose');
-                        this.props.navigation.dispatch({
-                            type: 'NAV_STATISTIC_PAGE',
-                            //payload: ''
-                        })
-                        //this.props.dispatch(selectPage(1))
-                    }}>
-                    <View
+                    }} >
+                    <Icon
+                        name={'line-graph'}
+                        size={16}
                         style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            marginLeft: 16,
-                            alignItems: 'center'
+                            color: '#03A9F4',
+                            //backgroundColor: 'red',
+                            width: 40,
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0,
+                        }}
+                    />
+                    <Text style={styles.elementMenuText} >Статистика</Text>
+                </View>
 
-                        }} >
-                        <Icon
-                            name={'line-graph'}
-                            size={16}
-                            style={{
-                                color: '#03A9F4',
-                                //backgroundColor: 'red',
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0,
-                            }}
-                        />
-                        <Text style={styles.elementMenuText} >Статистика</Text>
-                    </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+                underlayColor='rgba(3, 169, 244, 0.4)'
+                style={styles.elementMenuButton}
+                onPress={() => {
+                    this.props.navigation.navigate('DrawerClose');
+                    this.props.navigation.dispatch({
+                        type: 'NAV_RULES_PAGE',
+                        //payload: ''
+                    })
+                }}>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: 'row',
+                        marginLeft: 16,
+                        alignItems: 'center'
 
-                </TouchableHighlight>
-                <TouchableHighlight
-                    underlayColor='rgba(3, 169, 244, 0.4)'
-                    style={styles.elementMenuButton}
-                    onPress={() => {
-                        this.props.navigation.navigate('DrawerClose');
-                        this.props.navigation.dispatch({
-                            type: 'NAV_RULES_PAGE',
-                            //payload: ''
-                        })
-                    }}>
-                    <View
+                    }} >
+                    <Icon
+                        name={'graduation-cap'}
+                        size={16}
                         style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            marginLeft: 16,
-                            alignItems: 'center'
+                            color: '#03A9F4',
+                            //backgroundColor: 'red',
+                            width: 40,
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0,
+                        }}
+                    />
+                    <Text style={styles.elementMenuText} >Нормы</Text>
+                </View>
+            </TouchableHighlight>
+        </View>
 
-                        }} >
-                        <Icon
-                            name={'graduation-cap'}
-                            size={16}
-                            style={{
-                                color: '#03A9F4',
-                                //backgroundColor: 'red',
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0,
-                            }}
-                        />
-                        <Text style={styles.elementMenuText} >Нормы</Text>
-                    </View>
-                </TouchableHighlight>
-
-            </View>
         );
     }
 }
@@ -140,9 +143,10 @@ export default connect(mapStateToProps)(MenuDrawer);
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#ecf0f1',
+        flex: 1,        
         justifyContent: 'flex-start',
+        marginTop: 56,
+        backgroundColor: 'transparent'    
     },
     elementMenuText: {
         fontSize: 14,

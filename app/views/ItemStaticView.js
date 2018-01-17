@@ -50,23 +50,11 @@ export default class ItemStaticView extends Component {
               <Text style={styles.textSecondary}>
                 {this.props.item.rank}
               </Text>
-              <View style={[styles.column1row2,]} >
-                <View style={{ flex: 1, flexDirection: 'row' }}>
-                  <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
-                  <Text style={styles.textSecondary}>
-                    {this.props.item.dayOfClan}
-                  </Text>
-                </View>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
-                  <Icon style={styles.icon} name='ios-school-outline' size={18} />
-                  <Text style={styles.textSecondary}>
-                    {this.props.item.option}
-                  </Text>
-                </View>
-              </View>
+
             </View>
 
           </View>
+
           <View style={[styles.column2,]} >
             <View style={styles.column2row}>
               <Icon style={[styles.icon,]} name='ios-ribbon-outline' size={18} />
@@ -76,9 +64,21 @@ export default class ItemStaticView extends Component {
               <Icon style={[styles.icon,]} name='ios-arrow-forward-outline' size={18} />
               <Text style={styles.textSecondary}>{exp(this.props.item.ruleExp.value)}</Text>
             </View>
-            <View style={styles.column2row}>
-
-            </View>
+          </View>
+        </View>
+        <View style={{ height: 1, backgroundColor: 'lightgray', marginVertical: 16, marginLeft: 72 }} />
+        <View style={[styles.column1row2,]} >
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <Icon style={styles.icon} name='ios-calendar-outline' size={18} />
+            <Text style={styles.textSecondary}>
+              {this.props.item.dayOfClan}
+            </Text>
+          </View>
+          <View style={{ flex: 1, flexDirection: 'row' }}>
+            <Icon style={styles.icon} name='ios-school-outline' size={18} />
+            <Text style={styles.textSecondary}>
+              {this.props.item.option}
+            </Text>
           </View>
         </View>
       </View>
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     flex: -1,
     flexDirection: 'row',
     margin: 16,
+    marginBottom: 0,
     padding: 0,
     justifyContent: "space-between",
     alignItems: 'flex-start',
@@ -170,16 +171,17 @@ const styles = StyleSheet.create({
     padding: 0,
     marginLeft: 16,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    alignItems: 'stretch',
     //alignSelf: 'stretch',
     //backgroundColor: 'yellow'
   },
   column1row2: {
     flex: -1,
     flexDirection: 'row',
-    margin: 0,
+    margin: 16,
     paddingTop: 0,
-    marginLeft: 0,
+    marginLeft: 72,
+    marginTop: 0,
     justifyContent: 'flex-start',
     alignItems: 'center',
     //alignSelf: 'stretch',
@@ -219,7 +221,7 @@ const styles = StyleSheet.create({
     padding: 0,
     marginLeft: 0,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    alignItems: 'stretch',
     //backgroundColor: 'red'
     //alignSelf: 'stretch'
   },
@@ -239,7 +241,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     //alignItems: 'center',
     alignSelf: 'stretch',
-   // backgroundColor: 'blue'
+    // backgroundColor: 'blue'
   },
 
 });

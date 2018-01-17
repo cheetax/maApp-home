@@ -51700,7 +51700,6 @@ var AppNavigator = exports.AppNavigator = (0, _reactNavigation.DrawerNavigator)(
       }
     }));
   }
-
 });
 
 var RootPage = function RootPage(_ref) {
@@ -51708,7 +51707,7 @@ var RootPage = function RootPage(_ref) {
       nav = _ref.nav;
   return _react2.default.createElement(AppNavigator, { navigation: (0, _reactNavigation.addNavigationHelpers)({ dispatch: dispatch, state: nav }), __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 66
     }
   });
 };
@@ -79201,82 +79200,32 @@ var ItemClanView = _wrapComponent('ItemClanView')(function (_Component) {
                 },
                 this.props.item.rank
               )
-            ),
-            _react3.default.createElement(
-              _reactNative.View,
-              { style: styles.column1row2, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 37
-                }
-              },
-              _react3.default.createElement(_reactNative.Image, { source: require(696             ), style: styles.img, __source: { // 696 = ../img/dmg.png
-                  fileName: _jsxFileName,
-                  lineNumber: 38
-                }
-              }),
-              _react3.default.createElement(
-                _reactNative.Text,
-                { style: styles.textSecondary, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 39
-                  }
-                },
-                this.props.item.force
-              ),
-              _react3.default.createElement(_reactNative.Image, { source: require(697            ), style: styles.img, __source: { // 697 = ../img/hp.png
-                  fileName: _jsxFileName,
-                  lineNumber: 42
-                }
-              }),
-              _react3.default.createElement(
-                _reactNative.Text,
-                { style: styles.textSecondary, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 43
-                  }
-                },
-                this.props.item.health
-              ),
-              _react3.default.createElement(_reactNative.Image, { source: require(698               ), style: styles.img, __source: { // 698 = ../img/armor.png
-                  fileName: _jsxFileName,
-                  lineNumber: 46
-                }
-              }),
-              _react3.default.createElement(
-                _reactNative.Text,
-                { style: styles.textSecondary, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 47
-                  }
-                },
-                this.props.item.armor
-              )
             )
           ),
           _react3.default.createElement(
             _reactNative.View,
             { style: styles.column2, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 52
+                lineNumber: 37
               }
             },
             _react3.default.createElement(
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 53
+                  lineNumber: 38
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-ribbon-outline', size: 20, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 39
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 55
+                    lineNumber: 40
                   }
                 },
                 this.props.item.expClan
@@ -79286,24 +79235,74 @@ var ItemClanView = _wrapComponent('ItemClanView')(function (_Component) {
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 59
+                  lineNumber: 44
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 20, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 60
+                  lineNumber: 45
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 61
+                    lineNumber: 46
                   }
                 },
                 this.props.item.dayOfClan
               )
             )
+          )
+        ),
+        _react3.default.createElement(
+          _reactNative.View,
+          { style: styles.column1row2, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 52
+            }
+          },
+          _react3.default.createElement(_reactNative.Image, { source: require(696             ), style: styles.img, __source: { // 696 = ../img/dmg.png
+              fileName: _jsxFileName,
+              lineNumber: 53
+            }
+          }),
+          _react3.default.createElement(
+            _reactNative.Text,
+            { style: styles.textSecondary, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 54
+              }
+            },
+            this.props.item.force
+          ),
+          _react3.default.createElement(_reactNative.Image, { source: require(697            ), style: styles.img, __source: { // 697 = ../img/hp.png
+              fileName: _jsxFileName,
+              lineNumber: 57
+            }
+          }),
+          _react3.default.createElement(
+            _reactNative.Text,
+            { style: styles.textSecondary, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 58
+              }
+            },
+            this.props.item.health
+          ),
+          _react3.default.createElement(_reactNative.Image, { source: require(698               ), style: styles.img, __source: { // 698 = ../img/armor.png
+              fileName: _jsxFileName,
+              lineNumber: 61
+            }
+          }),
+          _react3.default.createElement(
+            _reactNative.Text,
+            { style: styles.textSecondary, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 62
+              }
+            },
+            this.props.item.armor
           )
         )
       );
@@ -79330,7 +79329,8 @@ var styles = _reactNative.StyleSheet.create({
     elevation: 2,
     justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: '#fff'
+
+    backgroundColor: 'red'
   },
   listItem: {
     flex: -1,
@@ -79339,7 +79339,8 @@ var styles = _reactNative.StyleSheet.create({
     padding: 0,
     justifyContent: "space-between",
     alignItems: 'center',
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    backgroundColor: 'orange'
   },
   textPrimary: {
     fontSize: 24,
@@ -79382,10 +79383,9 @@ var styles = _reactNative.StyleSheet.create({
   column1row2: {
     flex: 1,
     flexDirection: 'row',
-    margin: 0,
-    paddingTop: 16,
-    marginLeft: 0,
-    backgroundColor: 'transparent',
+    margin: 16,
+    paddingTop: 0,
+    backgroundColor: 'blue',
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch'
@@ -89081,8 +89081,8 @@ var AddRulesView = _wrapComponent("AddRulesView")((_temp = _class = function (_C
         value: function onBtnSaveClick() {
             this.props.navigation.goBack();
             return this.props.dispatch({
-                type: this.props.ruleType.type === 'add' ? 'ADD_RULES' : 'EDIT_RULES',
-                payload: { index: this.props.ruleType.index, oldRule: this.state.oldRule, newRule: this.state.newRule }
+                type: this.props.navigation.state.params.type === 'add' ? 'ADD_RULES' : 'EDIT_RULES',
+                payload: { index: this.props.navigation.state.params.index, oldRule: this.state.oldRule, newRule: this.state.newRule }
             });
         }
     }, {
@@ -89364,7 +89364,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 29
+                        lineNumber: 32
                     }
                 },
                 _react3.default.createElement(
@@ -89379,7 +89379,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 30
+                            lineNumber: 33
                         }
                     },
                     _react3.default.createElement(
@@ -89393,7 +89393,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
 
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 42
+                                lineNumber: 45
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
@@ -89409,14 +89409,14 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 50
+                                lineNumber: 53
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 62
+                                    lineNumber: 65
                                 }
                             },
                             "\u041A\u043B\u0430\u043D"
@@ -89435,7 +89435,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 68
                         }
                     },
                     _react3.default.createElement(
@@ -89449,7 +89449,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
 
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 76
+                                lineNumber: 79
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
@@ -89465,14 +89465,14 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 84
+                                lineNumber: 87
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 96
+                                    lineNumber: 99
                                 }
                             },
                             "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430"
@@ -89491,7 +89491,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 100
+                            lineNumber: 103
                         }
                     },
                     _react3.default.createElement(
@@ -89505,7 +89505,7 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
 
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 110
+                                lineNumber: 113
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
@@ -89521,14 +89521,14 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 118
+                                lineNumber: 121
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 130
+                                    lineNumber: 133
                                 }
                             },
                             "\u041D\u043E\u0440\u043C\u044B"
@@ -89548,8 +89548,9 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(MenuDrawer);
 var styles = _reactNative.StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ecf0f1',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        marginTop: 56,
+        backgroundColor: 'transparent'
     },
     elementMenuText: {
         fontSize: 14,
