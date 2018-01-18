@@ -17,6 +17,7 @@ import RulesPage from './RulesPage';
 import StatisticPage from './StatisticPage';
 import AddRulesView from './AddRulesView';
 import MenuDrawer from './MenuDrawer';
+import LoginPage from './LoginPage';
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -26,32 +27,33 @@ function mapStateToProps(state) {
 }
 
 export const stackNavigator = StackNavigator(
-    {
-      Home: { screen: ClanView, },
-      Rules: { screen: RulesPage, },
-      AddRules: { screen: AddRulesView, },
-      Statistic: { screen: StatisticPage},
-    },
-    {
-      navigationOptions: {
-        title: 'Battle of Wizards Assistans',
+  {
+    Home: { screen: ClanView, },
+    Rules: { screen: RulesPage, },
+    AddRules: { screen: AddRulesView, },
+    Statistic: { screen: StatisticPage },
+    Login: { screen: LoginPage },
+  },
+  {
+    navigationOptions: {
+      title: 'Battle of Wizards Assistans',
 
-        headerStyle: {
-          backgroundColor: '#03A9F4',  
-          height: 56,
-        },
-        headerTitleStyle: {
-          fontSize: 20,
-          color: '#fff',
-          marginHorizontal: 16,
-          textAlign: 'left',
-          alignSelf: 'stretch',
-          marginHorizontal: 0,
-        },
-      }
-  
-    },
-  );
+      headerStyle: {
+        backgroundColor: '#03A9F4',
+        height: 56,
+      },
+      headerTitleStyle: {
+        fontSize: 20,
+        color: '#fff',
+        marginHorizontal: 16,
+        textAlign: 'left',
+        alignSelf: 'stretch',
+        marginHorizontal: 0,
+      },
+    }
+
+  },
+);
 
 export const AppNavigator = DrawerNavigator(
   {

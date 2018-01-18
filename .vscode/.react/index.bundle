@@ -51656,6 +51656,10 @@ var _MenuDrawer = require(790           ); // 790 = ./MenuDrawer
 
 var _MenuDrawer2 = _interopRequireDefault(_MenuDrawer);
 
+var _LoginPage = require(798          ); // 798 = ./LoginPage
+
+var _LoginPage2 = _interopRequireDefault(_LoginPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function mapStateToProps(state) {
@@ -51668,7 +51672,8 @@ var stackNavigator = exports.stackNavigator = (0, _reactNavigation.StackNavigato
   Home: { screen: _ClanView2.default },
   Rules: { screen: _RulesPage2.default },
   AddRules: { screen: _AddRulesView2.default },
-  Statistic: { screen: _StatisticPage2.default }
+  Statistic: { screen: _StatisticPage2.default },
+  Login: { screen: _LoginPage2.default }
 }, {
   navigationOptions: {
     title: 'Battle of Wizards Assistans',
@@ -51696,7 +51701,7 @@ var AppNavigator = exports.AppNavigator = (0, _reactNavigation.DrawerNavigator)(
     return _react2.default.createElement(_MenuDrawer2.default, _extends({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 63
       }
     }));
   }
@@ -51707,7 +51712,7 @@ var RootPage = function RootPage(_ref) {
       nav = _ref.nav;
   return _react2.default.createElement(AppNavigator, { navigation: (0, _reactNavigation.addNavigationHelpers)({ dispatch: dispatch, state: nav }), __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     }
   });
 };
@@ -79255,51 +79260,56 @@ var ItemClanView = _wrapComponent('ItemClanView')(function (_Component) {
             )
           )
         ),
+        _react3.default.createElement(_reactNative.View, { style: { height: 1, backgroundColor: 'lightgray', marginVertical: 16 }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          }
+        }),
         _react3.default.createElement(
           _reactNative.View,
           { style: styles.column1row2, __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 53
             }
           },
           _react3.default.createElement(_reactNative.Image, { source: require(696             ), style: styles.img, __source: { // 696 = ../img/dmg.png
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 54
             }
           }),
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.textSecondary, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 54
+                lineNumber: 55
               }
             },
             this.props.item.force
           ),
           _react3.default.createElement(_reactNative.Image, { source: require(697            ), style: styles.img, __source: { // 697 = ../img/hp.png
               fileName: _jsxFileName,
-              lineNumber: 57
+              lineNumber: 58
             }
           }),
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.textSecondary, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 58
+                lineNumber: 59
               }
             },
             this.props.item.health
           ),
           _react3.default.createElement(_reactNative.Image, { source: require(698               ), style: styles.img, __source: { // 698 = ../img/armor.png
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 62
             }
           }),
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.textSecondary, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 62
+                lineNumber: 63
               }
             },
             this.props.item.armor
@@ -79328,19 +79338,17 @@ var styles = _reactNative.StyleSheet.create({
     borderRadius: 2,
     elevation: 2,
     justifyContent: 'flex-start',
-    alignItems: 'stretch',
-
-    backgroundColor: 'red'
+    alignItems: 'stretch'
   },
   listItem: {
-    flex: -1,
+    flex: 1,
     flexDirection: 'row',
     margin: 16,
     padding: 0,
+    marginBottom: 0,
     justifyContent: "space-between",
     alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: 'orange'
+    alignSelf: 'stretch'
   },
   textPrimary: {
     fontSize: 24,
@@ -79377,15 +79385,14 @@ var styles = _reactNative.StyleSheet.create({
     marginLeft: 0,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    alignSelf: 'stretch',
-    backgroundColor: 'transparent'
+    alignSelf: 'stretch'
   },
   column1row2: {
     flex: 1,
     flexDirection: 'row',
     margin: 16,
-    paddingTop: 0,
-    backgroundColor: 'blue',
+    marginTop: 0,
+
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'stretch'
@@ -79413,8 +79420,7 @@ var styles = _reactNative.StyleSheet.create({
     marginLeft: 0,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: 'transparent'
+    alignSelf: 'stretch'
   }
 
 });
@@ -88600,58 +88606,6 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
                   }
                 },
                 this.props.item.rank
-              ),
-              _react3.default.createElement(
-                _reactNative.View,
-                { style: [styles.column1row2], __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 53
-                  }
-                },
-                _react3.default.createElement(
-                  _reactNative.View,
-                  { style: { flex: 1, flexDirection: 'row' }, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 54
-                    }
-                  },
-                  _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 18, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 55
-                    }
-                  }),
-                  _react3.default.createElement(
-                    _reactNative.Text,
-                    { style: styles.textSecondary, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 56
-                      }
-                    },
-                    this.props.item.dayOfClan
-                  )
-                ),
-                _react3.default.createElement(
-                  _reactNative.View,
-                  { style: { flex: 1, flexDirection: 'row' }, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 60
-                    }
-                  },
-                  _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-school-outline', size: 18, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 61
-                    }
-                  }),
-                  _react3.default.createElement(
-                    _reactNative.Text,
-                    { style: styles.textSecondary, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 62
-                      }
-                    },
-                    this.props.item.option
-                  )
-                )
               )
             )
           ),
@@ -88659,26 +88613,26 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
             _reactNative.View,
             { style: [styles.column2], __source: {
                 fileName: _jsxFileName,
-                lineNumber: 70
+                lineNumber: 58
               }
             },
             _react3.default.createElement(
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 71
+                  lineNumber: 59
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: [styles.icon], name: 'ios-ribbon-outline', size: 18, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 72
+                  lineNumber: 60
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 73
+                    lineNumber: 61
                   }
                 },
                 exp(this.props.item.exp)
@@ -88688,29 +88642,81 @@ var ItemStaticView = _wrapComponent('ItemStaticView')(function (_Component) {
               _reactNative.View,
               { style: styles.column2row, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 75
+                  lineNumber: 63
                 }
               },
               _react3.default.createElement(_Ionicons2.default, { style: [styles.icon], name: 'ios-arrow-forward-outline', size: 18, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 76
+                  lineNumber: 64
                 }
               }),
               _react3.default.createElement(
                 _reactNative.Text,
                 { style: styles.textSecondary, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 77
+                    lineNumber: 65
                   }
                 },
                 exp(this.props.item.ruleExp.value)
               )
-            ),
-            _react3.default.createElement(_reactNative.View, { style: styles.column2row, __source: {
+            )
+          )
+        ),
+        _react3.default.createElement(_reactNative.View, { style: { height: 1, backgroundColor: 'lightgray', marginVertical: 16, marginLeft: 72 }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69
+          }
+        }),
+        _react3.default.createElement(
+          _reactNative.View,
+          { style: [styles.column1row2], __source: {
+              fileName: _jsxFileName,
+              lineNumber: 70
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.View,
+            { style: { flex: 1, flexDirection: 'row' }, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 79
+                lineNumber: 71
               }
-            })
+            },
+            _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-calendar-outline', size: 18, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 72
+              }
+            }),
+            _react3.default.createElement(
+              _reactNative.Text,
+              { style: styles.textSecondary, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 73
+                }
+              },
+              this.props.item.dayOfClan
+            )
+          ),
+          _react3.default.createElement(
+            _reactNative.View,
+            { style: { flex: 1, flexDirection: 'row' }, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 77
+              }
+            },
+            _react3.default.createElement(_Ionicons2.default, { style: styles.icon, name: 'ios-school-outline', size: 18, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 78
+              }
+            }),
+            _react3.default.createElement(
+              _reactNative.Text,
+              { style: styles.textSecondary, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 79
+                }
+              },
+              this.props.item.option
+            )
           )
         )
       );
@@ -88742,6 +88748,7 @@ var styles = _reactNative.StyleSheet.create({
     flex: -1,
     flexDirection: 'row',
     margin: 16,
+    marginBottom: 0,
     padding: 0,
     justifyContent: "space-between",
     alignItems: 'flex-start',
@@ -88806,14 +88813,15 @@ var styles = _reactNative.StyleSheet.create({
     padding: 0,
     marginLeft: 16,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'stretch'
   },
   column1row2: {
     flex: -1,
     flexDirection: 'row',
-    margin: 0,
+    margin: 16,
     paddingTop: 0,
-    marginLeft: 0,
+    marginLeft: 72,
+    marginTop: 0,
     justifyContent: 'flex-start',
     alignItems: 'center'
   },
@@ -88850,7 +88858,7 @@ var styles = _reactNative.StyleSheet.create({
     padding: 0,
     marginLeft: 0,
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'stretch'
   },
   column2: {
     flex: 0.3,
@@ -89342,7 +89350,8 @@ function mapStateToProps(state) {
     return {
         status: state.actionStatus,
         data: state.clanInfo,
-        nav: state.nav
+        nav: state.nav,
+        account: state.account
     };
 }
 
@@ -89364,9 +89373,90 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 32
+                        lineNumber: 31
                     }
                 },
+                _react3.default.createElement(
+                    _reactNative.View,
+                    { style: {
+                            flex: 0,
+                            height: 56,
+
+                            justifyContent: 'center'
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 32
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        { style: {
+                                flex: 0,
+                                flexDirection: 'row',
+                                marginHorizontal: 16,
+                                alignItems: 'center'
+                            }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 38
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            { style: {
+                                    height: 32,
+                                    width: 32,
+                                    marginRight: 8,
+                                    borderRadius: 16,
+                                    backgroundColor: 'lightgrey',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 44
+                                }
+                            },
+                            _react3.default.createElement(_Entypo2.default, {
+                                name: 'user',
+                                size: 22,
+                                style: { justifyContent: 'center' },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 53
+                                }
+                            })
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableHighlight,
+                            {
+                                underlayColor: "rgba(3, 169, 244, 0.4)",
+                                style: styles.elementMenuButton,
+                                onPress: function onPress() {
+                                    _this2.props.navigation.navigate('DrawerClose');
+                                    _this2.props.navigation.dispatch({
+                                        type: 'NAV_LOGIN_PAGE'
+                                    });
+                                }, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 59
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: styles.elementMenuText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 70
+                                    }
+                                },
+                                this.props.account.login
+                            )
+                        )
+                    )
+                ),
+                _react3.default.createElement(_reactNative.View, { style: { height: 1, backgroundColor: 'lightgray' }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 76
+                    }
+                }),
                 _react3.default.createElement(
                     _reactNative.TouchableHighlight,
                     {
@@ -89379,44 +89469,31 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 33
+                            lineNumber: 77
                         }
                     },
                     _react3.default.createElement(
                         _reactNative.View,
                         {
-                            style: {
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginLeft: 16,
-                                alignItems: 'center'
-
-                            }, __source: {
+                            style: styles.elementMenu, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 45
+                                lineNumber: 89
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
                             name: 'home',
-                            size: 16,
-                            style: {
-                                color: '#03A9F4',
-
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0
-                            },
+                            size: 24,
+                            style: styles.elementMenuIcon,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 53
+                                lineNumber: 91
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 65
+                                    lineNumber: 96
                                 }
                             },
                             "\u041A\u043B\u0430\u043D"
@@ -89435,44 +89512,31 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 68
+                            lineNumber: 99
                         }
                     },
                     _react3.default.createElement(
                         _reactNative.View,
                         {
-                            style: {
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginLeft: 16,
-                                alignItems: 'center'
-
-                            }, __source: {
+                            style: styles.elementMenu, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 79
+                                lineNumber: 110
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
                             name: 'line-graph',
-                            size: 16,
-                            style: {
-                                color: '#03A9F4',
-
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0
-                            },
+                            size: 24,
+                            style: styles.elementMenuIcon,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 112
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 99
+                                    lineNumber: 117
                                 }
                             },
                             "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430"
@@ -89491,44 +89555,31 @@ var MenuDrawer = _wrapComponent("MenuDrawer")(function (_Component) {
                             });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 103
+                            lineNumber: 121
                         }
                     },
                     _react3.default.createElement(
                         _reactNative.View,
                         {
-                            style: {
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginLeft: 16,
-                                alignItems: 'center'
-
-                            }, __source: {
+                            style: styles.elementMenu, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 113
+                                lineNumber: 131
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
                             name: 'graduation-cap',
-                            size: 16,
-                            style: {
-                                color: '#03A9F4',
-
-                                width: 40,
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0
-                            },
+                            size: 24,
+                            style: styles.elementMenuIcon,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 121
+                                lineNumber: 133
                             }
                         }),
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: styles.elementMenuText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 133
+                                    lineNumber: 138
                                 }
                             },
                             "\u041D\u043E\u0440\u043C\u044B"
@@ -89549,7 +89600,7 @@ var styles = _reactNative.StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'flex-start',
-        marginTop: 56,
+        marginTop: 0,
         backgroundColor: 'transparent'
     },
     elementMenuText: {
@@ -89563,9 +89614,293 @@ var styles = _reactNative.StyleSheet.create({
         height: 48,
         justifyContent: 'center',
         margin: 0
+    },
+    elementMenuIcon: {
+        color: '#03A9F4',
+
+        width: 36,
+        margin: 0,
+        marginLeft: 0,
+        padding: 0
+    },
+
+    elementMenu: {
+        flex: 1,
+        flexDirection: 'row',
+        marginLeft: 20,
+        alignItems: 'center'
     }
 });
 }, 790, null, "myApp/app/views/MenuDrawer.js");
+__d(/* myApp/app/views/LoginPage.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(35     ); // 35 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(174                                                    ); // 174 = ./../../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\LoginPage.js";
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactRedux = require(488          ); // 488 = react-redux
+
+var _actionUsers = require(629                     ); // 629 = ../actions/actionUsers
+
+var _reactNativeElements = require(637                    ); // 637 = react-native-elements
+
+var _Entypo = require(579                               ); // 579 = react-native-vector-icons/Entypo
+
+var _Entypo2 = _interopRequireDefault(_Entypo);
+
+var _reactNativeMdTextinput = require(703                        ); // 703 = react-native-md-textinput
+
+var _reactNativeMdTextinput2 = _interopRequireDefault(_reactNativeMdTextinput);
+
+var _reactNative = require(12            ); // 12 = react-native
+
+var _ItemRulesView = require(701              ); // 701 = ./ItemRulesView
+
+var _ItemRulesView2 = _interopRequireDefault(_ItemRulesView);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    LoginPage: {
+        displayName: "LoginPage"
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "d:/tfvc/maApp-home/app/views/LoginPage.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+function mapStateToProps(state) {
+    return {
+        nav: state.nav,
+        account: state.account
+    };
+}
+
+function mapDispatcherToProps(dispatch) {
+    return {
+        saveRules: function saveRules(data) {
+            dispatch((0, _actionUsers.saveRules)(data));
+        }
+    };
+}
+
+var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
+    _inherits(LoginPage, _Component);
+
+    function LoginPage(props) {
+        _classCallCheck(this, LoginPage);
+
+        var _this = _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).call(this, props));
+
+        _this.state = {
+            account: _extends({}, props.account)
+        };
+
+        return _this;
+    }
+
+    _createClass(LoginPage, [{
+        key: "onBtnLoginClick",
+        value: function onBtnLoginClick() {
+            this.props.navigation.goBack();
+            return this.props.dispatch({
+                type: 'LOGIN',
+                payload: _extends({}, this.state.account)
+            });
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {}
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            return _react3.default.createElement(
+                _reactNative.View,
+                { style: styles.container, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 99
+                    }
+                },
+                _react3.default.createElement(
+                    _reactNative.Text,
+                    { style: styles.headerText, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 100
+                        }
+                    },
+                    "\u0412\u0445\u043E\u0434"
+                ),
+                _react3.default.createElement(
+                    _reactNative.View,
+                    { style: { marginHorizontal: 16 }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 101
+                        }
+                    },
+                    _react3.default.createElement(_reactNativeMdTextinput2.default, {
+                        label: 'Логин',
+
+                        highlightColor: '#00BCD4',
+                        onChangeText: function onChangeText(login) {
+                            return _this2.state.account.login = login;
+                        },
+                        value: this.state.account.login,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 102
+                        }
+                    }),
+                    _react3.default.createElement(_reactNativeMdTextinput2.default, {
+                        label: 'Пароль',
+                        highlightColor: '#00BCD4',
+                        secureTextEntry: true,
+                        onChangeText: function onChangeText(password) {
+                            return _this2.state.account.password = password;
+                        },
+                        value: this.state.account.password,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 112
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.TouchableHighlight,
+                        {
+
+                            onPress: this.onBtnLoginClick.bind(this),
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 120
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 124
+                                }
+                            },
+                            "\u0412\u043E\u0439\u0442\u0438"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return LoginPage;
+}(_react2.Component));
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(LoginPage);
+
+
+var styles = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        padding: 0
+    },
+    headerText: {
+        fontSize: 20,
+        textAlign: 'left',
+        marginLeft: 16,
+        marginTop: 24
+    },
+    buttonPanel: {
+        flexDirection: 'row',
+        backgroundColor: 'lightgrey',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottomWidth: 0,
+        borderColor: 'grey',
+        margin: 0
+    },
+    footer: {
+        flex: 0,
+        flexDirection: 'column',
+        justifyContent: 'center',
+
+        borderTopWidth: 0.5,
+        borderColor: 'grey',
+        backgroundColor: 'lightgrey',
+        alignItems: 'center'
+    },
+    buttonRes: {
+        flex: 1,
+        padding: 0,
+
+        alignItems: 'center',
+        alignSelf: 'flex-end',
+
+        backgroundColor: 'transparent',
+        marginRight: 16
+    },
+    buttonTextStyle: {
+        color: '#fff',
+        fontSize: 16,
+        textAlign: 'right'
+    },
+    buttonCircle: {
+        width: 35,
+        height: 35,
+        borderRadius: 20,
+        margin: 0,
+        padding: 0,
+        borderColor: 'grey',
+        borderWidth: 1,
+
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#ecf0f1'
+    },
+    buttonFooter: {
+        width: 100,
+        flex: 0,
+
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+        margin: 0
+    },
+    header: {
+        backgroundColor: '#03A9F4',
+        height: 30,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});
+}, 798, null, "myApp/app/views/LoginPage.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -89610,6 +89945,8 @@ var _stackNavigator = require(796               ); // 796 = ./stackNavigator
 
 var _stackNavigator2 = _interopRequireDefault(_stackNavigator);
 
+var _settings = require(799         ); // 799 = ./settings
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
@@ -89617,6 +89954,8 @@ var rootReducer = (0, _redux.combineReducers)({
     actionStatus: _status2.default,
     rules: _rules.rules,
     editRule: _rules.editRule,
+    settings: _settings.settings,
+    account: _settings.account,
     nav: _stackNavigator2.default
 });
 
@@ -89811,12 +90150,14 @@ function nav() {
     case 'NAV_RULES_PAGE':
       nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'Rules' }), state);
       break;
-
     case 'NAV_CLAN_PAGE':
       nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'Home' }), state);
       break;
     case 'NAV_STATISTIC_PAGE':
       nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'Statistic' }), state);
+      break;
+    case 'NAV_LOGIN_PAGE':
+      nextState = _RootPage.AppNavigator.router.getStateForAction(_reactNavigation.NavigationActions.navigate({ routeName: 'Login' }), state);
       break;
     case 'ADD_RULES_VIEW':
       var navig = _reactNavigation.NavigationActions.navigate({ routeName: 'AddRules', params: _extends({}, action.payload, { type: 'add' }) });
@@ -89837,6 +90178,50 @@ function nav() {
 
 exports.default = nav;
 }, 796, null, "myApp/app/reducers/stackNavigator.js");
+__d(/* myApp/app/reducers/settings.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.settings = settings;
+exports.account = account;
+var initialSettings = {
+    probationPeriod: 0
+};
+
+var initialAccount = {
+    login: '',
+    password: '',
+    statusLogIn: false
+};
+
+function settings() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialSettings;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case "CHANGE_SETTINGS":
+            state = action.payload;
+            return _extends({}, state);;
+        default:
+            return state;
+    }
+}
+
+function account() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialAccount;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case "LOGIN":
+            state = _extends({}, action.payload);
+            return _extends({}, state);;
+        default:
+            return state;
+    }
+}
+}, 799, null, "myApp/app/reducers/settings.js");
 ;require(50);
 ;require(797);
 //# sourceMappingURL=index.map

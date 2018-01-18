@@ -9,7 +9,7 @@ const firstAction = AppNavigator.router.getActionForPathAndParams('Home');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const initialNavState = AppNavigator.router.getStateForAction(
   tempNavState
-); 
+);
 let inAction = false;
 
 function nav(state = initialNavState, action) {
@@ -22,7 +22,6 @@ function nav(state = initialNavState, action) {
         state
       );
       break;
-
     case 'NAV_CLAN_PAGE':
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions.navigate({ routeName: 'Home' }),
@@ -35,8 +34,14 @@ function nav(state = initialNavState, action) {
         state
       );
       break;
+    case 'NAV_LOGIN_PAGE':
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Login' }),
+        state
+      );
+      break;
     case 'ADD_RULES_VIEW':
-      var navig = NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } });  
+      var navig = NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } });
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions.navigate({ routeName: 'AddRules', params: { ...action.payload, type: 'add' } }),
         state
