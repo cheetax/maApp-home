@@ -1303,7 +1303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactNative.AppRegistry.registerComponent('myApp', function () {
   return _app2.default;
 });
-}, 797, null, "myApp/index.js");
+}, 799, null, "myApp/index.js");
 __d(/* react-native-implementation */function(global, require, module, exports) {
 'use strict';
 
@@ -22270,7 +22270,7 @@ module.exports = __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactDebugTo
 __d(/* ActivityIndicator */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ActivityIndicator\\ActivityIndicator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ActivityIndicator\\ActivityIndicator.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22724,7 +22724,7 @@ __d(/* ProgressBarAndroid */function(global, require, module, exports) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ProgressBarAndroid\\ProgressBarAndroid.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ProgressBarAndroid\\ProgressBarAndroid.android.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -25300,7 +25300,7 @@ __d(/* View */function(global, require, module, exports) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\View\\View.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\View\\View.js';
 var NativeMethodsMixin = require(124                 ); // 124 = NativeMethodsMixin
 var Platform = require(46        ); // 46 = Platform
 var PropTypes = require(126         ); // 126 = prop-types
@@ -25834,7 +25834,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\ART\\ReactNativeART.js',
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\ART\\ReactNativeART.js',
     _class2,
     _temp2;
 
@@ -25865,7 +25865,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/ART/ReactNativeART.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/ART/ReactNativeART.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -30452,7 +30452,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Button.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Button.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30469,7 +30469,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/Button.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/Button.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -30626,7 +30626,7 @@ module.exports = Button;
 __d(/* Text */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Text\\Text.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Text\\Text.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -30870,7 +30870,7 @@ __d(/* Touchable */function(global, require, module, exports) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Touchable\\Touchable.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Touchable\\Touchable.js';
 var BoundingDimensions = require(336                 ); // 336 = BoundingDimensions
 var Platform = require(46        ); // 46 = Platform
 var Position = require(338       ); // 338 = Position
@@ -31882,7 +31882,7 @@ module.exports = ensurePositiveDelayProps;
 __d(/* TouchableOpacity */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Touchable\\TouchableOpacity.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Touchable\\TouchableOpacity.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -35674,7 +35674,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Animated\\src\\createAnimatedComponent.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Animated\\src\\createAnimatedComponent.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -35694,7 +35694,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -35874,7 +35874,7 @@ module.exports = createAnimatedComponent;
 __d(/* Image */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Image\\Image.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Image\\Image.android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -36118,7 +36118,7 @@ module.exports = filterObject;
 __d(/* ScrollView */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ScrollView\\ScrollView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ScrollView\\ScrollView.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -36998,7 +36998,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ScrollView\\ScrollViewStickyHeader.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ScrollView\\ScrollViewStickyHeader.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37017,7 +37017,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -37149,7 +37149,7 @@ module.exports = processDecelerationRate;
 __d(/* CheckBox */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\CheckBox\\CheckBox.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\CheckBox\\CheckBox.android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -37249,7 +37249,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\DatePicker\\DatePickerIOS.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\DatePicker\\DatePickerIOS.android.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37268,7 +37268,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -37342,7 +37342,7 @@ module.exports = DummyDatePickerIOS;
 __d(/* DrawerLayoutAndroid */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\DrawerAndroid\\DrawerLayoutAndroid.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\DrawerAndroid\\DrawerLayoutAndroid.android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -37583,7 +37583,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -37815,7 +37815,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\FlatList.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\FlatList.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -37834,7 +37834,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index3.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Lists/FlatList.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Lists/FlatList.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -38139,7 +38139,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\MetroListView.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\MetroListView.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38156,7 +38156,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Lists/MetroListView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Lists/MetroListView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -38355,7 +38355,7 @@ module.exports = MetroListView;
 __d(/* ListView */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\ListView\\ListView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\ListView\\ListView.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -39122,7 +39122,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/StaticRenderer.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/StaticRenderer.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -39205,7 +39205,7 @@ module.exports = cloneReferencedElement;
 __d(/* RefreshControl */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\RefreshControl\\RefreshControl.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\RefreshControl\\RefreshControl.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -39318,7 +39318,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _temp,
     _initialiseProps,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\VirtualizedList.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\VirtualizedList.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39340,7 +39340,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index3.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Lists/VirtualizedList.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Lists/VirtualizedList.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -40999,7 +40999,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Image\\ImageBackground.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Image\\ImageBackground.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -41020,7 +41020,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Image/ImageBackground.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Image/ImageBackground.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -41194,7 +41194,7 @@ module.exports = ImageStore;
 __d(/* KeyboardAvoidingView */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Keyboard\\KeyboardAvoidingView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Keyboard\\KeyboardAvoidingView.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -41493,7 +41493,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\UnimplementedViews\\UnimplementedView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\UnimplementedViews\\UnimplementedView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -41512,7 +41512,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -41583,7 +41583,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Modal\\Modal.js',
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Modal\\Modal.js',
     _container;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -41603,7 +41603,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Modal/Modal.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Modal/Modal.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -41808,7 +41808,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\ReactNative\\AppContainer.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\ReactNative\\AppContainer.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41825,7 +41825,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/ReactNative/AppContainer.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/ReactNative/AppContainer.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -41999,7 +41999,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _temp,
     _initialiseProps,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\Inspector.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\Inspector.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42016,7 +42016,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/Inspector.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/Inspector.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -42322,7 +42322,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\InspectorOverlay.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\InspectorOverlay.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42339,7 +42339,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -42447,7 +42447,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\ElementBox.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\ElementBox.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -42466,7 +42466,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/ElementBox.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/ElementBox.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -42583,7 +42583,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\BorderBox.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\BorderBox.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -42602,7 +42602,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/BorderBox.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/BorderBox.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -42707,7 +42707,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\InspectorPanel.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\InspectorPanel.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -42729,7 +42729,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/InspectorPanel.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/InspectorPanel.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -42996,7 +42996,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\ElementProperties.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\ElementProperties.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43013,7 +43013,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/ElementProperties.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/ElementProperties.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -43251,7 +43251,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\BoxInspector.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\BoxInspector.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -43273,7 +43273,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/BoxInspector.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/BoxInspector.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -43513,7 +43513,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\StyleInspector.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\StyleInspector.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -43532,7 +43532,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/StyleInspector.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/StyleInspector.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -43660,7 +43660,7 @@ module.exports = StyleInspector;
 __d(/* TouchableHighlight */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Touchable\\TouchableHighlight.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Touchable\\TouchableHighlight.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -43941,7 +43941,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\NetworkOverlay.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\NetworkOverlay.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -43960,7 +43960,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -44909,7 +44909,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Inspector\\PerformanceOverlay.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Inspector\\PerformanceOverlay.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -44928,7 +44928,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -45045,7 +45045,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\ReactNative\\YellowBox.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\ReactNative\\YellowBox.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45064,7 +45064,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/ReactNative/YellowBox.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/ReactNative/YellowBox.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -45778,7 +45778,7 @@ var _class,
     _temp,
     _class2,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Picker\\Picker.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Picker\\Picker.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45800,7 +45800,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/Picker/Picker.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/Picker/Picker.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -45950,7 +45950,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _temp,
     _initialiseProps,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Picker\\PickerAndroid.android.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Picker\\PickerAndroid.android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45969,7 +45969,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -46137,7 +46137,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ProgressViewIOS\\ProgressViewIOS.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ProgressViewIOS\\ProgressViewIOS.android.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -46156,7 +46156,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -46242,7 +46242,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\SectionList.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\SectionList.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -46261,7 +46261,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Lists/SectionList.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Lists/SectionList.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -46377,7 +46377,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Lists\\VirtualizedSectionList.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Lists\\VirtualizedSectionList.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46397,7 +46397,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -46816,7 +46816,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\SegmentedControlIOS\\SegmentedControlIOS.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\SegmentedControlIOS\\SegmentedControlIOS.android.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -46835,7 +46835,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -46909,7 +46909,7 @@ module.exports = DummySegmentedControlIOS;
 __d(/* Slider */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Slider\\Slider.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Slider\\Slider.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -47055,7 +47055,7 @@ module.exports = require(412                ); // 412 = UnimplementedView
 __d(/* Switch */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\Switch\\Switch.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\Switch\\Switch.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -47183,7 +47183,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableFlatList.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableFlatList.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47200,7 +47200,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -47363,7 +47363,7 @@ __d(/* SwipeableRow */function(global, require, module, exports) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableRow.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableRow.js';
 var Animated = require(347       ); // 347 = Animated
 var I18nManager = require(434          ); // 434 = I18nManager
 var PanResponder = require(448           ); // 448 = PanResponder
@@ -47834,7 +47834,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableListView.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Experimental\\SwipeableRow\\SwipeableListView.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47851,7 +47851,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -48132,7 +48132,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\TabBarIOS\\TabBarIOS.android.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\TabBarIOS\\TabBarIOS.android.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48149,7 +48149,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -48213,7 +48213,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\TabBarIOS\\TabBarItemIOS.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\TabBarIOS\\TabBarItemIOS.android.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -48232,7 +48232,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -48299,7 +48299,7 @@ module.exports = DummyTab;
 __d(/* TextInput */function(global, require, module, exports) {
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\TextInput\\TextInput.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\TextInput\\TextInput.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -49293,7 +49293,7 @@ __d(/* ToolbarAndroid */function(global, require, module, exports) {
 
 'use strict';
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ToolbarAndroid\\ToolbarAndroid.android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ToolbarAndroid\\ToolbarAndroid.android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -49420,7 +49420,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\ViewPager\\ViewPagerAndroid.android.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\ViewPager\\ViewPagerAndroid.android.js';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49437,7 +49437,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -49583,7 +49583,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\Components\\WebView\\WebView.android.js',
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\Components\\WebView\\WebView.android.js',
     _class,
     _temp2;
 
@@ -49602,7 +49602,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native/Libraries/Components/WebView/WebView.android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native/Libraries/Components/WebView/WebView.android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -50238,7 +50238,7 @@ __d(/* renderApplication */function(global, require, module, exports) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native\\Libraries\\ReactNative\\renderApplication.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native\\Libraries\\ReactNative\\renderApplication.js';
 var AppContainer = require(414           ); // 414 = AppContainer
 var React = require(129    ); // 129 = React
 var ReactNative = require(21           ); // 21 = ReactNative
@@ -51511,7 +51511,7 @@ var _index = require(174                                                 ); // 1
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\app.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\app.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -51523,11 +51523,11 @@ var _reactRedux = require(488          ); // 488 = react-redux
 
 var _redux = require(499    ); // 499 = redux
 
-var _reduxThunk = require(791          ); // 791 = redux-thunk
+var _reduxThunk = require(792          ); // 792 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _index3 = require(792               ); // 792 = ./reducers/index
+var _index3 = require(793               ); // 793 = ./reducers/index
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -51552,7 +51552,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/app.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/app.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -51612,7 +51612,7 @@ exports.AppNavigator = exports.stackNavigator = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\RootPage.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\RootPage.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -51656,7 +51656,7 @@ var _MenuDrawer = require(790           ); // 790 = ./MenuDrawer
 
 var _MenuDrawer2 = _interopRequireDefault(_MenuDrawer);
 
-var _LoginPage = require(798          ); // 798 = ./LoginPage
+var _LoginPage = require(791          ); // 791 = ./LoginPage
 
 var _LoginPage2 = _interopRequireDefault(_LoginPage);
 
@@ -53505,7 +53505,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\createNavigationContainer.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\createNavigationContainer.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -53543,7 +53543,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/createNavigationContainer.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/createNavigationContainer.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -54090,7 +54090,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\navigators\\createNavigator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\navigators\\createNavigator.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -54114,7 +54114,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/navigators/createNavigator.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/navigators/createNavigator.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -54163,7 +54163,7 @@ __d(/* react-navigation/src/navigators/StackNavigator.js */function(global, requ
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\navigators\\StackNavigator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\navigators\\StackNavigator.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -54252,7 +54252,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\CardStack\\CardStackTransitioner.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\CardStack\\CardStackTransitioner.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -54289,7 +54289,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -54386,7 +54386,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\CardStack\\CardStack.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\CardStack\\CardStack.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -54441,7 +54441,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/CardStack/CardStack.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/CardStack/CardStack.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -54851,7 +54851,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\CardStack\\Card.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\CardStack\\Card.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -54878,7 +54878,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/CardStack/Card.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/CardStack/Card.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -54959,7 +54959,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\CardStack\\PointerEventsContainer.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\CardStack\\PointerEventsContainer.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -54991,7 +54991,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -55151,7 +55151,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Header\\Header.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Header\\Header.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -55200,7 +55200,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Header/Header.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Header/Header.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -55578,7 +55578,7 @@ __d(/* react-navigation/src/views/Header/HeaderTitle.js */function(global, requi
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Header\\HeaderTitle.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Header\\HeaderTitle.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -55636,7 +55636,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Header\\HeaderBackButton.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Header\\HeaderBackButton.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -55661,7 +55661,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Header/HeaderBackButton.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Header/HeaderBackButton.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -55825,7 +55825,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\TouchableItem.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\TouchableItem.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -55848,7 +55848,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/TouchableItem.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/TouchableItem.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -56069,7 +56069,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\SafeAreaView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\SafeAreaView.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -56098,7 +56098,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/SafeAreaView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/SafeAreaView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -56462,7 +56462,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\withOrientation.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\withOrientation.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -56545,7 +56545,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/withOrientation.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/withOrientation.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -56579,7 +56579,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\SceneView.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\SceneView.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -56602,7 +56602,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/SceneView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/SceneView.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -56918,7 +56918,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Transitioner.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Transitioner.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -56951,7 +56951,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Transitioner.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Transitioner.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -58271,7 +58271,7 @@ exports.default = {
 __d(/* react-navigation/src/navigators/TabNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\navigators\\TabNavigator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\navigators\\TabNavigator.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -58673,7 +58673,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\TabView\\TabView.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\TabView\\TabView.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -58708,7 +58708,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/TabView/TabView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/TabView/TabView.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -58956,7 +58956,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _temp,
     _initialiseProps,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TabViewAnimated.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TabViewAnimated.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -58987,7 +58987,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TabViewAnimated.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TabViewAnimated.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -59318,7 +59318,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TabViewPagerAndroid.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TabViewPagerAndroid.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -59345,7 +59345,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -59551,7 +59551,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TabViewPagerScroll.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TabViewPagerScroll.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -59578,7 +59578,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TabViewPagerScroll.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TabViewPagerScroll.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -59757,7 +59757,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TabViewPagerPan.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TabViewPagerPan.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -59788,7 +59788,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TabViewPagerPan.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TabViewPagerPan.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -60067,7 +60067,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _temp,
     _initialiseProps,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TabBar.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TabBar.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -60100,7 +60100,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TabBar.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TabBar.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -60650,7 +60650,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\TouchableItem.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\TouchableItem.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -60677,7 +60677,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/TouchableItem.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/TouchableItem.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -60785,7 +60785,7 @@ var _index = require(174                                       ); // 174 = ./../
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-tab-view\\src\\SceneMap.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-tab-view\\src\\SceneMap.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -60807,7 +60807,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-tab-view/src/SceneMap.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-tab-view/src/SceneMap.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -60863,7 +60863,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\withCachedChildNavigation.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\withCachedChildNavigation.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -60890,7 +60890,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/withCachedChildNavigation.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/withCachedChildNavigation.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -60982,7 +60982,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarTop.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarTop.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -61011,7 +61011,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/TabView/TabBarTop.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/TabView/TabBarTop.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -61185,7 +61185,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarIcon.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarIcon.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61210,7 +61210,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/TabView/TabBarIcon.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/TabView/TabBarIcon.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -61336,7 +61336,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarBottom.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\TabView\\TabBarBottom.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -61371,7 +61371,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/TabView/TabBarBottom.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/TabView/TabBarBottom.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -61646,7 +61646,7 @@ __d(/* react-navigation/src/navigators/DrawerNavigator.js */function(global, req
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\navigators\\DrawerNavigator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\navigators\\DrawerNavigator.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -61812,7 +61812,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerScreen.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerScreen.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61841,7 +61841,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -61905,7 +61905,7 @@ var _index2 = require(174                                             ); // 174 
 
 var _index3 = _interopRequireDefault(_index2);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61940,7 +61940,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index3.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Drawer/DrawerView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Drawer/DrawerView.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -62123,7 +62123,7 @@ var _index = require(174                                             ); // 174 =
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerSidebar.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerSidebar.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -62164,7 +62164,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js',
   components: _components,
   locals: [module],
   imports: [React.default]
@@ -62298,7 +62298,7 @@ var styles = _reactNative.StyleSheet.create({
 __d(/* react-navigation/src/views/Drawer/DrawerNavigatorItems.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerNavigatorItems.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\Drawer\\DrawerNavigatorItems.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -62448,7 +62448,7 @@ __d(/* react-navigation/src/views/withNavigation.js */function(global, require, 
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-navigation\\src\\views\\withNavigation.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-navigation\\src\\views\\withNavigation.js';
 exports.default = withNavigation;
 
 var _react = require(35     ); // 35 = react
@@ -62525,7 +62525,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-vector-icons\\lib\\create-icon-set.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-vector-icons\\lib\\create-icon-set.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -62569,7 +62569,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-vector-icons/lib/create-icon-set.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-vector-icons/lib/create-icon-set.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -62782,7 +62782,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-vector-icons\\lib\\icon-button.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-vector-icons\\lib\\icon-button.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -62824,7 +62824,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-vector-icons/lib/icon-button.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-vector-icons/lib/icon-button.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -63673,7 +63673,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-vector-icons\\lib\\tab-bar-item-ios.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-vector-icons\\lib\\tab-bar-item-ios.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -63709,7 +63709,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -63808,7 +63808,7 @@ var _index = require(174                                       ); // 174 = ./../
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-vector-icons\\lib\\toolbar-android.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-vector-icons\\lib\\toolbar-android.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -63846,7 +63846,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-vector-icons/lib/toolbar-android.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-vector-icons/lib/toolbar-android.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -64385,7 +64385,7 @@ __d(/* myApp/app/views/ShellPage.js */function(global, require, module, exports)
   value: true
 });
 exports.AppNavigator = undefined;
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\ShellPage.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ShellPage.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -64485,7 +64485,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\ClanView.js";
+    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ClanView.js";
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
@@ -64518,7 +64518,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/views/ClanView.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/ClanView.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -64734,9 +64734,11 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(ClanView);
 __d(/* myApp/app/actions/actionUsers.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.saveRules = exports.getContent = exports.selectPage = undefined;
+exports.actionLogin = exports.saveRules = exports.getContent = exports.selectPage = undefined;
 
 var _base = require(630           ); // 630 = ../Data/base
+
+var _GetContent = require(631                     ); // 631 = ../services/GetContent
 
 var selectPage = exports.selectPage = function selectPage(selPage) {
     return function (dispatch) {
@@ -64778,6 +64780,23 @@ var saveRules = exports.saveRules = function saveRules(currentRules) {
 
 var _compareRules = function _compareRules(rulesA, rulesB) {
     return rulesA.minParam === rulesB.minParam || rulesA.maxParam === rulesB.maxParam || rulesA.value === rulesB.value;
+};
+
+var actionLogin = exports.actionLogin = function actionLogin(account) {
+    return function (dispatch) {
+        dispatch({
+            type: 'SET_LOGIN',
+            payload: account
+        });
+        (0, _GetContent.Login)(account).then(function (status) {
+            if (status.code) {
+                dispatch({
+                    type: 'LOGIN',
+                    payload: status.code
+                });
+            }
+        });
+    };
 };
 }, 629, null, "myApp/app/actions/actionUsers.js");
 __d(/* myApp/app/Data/base.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
@@ -64879,7 +64898,7 @@ var saveRulesToBase = exports.saveRulesToBase = function saveRulesToBase(data) {
 __d(/* myApp/app/services/GetContent.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.GetContent = undefined;
+exports.GetContent = exports.Login = undefined;
 
 var _this = this;
 
@@ -64905,6 +64924,22 @@ var urlClan = '/clan/235/';
 var DomParser = require(633                       ).DOMParser; // 633 = react-native-html-parser
 var users = [];
 var expirienceUsers = [];
+
+var Login = exports.Login = function Login(account) {
+    return new Promise(function (succes, fail) {
+        if (!account) account = body;else account = 'UserName=' + account.login + '&Password=' + account.password;
+        httpClient.post(url + urlLogin, account).then(function (html) {
+            succes({
+                code: true,
+                html: html
+            });
+        }, function (error) {
+            fail(false);
+        });
+    }, function (error) {
+        console.log(error);
+    });
+};
 
 var GetContent = exports.GetContent = function GetContent() {
     return new Promise(function _callee4(succes, fail) {
@@ -65099,7 +65134,7 @@ var GetContent = exports.GetContent = function GetContent() {
                         };
 
                         _context8.next = 10;
-                        return regeneratorRuntime.awrap(login().then(function _callee3(status) {
+                        return regeneratorRuntime.awrap(Login().then(function _callee3(status) {
                             var i, _i;
 
                             return regeneratorRuntime.async(function _callee3$(_context7) {
@@ -67448,7 +67483,7 @@ __d(/* react-native-elements/src/buttons/Button.js */function(global, require, m
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\buttons\\Button.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\buttons\\Button.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -67801,7 +67836,7 @@ exports.default = {
 __d(/* react-native-elements/src/text/Text.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\text\\Text.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\text\\Text.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -74094,7 +74129,7 @@ __d(/* react-native-elements/src/icons/Icon.js */function(global, require, modul
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\icons\\Icon.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\icons\\Icon.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -74227,7 +74262,7 @@ __d(/* react-native-elements/src/list/List.js */function(global, require, module
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\list\\List.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\list\\List.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -74291,7 +74326,7 @@ __d(/* react-native-elements/src/list/ListItem.js */function(global, require, mo
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\list\\ListItem.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\list\\ListItem.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -74808,7 +74843,7 @@ exports.default = ListItem;
 __d(/* react-native-elements/src/avatar/Avatar.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\avatar\\Avatar.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\avatar\\Avatar.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -75114,7 +75149,7 @@ __d(/* react-native-elements/src/badge/badge.js */function(global, require, modu
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\badge\\badge.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\badge\\badge.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -75239,7 +75274,7 @@ __d(/* react-native-elements/src/social/SocialIcon.js */function(global, require
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _colors,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\social\\SocialIcon.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\social\\SocialIcon.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -75454,7 +75489,7 @@ __d(/* react-native-elements/src/checkbox/CheckBox.js */function(global, require
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\checkbox\\CheckBox.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\checkbox\\CheckBox.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -75650,7 +75685,7 @@ exports.default = CheckBox;
 __d(/* react-native-elements/src/divider/Divider.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\divider\\Divider.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\divider\\Divider.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -75704,7 +75739,7 @@ var _index = require(174                                          ); // 174 = ./
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\slider\\Slider.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\slider\\Slider.js';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -75737,7 +75772,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-elements/src/slider/Slider.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-elements/src/slider/Slider.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -76217,7 +76252,7 @@ __d(/* react-native-elements/src/buttons/ButtonGroup.js */function(global, requi
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\buttons\\ButtonGroup.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\buttons\\ButtonGroup.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -76409,7 +76444,7 @@ __d(/* react-native-elements/src/card/Card.js */function(global, require, module
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\card\\Card.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\card\\Card.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -76694,7 +76729,7 @@ __d(/* react-native-elements/src/tile/Tile.js */function(global, require, module
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\tile\\Tile.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\tile\\Tile.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -76910,7 +76945,7 @@ __d(/* react-native-elements/src/tile/FeaturedTile.js */function(global, require
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\tile\\FeaturedTile.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\tile\\FeaturedTile.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -77111,7 +77146,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\rating\\Rating.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\rating\\Rating.js';
 
 var _lodash = require(680           ); // 680 = lodash.times
 
@@ -77146,7 +77181,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-elements/src/rating/Rating.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-elements/src/rating/Rating.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -77710,7 +77745,7 @@ __d(/* react-native-elements/src/header/Header.js */function(global, require, mo
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\header\\Header.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\header\\Header.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -78080,7 +78115,7 @@ module.exports = isEmpty;
 __d(/* react-native-elements/src/header/DummyNavButton.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\header\\DummyNavButton.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\header\\DummyNavButton.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -78113,7 +78148,7 @@ __d(/* react-native-elements/src/header/NavButton.js */function(global, require,
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\header\\NavButton.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\header\\NavButton.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -78154,7 +78189,7 @@ __d(/* react-native-elements/src/header/Title.js */function(global, require, mod
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\header\\Title.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\header\\Title.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -78199,7 +78234,7 @@ __d(/* react-native-elements/src/pricing/PricingCard.js */function(global, requi
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\pricing\\PricingCard.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\pricing\\PricingCard.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -78416,7 +78451,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\form\\FormInput.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\form\\FormInput.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -78455,7 +78490,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-elements/src/form/FormInput.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-elements/src/form/FormInput.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -78631,7 +78666,7 @@ __d(/* react-native-elements/src/form/FormLabel.js */function(global, require, m
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\form\\FormLabel.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\form\\FormLabel.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -78729,7 +78764,7 @@ __d(/* react-native-elements/src/form/FormValidationMessage.js */function(global
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\form\\FormValidationMessage.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\form\\FormValidationMessage.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -78826,7 +78861,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-elements\\src\\input\\Search.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-elements\\src\\input\\Search.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -78869,7 +78904,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-elements/src/input/Search.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-elements/src/input/Search.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -79108,7 +79143,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\ItemClanView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ItemClanView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -79135,7 +79170,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/app/views/ItemClanView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/ItemClanView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -79447,7 +79482,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\RulesPage.js";
+    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\RulesPage.js";
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
@@ -79488,7 +79523,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/views/RulesPage.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/RulesPage.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -79775,7 +79810,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\RulesView.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\RulesView.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -79810,7 +79845,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/views/RulesView.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/RulesView.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -79981,7 +80016,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\ItemRulesView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ItemRulesView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -80010,7 +80045,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/app/views/ItemRulesView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/ItemRulesView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -80255,7 +80290,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\MenuContextRulesItem.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MenuContextRulesItem.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -80294,7 +80329,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "d:/tfvc/maApp-home/app/views/MenuContextRulesItem.js",
+    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/MenuContextRulesItem.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -80397,7 +80432,7 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\node_modules\\react-native-md-textinput\\lib\\TextField.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-md-textinput\\lib\\TextField.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -80428,7 +80463,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/node_modules/react-native-md-textinput/lib/TextField.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-md-textinput/lib/TextField.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -80627,7 +80662,7 @@ var _index = require(174                                       ); // 174 = ./../
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\node_modules\\react-native-md-textinput\\lib\\Underline.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-md-textinput\\lib\\Underline.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -80648,7 +80683,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/node_modules/react-native-md-textinput/lib/Underline.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-md-textinput/lib/Underline.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -80766,7 +80801,7 @@ var _index = require(174                                       ); // 174 = ./../
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\node_modules\\react-native-md-textinput\\lib\\FloatingLabel.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-md-textinput\\lib\\FloatingLabel.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -80787,7 +80822,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/node_modules/react-native-md-textinput/lib/FloatingLabel.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-md-textinput/lib/FloatingLabel.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -80929,7 +80964,7 @@ exports.default = _Menu2.default;
 __d(/* react-native-material-menu/src/MenuDivider.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-menu\\src\\MenuDivider.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-menu\\src\\MenuDivider.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -80972,7 +81007,7 @@ exports.default = MenuDivider;
 __d(/* react-native-material-menu/src/MenuItem.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-menu\\src\\MenuItem.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-menu\\src\\MenuItem.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -81065,7 +81100,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-menu\\src\\Menu.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-menu\\src\\Menu.js';
 
 var _reactNative = require(12            ); // 12 = react-native
 
@@ -81088,7 +81123,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-material-menu/src/Menu.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-material-menu/src/Menu.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -81369,7 +81404,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp2,
-    _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-tabs\\src\\components\\MaterialTabs.js';
+    _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-tabs\\src\\components\\MaterialTabs.js';
 
 var _propTypes = require(126         ); // 126 = prop-types
 
@@ -81402,7 +81437,7 @@ var _components = {
 };
 
 var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/node_modules/react-native-material-tabs/src/components/MaterialTabs.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/node_modules/react-native-material-tabs/src/components/MaterialTabs.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -87596,7 +87631,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 __d(/* react-native-material-tabs/src/components/Tab/Tab.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-tabs\\src\\components\\Tab\\Tab.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-tabs\\src\\components\\Tab\\Tab.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -87688,7 +87723,7 @@ var TabText = exports.TabText = _native2.default.Text(_templateObject3, function
 __d(/* react-native-material-tabs/src/components/Touchable.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-tabs\\src\\components\\Touchable.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-tabs\\src\\components\\Touchable.js';
 
 var _react = require(35     ); // 35 = react
 
@@ -87731,7 +87766,7 @@ exports.default = Touchable;
 __d(/* react-native-material-tabs/src/components/Indicator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\node_modules\\react-native-material-tabs\\src\\components\\Indicator.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\node_modules\\react-native-material-tabs\\src\\components\\Indicator.js';
 
 var _templateObject = _taggedTemplateLiteral(['\n  height: 2;\n  width: ', ';\n  position: absolute;\n  bottom: 0;\n  background-color: ', ';\n'], ['\n  height: 2;\n  width: ', ';\n  position: absolute;\n  bottom: 0;\n  background-color: ', ';\n']);
 
@@ -87785,7 +87820,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\StatisticPage.js";
+    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\StatisticPage.js";
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
@@ -87822,7 +87857,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/views/StatisticPage.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/StatisticPage.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -88035,7 +88070,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\StatisticView.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\StatisticView.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -88076,7 +88111,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: "d:/tfvc/maApp-home/app/views/StatisticView.js",
+  filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/StatisticView.js",
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -88258,7 +88293,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\StatisticViewItems.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\StatisticViewItems.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -88293,7 +88328,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/app/views/StatisticViewItems.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/StatisticViewItems.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -88480,7 +88515,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\ItemStaticView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\ItemStaticView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -88507,7 +88542,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: 'd:/tfvc/maApp-home/app/views/ItemStaticView.js',
+  filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/ItemStaticView.js',
   components: _components,
   locals: [module],
   imports: [_react3.default]
@@ -88892,7 +88927,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = 'd:\\tfvc\\maApp-home\\app\\views\\MoreStatisticView.js';
+var _jsxFileName = 'c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MoreStatisticView.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -88919,7 +88954,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: 'd:/tfvc/maApp-home/app/views/MoreStatisticView.js',
+    filename: 'c:/Users/ADM_ZMU_2015/myApp/app/views/MoreStatisticView.js',
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -88987,7 +89022,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class,
     _temp,
-    _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\AddRulesView.js";
+    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\AddRulesView.js";
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
@@ -89024,7 +89059,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "d:/tfvc/maApp-home/app/views/AddRulesView.js",
+    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/AddRulesView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -89303,7 +89338,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\MenuDrawer.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\MenuDrawer.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -89334,7 +89369,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "d:/tfvc/maApp-home/app/views/MenuDrawer.js",
+    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/MenuDrawer.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -89644,7 +89679,7 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\LoginPage.js";
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\LoginPage.js";
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -89685,7 +89720,7 @@ var _components = {
 };
 
 var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "d:/tfvc/maApp-home/app/views/LoginPage.js",
+    filename: "c:/Users/ADM_ZMU_2015/myApp/app/views/LoginPage.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -89706,9 +89741,19 @@ function mapStateToProps(state) {
 
 function mapDispatcherToProps(dispatch) {
     return {
-        saveRules: function saveRules(data) {
-            dispatch((0, _actionUsers.saveRules)(data));
-        }
+        saveRules: function (_saveRules) {
+            function saveRules(_x) {
+                return _saveRules.apply(this, arguments);
+            }
+
+            saveRules.toString = function () {
+                return _saveRules.toString();
+            };
+
+            return saveRules;
+        }(function (data) {
+            dispatch(saveRules(data));
+        })
     };
 }
 
@@ -89731,10 +89776,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
         key: "onBtnLoginClick",
         value: function onBtnLoginClick() {
             this.props.navigation.goBack();
-            return this.props.dispatch({
-                type: 'LOGIN',
-                payload: _extends({}, this.state.account)
-            });
+            return this.props.dispatch((0, _actionUsers.actionLogin)(this.state.account));
         }
     }, {
         key: "componentDidMount",
@@ -89748,14 +89790,14 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 99
+                        lineNumber: 96
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.Text,
                     { style: styles.headerText, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 100
+                            lineNumber: 97
                         }
                     },
                     "\u0412\u0445\u043E\u0434"
@@ -89764,7 +89806,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.View,
                     { style: { marginHorizontal: 16 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 101
+                            lineNumber: 98
                         }
                     },
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -89777,7 +89819,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         value: this.state.account.login,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 102
+                            lineNumber: 99
                         }
                     }),
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -89790,7 +89832,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         value: this.state.account.password,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 112
+                            lineNumber: 109
                         }
                     }),
                     _react3.default.createElement(
@@ -89800,7 +89842,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             onPress: this.onBtnLoginClick.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 120
+                                lineNumber: 117
                             }
                         },
                         _react3.default.createElement(
@@ -89808,7 +89850,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 124
+                                    lineNumber: 121
                                 }
                             },
                             "\u0412\u043E\u0439\u0442\u0438"
@@ -89900,7 +89942,7 @@ var styles = _reactNative.StyleSheet.create({
         alignItems: 'center'
     }
 });
-}, 798, null, "myApp/app/views/LoginPage.js");
+}, 791, null, "myApp/app/views/LoginPage.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -89924,28 +89966,28 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 791, null, "redux-thunk/lib/index.js");
+}, 792, null, "redux-thunk/lib/index.js");
 __d(/* myApp/app/reducers/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _redux = require(499    ); // 499 = redux
 
-var _clanInfo = require(793         ); // 793 = ./clanInfo
+var _clanInfo = require(794         ); // 794 = ./clanInfo
 
 var _clanInfo2 = _interopRequireDefault(_clanInfo);
 
-var _status = require(794       ); // 794 = ./status
+var _status = require(795       ); // 795 = ./status
 
 var _status2 = _interopRequireDefault(_status);
 
-var _rules = require(795      ); // 795 = ./rules
+var _rules = require(796      ); // 796 = ./rules
 
-var _stackNavigator = require(796               ); // 796 = ./stackNavigator
+var _stackNavigator = require(797               ); // 797 = ./stackNavigator
 
 var _stackNavigator2 = _interopRequireDefault(_stackNavigator);
 
-var _settings = require(799         ); // 799 = ./settings
+var _settings = require(798         ); // 798 = ./settings
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -89960,7 +90002,7 @@ var rootReducer = (0, _redux.combineReducers)({
 });
 
 exports.default = rootReducer;
-}, 792, null, "myApp/app/reducers/index.js");
+}, 793, null, "myApp/app/reducers/index.js");
 __d(/* myApp/app/reducers/clanInfo.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -89981,7 +90023,7 @@ function clanInfo() {
             return state;
     }
 }
-}, 793, null, "myApp/app/reducers/clanInfo.js");
+}, 794, null, "myApp/app/reducers/clanInfo.js");
 __d(/* myApp/app/reducers/status.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -90010,7 +90052,7 @@ function actionStatus() {
             return state;
     }
 }
-}, 794, null, "myApp/app/reducers/status.js");
+}, 795, null, "myApp/app/reducers/status.js");
 __d(/* myApp/app/reducers/rules.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -90124,7 +90166,7 @@ function editRule() {
             return state;
     }
 }
-}, 795, null, "myApp/app/reducers/rules.js");
+}, 796, null, "myApp/app/reducers/rules.js");
 __d(/* myApp/app/reducers/stackNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -90177,7 +90219,7 @@ function nav() {
 }
 
 exports.default = nav;
-}, 796, null, "myApp/app/reducers/stackNavigator.js");
+}, 797, null, "myApp/app/reducers/stackNavigator.js");
 __d(/* myApp/app/reducers/settings.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -90193,7 +90235,7 @@ var initialSettings = {
 var initialAccount = {
     login: '',
     password: '',
-    statusLogIn: false
+    statusLogin: false
 };
 
 function settings() {
@@ -90213,15 +90255,18 @@ function account() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialAccount;
     var action = arguments[1];
 
+    var newstate;
     switch (action.type) {
-        case "LOGIN":
-            state = _extends({}, action.payload);
-            return _extends({}, state);;
-        default:
-            return state;
+        case "SET_LOGIN":
+            newstate = _extends({}, action.payload);
+            break;
+        case 'LOGIN':
+            newstate = _extends({}, state, { statusLogin: action.payload });
+            break;
     }
+    return newstate || state;
 }
-}, 799, null, "myApp/app/reducers/settings.js");
+}, 798, null, "myApp/app/reducers/settings.js");
 ;require(50);
-;require(797);
+;require(799);
 //# sourceMappingURL=index.map

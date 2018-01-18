@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { saveRules } from "../actions/actionUsers";
+import { actionLogin } from "../actions/actionUsers";
 import { Header } from 'react-native-elements';
 import Icon from "react-native-vector-icons/Entypo";
 import TextField from 'react-native-md-textinput';
@@ -82,10 +82,7 @@ class LoginPage extends Component {
     onBtnLoginClick() {
         //this.props.rules.Exp.push(this.state);
         this.props.navigation.goBack();
-        return this.props.dispatch({
-            type: 'LOGIN',
-            payload: {...this.state.account},
-        });
+        return this.props.dispatch(actionLogin(this.state.account));
     }
 
     componentDidMount() {

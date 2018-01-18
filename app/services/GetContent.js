@@ -18,6 +18,22 @@ var DomParser = require('react-native-html-parser').DOMParser;
 var users = [];
 var expirienceUsers = [];
 
+export const Login = (account) => new Promise((succes, fail) => {
+    if (!account) account = body;
+    else account = 'UserName='+account.login+'&Password='+account.password;
+    httpClient.post(url + urlLogin, account).then((html) => {
+        succes({
+            code: true,
+            html: html
+        });
+    }, (error) => {
+        fail(false);
+    })
+}, (error) => {
+    console.log(error);
+    //let errorDom = parser.parseFromString(error, 'text/html');
+
+});
 
 export const GetContent = () => new Promise(async (succes, fail) => {
 
@@ -142,7 +158,7 @@ export const GetContent = () => new Promise(async (succes, fail) => {
 
   //  console.log('Старт');
 
-    await login().then(async (status) => {
+    await Login().then(async (status) => {
         //console.log(status);
         for (let i = 1; i <= 6; i++) {
             //console.log(i);

@@ -1,11 +1,11 @@
-const initialSettings = {    
+const initialSettings = {
     probationPeriod: 0
 }
 
 const initialAccount = {
     login: '',
     password: '',
-    statusLogIn: false,
+    statusLogin: false,
 }
 
 export function settings(state = initialSettings, action) {
@@ -13,7 +13,7 @@ export function settings(state = initialSettings, action) {
     switch (action.type) {
         case "CHANGE_SETTINGS":
             state = action.payload;
-            return { ...state }; ;
+            return { ...state };;
         default:
             return state;
     }
@@ -23,13 +23,16 @@ export function settings(state = initialSettings, action) {
 
 export function account(state = initialAccount, action) {
     //console.log('actionStatus', action.type);
+    var newstate;
     switch (action.type) {
-        case "LOGIN":
-            state = {...action.payload};
-            return { ...state }; ;
-        default:
-            return state;
+        case "SET_LOGIN":
+            newstate = { ...action.payload };
+            break;
+        case 'LOGIN':
+            newstate = { ...state, statusLogin: action.payload }
+            break;
     }
+    return newstate || state;
     // console.log("actionEnd", state);
     // return state;
 }
