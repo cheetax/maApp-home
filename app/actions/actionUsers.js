@@ -15,13 +15,13 @@ export const getContent = (forceUpdate) => async (dispatch) => {
     });
     await getAccount().then(async (account) => {
         await Login(account).then(async (status) => {
-            if (status.code) {
+            if (status.login) {
                 dispatch({
                     type: 'LOGIN',
                     payload: status.login,
                 })
             }
-            await getDataBase(forceUpdate, status.code).then((data) => {
+            await getDataBase(forceUpdate, status.login).then((data) => {
                 dispatch({
                     type: 'GET_CONTENT',
                     payload: data,

@@ -18,9 +18,10 @@ var DomParser = require('react-native-html-parser').DOMParser;
 var users = [];
 var expirienceUsers = [];
 
-export const Login = (account) => new Promise((succes, fail) => {
-    if (!account) account = body;
-    else account = 'UserName=' + account.login + '&Password=' + account.password;
+export const Login = (account = {login,password}) => new Promise((succes, fail) => {
+    //if (!account) account = body;
+    //else
+    account = 'UserName=' + account.login + '&Password=' + account.password;
     httpClient.post(url + urlLogin, account).then((html) => {
         succes({
             login: true,
