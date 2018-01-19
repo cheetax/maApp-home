@@ -64923,7 +64923,7 @@ var getAccount = exports.getAccount = function getAccount() {
                     case 0:
                         _context2.next = 2;
                         return regeneratorRuntime.awrap(_reactNative.AsyncStorage.getItem('account').then(function (account) {
-                            succes(JSON.parse(account));
+                            if (account != null) succes(JSON.parse(account));else fail(false);
                         }, function (error) {
                             return fail(error);
                         }));

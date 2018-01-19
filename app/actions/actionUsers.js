@@ -29,6 +29,8 @@ export const getContent = (forceUpdate) => async (dispatch) => {
 
             });
         });
+    }, (error) => {
+        console.log(error)
     })
     dispatch({
         type: 'CHANGE_STATUS',
