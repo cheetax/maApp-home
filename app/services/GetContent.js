@@ -20,10 +20,10 @@ var expirienceUsers = [];
 
 export const Login = (account) => new Promise((succes, fail) => {
     if (!account) account = body;
-    else account = 'UserName='+account.login+'&Password='+account.password;
+    else account = 'UserName=' + account.login + '&Password=' + account.password;
     httpClient.post(url + urlLogin, account).then((html) => {
         succes({
-            code: true,
+            login: true,
             html: html
         });
     }, (error) => {
@@ -39,12 +39,12 @@ export const GetContent = () => new Promise(async (succes, fail) => {
 
     users = [];
     expirienceUsers = [];
-    
+
     let getUsersExp = async (wizards) => {
 
         for (var i = 0; i < wizards.length; i++) {
             let href = wizards[i].childNodes[1].getElementsBySelector('a.tdn.c_user')[0].getAttribute('href'); //Id
-            let expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.replace(/'/g,'').trim(); //опыт
+            let expirience = wizards[i].getElementsBySelector('div.fr.mr10.cntr.mlra')[0].textContent.replace(/'/g, '').trim(); //опыт
             expirienceUsers.push({
                 id: href,
                 exp: expirience,
@@ -142,7 +142,7 @@ export const GetContent = () => new Promise(async (succes, fail) => {
                 armor: armor,
                 option: option,
                 dayOfClan: ((userDoc) => {
-                    day = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;                
+                    day = userDoc.documentElement.getElementsBySelector('div.ptb9')[1].textContent;
                     day = day.substring(day.indexOf(":") + 1).trim();
                     return day.substring(0, day.indexOf('(') === -1 ? day.length : day.indexOf('(') - 1).trim();
                 })(userDoc),
@@ -156,32 +156,33 @@ export const GetContent = () => new Promise(async (succes, fail) => {
         console.log(error);
     });
 
-  //  console.log('Старт');
+    //  console.log('Старт');
 
-    await Login().then(async (status) => {
-        //console.log(status);
-        for (let i = 1; i <= 6; i++) {
-            //console.log(i);
-            await getClans(i).then(async (wizards) => {
-                //console.log(wizards);
-                await getUsers(wizards);
-            }, (error) => {
-                console.log(error);
-            });
-        }
-        for (let i = 1; i <= 6; i++) {
-            //console.log(i);
-            await getExperienceUsers(i).then(async (wizards) => {
-                //console.log(wizards);
-                await getUsersExp(wizards);
-            }, (error) => {
-                console.log(error);
-            });
-        }
-        
-    }, (error) => {
-        console.log(error);
-    });
+    //await Login().then(async (status) => {
+    //console.log(status);
+
+    for (let i = 1; i <= 6; i++) {
+        //console.log(i);
+        await getClans(i).then(async (wizards) => {
+            //console.log(wizards);
+            await getUsers(wizards);
+        }, (error) => {
+            console.log(error);
+        });
+    }
+    for (let i = 1; i <= 6; i++) {
+        //console.log(i);
+        await getExperienceUsers(i).then(async (wizards) => {
+            //console.log(wizards);
+            await getUsersExp(wizards);
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
+    // }, (error) => {
+    //     console.log(error);
+    // });
     succes({
         users: users,
         expirienceUsers: expirienceUsers,

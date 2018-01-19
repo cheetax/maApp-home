@@ -25,6 +25,9 @@ export function account(state = initialAccount, action) {
     //console.log('actionStatus', action.type);
     var newstate;
     switch (action.type) {
+        // case 'GET_CONTENT':
+        //     newstate = {...action.payload.account};
+        //     break;
         case "SET_LOGIN":
             newstate = { ...action.payload };
             break;

@@ -1,4 +1,4 @@
-import { getDataBase, saveRulesToBase } from '../Data/base';
+import { getDataBase, saveRulesToBase, getAccount } from '../Data/base';
 import { Login } from "../services/GetContent";
 
 export const selectPage = (selPage) => dispatch => {
@@ -8,20 +8,32 @@ export const selectPage = (selPage) => dispatch => {
     });
 }
 
-export const getContent = (forceUpdate) => dispatch => {
+export const getContent = (forceUpdate) => async (dispatch) => {
     // console.log(new Date(), 'get content: start');
     dispatch({
         type: 'CHANGE_STATUS',
     });
-    getDataBase(forceUpdate).then((data) => {
-        dispatch({
-            type: 'GET_CONTENT',
-            payload: data,
+    await getAccount().then(async (account) => {
+        await Login(account).then(async (status) => {
+            if (status.code) {
+                dispatch({
+                    type: 'LOGIN',
+                    payload: status.login,
+                })
+            }
+            await getDataBase(forceUpdate, status.code).then((data) => {
+                dispatch({
+                    type: 'GET_CONTENT',
+                    payload: data,
+                });
+
+            });
         });
-        dispatch({
-            type: 'CHANGE_STATUS',
-        });
+    })
+    dispatch({
+        type: 'CHANGE_STATUS',
     });
+
 }
 
 let previousRules;
