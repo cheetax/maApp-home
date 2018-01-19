@@ -64922,7 +64922,7 @@ var getAccount = exports.getAccount = function getAccount() {
                 switch (_context2.prev = _context2.next) {
                     case 0:
                         _context2.next = 2;
-                        return regeneratorRuntime.awrap(_reactNative.AsyncStorage.getItem('acc').then(function (account) {
+                        return regeneratorRuntime.awrap(_reactNative.AsyncStorage.getItem('account').then(function (account) {
                             succes(JSON.parse(account));
                         }, function (error) {
                             return fail(error);

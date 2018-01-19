@@ -33,7 +33,8 @@ export const getDataBase = (forceUpdate = false, login = false) => new Promise(a
 
 export const getAccount = () => new Promise(async (succes, fail) => {
     await AsyncStorage.getItem('account').then((account) => {
-        succes(JSON.parse(account));
+        if (account != null) succes(JSON.parse(account));
+        else fail(false)
     }, (error) => fail(error))
 })
 
