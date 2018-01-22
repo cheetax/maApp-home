@@ -32,7 +32,7 @@ export const stackNavigator = StackNavigator(
     Rules: { screen: RulesPage, },
     AddRules: { screen: AddRulesView, },
     Statistic: { screen: StatisticPage },
-    Login: { screen: LoginPage },
+    //Login: { screen: LoginPage },
   },
   {
     navigationOptions: {
@@ -58,6 +58,7 @@ export const stackNavigator = StackNavigator(
 export const AppNavigator = DrawerNavigator(
   {
     Shell: { screen: stackNavigator, },
+    Login: { screen: LoginPage }
   },
   {
     contentComponent: props => <MenuDrawer {...props} />,

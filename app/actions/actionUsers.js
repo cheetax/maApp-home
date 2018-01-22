@@ -29,8 +29,15 @@ export const getContent = (forceUpdate) => async (dispatch) => {
 
             });
         });
-    }, (error) => {
-        console.log(error)
+    }, async (status) => {
+        await getDataBase(forceUpdate, status.login).then((data) => {
+            dispatch({
+                type: 'GET_CONTENT',
+                payload: data,
+            });
+
+        });
+        console.log(status.login)
     })
     dispatch({
         type: 'CHANGE_STATUS',

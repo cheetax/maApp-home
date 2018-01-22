@@ -34,12 +34,12 @@ export const getDataBase = (forceUpdate = false, login = false) => new Promise(a
 export const getAccount = () => new Promise(async (succes, fail) => {
     await AsyncStorage.getItem('account').then((account) => {
         if (account != null) succes(JSON.parse(account));
-        else fail(false)
+        else fail({login: false})
     }, (error) => fail(error))
 })
 
 export const saveRulesToBase = async (data) => {
-    await AsyncStorage.setItem('rules', JSON.stringify(data)).then(async () => {
+    await AsyncStorage.setItem('rules', JSON.stringify(data)).then( () => {
         // await AsyncStorage.getItem('rules').then((data) => {
         //     rules = JSON.parse(data);
         // })
@@ -47,5 +47,5 @@ export const saveRulesToBase = async (data) => {
 };
 
 export const saveAccountToBase = async (account) => {
-    await AsyncStorage.setItem('account', JSON.stringify(account));
+    await AsyncStorage.setItem('account', JSON.stringify(account).then());
 }
