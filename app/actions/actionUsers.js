@@ -1,4 +1,4 @@
-import { getDataBase, saveRulesToBase, getAccount } from '../Data/base';
+import { getDataBase, saveRulesToBase, getAccount, saveAccountToBase } from '../Data/base';
 import { Login } from "../services/GetContent";
 
 export const selectPage = (selPage) => dispatch => {
@@ -14,6 +14,10 @@ export const getContent = (forceUpdate) => async (dispatch) => {
         type: 'CHANGE_STATUS',
     });
     await getAccount().then(async (account) => {
+        dispatch({
+            type: 'SET_LOGIN',
+            payload: account
+        })
         await Login(account).then(async (status) => {
             if (status.login) {
                 dispatch({
@@ -30,6 +34,10 @@ export const getContent = (forceUpdate) => async (dispatch) => {
             });
         });
     }, async (status) => {
+        dispatch({
+            type: 'LOGIN',
+            payload: status.login,
+        })
         await getDataBase(forceUpdate, status.login).then((data) => {
             dispatch({
                 type: 'GET_CONTENT',
@@ -59,17 +67,19 @@ const _compareRules = (rulesA, rulesB) => {
     return (rulesA.minParam === rulesB.minParam || rulesA.maxParam === rulesB.maxParam || rulesA.value === rulesB.value);
 }
 
-export const actionLogin = (account) => dispatch => {
+export const actionLogin = (account) => async (dispatch) => {
     dispatch({
         type: 'SET_LOGIN',
         payload: account
     })
-    Login(account).then((status) => {
-        if (status.code) {
-            dispatch({
-                type: 'LOGIN',
-                payload: status.code,
-            })
+    await saveAccountToBase(account);
+    await Login(account).then((status) => {
+        dispatch({
+            type: 'LOGIN',
+            payload: status.login,
+        })
+        if (status.login) {
+            
         }
     });
 } 

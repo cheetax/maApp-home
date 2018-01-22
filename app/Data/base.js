@@ -47,5 +47,5 @@ export const saveRulesToBase = async (data) => {
 };
 
 export const saveAccountToBase = async (account) => {
-    await AsyncStorage.setItem('account', JSON.stringify(account).then());
+    await AsyncStorage.setItem('account', JSON.stringify(account)).then();
 }

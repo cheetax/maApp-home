@@ -4,10 +4,11 @@ export class HTTPClient {
     post = function (url, requestuestBody) {
         return new Promise(function (succeed, fail) {
             var request = new XMLHttpRequest();
-
+            request.withCredentials = false;
             request.open("POST", url, true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            //console.log('request.status',request.status); 
+            //console.log('request.status',request.status);
+
             request.addEventListener("load", function () {
                 if (request.status < 400) {
                    // console.log(request.status);
@@ -37,7 +38,7 @@ export class HTTPClient {
                     succeed(request.responseText);
                 }
                 else {
-                   // console.log(request.status);
+                    // console.log(request.status);
                     fail(request.statusText);
                 }
             });

@@ -18,9 +18,10 @@ var DomParser = require('react-native-html-parser').DOMParser;
 var users = [];
 var expirienceUsers = [];
 
-export const Login = (account = {login,password}) => new Promise((succes, fail) => {
+export const Login = (account = { login, password }) => new Promise((succes, fail) => {
     //if (!account) account = body;
     //else
+    var httpClient = new HTTPClient();
     account = 'UserName=' + account.login + '&Password=' + account.password;
     httpClient.post(url + urlLogin, account).then((html) => {
         succes({
@@ -28,8 +29,23 @@ export const Login = (account = {login,password}) => new Promise((succes, fail) 
             html: html
         });
     }, (error) => {
-        fail(false);
+        fail({ login: false });
     })
+    // fetch(url + urlLogin, {
+    //     method: "POST",
+    //     body: account,
+    //     credentials: 'same-origin',
+    //     // -- or --
+    //     // body : JSON.stringify({
+    //     // user : document.getElementById('user').value,
+    //     // ...
+    //     // })
+    // }).then((response) => {
+    //     response.text();
+    //     //succeed('111');
+    // } // .json(), etc.
+    //     // same as function(response) {return response.text();}
+    //     )
 }, (error) => {
     console.log(error);
     //let errorDom = parser.parseFromString(error, 'text/html');

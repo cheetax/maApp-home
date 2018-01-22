@@ -47,37 +47,10 @@ class LoginPage extends Component {
         super(props);
         // props.navigation.setParams({btnSave: this.onBtnSaveClick})
         this.state = {
-            account: {...props.account}
-        } 
-        
-    }
-    // static navigationOptions = ({ navigation }) => ({
-    //     // headerTitle: (navigation.state.params.type === 'add') ? 'Новая норма' : 'Редактирование нормы',
-    //     // headerLeft: (<Icon
-    //     //     name={'cross'}
-    //     //     size={20}
-    //     //     style={{ color: '#fff', marginLeft: 16 }}
-    //     //     onPress={() => { navigation.goBack() }} />),
-    //     // headerRight: (<Button
-    //     //     title='Записать'
-    //     //     //borderRadius={20}
-    //     //     backgroundColor='transparent'
-    //     //     //containerViewStyle={{borderRadius: 20}}
-    //     //     buttonStyle={styles.buttonRes}
-    //     //     textStyle={styles.buttonTextStyle}
-    //     //     onPress={navigation.state.params.btnSave ? navigation.state.params.btnSave : () => null}
-    //     // />
+            account: { ...props.account }
+        }
 
-    //     // ),
-    //     // headerTitleStyle: {
-    //     //     fontSize: 20,
-    //     //     color: '#fff',
-    //     //     marginLeft: 0,
-    //     //     textAlign: 'left',
-    //     //     alignSelf: 'stretch'
-    //     // },
-    //     //headerTitle: <Text>test</Text>
-    // });
+    }
 
     onBtnLoginClick() {
         //this.props.rules.Exp.push(this.state);
@@ -94,8 +67,8 @@ class LoginPage extends Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.headerText} >Вход</Text>
-                <View style={{ marginHorizontal: 16, }}>
+                <Text style={styles.headerText} >Battle of Wizards Assistans</Text>
+                <View style={{ marginHorizontal: 24, marginTop: 72 }}>
                     <TextField
                         label={'Логин'}
                         // labelStyle={{color: 'orange'}}
@@ -113,12 +86,19 @@ class LoginPage extends Component {
                         onChangeText={(password) => this.state.account.password = password}
                         value={this.state.account.password}
                     //returnKeyType={'next'} 
-                    />     
+                    />
                     <TouchableHighlight
-
+                        style={{
+                            padding: 8,
+                            marginVertical: 32,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            backgroundColor:'#03A9F4'
+                        }}
+                        underlayColor="rgba(0,0,0,0.2)"
                         onPress={this.onBtnLoginClick.bind(this)}
                     >
-                        <Text>Войти</Text>
+                        <Text style={{color:'#fff', fontSize: 20}} >Войти</Text>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -135,10 +115,10 @@ const styles = StyleSheet.create({
         padding: 0,
     },
     headerText: {
-        fontSize: 20,
-        textAlign: 'left',
-        marginLeft: 16,
-        marginTop: 24,
+        fontSize: 32,
+        textAlign: 'center',
+        marginHorizontal: 16,
+        marginTop: 72,
     },
     buttonPanel: {
         flexDirection: 'row',
