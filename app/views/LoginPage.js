@@ -54,17 +54,38 @@ class LoginPage extends Component {
 
     onBtnLoginClick() {
         //this.props.rules.Exp.push(this.state);
-        this.props.navigation.goBack();
+        //this.props.navigation.goBack();
         return this.props.dispatch(actionLogin(this.state.account));
     }
 
+    // componentDidUpdate(prevProps,) {
+    //     //this.setState({ account: { ...this.state.account, inAction: this.props.account.inAction } })
+    //     console.log(prevProps)
+    // }
+    
     componentDidMount() {
         //this.props.navigation.setParams({ btnSave: this.onBtnLoginClick.bind(this) })
     }
+    _btnLogin = () => {
+        if (!this.props.account.inAction && !this.props.account.statusLogin) {
+            return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
+        }
+        else if (this.props.account.inAction && !this.props.account.statusLogin) {
+            return <Text>Not Login</Text>
+        }
+        else if (this.props.account.inAction && this.props.account.statusLogin) {
+            return <Text>Login!!!</Text>
+        }
+        else {
+            return <ActivityIndicator size={32} />
+        }
+        return <Text>Test</Text>
+    }
+
 
     render() {
         //console.log('map', this.props.items);
-
+        //var btnLogin = this._btnLogin();
         return (
             <View style={styles.container}>
                 <Text style={styles.headerText} >Battle of Wizards Assistans</Text>
@@ -93,12 +114,21 @@ class LoginPage extends Component {
                             marginVertical: 32,
                             justifyContent: 'center',
                             alignItems: 'center',
-                            backgroundColor:'#03A9F4'
+                            backgroundColor: '#03A9F4'
                         }}
                         underlayColor="rgba(0,0,0,0.2)"
                         onPress={this.onBtnLoginClick.bind(this)}
                     >
-                        <Text style={{color:'#fff', fontSize: 20}} >Войти</Text>
+                        <View style={{ justifyContent: 'center', alignItems: 'stretch' }} >
+                            {/* <Text
+                                style={{
+                                    color: '#fff',
+                                    fontSize: 20
+                                }}
+                                disabled={inAction}>Войти</Text> */}
+                            {this._btnLogin()}
+                        </View>
+
                     </TouchableHighlight>
                 </View>
             </View>

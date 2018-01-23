@@ -6,6 +6,7 @@ const initialAccount = {
     login: '',
     password: '',
     statusLogin: false,
+    inAction: false,
 }
 
 export function settings(state = initialSettings, action) {
@@ -29,10 +30,10 @@ export function account(state = initialAccount, action) {
         //     newstate = {...action.payload.account};
         //     break;
         case "SET_LOGIN":
-            newstate = { ...action.payload };
+            newstate = { ...action.payload, statusLogin: false, inAction: false };
             break;
         case 'LOGIN':
-            newstate = { ...state, statusLogin: action.payload }
+            newstate = { ...state, statusLogin: action.payload.login, inAction: action.payload.inAction }
             break;
     }
     return newstate || state;

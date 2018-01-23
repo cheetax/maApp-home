@@ -21,7 +21,7 @@ var expirienceUsers = [];
 export const Login = (account = { login, password }) => new Promise((succes, fail) => {
     //if (!account) account = body;
     //else
-    var httpClient = new HTTPClient();
+    //var httpClient = new HTTPClient();
     account = 'UserName=' + account.login + '&Password=' + account.password;
     httpClient.post(url + urlLogin, account).then((html) => {
         succes({
@@ -34,22 +34,24 @@ export const Login = (account = { login, password }) => new Promise((succes, fai
     // fetch(url + urlLogin, {
     //     method: "POST",
     //     body: account,
-    //     credentials: 'same-origin',
-    //     // -- or --
-    //     // body : JSON.stringify({
-    //     // user : document.getElementById('user').value,
-    //     // ...
-    //     // })
+    //     //credentials: 'same-origin',
     // }).then((response) => {
-    //     response.text();
-    //     //succeed('111');
-    // } // .json(), etc.
-    //     // same as function(response) {return response.text();}
-    //     )
+    //     if (response.url != url + urlLogin) {
+    //         succes({
+    //             login: true,
+    //             html: response._bodyText,
+    //         });
+    //     }
+    //     else
+    //     {
+    //         succes({
+    //             login: false,
+    //         })
+    //     }    
+
+    // })
 }, (error) => {
     console.log(error);
-    //let errorDom = parser.parseFromString(error, 'text/html');
-
 });
 
 export const GetContent = () => new Promise(async (succes, fail) => {

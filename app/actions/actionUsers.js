@@ -22,29 +22,37 @@ export const getContent = (forceUpdate) => async (dispatch) => {
             if (status.login) {
                 dispatch({
                     type: 'LOGIN',
-                    payload: status.login,
+                    payload: { login: status.login, inAction: true },
                 })
-            }
-            await getDataBase(forceUpdate, status.login).then((data) => {
-                dispatch({
-                    type: 'GET_CONTENT',
-                    payload: data,
-                });
+                setTimeout(() => dispatch({
+                    type: 'LOGIN',
+                    payload: { login: status.login, inAction: false },
+                }), 3000);
 
-            });
+            }
+            else
+                await getDataBase(forceUpdate, status.login).then((data) => {
+                    dispatch({
+                        type: 'GET_CONTENT',
+                        payload: data,
+                    });
+
+                });
+        }, (status) => {
+            console.log(status)
         });
     }, async (status) => {
         dispatch({
-            type: 'LOGIN',
-            payload: status.login,
+            type: 'NAV_LOGIN_PAGE',
+            //payload: ''
         })
-        await getDataBase(forceUpdate, status.login).then((data) => {
-            dispatch({
-                type: 'GET_CONTENT',
-                payload: data,
-            });
+        // await getDataBase(forceUpdate, status.login).then((data) => {
+        //     dispatch({
+        //         type: 'GET_CONTENT',
+        //         payload: data,
+        //     });
 
-        });
+        // });
         console.log(status.login)
     })
     dispatch({
@@ -72,14 +80,22 @@ export const actionLogin = (account) => async (dispatch) => {
         type: 'SET_LOGIN',
         payload: account
     })
+    dispatch({
+        type: 'LOGIN',
+        payload: { login: false, inAction: false },
+    })
     await saveAccountToBase(account);
     await Login(account).then((status) => {
         dispatch({
             type: 'LOGIN',
-            payload: status.login,
+            payload: { login: status.login, inAction: true },
         })
+        setTimeout(() => dispatch({
+            type: 'LOGIN',
+            payload: { login: status.login, inAction: false },
+        }), 5000);
         if (status.login) {
-            
+
         }
     });
 } 

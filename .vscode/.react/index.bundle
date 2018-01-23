@@ -64776,13 +64776,27 @@ var getContent = exports.getContent = function getContent(forceUpdate) {
                                                     while (1) {
                                                         switch (_context.prev = _context.next) {
                                                             case 0:
-                                                                if (status.login) {
-                                                                    dispatch({
-                                                                        type: 'LOGIN',
-                                                                        payload: status.login
-                                                                    });
+                                                                if (!status.login) {
+                                                                    _context.next = 5;
+                                                                    break;
                                                                 }
-                                                                _context.next = 3;
+
+                                                                dispatch({
+                                                                    type: 'LOGIN',
+                                                                    payload: { login: status.login, inAction: true }
+                                                                });
+                                                                setTimeout(function () {
+                                                                    return dispatch({
+                                                                        type: 'LOGIN',
+                                                                        payload: { login: status.login, inAction: false }
+                                                                    });
+                                                                }, 3000);
+
+                                                                _context.next = 7;
+                                                                break;
+
+                                                            case 5:
+                                                                _context.next = 7;
                                                                 return regeneratorRuntime.awrap((0, _base.getDataBase)(forceUpdate, status.login).then(function (data) {
                                                                     dispatch({
                                                                         type: 'GET_CONTENT',
@@ -64790,12 +64804,14 @@ var getContent = exports.getContent = function getContent(forceUpdate) {
                                                                     });
                                                                 }));
 
-                                                            case 3:
+                                                            case 7:
                                                             case 'end':
                                                                 return _context.stop();
                                                         }
                                                     }
                                                 }, null, _this);
+                                            }, function (status) {
+                                                console.log(status);
                                             }));
 
                                         case 3:
@@ -64810,21 +64826,12 @@ var getContent = exports.getContent = function getContent(forceUpdate) {
                                     switch (_context3.prev = _context3.next) {
                                         case 0:
                                             dispatch({
-                                                type: 'LOGIN',
-                                                payload: status.login
+                                                type: 'NAV_LOGIN_PAGE'
                                             });
-                                            _context3.next = 3;
-                                            return regeneratorRuntime.awrap((0, _base.getDataBase)(forceUpdate, status.login).then(function (data) {
-                                                dispatch({
-                                                    type: 'GET_CONTENT',
-                                                    payload: data
-                                                });
-                                            }));
 
-                                        case 3:
                                             console.log(status.login);
 
-                                        case 4:
+                                        case 2:
                                         case 'end':
                                             return _context3.stop();
                                     }
@@ -64872,20 +64879,30 @@ var actionLogin = exports.actionLogin = function actionLogin(account) {
                             type: 'SET_LOGIN',
                             payload: account
                         });
-                        _context5.next = 3;
+                        dispatch({
+                            type: 'LOGIN',
+                            payload: { login: false, inAction: false }
+                        });
+                        _context5.next = 4;
                         return regeneratorRuntime.awrap((0, _base.saveAccountToBase)(account));
 
-                    case 3:
-                        _context5.next = 5;
+                    case 4:
+                        _context5.next = 6;
                         return regeneratorRuntime.awrap((0, _GetContent.Login)(account).then(function (status) {
                             dispatch({
                                 type: 'LOGIN',
-                                payload: status.login
+                                payload: { login: status.login, inAction: true }
                             });
+                            setTimeout(function () {
+                                return dispatch({
+                                    type: 'LOGIN',
+                                    payload: { login: status.login, inAction: false }
+                                });
+                            }, 5000);
                             if (status.login) {}
                         }));
 
-                    case 5:
+                    case 6:
                     case 'end':
                         return _context5.stop();
                 }
@@ -65047,7 +65064,6 @@ var expirienceUsers = [];
 var Login = exports.Login = function Login() {
     var account = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { login: login, password: password };
     return new Promise(function (succes, fail) {
-        var httpClient = new _HTTPClient.HTTPClient();
         account = 'UserName=' + account.login + '&Password=' + account.password;
         httpClient.post(url + urlLogin, account).then(function (html) {
             succes({
@@ -89784,9 +89800,9 @@ var _index = require(174                                                    ); /
 
 var _index2 = _interopRequireDefault(_index);
 
-var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\LoginPage.js";
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _jsxFileName = "d:\\tfvc\\maApp-home\\app\\views\\LoginPage.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -89870,6 +89886,58 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).call(this, props));
 
+        _this._btnLogin = function () {
+            if (!_this.props.account.inAction && !_this.props.account.statusLogin) {
+                return _react3.default.createElement(
+                    _reactNative.Text,
+                    { style: { color: '#fff', fontSize: 20 }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 71
+                        }
+                    },
+                    "\u0412\u043E\u0439\u0442\u0438"
+                );
+            } else if (_this.props.account.inAction && !_this.props.account.statusLogin) {
+                return _react3.default.createElement(
+                    _reactNative.Text,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 74
+                        }
+                    },
+                    "Not Login"
+                );
+            } else if (_this.props.account.inAction && _this.props.account.statusLogin) {
+                return _react3.default.createElement(
+                    _reactNative.Text,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 77
+                        }
+                    },
+                    "Login!!!"
+                );
+            } else {
+                return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 32, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 80
+                    }
+                });
+            }
+            return _react3.default.createElement(
+                _reactNative.Text,
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 82
+                    }
+                },
+                "Test"
+            );
+        };
+
         _this.state = {
             account: _extends({}, props.account)
         };
@@ -89880,7 +89948,6 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
     _createClass(LoginPage, [{
         key: "onBtnLoginClick",
         value: function onBtnLoginClick() {
-            this.props.navigation.goBack();
             return this.props.dispatch((0, _actionUsers.actionLogin)(this.state.account));
         }
     }, {
@@ -89895,14 +89962,14 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 69
+                        lineNumber: 90
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.Text,
                     { style: styles.headerText, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 70
+                            lineNumber: 91
                         }
                     },
                     "Battle of Wizards Assistans"
@@ -89911,7 +89978,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.View,
                     { style: { marginHorizontal: 24, marginTop: 72 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 71
+                            lineNumber: 92
                         }
                     },
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -89924,7 +89991,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         value: this.state.account.login,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 72
+                            lineNumber: 93
                         }
                     }),
                     _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -89937,7 +90004,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         value: this.state.account.password,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 82
+                            lineNumber: 103
                         }
                     }),
                     _react3.default.createElement(
@@ -89954,17 +90021,17 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             onPress: this.onBtnLoginClick.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 90
+                                lineNumber: 111
                             }
                         },
                         _react3.default.createElement(
-                            _reactNative.Text,
-                            { style: { color: '#fff', fontSize: 20 }, __source: {
+                            _reactNative.View,
+                            { style: { justifyContent: 'center', alignItems: 'stretch' }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 101
+                                    lineNumber: 122
                                 }
                             },
-                            "\u0412\u043E\u0439\u0442\u0438"
+                            this._btnLogin()
                         )
                     )
                 )
@@ -90346,7 +90413,8 @@ var initialSettings = {
 var initialAccount = {
     login: '',
     password: '',
-    statusLogin: false
+    statusLogin: false,
+    inAction: false
 };
 
 function settings() {
@@ -90369,10 +90437,10 @@ function account() {
     var newstate;
     switch (action.type) {
         case "SET_LOGIN":
-            newstate = _extends({}, action.payload);
+            newstate = _extends({}, action.payload, { statusLogin: false, inAction: false });
             break;
         case 'LOGIN':
-            newstate = _extends({}, state, { statusLogin: action.payload });
+            newstate = _extends({}, state, { statusLogin: action.payload.login, inAction: action.payload.inAction });
             break;
     }
     return newstate || state;

@@ -4,7 +4,7 @@ export class HTTPClient {
     post = function (url, requestuestBody) {
         return new Promise(function (succeed, fail) {
             var request = new XMLHttpRequest();
-            request.withCredentials = false;
+            request.withCredentials = true;
             request.open("POST", url, true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             //console.log('request.status',request.status);
