@@ -64881,7 +64881,7 @@ var actionLogin = exports.actionLogin = function actionLogin(account) {
                         });
                         dispatch({
                             type: 'LOGIN',
-                            payload: { login: false, inAction: false }
+                            payload: { login: false, inAction: true }
                         });
                         _context5.next = 4;
                         return regeneratorRuntime.awrap((0, _base.saveAccountToBase)(account));
@@ -89979,69 +89979,6 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
         key: "render",
         value: function render() {
             var _this2 = this;
-
-            var disabledAccount = false;
-            btnLogin = function btnLogin() {
-                if (!_this2.props.account.inAction && !_this2.props.account.statusLogin) {
-                    return _react3.default.createElement(
-                        _reactNative.Text,
-                        { style: { color: '#fff', fontSize: 20 }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 100
-                            }
-                        },
-                        "\u0412\u043E\u0439\u0442\u0438"
-                    );
-                } else if (_this2.props.account.inAction && !_this2.props.account.statusLogin) {
-                    return _react3.default.createElement(
-                        _reactNative.Text,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 103
-                            }
-                        },
-                        "Not Login"
-                    );
-                } else if (_this2.props.account.inAction && _this2.props.account.statusLogin) {
-                    return _react3.default.createElement(
-                        _reactNative.Text,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 106
-                            }
-                        },
-                        "Login!!!"
-                    );
-                } else if (!_this2.props.account.inAction && _this2.props.account.statusLogin) {
-                    return _react3.default.createElement(
-                        _reactNative.Text,
-                        { style: { color: '#fff', fontSize: 20 }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 109
-                            }
-                        },
-                        "\u0412\u044B\u0439\u0442\u0438"
-                    );
-                } else {
-                    return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 32, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 112
-                        }
-                    });
-                }
-                return _react3.default.createElement(
-                    _reactNative.Text,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 114
-                        }
-                    },
-                    "Test"
-                );
-            };
 
             return _react3.default.createElement(
                 _reactNative.View,

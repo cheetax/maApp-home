@@ -82,7 +82,7 @@ export const actionLogin = (account) => async (dispatch) => {
     })
     dispatch({
         type: 'LOGIN',
-        payload: { login: false, inAction: false },
+        payload: { login: false, inAction: true },
     })
     await saveAccountToBase(account);
     await Login(account).then((status) => {
