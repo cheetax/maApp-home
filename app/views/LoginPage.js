@@ -47,7 +47,8 @@ class LoginPage extends Component {
         super(props);
         // props.navigation.setParams({btnSave: this.onBtnSaveClick})
         this.state = {
-            account: { ...props.account }
+            account: { ...props.account },
+            disabledAccount: false,
         }
 
     }
@@ -55,14 +56,20 @@ class LoginPage extends Component {
     onBtnLoginClick() {
         //this.props.rules.Exp.push(this.state);
         //this.props.navigation.goBack();
-        return this.props.dispatch(actionLogin(this.state.account));
+        if (this.props.account.statusLogin)
+            return this.props.dispatch({
+                type: 'UNLOGIN',
+                payload: {}
+            })    
+        else
+            return this.props.dispatch(actionLogin(this.state.account));
     }
 
     // componentDidUpdate(prevProps,) {
     //     //this.setState({ account: { ...this.state.account, inAction: this.props.account.inAction } })
     //     console.log(prevProps)
     // }
-    
+
     componentDidMount() {
         //this.props.navigation.setParams({ btnSave: this.onBtnLoginClick.bind(this) })
     }
@@ -76,6 +83,9 @@ class LoginPage extends Component {
         else if (this.props.account.inAction && this.props.account.statusLogin) {
             return <Text>Login!!!</Text>
         }
+        else if (!this.props.account.inAction && this.props.account.statusLogin) {
+            return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
+        }
         else {
             return <ActivityIndicator size={32} />
         }
@@ -84,30 +94,56 @@ class LoginPage extends Component {
 
 
     render() {
+        // var disabledAccount = false;
+        // btnLogin = () => {
+        //     if (!this.props.account.inAction && !this.props.account.statusLogin) {
+        //         return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
+        //     }
+        //     else if (this.props.account.inAction && !this.props.account.statusLogin) {
+        //         return <Text>Not Login</Text>
+        //     }
+        //     else if (this.props.account.inAction && this.props.account.statusLogin) {
+        //         return <Text>Login!!!</Text>
+        //     }
+        //     else if (!this.props.account.inAction && this.props.account.statusLogin) {
+        //         return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
+        //     }
+        //     else {
+        //         return <ActivityIndicator size={32} />
+        //     }
+        //     return <Text>Test</Text>
+        // }
         //console.log('map', this.props.items);
         //var btnLogin = this._btnLogin();
         return (
             <View style={styles.container}>
                 <Text style={styles.headerText} >Battle of Wizards Assistans</Text>
                 <View style={{ marginHorizontal: 24, marginTop: 72 }}>
-                    <TextField
-                        label={'Логин'}
-                        // labelStyle={{color: 'orange'}}
-                        //inputStyle={{paddingVertical:8 }}
-                        //wrapperStyle={{paddingBottom:8}}
-                        highlightColor={'#00BCD4'}
-                        onChangeText={(login) => this.state.account.login = login}
-                        value={this.state.account.login}
-                    //returnKeyType={'next'}                         
-                    />
-                    <TextField
-                        label={'Пароль'}
-                        highlightColor={'#00BCD4'}
-                        secureTextEntry={true}
-                        onChangeText={(password) => this.state.account.password = password}
-                        value={this.state.account.password}
-                    //returnKeyType={'next'} 
-                    />
+                    <View >
+                        <TextField
+                            label={'Логин'}
+                            // labelStyle={{color: 'orange'}}
+                            //inputStyle={{paddingVertical:8 }}
+                            //wrapperStyle={{paddingBottom:8}}
+                            autoGrow={true}
+                            editable={!this.props.account.statusLogin}
+                            highlightColor={'#00BCD4'}
+                            onChangeText={(login) => this.state.account.login = login}
+                            value={this.state.account.login}
+                        //returnKeyType={'next'}                         
+                        />
+                        <TextField
+                            label={'Пароль'}
+                            highlightColor={'#00BCD4'}
+                            autoGrow={true}
+                            secureTextEntry={true}
+                            editable={!this.props.account.statusLogin}
+                            onChangeText={(password) => this.state.account.password = password}
+                            value={this.state.account.password}
+                        //returnKeyType={'next'} 
+                        />
+                    </View>
+
                     <TouchableHighlight
                         style={{
                             padding: 8,

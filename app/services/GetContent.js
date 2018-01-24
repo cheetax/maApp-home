@@ -23,18 +23,31 @@ export const Login = (account = { login, password }) => new Promise((succes, fai
     //else
     //var httpClient = new HTTPClient();
     account = 'UserName=' + account.login + '&Password=' + account.password;
-    httpClient.post(url + urlLogin, account).then((html) => {
-        succes({
-            login: true,
-            html: html
-        });
-    }, (error) => {
-        fail({ login: false });
+    httpClient.post(url + urlLogin, account, 'application/x-www-form-urlencoded').then((data) => {
+        httpClient.post(url + urlLogin, account, 'text/html').then((responseURL) => {
+            if (responseURL != url + urlLogin) {
+                succes({
+                    login: true,
+                   // html: response._bodyText,
+                });
+            }
+            else {
+                succes({
+                    login: false,
+                })
+            }
+        }, (error) => {
+            fail({ login: false });
+        })
     })
+    // myHeaders = new Headers({
+    //     "Content-Type": "text/html",
+    // });
     // fetch(url + urlLogin, {
     //     method: "POST",
     //     body: account,
-    //     //credentials: 'same-origin',
+    //     headers: myHeaders,
+    //     credentials: 'omit',
     // }).then((response) => {
     //     if (response.url != url + urlLogin) {
     //         succes({
@@ -42,14 +55,13 @@ export const Login = (account = { login, password }) => new Promise((succes, fai
     //             html: response._bodyText,
     //         });
     //     }
-    //     else
-    //     {
+    //     else {
     //         succes({
     //             login: false,
     //         })
-    //     }    
+    //     }
 
-    // })
+    //      })
 }, (error) => {
     console.log(error);
 });

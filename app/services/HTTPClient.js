@@ -1,21 +1,22 @@
 
 export class HTTPClient {
 
-    post = function (url, requestuestBody) {
+    post = function (url, requestuestBody, header) {
         return new Promise(function (succeed, fail) {
             var request = new XMLHttpRequest();
-            request.withCredentials = true;
+            //request.withCredentials = true;
             request.open("POST", url, true);
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            request.setRequestHeader('Content-Type', header);
             //console.log('request.status',request.status);
 
             request.addEventListener("load", function () {
                 if (request.status < 400) {
                    // console.log(request.status);
-                    succeed(request.responseText);
+                    succeed(request.responseURL); //request.responseText
                 }
                 else {
-                    fail(request.responseText);
+                    fail(request.responseURL);
                 }
             });
             request.addEventListener("error", function () {

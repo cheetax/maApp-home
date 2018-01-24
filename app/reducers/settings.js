@@ -35,6 +35,9 @@ export function account(state = initialAccount, action) {
         case 'LOGIN':
             newstate = { ...state, statusLogin: action.payload.login, inAction: action.payload.inAction }
             break;
+        case 'UNLOGIN':
+            newstate = { ...state, statusLogin: false }
+            break;
     }
     return newstate || state;
     // console.log("actionEnd", state);

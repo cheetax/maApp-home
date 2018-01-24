@@ -65065,13 +65065,20 @@ var Login = exports.Login = function Login() {
     var account = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { login: login, password: password };
     return new Promise(function (succes, fail) {
         account = 'UserName=' + account.login + '&Password=' + account.password;
-        httpClient.post(url + urlLogin, account).then(function (html) {
-            succes({
-                login: true,
-                html: html
+        httpClient.post(url + urlLogin, account, 'application/x-www-form-urlencoded').then(function (data) {
+            httpClient.post(url + urlLogin, account, 'text/html').then(function (responseURL) {
+                if (responseURL != url + urlLogin) {
+                    succes({
+                        login: true
+                    });
+                } else {
+                    succes({
+                        login: false
+                    });
+                }
+            }, function (error) {
+                fail({ login: false });
             });
-        }, function (error) {
-            fail({ login: false });
         });
     }, function (error) {
         console.log(error);
@@ -65362,19 +65369,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var HTTPClient = exports.HTTPClient = function HTTPClient() {
     _classCallCheck(this, HTTPClient);
 
-    this.post = function (url, requestuestBody) {
+    this.post = function (url, requestuestBody, header) {
         return new Promise(function (succeed, fail) {
             var request = new XMLHttpRequest();
-            request.withCredentials = true;
+
             request.open("POST", url, true);
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            request.setRequestHeader('Content-Type', header);
 
 
             request.addEventListener("load", function () {
                 if (request.status < 400) {
-                    succeed(request.responseText);
+                    succeed(request.responseURL);
                 } else {
-                    fail(request.responseText);
+                    fail(request.responseURL);
                 }
             });
             request.addEventListener("error", function () {
@@ -89892,7 +89900,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 71
+                            lineNumber: 78
                         }
                     },
                     "\u0412\u043E\u0439\u0442\u0438"
@@ -89903,7 +89911,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 74
+                            lineNumber: 81
                         }
                     },
                     "Not Login"
@@ -89914,15 +89922,25 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 77
+                            lineNumber: 84
                         }
                     },
                     "Login!!!"
                 );
+            } else if (!_this.props.account.inAction && _this.props.account.statusLogin) {
+                return _react3.default.createElement(
+                    _reactNative.Text,
+                    { style: { color: '#fff', fontSize: 20 }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 87
+                        }
+                    },
+                    "\u0412\u044B\u0439\u0442\u0438"
+                );
             } else {
                 return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 32, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 80
+                        lineNumber: 90
                     }
                 });
             }
@@ -89931,7 +89949,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 82
+                        lineNumber: 92
                     }
                 },
                 "Test"
@@ -89939,7 +89957,8 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
         };
 
         _this.state = {
-            account: _extends({}, props.account)
+            account: _extends({}, props.account),
+            disabledAccount: false
         };
 
         return _this;
@@ -89948,7 +89967,10 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
     _createClass(LoginPage, [{
         key: "onBtnLoginClick",
         value: function onBtnLoginClick() {
-            return this.props.dispatch((0, _actionUsers.actionLogin)(this.state.account));
+            if (this.props.account.statusLogin) return this.props.dispatch({
+                type: 'UNLOGIN',
+                payload: {}
+            });else return this.props.dispatch((0, _actionUsers.actionLogin)(this.state.account));
         }
     }, {
         key: "componentDidMount",
@@ -89958,18 +89980,81 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
         value: function render() {
             var _this2 = this;
 
+            var disabledAccount = false;
+            btnLogin = function btnLogin() {
+                if (!_this2.props.account.inAction && !_this2.props.account.statusLogin) {
+                    return _react3.default.createElement(
+                        _reactNative.Text,
+                        { style: { color: '#fff', fontSize: 20 }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 100
+                            }
+                        },
+                        "\u0412\u043E\u0439\u0442\u0438"
+                    );
+                } else if (_this2.props.account.inAction && !_this2.props.account.statusLogin) {
+                    return _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 103
+                            }
+                        },
+                        "Not Login"
+                    );
+                } else if (_this2.props.account.inAction && _this2.props.account.statusLogin) {
+                    return _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 106
+                            }
+                        },
+                        "Login!!!"
+                    );
+                } else if (!_this2.props.account.inAction && _this2.props.account.statusLogin) {
+                    return _react3.default.createElement(
+                        _reactNative.Text,
+                        { style: { color: '#fff', fontSize: 20 }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 109
+                            }
+                        },
+                        "\u0412\u044B\u0439\u0442\u0438"
+                    );
+                } else {
+                    return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 32, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 112
+                        }
+                    });
+                }
+                return _react3.default.createElement(
+                    _reactNative.Text,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 114
+                        }
+                    },
+                    "Test"
+                );
+            };
+
             return _react3.default.createElement(
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 90
+                        lineNumber: 119
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.Text,
                     { style: styles.headerText, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 91
+                            lineNumber: 120
                         }
                     },
                     "Battle of Wizards Assistans"
@@ -89978,35 +90063,48 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.View,
                     { style: { marginHorizontal: 24, marginTop: 72 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 92
+                            lineNumber: 121
                         }
                     },
-                    _react3.default.createElement(_reactNativeMdTextinput2.default, {
-                        label: 'Логин',
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 122
+                            }
+                        },
+                        _react3.default.createElement(_reactNativeMdTextinput2.default, {
+                            label: 'Логин',
 
-                        highlightColor: '#00BCD4',
-                        onChangeText: function onChangeText(login) {
-                            return _this2.state.account.login = login;
-                        },
-                        value: this.state.account.login,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 93
-                        }
-                    }),
-                    _react3.default.createElement(_reactNativeMdTextinput2.default, {
-                        label: 'Пароль',
-                        highlightColor: '#00BCD4',
-                        secureTextEntry: true,
-                        onChangeText: function onChangeText(password) {
-                            return _this2.state.account.password = password;
-                        },
-                        value: this.state.account.password,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 103
-                        }
-                    }),
+                            autoGrow: true,
+                            editable: !this.props.account.statusLogin,
+                            highlightColor: '#00BCD4',
+                            onChangeText: function onChangeText(login) {
+                                return _this2.state.account.login = login;
+                            },
+                            value: this.state.account.login,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 123
+                            }
+                        }),
+                        _react3.default.createElement(_reactNativeMdTextinput2.default, {
+                            label: 'Пароль',
+                            highlightColor: '#00BCD4',
+                            autoGrow: true,
+                            secureTextEntry: true,
+                            editable: !this.props.account.statusLogin,
+                            onChangeText: function onChangeText(password) {
+                                return _this2.state.account.password = password;
+                            },
+                            value: this.state.account.password,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 135
+                            }
+                        })
+                    ),
                     _react3.default.createElement(
                         _reactNative.TouchableHighlight,
                         {
@@ -90021,14 +90119,14 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             onPress: this.onBtnLoginClick.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 111
+                                lineNumber: 147
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.View,
                             { style: { justifyContent: 'center', alignItems: 'stretch' }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 122
+                                    lineNumber: 158
                                 }
                             },
                             this._btnLogin()
@@ -90441,6 +90539,9 @@ function account() {
             break;
         case 'LOGIN':
             newstate = _extends({}, state, { statusLogin: action.payload.login, inAction: action.payload.inAction });
+            break;
+        case 'UNLOGIN':
+            newstate = _extends({}, state, { statusLogin: false });
             break;
     }
     return newstate || state;
