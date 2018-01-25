@@ -64891,12 +64891,12 @@ var actionLogin = exports.actionLogin = function actionLogin(account) {
                         return regeneratorRuntime.awrap((0, _GetContent.Login)(account).then(function (status) {
                             dispatch({
                                 type: 'LOGIN',
-                                payload: { login: status.login, inAction: true }
+                                payload: { login: status.login, inActionLogin: true, inAction: false }
                             });
                             setTimeout(function () {
                                 return dispatch({
                                     type: 'LOGIN',
-                                    payload: { login: status.login, inAction: false }
+                                    payload: { login: status.login, inAction: false, inActionLogin: false }
                                 });
                             }, 5000);
                             if (status.login) {}
@@ -89895,7 +89895,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
         var _this = _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).call(this, props));
 
         _this._btnLogin = function () {
-            if (!_this.props.account.inAction && !_this.props.account.statusLogin) {
+            if (!_this.props.account.inActionLogin && !_this.props.account.inAction && !_this.props.account.statusLogin) {
                 return _react3.default.createElement(
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
@@ -89905,7 +89905,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     },
                     "\u0412\u043E\u0439\u0442\u0438"
                 );
-            } else if (_this.props.account.inAction && !_this.props.account.statusLogin) {
+            } else if (_this.props.account.inActionLogin && !_this.props.account.inAction && !_this.props.account.statusLogin) {
                 return _react3.default.createElement(
                     _reactNative.Text,
                     {
@@ -89916,7 +89916,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     },
                     "Not Login"
                 );
-            } else if (_this.props.account.inAction && _this.props.account.statusLogin) {
+            } else if (_this.props.account.inActionLogin && !_this.props.account.inAction && _this.props.account.statusLogin) {
                 return _react3.default.createElement(
                     _reactNative.Text,
                     {
@@ -89927,7 +89927,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     },
                     "Login!!!"
                 );
-            } else if (!_this.props.account.inAction && _this.props.account.statusLogin) {
+            } else if (!_this.props.account.inActionLogin && !_this.props.account.inAction && _this.props.account.statusLogin) {
                 return _react3.default.createElement(
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
@@ -90449,7 +90449,8 @@ var initialAccount = {
     login: '',
     password: '',
     statusLogin: false,
-    inAction: false
+    inAction: false,
+    inActionLogin: false
 };
 
 function settings() {
@@ -90472,10 +90473,10 @@ function account() {
     var newstate;
     switch (action.type) {
         case "SET_LOGIN":
-            newstate = _extends({}, action.payload, { statusLogin: false, inAction: false });
+            newstate = _extends({}, action.payload, { statusLogin: false, inAction: false, inActionLogin: false });
             break;
         case 'LOGIN':
-            newstate = _extends({}, state, { statusLogin: action.payload.login, inAction: action.payload.inAction });
+            newstate = _extends({}, state, { statusLogin: action.payload.login, inAction: action.payload.inAction, inActionLogin: action.payload.inActionLogin });
             break;
         case 'UNLOGIN':
             newstate = _extends({}, state, { statusLogin: false });

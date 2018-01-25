@@ -88,11 +88,11 @@ export const actionLogin = (account) => async (dispatch) => {
     await Login(account).then((status) => {
         dispatch({
             type: 'LOGIN',
-            payload: { login: status.login, inAction: true },
+            payload: { login: status.login, inActionLogin: true, inAction: false },
         })
         setTimeout(() => dispatch({
             type: 'LOGIN',
-            payload: { login: status.login, inAction: false },
+            payload: { login: status.login, inAction: false, inActionLogin: false },
         }), 5000);
         if (status.login) {
 

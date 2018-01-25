@@ -74,16 +74,16 @@ class LoginPage extends Component {
         //this.props.navigation.setParams({ btnSave: this.onBtnLoginClick.bind(this) })
     }
     _btnLogin = () => {
-        if (!this.props.account.inAction && !this.props.account.statusLogin) {
+        if ((!this.props.account.inActionLogin && !this.props.account.inAction) && !this.props.account.statusLogin) {
             return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
         }
-        else if (this.props.account.inAction && !this.props.account.statusLogin) {
+        else if ((this.props.account.inActionLogin && !this.props.account.inAction) && !this.props.account.statusLogin) {
             return <Text>Not Login</Text>
         }
-        else if (this.props.account.inAction && this.props.account.statusLogin) {
+        else if ((this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
             return <Text>Login!!!</Text>
         }
-        else if (!this.props.account.inAction && this.props.account.statusLogin) {
+        else if ((!this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
             return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
         }
         else {
