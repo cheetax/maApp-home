@@ -60,7 +60,7 @@ class LoginPage extends Component {
             return this.props.dispatch({
                 type: 'UNLOGIN',
                 payload: {}
-            })    
+            })
         else
             return this.props.dispatch(actionLogin(this.state.account));
     }
@@ -94,31 +94,36 @@ class LoginPage extends Component {
 
 
     render() {
-        // var disabledAccount = false;
-        // btnLogin = () => {
-        //     if (!this.props.account.inAction && !this.props.account.statusLogin) {
-        //         return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
-        //     }
-        //     else if (this.props.account.inAction && !this.props.account.statusLogin) {
-        //         return <Text>Not Login</Text>
-        //     }
-        //     else if (this.props.account.inAction && this.props.account.statusLogin) {
-        //         return <Text>Login!!!</Text>
-        //     }
-        //     else if (!this.props.account.inAction && this.props.account.statusLogin) {
-        //         return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
-        //     }
-        //     else {
-        //         return <ActivityIndicator size={32} />
-        //     }
-        //     return <Text>Test</Text>
-        // }
-        //console.log('map', this.props.items);
-        //var btnLogin = this._btnLogin();
         return (
             <View style={styles.container}>
+                <View>
+                    <TouchableHighlight
+                        style={{
+                            margin: 0,
+                            marginTop: 8,
+                            marginLeft: 8,
+                            width: 40,
+                            height: 40,
+                            borderRadius: 25,
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                        underlayColor="rgba(0,0,0,0.2)"
+                        onPress={() => { this.props.navigation.goBack() }} >
+                        <Icon
+                            name={'cross'}
+                            size={24}
+                            style={{
+                                color: '#000',
+                                margin: 0,
+                                marginLeft: 0,
+                                padding: 0,
+                            }}
+                        />
+                    </TouchableHighlight>
+                </View>
                 <Text style={styles.headerText} >Battle of Wizards Assistans</Text>
-                <View style={{ marginHorizontal: 24, marginTop: 72 }}>
+                <View style={{ marginHorizontal: 24, marginTop: 64 }}>
                     <View >
                         <TextField
                             label={'Логин'}
@@ -184,7 +189,7 @@ const styles = StyleSheet.create({
         fontSize: 32,
         textAlign: 'center',
         marginHorizontal: 16,
-        marginTop: 72,
+        marginTop: 64,
     },
     buttonPanel: {
         flexDirection: 'row',

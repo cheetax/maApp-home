@@ -19,25 +19,17 @@ export const getContent = (forceUpdate) => async (dispatch) => {
             payload: account
         })
         await Login(account).then(async (status) => {
-            if (status.login) {
+            dispatch({
+                type: 'LOGIN',
+                payload: { login: status.login, inAction: false, inActionLogin: false },
+            })
+            await getDataBase(forceUpdate, status.login).then((data) => {
                 dispatch({
-                    type: 'LOGIN',
-                    payload: { login: status.login, inAction: true },
-                })
-                setTimeout(() => dispatch({
-                    type: 'LOGIN',
-                    payload: { login: status.login, inAction: false },
-                }), 3000);
-
-            }
-            else
-                await getDataBase(forceUpdate, status.login).then((data) => {
-                    dispatch({
-                        type: 'GET_CONTENT',
-                        payload: data,
-                    });
-
+                    type: 'GET_CONTENT',
+                    payload: data,
                 });
+
+            });
         }, (status) => {
             console.log(status)
         });
@@ -90,10 +82,16 @@ export const actionLogin = (account) => async (dispatch) => {
             type: 'LOGIN',
             payload: { login: status.login, inActionLogin: true, inAction: false },
         })
-        setTimeout(() => dispatch({
-            type: 'LOGIN',
-            payload: { login: status.login, inAction: false, inActionLogin: false },
-        }), 5000);
+        setTimeout(() => {
+            dispatch({
+                type: 'LOGIN',
+                payload: { login: status.login, inAction: false, inActionLogin: false },
+            })
+            dispatch({
+                type: 'Navigation/BACK',
+                key: 'Login'
+            })
+        }, 5000);
         if (status.login) {
 
         }
