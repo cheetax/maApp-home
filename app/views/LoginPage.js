@@ -73,43 +73,62 @@ class LoginPage extends Component {
     componentDidMount() {
         //this.props.navigation.setParams({ btnSave: this.onBtnLoginClick.bind(this) })
     }
+
     _btnLogin = () => {
         if ((!this.props.account.inActionLogin && !this.props.account.inAction) && !this.props.account.statusLogin) {
-            return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
+            return <Text style={{ color: '#fff', fontSize: 20 }}>ВОЙТИ</Text>
         }
         else if ((this.props.account.inActionLogin && !this.props.account.inAction) && !this.props.account.statusLogin) {
-            return <Icon
-            name={'cross'}
-            size={24}
-            style={{
-                color: '#fff',
-                margin: 0,
-                marginLeft: 0,
-                padding: 0,
-            }}
-        />
+            return <View style={{
+                borderColor: 'red',
+                borderRadius: 14,
+                height: 28,
+                borderWidth: 1
+
+            }}  >
+                <Icon
+                    name={'cross'}
+                    size={24}
+                    style={{
+                        color: 'red',
+                        margin: 0,
+                        marginLeft: 0,
+                        padding: 0,
+                    }}
+                />
+            </View>
+
         }
         else if ((this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
-            return <Icon
-                name={'check'}
-                size={24}
-                style={{
-                    color: '#fff',
-                    margin: 0,
-                    marginLeft: 0,
-                    padding: 0,
-                }}
-            />
+            return <View style={{
+                borderColor: 'green',
+                borderRadius: 16,
+                height: 32,
+                width: 32,
+                borderWidth: 2
+            }} >
+                <Icon
+                    name={'check'}
+                    size={24}
+                    style={{
+                        color: 'green',
+                        margin: 0,
+                        marginLeft: 0,
+                        padding: 0,
+                    }}
+                />
+            </View>
+
+
         }
         else if ((!this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
-            return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
+            return <Text style={{ color: '#fff', fontSize: 20 }}>ВЫЙТИ</Text>
         }
         else {
             return <ActivityIndicator size={24} />
         }
         return <Text>Test</Text>
     }
-    colorBtn = '#03A9F4';
 
     render() {
         return (
@@ -173,13 +192,13 @@ class LoginPage extends Component {
                             marginVertical: 32,
                             justifyContent: 'space-between',
                             alignItems: 'stretch',
-                            //backgroundColor: '#03A9F4'
-                            backgroundColor: this.colorBtn
+                            backgroundColor: (!this.props.account.inActionLogin && this.props.account.statusLogin) ? 'red' : '#03A9F4',
+                            //backgroundColor: this.colorBtn()
                         }}
                         underlayColor="rgba(0,0,0,0.2)"
                         onPress={this.onBtnLoginClick.bind(this)}
                     >
-                        <View style={{flex: 0,  height: 44, justifyContent: 'center', alignItems: 'center' }} >                            
+                        <View style={{ flex: 0, height: 48, justifyContent: 'center', alignItems: 'center' }} >
                             {this._btnLogin()}
                         </View>
 
