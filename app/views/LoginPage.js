@@ -78,10 +78,28 @@ class LoginPage extends Component {
             return <Text style={{ color: '#fff', fontSize: 20 }}>Войти</Text>
         }
         else if ((this.props.account.inActionLogin && !this.props.account.inAction) && !this.props.account.statusLogin) {
-            return <Text>Not Login</Text>
+            return <Icon
+            name={'cross'}
+            size={24}
+            style={{
+                color: '#fff',
+                margin: 0,
+                marginLeft: 0,
+                padding: 0,
+            }}
+        />
         }
         else if ((this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
-            return <Text>Login!!!</Text>
+            return <Icon
+                name={'check'}
+                size={24}
+                style={{
+                    color: '#fff',
+                    margin: 0,
+                    marginLeft: 0,
+                    padding: 0,
+                }}
+            />
         }
         else if ((!this.props.account.inActionLogin && !this.props.account.inAction) && this.props.account.statusLogin) {
             return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
