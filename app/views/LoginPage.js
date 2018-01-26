@@ -105,11 +105,11 @@ class LoginPage extends Component {
             return <Text style={{ color: '#fff', fontSize: 20 }}>Выйти</Text>
         }
         else {
-            return <ActivityIndicator size={32} />
+            return <ActivityIndicator size={24} />
         }
         return <Text>Test</Text>
     }
-
+    colorBtn = '#03A9F4';
 
     render() {
         return (
@@ -169,22 +169,17 @@ class LoginPage extends Component {
 
                     <TouchableHighlight
                         style={{
-                            padding: 8,
+                            padding: 0,
                             marginVertical: 32,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: '#03A9F4'
+                            justifyContent: 'space-between',
+                            alignItems: 'stretch',
+                            //backgroundColor: '#03A9F4'
+                            backgroundColor: this.colorBtn
                         }}
                         underlayColor="rgba(0,0,0,0.2)"
                         onPress={this.onBtnLoginClick.bind(this)}
                     >
-                        <View style={{ justifyContent: 'center', alignItems: 'stretch' }} >
-                            {/* <Text
-                                style={{
-                                    color: '#fff',
-                                    fontSize: 20
-                                }}
-                                disabled={inAction}>Войти</Text> */}
+                        <View style={{flex: 0,  height: 44, justifyContent: 'center', alignItems: 'center' }} >                            
                             {this._btnLogin()}
                         </View>
 
