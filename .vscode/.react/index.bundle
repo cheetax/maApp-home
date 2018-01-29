@@ -89798,11 +89798,9 @@ var _index2 = _interopRequireDefault(_index);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\LoginPage.js";
 
-var _class,
-    _temp,
-    _jsxFileName = "c:\\Users\\ADM_ZMU_2015\\myApp\\app\\views\\LoginPage.js";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _reactRedux = require(488          ); // 488 = react-redux
 
@@ -89876,7 +89874,7 @@ function mapDispatcherToProps(dispatch) {
     };
 }
 
-var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Component) {
+var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
     _inherits(LoginPage, _Component);
 
     function LoginPage(props) {
@@ -89886,65 +89884,87 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
 
         _this._btnLogin = function () {
             if (!_this.props.account.inActionLogin && !_this.props.account.inAction && !_this.props.account.statusLogin) {
-                colorBtn = function colorBtn() {
-                    return '#03A9F4';
-                };
                 return _react3.default.createElement(
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 79
+                        }
+                    },
+                    "\u0412\u041E\u0419\u0422\u0418"
+                );
+            } else if (_this.props.account.inActionLogin && !_this.props.account.inAction && !_this.props.account.statusLogin) {
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    { style: {
+                            borderColor: 'red',
+                            borderRadius: 14,
+                            height: 28,
+                            borderWidth: 1
+
+                        }, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 82
                         }
                     },
-                    "\u0412\u043E\u0439\u0442\u0438"
+                    _react3.default.createElement(_Entypo2.default, {
+                        name: 'cross',
+                        size: 24,
+                        style: {
+                            color: 'red',
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 89
+                        }
+                    })
                 );
-            } else if (_this.props.account.inActionLogin && !_this.props.account.inAction && !_this.props.account.statusLogin) {
-                return _react3.default.createElement(_Entypo2.default, {
-                    name: 'cross',
-                    size: 24,
-                    style: {
-                        color: '#fff',
-                        margin: 0,
-                        marginLeft: 0,
-                        padding: 0
-                    },
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 85
-                    }
-                });
             } else if (_this.props.account.inActionLogin && !_this.props.account.inAction && _this.props.account.statusLogin) {
-                return _react3.default.createElement(_Entypo2.default, {
-                    name: 'check',
-                    size: 24,
-                    style: {
-                        color: '#fff',
-                        margin: 0,
-                        marginLeft: 0,
-                        padding: 0
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    { style: {
+                            borderColor: 'green',
+                            borderRadius: 16,
+                            height: 32,
+                            width: 32,
+                            borderWidth: 2
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 103
+                        }
                     },
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 97
-                    }
-                });
+                    _react3.default.createElement(_Entypo2.default, {
+                        name: 'check',
+                        size: 24,
+                        style: {
+                            color: 'green',
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 110
+                        }
+                    })
+                );
             } else if (!_this.props.account.inActionLogin && !_this.props.account.inAction && _this.props.account.statusLogin) {
-                colorBtn = function colorBtn() {
-                    return 'red';
-                };
                 return _react3.default.createElement(
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 110
+                            lineNumber: 125
                         }
                     },
-                    "\u0412\u044B\u0439\u0442\u0438"
+                    "\u0412\u042B\u0419\u0422\u0418"
                 );
             } else {
                 return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 24, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 113
+                        lineNumber: 128
                     }
                 });
             }
@@ -89953,7 +89973,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 115
+                        lineNumber: 130
                     }
                 },
                 "Test"
@@ -89988,7 +90008,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 120
+                        lineNumber: 135
                     }
                 },
                 _react3.default.createElement(
@@ -89996,7 +90016,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 121
+                            lineNumber: 136
                         }
                     },
                     _react3.default.createElement(
@@ -90017,7 +90037,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                                 _this2.props.navigation.goBack();
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 122
+                                lineNumber: 137
                             }
                         },
                         _react3.default.createElement(_Entypo2.default, {
@@ -90031,7 +90051,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 135
+                                lineNumber: 150
                             }
                         })
                     )
@@ -90040,7 +90060,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                     _reactNative.Text,
                     { style: styles.headerText, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 147
+                            lineNumber: 162
                         }
                     },
                     "Battle of Wizards Assistans"
@@ -90049,7 +90069,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                     _reactNative.View,
                     { style: { marginHorizontal: 24, marginTop: 64 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 148
+                            lineNumber: 163
                         }
                     },
                     _react3.default.createElement(
@@ -90057,7 +90077,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 149
+                                lineNumber: 164
                             }
                         },
                         _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -90072,7 +90092,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                             value: this.state.account.login,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 150
+                                lineNumber: 165
                             }
                         }),
                         _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -90087,7 +90107,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                             value: this.state.account.password,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 162
+                                lineNumber: 177
                             }
                         })
                     ),
@@ -90099,20 +90119,20 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
                                 marginVertical: 32,
                                 justifyContent: 'space-between',
                                 alignItems: 'stretch',
-                                backgroundColor: '#03A9F4'
+                                backgroundColor: !this.props.account.inActionLogin && this.props.account.statusLogin ? 'red' : '#03A9F4'
                             },
                             underlayColor: "rgba(0,0,0,0.2)",
                             onPress: this.onBtnLoginClick.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 174
+                                lineNumber: 189
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.View,
-                            { style: { flex: 0, height: 44, justifyContent: 'center', alignItems: 'center' }, __source: {
+                            { style: { flex: 0, height: 48, justifyContent: 'center', alignItems: 'center' }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 186
+                                    lineNumber: 201
                                 }
                             },
                             this._btnLogin()
@@ -90124,9 +90144,7 @@ var LoginPage = _wrapComponent("LoginPage")((_temp = _class = function (_Compone
     }]);
 
     return LoginPage;
-}(_react2.Component), _class.colorBtn = function () {
-    return '#03A9F4';
-}, _temp));
+}(_react2.Component));
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(LoginPage);
 

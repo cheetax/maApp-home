@@ -35,43 +35,37 @@ class MenuDrawer extends Component {
                     //backgroundColor: 'orange',
                     justifyContent: 'center'
                 }} >
-                    <View style={{
-                        flex: 0,
-                        flexDirection: 'row',
-                        marginHorizontal: 16,
-                        alignItems: 'center'
-                    }} >
-                        <View style={{
-                            height: 32,
-                            width: 32,
-                            marginRight: 8,
-                            borderRadius: 16,
-                            backgroundColor: 'lightgrey',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                        }} >
-                            <Icon
-                                name={'user'}
-                                size={22}
-                                style={{ justifyContent: 'center' }}
-                            />
-                        </View>
-                        <TouchableHighlight
-                            underlayColor='rgba(3, 169, 244, 0.4)'
-                            style={styles.elementMenuButton}
-                            onPress={() => {
-                                this.props.navigation.navigate('DrawerClose');
-                                this.props.navigation.dispatch({
-                                    type: 'NAV_LOGIN_PAGE',
-                                    //payload: ''
-                                })
-                                //this.props.dispatch(selectPage(1))
-                            }}>
+
+                    <TouchableHighlight
+                        underlayColor='rgba(3, 169, 244, 0.4)'
+                        style={styles.elementMenuButton}
+                        onPress={() => {
+                            this.props.navigation.navigate('DrawerClose');
+                            this.props.navigation.dispatch({
+                                type: 'NAV_LOGIN_PAGE',
+                                //payload: ''
+                            })
+                            //this.props.dispatch(selectPage(1))
+                        }}>
+                        <View style={styles.elementMenu} >
+                            <View style={{
+                                height: 36,
+                                width: 36,
+                                marginRight: 0,
+                                borderRadius: 18,
+                                backgroundColor: 'lightgrey',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }} >
+                                <Icon
+                                    name={'user'}
+                                    size={22}
+                                    style={{ justifyContent: 'center' }}
+                                />
+                            </View>
                             <Text style={styles.elementMenuText} >{this.props.account.login}</Text>
-                        </TouchableHighlight>
-
-                    </View>
-
+                        </View>
+                    </TouchableHighlight>
                 </View>
                 <View style={{ height: 1, backgroundColor: 'lightgray' }} />
                 <TouchableHighlight
