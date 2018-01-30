@@ -51568,7 +51568,7 @@ var customMiddleware = function customMiddleware(store) {
   return function (next) {
     return function (action) {
       console.log(action);
-      return next(action);
+      next(action);
     };
   };
 };
@@ -64821,7 +64821,6 @@ var getContent = exports.getContent = function getContent(forceUpdate) {
                                             dispatch({
                                                 type: 'NAV_LOGIN_PAGE'
                                             });
-
                                             console.log(status.login);
 
                                         case 2:
@@ -64872,14 +64871,14 @@ var actionLogin = exports.actionLogin = function actionLogin(account) {
                             type: 'SET_LOGIN',
                             payload: account
                         });
+                        _context5.next = 3;
+                        return regeneratorRuntime.awrap((0, _base.saveAccountToBase)(account));
+
+                    case 3:
                         dispatch({
                             type: 'LOGIN',
                             payload: { login: false, inAction: true }
                         });
-                        _context5.next = 4;
-                        return regeneratorRuntime.awrap((0, _base.saveAccountToBase)(account));
-
-                    case 4:
                         _context5.next = 6;
                         return regeneratorRuntime.awrap((0, _GetContent.Login)(account).then(function (status) {
                             dispatch({
@@ -89822,10 +89821,6 @@ var _reactNativeMdTextinput2 = _interopRequireDefault(_reactNativeMdTextinput);
 
 var _reactNative = require(12            ); // 12 = react-native
 
-var _ItemRulesView = require(701              ); // 701 = ./ItemRulesView
-
-var _ItemRulesView2 = _interopRequireDefault(_ItemRulesView);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -89860,24 +89855,6 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatcherToProps(dispatch) {
-    return {
-        saveRules: function (_saveRules) {
-            function saveRules(_x) {
-                return _saveRules.apply(this, arguments);
-            }
-
-            saveRules.toString = function () {
-                return _saveRules.toString();
-            };
-
-            return saveRules;
-        }(function (data) {
-            dispatch(saveRules(data));
-        })
-    };
-}
-
 var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
     _inherits(LoginPage, _Component);
 
@@ -89892,7 +89869,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 79
+                            lineNumber: 68
                         }
                     },
                     "\u0412\u041E\u0419\u0422\u0418"
@@ -89908,7 +89885,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
 
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 82
+                            lineNumber: 71
                         }
                     },
                     _react3.default.createElement(_Entypo2.default, {
@@ -89922,7 +89899,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 89
+                            lineNumber: 78
                         }
                     })
                 );
@@ -89937,7 +89914,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             borderWidth: 2
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 103
+                            lineNumber: 92
                         }
                     },
                     _react3.default.createElement(_Entypo2.default, {
@@ -89951,7 +89928,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 110
+                            lineNumber: 99
                         }
                     })
                 );
@@ -89960,7 +89937,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.Text,
                     { style: { color: '#fff', fontSize: 20 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 125
+                            lineNumber: 114
                         }
                     },
                     "\u0412\u042B\u0419\u0422\u0418"
@@ -89968,7 +89945,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
             } else {
                 return _react3.default.createElement(_reactNative.ActivityIndicator, { size: 24, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 128
+                        lineNumber: 117
                     }
                 });
             }
@@ -89977,7 +89954,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 130
+                        lineNumber: 119
                     }
                 },
                 "Test"
@@ -90012,59 +89989,50 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 135
+                        lineNumber: 124
                     }
                 },
                 _react3.default.createElement(
-                    _reactNative.View,
+                    _reactNative.TouchableHighlight,
                     {
-                        __source: {
+                        style: {
+                            margin: 0,
+                            marginTop: 8,
+                            marginLeft: 8,
+                            width: 40,
+                            height: 40,
+                            borderRadius: 20,
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        },
+                        underlayColor: "rgba(0,0,0,0.2)",
+                        onPress: function onPress() {
+                            return _this2.props.dispatch({ type: 'Navigation/BACK', key: 'Login' });
+                        }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 136
+                            lineNumber: 126
                         }
                     },
-                    _react3.default.createElement(
-                        _reactNative.TouchableHighlight,
-                        {
-                            style: {
-                                margin: 0,
-                                marginTop: 8,
-                                marginLeft: 8,
-                                width: 40,
-                                height: 40,
-                                borderRadius: 25,
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            },
-                            underlayColor: "rgba(0,0,0,0.2)",
-                            onPress: function onPress() {
-                                _this2.props.navigation.goBack();
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 137
-                            }
+                    _react3.default.createElement(_Entypo2.default, {
+                        name: 'cross',
+                        size: 24,
+                        style: {
+                            color: '#000',
+                            margin: 0,
+                            marginLeft: 0,
+                            padding: 0
                         },
-                        _react3.default.createElement(_Entypo2.default, {
-                            name: 'cross',
-                            size: 24,
-                            style: {
-                                color: '#000',
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0
-                            },
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 150
-                            }
-                        })
-                    )
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 139
+                        }
+                    })
                 ),
                 _react3.default.createElement(
                     _reactNative.Text,
                     { style: styles.headerText, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 162
+                            lineNumber: 151
                         }
                     },
                     "Battle of Wizards Assistans"
@@ -90073,7 +90041,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                     _reactNative.View,
                     { style: { marginHorizontal: 24, marginTop: 64 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 163
+                            lineNumber: 152
                         }
                     },
                     _react3.default.createElement(
@@ -90081,7 +90049,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 164
+                                lineNumber: 153
                             }
                         },
                         _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -90096,7 +90064,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             value: this.state.account.login,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 165
+                                lineNumber: 154
                             }
                         }),
                         _react3.default.createElement(_reactNativeMdTextinput2.default, {
@@ -90111,7 +90079,7 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             value: this.state.account.password,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 177
+                                lineNumber: 166
                             }
                         })
                     ),
@@ -90129,14 +90097,14 @@ var LoginPage = _wrapComponent("LoginPage")(function (_Component) {
                             onPress: this.onBtnLoginClick.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 189
+                                lineNumber: 178
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.View,
                             { style: { flex: 0, height: 48, justifyContent: 'center', alignItems: 'center' }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 201
+                                    lineNumber: 190
                                 }
                             },
                             this._btnLogin()

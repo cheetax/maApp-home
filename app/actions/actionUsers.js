@@ -36,15 +36,7 @@ export const getContent = (forceUpdate) => async (dispatch) => {
     }, async (status) => {
         dispatch({
             type: 'NAV_LOGIN_PAGE',
-            //payload: ''
         })
-        // await getDataBase(forceUpdate, status.login).then((data) => {
-        //     dispatch({
-        //         type: 'GET_CONTENT',
-        //         payload: data,
-        //     });
-
-        // });
         console.log(status.login)
     })
     dispatch({
@@ -72,11 +64,11 @@ export const actionLogin = (account) => async (dispatch) => {
         type: 'SET_LOGIN',
         payload: account
     })
+    await saveAccountToBase(account);
     dispatch({
         type: 'LOGIN',
         payload: { login: false, inAction: true },
-    })
-    await saveAccountToBase(account);
+    })    
     await Login(account).then((status) => {
         dispatch({
             type: 'LOGIN',

@@ -23,22 +23,11 @@ import {
     TouchableHighlight,
 } from 'react-native';
 
-import ItemRulesView from './ItemRulesView';
-
-
 function mapStateToProps(state) {
     //console.log('mapStateToProps', state);
     return {
         nav: state.nav,
         account: state.account,
-    }
-}
-
-function mapDispatcherToProps(dispatch) {
-    return {
-        saveRules: (data) => {
-            dispatch(saveRules(data));
-        },
     }
 }
 
@@ -133,32 +122,32 @@ class LoginPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View>
-                    <TouchableHighlight
+
+                <TouchableHighlight
+                    style={{
+                        margin: 0,
+                        marginTop: 8,
+                        marginLeft: 8,
+                        width: 40,
+                        height: 40,
+                        borderRadius: 20,
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                    underlayColor="rgba(0,0,0,0.2)"
+                    onPress={() => this.props.dispatch({ type: 'Navigation/BACK', key: 'Login' })} >
+                    <Icon
+                        name={'cross'}
+                        size={24}
                         style={{
+                            color: '#000',
                             margin: 0,
-                            marginTop: 8,
-                            marginLeft: 8,
-                            width: 40,
-                            height: 40,
-                            borderRadius: 25,
-                            justifyContent: 'center',
-                            alignItems: 'center'
+                            marginLeft: 0,
+                            padding: 0,
                         }}
-                        underlayColor="rgba(0,0,0,0.2)"
-                        onPress={() => { this.props.navigation.goBack() }} >
-                        <Icon
-                            name={'cross'}
-                            size={24}
-                            style={{
-                                color: '#000',
-                                margin: 0,
-                                marginLeft: 0,
-                                padding: 0,
-                            }}
-                        />
-                    </TouchableHighlight>
-                </View>
+                    />
+                </TouchableHighlight>
+
                 <Text style={styles.headerText} >Battle of Wizards Assistans</Text>
                 <View style={{ marginHorizontal: 24, marginTop: 64 }}>
                     <View >

@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 
 const customMiddleware = store => next => action => {
    console.log(action)
-   return next(action)
+   next(action)
 }
 
 const store = createStore(rootReducer, applyMiddleware(thunk, customMiddleware));
