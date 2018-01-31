@@ -18,6 +18,7 @@ import StatisticPage from './StatisticPage';
 import AddRulesView from './AddRulesView';
 import MenuDrawer from './MenuDrawer';
 import LoginPage from './LoginPage';
+import SettingsPage from './SettingsPage'
 
 function mapStateToProps(state) {
   //console.log('mapStateToProps', state);
@@ -32,7 +33,7 @@ export const stackNavigator = StackNavigator(
     Rules: { screen: RulesPage, },
     AddRules: { screen: AddRulesView, },
     Statistic: { screen: StatisticPage },
-    //Login: { screen: LoginPage },
+    Settings: { screen: SettingsPage },
   },
   {
     navigationOptions: {

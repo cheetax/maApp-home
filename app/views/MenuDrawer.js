@@ -29,6 +29,8 @@ class MenuDrawer extends Component {
         return (
 
             <View style={styles.container}>
+                
+                <View style={styles.menuTop} >
                 <View style={{
                     flex: 0,
                     height: 56,
@@ -132,6 +134,28 @@ class MenuDrawer extends Component {
                         <Text style={styles.elementMenuText} >Нормы</Text>
                     </View>
                 </TouchableHighlight>
+                </View>
+                <View style={{ height: 1, backgroundColor: 'lightgray' }} />
+                <TouchableHighlight
+                    underlayColor='rgba(3, 169, 244, 0.4)'
+                    style={[styles.elementMenuButton]}
+                    onPress={() => {
+                        this.props.navigation.navigate('DrawerClose');
+                        this.props.navigation.dispatch({
+                            type: 'NAV_SETTINGS_PAGE',
+                            //payload: ''
+                        })
+                    }}>
+                    <View
+                        style={styles.elementMenu} >
+                        <Icon
+                            name={'cog'}
+                            size={24}
+                            style={styles.elementMenuIcon}
+                        />
+                        <Text style={styles.elementMenuText} >Настройки</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
 
         );
@@ -143,9 +167,15 @@ export default connect(mapStateToProps)(MenuDrawer);
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'space-between',
+        marginTop: 0,
+        //backgroundColor: 'transparent'
+    },
+    menuTop: {
+        flex: 1,
         justifyContent: 'flex-start',
         marginTop: 0,
-        backgroundColor: 'transparent'
+        //backgroundColor: 'red'
     },
     elementMenuText: {
         fontSize: 14,
@@ -156,7 +186,7 @@ const styles = StyleSheet.create({
     },
     elementMenuButton: {
         height: 48,
-        justifyContent: 'center',
+        //justifyContent: 'center',
         margin: 0,
     },
     elementMenuIcon: {

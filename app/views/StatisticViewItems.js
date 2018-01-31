@@ -46,7 +46,7 @@ class StatisticViewItems extends Component {
           marginBottom: 8
         }} >
         <Text style={{ fontSize: 20, }} >{section.title}: {section.data.length} </Text>
-        <TouchableHighlight style={{padding: 8}} onPress={() => this._MoreStatisticView(section.data)} >
+        <TouchableHighlight style={{ padding: 8 }} onPress={() => this._MoreStatisticView(section.data)} >
           <Text style={{ fontSize: 16, }} >КОПИР.</Text>
         </TouchableHighlight>
 
@@ -58,23 +58,28 @@ class StatisticViewItems extends Component {
     //console.log(data)
     var str = ''
     data.forEach(element => {
-      str = str + element.name + ' ⋆ ' + element.exp + ' ⋆ >' + parseInt(element.ruleExp.value)/1000 + ' ⋆ дней: ' + element.dayOfClan + '\n'
+      str = str + element.name + ' ⋆ ' + element.exp + ' ⋆ >' + parseInt(element.ruleExp.value) / 1000 + ' ⋆ дней: ' + element.dayOfClan + '\n'
     });
     Clipboard.setString(str);
     //return {}
   }
-  
-  
+
+
   //</View>
 
 
   render() {
-    const performs = this.props.items.filter((value, index, array) => {
-      return parseInt(value.exp) >= parseInt(value.ruleExp.value)
-    })
-    const notPerforms = this.props.items.filter((value, index, array) => {
-      return parseInt(value.exp) < parseInt(value.ruleExp.value)
-    })
+    const performs = (_this) => {
+      const probationPeriod = _this.props.probationPeriod;
+      return _this.props.items.filter((value, index, array) => {
+        return ((parseInt(value.exp) >= parseInt(value.ruleExp.value)) || (parseInt(value.dayOfClan) <= parseInt(probationPeriod)))
+      })
+    }
+    const notPerforms = (_this) => {
+      const probationPeriod = _this.props.probationPeriod;
+      return _this.props.items.filter((value, index, array) => {
+      return ((parseInt(value.exp) < parseInt(value.ruleExp.value)) && (parseInt(value.dayOfClan) > parseInt(probationPeriod)))
+    })}
     //console.log('map', this.props.items);
 
 
@@ -86,15 +91,15 @@ class StatisticViewItems extends Component {
           keyExtractor={this._keyExtractor}
           sections={[
             {
-              data: notPerforms, title: 'Не выполняющие норму'
+              data: notPerforms(this), title: 'Не выполняющие норму'
             },
             {
-              data: performs, title: 'Выполняющие норму'
+              data: performs(this), title: 'Выполняющие норму'
             },
           ]}
         />
       </View>
-      
+
     );
   }
 }

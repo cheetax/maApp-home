@@ -1,5 +1,5 @@
 const initialSettings = {
-    probationPeriod: 0
+    probationPeriod: '7'
 }
 
 const initialAccount = {
@@ -13,9 +13,9 @@ const initialAccount = {
 export function settings(state = initialSettings, action) {
     //console.log('actionStatus', action.type);
     switch (action.type) {
-        case "CHANGE_SETTINGS":
-            state = action.payload;
-            return { ...state };;
+        case "EDIT_SETTINGS":
+            newState = action.payload;
+            return newState;;
         default:
             return state;
     }

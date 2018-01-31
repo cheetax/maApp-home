@@ -53,6 +53,13 @@ function nav(state = initialNavState, action) {
         state
       );
       break;
+    case 'NAV_SETTINGS_PAGE':
+      var navig = NavigationActions.navigate({ routeName: 'Settings', params: { ...action.payload, } });
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Settings', params: { ...action.payload, } }),
+        state
+      );
+      break;
     // case "CHANGE_STATUS":
     //   inAction = !inAction;
     //   nextState = AppNavigator.router.getStateForAction({ }, state);

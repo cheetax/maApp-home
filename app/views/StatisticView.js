@@ -22,6 +22,7 @@ import {
   ActivityIndicator,
   ListView,
 } from 'react-native';
+import { settings } from '../reducers/settings';
 
 
 function mapStateToProps(state) {
@@ -67,6 +68,7 @@ function mapStateToProps(state) {
   });
   return {
     items: state.clanInfo.expirienceUsers,
+    probationPeriod: state.settings.probationPeriod,
   }
 }
 
@@ -96,7 +98,7 @@ class StatisticView extends Component {
         items = [];
         break;
     }
-    let statisticView = <StatisticViewItems items={items} />
+    let statisticView = <StatisticViewItems items={items} probationPeriod={this.props.probationPeriod}/>
     return (
       <View style={styles.container}>
         <MaterialTabs
