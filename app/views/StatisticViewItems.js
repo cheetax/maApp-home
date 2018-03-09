@@ -24,7 +24,7 @@ import {
 
 import ItemStaticView from './ItemStaticView';
 import MoreStatisticView from './MoreStatisticView'
-
+import { CopyStatistic } from '../actions/CopyStatistic';
 
 class StatisticViewItems extends Component {
 
@@ -54,19 +54,7 @@ class StatisticViewItems extends Component {
     )
   }
 
-  _MoreStatisticView = (data) => {
-    //console.log(data)
-    var str = ''
-    data.forEach(element => {
-      str = str + element.name + ' ⋆ ' + element.exp + ' ⋆ >' + parseInt(element.ruleExp.value) / 1000 + ' ⋆ дней: ' + element.dayOfClan + '\n'
-    });
-    Clipboard.setString(str);
-    //return {}
-  }
-
-
-  //</View>
-
+  _MoreStatisticView = (data) => CopyStatistic(data);
 
   render() {
     const performs = (_this) => {
@@ -78,8 +66,9 @@ class StatisticViewItems extends Component {
     const notPerforms = (_this) => {
       const probationPeriod = _this.props.probationPeriod;
       return _this.props.items.filter((value, index, array) => {
-      return ((parseInt(value.exp) < parseInt(value.ruleExp.value)) && (parseInt(value.dayOfClan) > parseInt(probationPeriod)))
-    })}
+        return ((parseInt(value.exp) < parseInt(value.ruleExp.value)) && (parseInt(value.dayOfClan) > parseInt(probationPeriod)))
+      })
+    }
     //console.log('map', this.props.items);
 
 
